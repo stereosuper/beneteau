@@ -42,25 +42,25 @@ gulp.task('styles', function () {
             ]
         }))
         .pipe($.sourcemaps.write())
-        .pipe(gulp.dest('dest/css'))
+        .pipe(gulp.dest('dest/wp-content/themes/super/css'))
         .pipe($.size({title: 'styles'}));
 });
 
 gulp.task('fonts', function() {
     return gulp.src('src/fonts/**/*')
-        .pipe(gulp.dest('dest/fonts'))
+        .pipe(gulp.dest('dest/wp-content/themes/super/fonts'))
         .pipe($.size({ title: 'fonts' }));
 });
 
 gulp.task('img', function() {
     return gulp.src('src/img/**/*')
-        .pipe(gulp.dest('dest/img'))
+        .pipe(gulp.dest('dest/wp-content/themes/super/img'))
         .pipe($.size({ title: 'img' }));
 });
 
 gulp.task('layoutImg', function() {
     return gulp.src('src/layoutImg/**/*')
-        .pipe(gulp.dest('dest/layoutImg'))
+        .pipe(gulp.dest('dest/wp-content/themes/super/layoutImg'))
         .pipe($.size({ title: 'layoutImg' }));
 });
 
@@ -77,30 +77,26 @@ gulp.task('js', function () {
         .pipe($.sourcemaps.init({loadMaps: true}))
         .pipe($.uglify())
         .pipe($.sourcemaps.write('./'))
-        .pipe(gulp.dest('dest/js'))
+        .pipe(gulp.dest('dest/wp-content/themes/super/js'))
         .pipe($.size({ title: 'js' }));
 });
 
 
-gulp.task('templates', function() {
-    
-    return gulp.src('src/templates/*.html')
-    
-        .pipe($.prettify({ indent_size: 4 }))
-        .pipe($.htmlmin({collapseWhitespace: true}))
-        .pipe(gulp.dest('dest'))
-        .pipe($.size({title: 'template'}));
+gulp.task('theme', function() {
+    return gulp.src('src/theme/**/*')
+        .pipe(gulp.dest('dest/wp-content/themes/super'))
+        .pipe($.size({title: 'theme'}));
 });
 
 
 gulp.task('sitemap', function () {
-    gulp.src('dest/**/*.html', {
+    gulp.src('dest/wp-content/themes/super/**/*.html', {
             read: false
         })
         .pipe(sitemap({
-            siteUrl: 'http://www.test.com'
+            siteUrl: 'http://beneteau.fr'
         }))
-        .pipe(gulp.dest('dest'));
+        .pipe(gulp.dest('dest/wp-content/themes/super'));
 });
 
 gulp.task('root', function() {
@@ -114,7 +110,7 @@ gulp.task('watch', function () {
     
     browserSync({
         notify: false,
-        server: ['dest']
+        proxy: 'localhost'
     });
     
 
@@ -122,8 +118,8 @@ gulp.task('watch', function () {
         gulp.start(['styles'], reload);
     });
     
-    $.watch('src/templates/**/*', function(){
-        gulp.start(['templates'], reload);
+    $.watch('src/theme/**/*', function(){
+        gulp.start(['theme'], reload);
     });
     
     $.watch('src/fonts/**/*', function(){
@@ -139,18 +135,11 @@ gulp.task('watch', function () {
         gulp.start(['js'], reload);
     });
     
-    var fileWatcher = $.watch('src/**/*').on('unlink', function(currentPath){
-        var filePathFromSrc = path.relative(path.resolve('src'), currentPath);
-        var destFilePath = path.resolve('dest', filePathFromSrc).replace('templates/', '');
-        del.sync(destFilePath);
-        console.log('File removed - ' + destFilePath);
-    });
-    
     $.watch('src/*.*', function(){
         gulp.start(['root'], reload);
     });
 });
 
 
-gulp.task('start', ['styles', 'templates', 'fonts', 'img', 'layoutImg', 'js', 'root', 'sitemap']);
+gulp.task('start', ['styles', 'theme', 'fonts', 'img', 'layoutImg', 'js', 'root', 'sitemap']);
 
