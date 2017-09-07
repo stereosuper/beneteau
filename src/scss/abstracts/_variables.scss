@@ -2,16 +2,24 @@
 
 
 // Colors
-$white: rgb(255, 255, 255);
-$black: rgb(0, 0, 0);
+$white: #fff;
+$black: #000;
+
+$primary: #B1780D;
+$secondary: #F7CF84;
+$text: #2D3A45;
+$grey: #54616C;
 
 
 // Transitions
-$transition: 0.3s ease-in-out;
+$transition: 0.2s ease-in-out;
 
 
 // Fonts
-// $font: 'font', sans-serif;
+$montserratLight: 'Montserrat Light', sans-serif;
+
+$roboto: 'RobotoCondensed', sans-serif;
+$robotoLight: 'RobotoCondensed Light', sans-serif;
 
 
 // Mediaqueries
@@ -25,6 +33,6 @@ $phone-small: '400px';
 
 
 // Grid
-$col: 100/12*1%;
+$col: 100/8*1%;
 
-$gutter: 10px;
+$gutter: 30px;
