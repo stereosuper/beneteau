@@ -26,3 +26,5 @@ dest/wp-activate.php
 dest/xmlrpc.php
 dest/index.php
 dest/license.txt
+/dest/wp-content/index.php
+/dest/readme.html
