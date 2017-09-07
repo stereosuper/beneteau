@@ -7,9 +7,7 @@
 		<h1><?php the_title(); ?></h1>
 		<?php the_content(); ?>
 
-		<h1>Modèle de page type</h1>
-
-        <p class='introduction'>Moteur de l'innovation, la recherche figure au premier rang des priorités du groupe qui consacre à ce secteur près de 20 millions d'euros chaque année.</p>
+        <p class='intro'>Moteur de l'innovation, la recherche figure au premier rang des priorités du groupe qui consacre à ce secteur près de 20 millions d'euros chaque année.</p>
 
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis venenatis risus, nec aliquet velit. Nunc scelerisque, est id vehicula bibendum, massa arcu laoreet magna, <a href='#'>sed vehicula leo odio ac leo</a>. ssa arcu laoreet magna, sed vehicula leo odioa arcu laoreet magna, sed vehicula leo odio ac leo. ssa arcu laoreet magna, sed vehicula leo odioa arcu laoreet magna, sed vehicula leo odio ac leo. ssa arcu laoreet mao ac leo. Mn diam pellentesque consectetur. Mauris et lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis venenatis risus, nec aliquet velit. Nunc scelerisque, est id vehicula bibendum, massa arcu laoreet magna, sed vehicula leo odio ac leo. Morbi eleifend lectus in diam pellentesque consectetur.</p>
 
@@ -19,7 +17,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis venenatis risus, nec aliquet velit. Nunc scelerisque, est id vehicula bibendum, massa arcu laoreet magna, <br>
             Duis pellentesque enim commodo sem tristique ullamcorper. Duis sapien erat, mollis id auctor sit amet, commodo vel arcu. Aliquam euismod mauris eros, a fermentum enim aliquam quis. Aenean tincidunt fringilla lectus, nec molestie odio semper ultrices. Duis nec nibh vel ligula lacinia blandit quis ac orci. Pellentesque vel sapien nibh. Donec fringilla auctor nisi eu tristique. Phasellus lobortis aliquet viverra.</p>
 
-            <blockquote>Limiter l'impact environnemental de nos produits</blockquote>
+            <blockquote><p>Limiter l'impact environnemental de nos produits</p></blockquote>
 
             <p>Duis pellentesque enim commodo sem tristique ullamcorper. Duis sapien erat, mollis id auctor sit amet, commodo vel arcu. </p>
         </div>
@@ -42,7 +40,9 @@
         </div>
 
         <div class='col'>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis venenatis risus, nec aliquet velit. Nunc scelerisque, est id vehicula bibendum, massa arcu laoreet magna</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis venenatis risus, nec aliquet velit. Nunc scelerisque, est id vehicula bibendum, massa arcu laoreet magna</p>
+			
+			<h3>Un titre de troisième niveau</h3>
 
             <ol>
                 <li>Aliquam euismod mauris eros</li>
