@@ -47,7 +47,7 @@
                             "name": "title_align",
                             "type": "radio",
                             "instructions": "",
-                            "required": 1,
+                            "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
                                 "width": "",
@@ -276,7 +276,7 @@
                             "other_choice": 0,
                             "save_other_choice": 0,
                             "default_value": "",
-                            "layout": "vertical",
+                            "layout": "horizontal",
                             "return_format": "value"
                         },
                         {
@@ -323,7 +323,7 @@
                                     "name": "image",
                                     "type": "image",
                                     "instructions": "",
-                                    "required": 1,
+                                    "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
                                         "width": "",
@@ -407,5 +407,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1504878149
+    "modified": 1504883233
 }
