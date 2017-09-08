@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 
-<div class='container'>
+<?php if ( have_posts() ) : the_post(); ?>
 
-	<?php if ( have_posts() ) : the_post(); ?>
+	<div class='container'>
 
 		<h1><?php the_title(); ?></h1>
 		<?php the_content(); ?>
@@ -71,12 +71,44 @@
 			</div>
 		</div>
 	
-	<?php else : ?>
-				
+	</div>
+
+	<div class='highlighted'>
+		<div class='container'>
+			<span class='title'>Savoir faire :</span>
+			<strong>Concevoir l'espace et optimiser les volumes pour accompagner de nouveaux modes de vie.</strong>
+		</div>
+	</div>
+
+	<div class='push-wrapper'>
+		<div class='container'>
+			<a href='#' class='push'>
+				<div class='img'>
+					<img src='<?php echo get_template_directory_uri(); ?>/img/boat.png' alt=''>
+				</div>
+				<strong>Cotation boursière : en savoir plus</strong>
+				<span class='link'>Infos financières</span>
+			</a>
+			<a href='#' class='push'>
+				<div class='img'>
+					<img src='<?php echo get_template_directory_uri(); ?>/img/boat.png' alt=''>
+				</div>
+				<strong>Les premières navigations</strong>
+				<span class='link'>Infos de traversé</span>
+			</a>
+			<a href='#' class='push'>
+				<div class='img'></div>
+				<strong>Nos gammes complètes</strong>
+				<span class='link'>Infos des gammes</span>
+			</a>
+		</div>
+	</div>
+	
+<?php else : ?>
+	<div class='container'>			
 		<h1>404</h1>
+	</div>
 
-	<?php endif; ?>
-
-</div>
+<?php endif; ?>
 
 <?php get_footer(); ?>
