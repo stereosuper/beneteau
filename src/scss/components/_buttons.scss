@@ -1,1 +1,28 @@
 /* Buttons */
+
+.link, .link-doc{
+    display: block;
+    padding: 0 0 0 60px;
+    position: relative;
+    font-family: $montserratBold;
+    font-size: 1.1rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: $text;
+    &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
+    }
+}
+
+.link{
+    &:before{
+        width: 25px;
+        height: 1px;
+        background: $primary;
+    }
+}

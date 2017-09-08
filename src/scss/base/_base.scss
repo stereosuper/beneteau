@@ -144,6 +144,7 @@ ol{
         counter-increment: ol-counter;
         &:before{
             content: counter(ol-counter)'.';
+            font-family: $montserratBold;
             font-size: 0.8em;
             color: $primary;
         }

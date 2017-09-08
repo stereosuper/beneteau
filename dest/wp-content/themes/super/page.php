@@ -63,7 +63,7 @@
 
         <div class='col'>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis venenatis risus, nec aliquet velit. Nunc scelerisque, est id vehicula bibendum, massa arcu laoreet magna</p>
-            <a href='#' class='link-doc'>Télécharger notre rapport d'activité</a>
+            <a href='#' class='link'>Télécharger notre rapport d'activité</a>
             <p>Duis pellentesque enim commodo sem tristique ullamcorper. Duis sapien erat, mollis id auctor sit amet, commodo vel arcu. Aliquam euismod mauris eros, a fermentum enim aliquam quis.</p>
         </div>
 	
