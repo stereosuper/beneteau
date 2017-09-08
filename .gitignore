@@ -9,6 +9,7 @@
 
 node_modules/**
 
+dest/wp-config.php
 dest/wp-admin/
 dest/wp-includes/
 dest/wp-cron.php

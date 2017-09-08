@@ -5,3 +5,19 @@
     padding: 0 $gutter*2;
     margin: 0 auto;
 }
+
+.grid{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+// [class*='col-']{
+//     display: inline-block;
+//     padding: 0 $gutter/2;
+//     vertical-align: top;
+// }
+.col-2{
+    width: calc(50% - #{$gutter});
+}
