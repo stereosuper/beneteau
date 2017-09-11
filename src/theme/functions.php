@@ -107,8 +107,33 @@ function beneteau_right_now_custom_post() {
 }
 add_action( 'dashboard_glance_items', 'beneteau_right_now_custom_post' );
 
+// News styles in wysiwyg
+function beneteau_wysiwyg_styleselect( $buttons ){
+    array_unshift( $buttons, 'styleselect' );
+    return $buttons;
+}
+add_filter( 'mce_buttons_2', 'beneteau_wysiwyg_styleselect' );
+
 // Customize a bit the wysiwyg editor
 function beneteau_mce_before_init( $styles ){
+    $style_formats = array(
+        array(
+            'title' => 'Lien',
+            'selector' => 'a',
+            'classes' => 'link'
+        ),
+        array(
+            'title' => 'Lien doc',
+            'selector' => 'a',
+            'classes' => 'link-doc'
+        ),
+        array(
+            'title' => 'Introduction',
+            'block' => 'p',
+            'classes' => 'intro'
+        ),
+    );
+    $styles['style_formats'] = json_encode( $style_formats );
     // Remove h1 and code
     $styles['block_formats'] = 'Paragraph=p;Heading 2=h2;Heading 3=h3;Heading 4=h4;Heading 5=h5;Heading 6=h6';
     // Let only the colors you want
