@@ -1,1 +1,47 @@
 /* Header */
+
+.header{
+    padding: $gutter 0;
+    border-bottom: 1px solid #d8d8d8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background: $white;
+    > .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.menu-main{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0;
+    font-family: $roboto;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    > li{
+        padding: 0 35px 0 0;
+        &:before{
+            content: none;
+        }
+        &:last-child{
+            padding: 0;
+        }
+    }
+    a{
+        display: block;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $greyText;
+    }
+}
+
+.logo{
+    max-width: 340px;
+    margin: 0 $gutter*2 0 0;
+}

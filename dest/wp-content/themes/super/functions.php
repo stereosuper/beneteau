@@ -1,6 +1,6 @@
 <?php
 
-define( 'SUPER_VERSION', 1.0 );
+define( 'BENETEAU_VERSION', 1.0 );
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -180,11 +180,9 @@ add_filter( 'post_gallery', 'beneteau_gallery' );
 /*-----------------------------------------------------------------------------------*/
 /* Menus
 /*-----------------------------------------------------------------------------------*/
-register_nav_menus(
-	array(
+register_nav_menus( array(
 		'primary' => 'Primary Menu',
-	)
-);
+) );
 
 // Cleanup WP Menu html
 function beneteau_css_attributes_filter($var){

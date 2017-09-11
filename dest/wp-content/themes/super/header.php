@@ -12,14 +12,16 @@
 
 	<body <?php body_class(); ?>>
 
-		<header role='banner'>
+		<header role='banner' class='header'>
+			<div class='container'>
+			
+				<a href='<?php echo home_url('/'); ?>' title='Groupe Bénéteau' rel='home' class='logo'><img src='<?php echo get_template_directory_uri(); ?>/layoutImg/logo-beneteau.svg' alt='Groupe Bénéteau'></a>
 
-			<nav role='navigation'>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'menu-main' ) ); ?>
-			</nav>
+				<nav role='navigation'>
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'menu-main' ) ); ?>
+				</nav>
 
-			<a href='<?php echo home_url('/'); ?>' title='<?php bloginfo( 'name' ); ?>' rel='home'><?php bloginfo( 'name' ); ?></a>
-
+			</div>
 		</header>
 
 		<main role='main' class='main'>
