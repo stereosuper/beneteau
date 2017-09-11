@@ -31,12 +31,15 @@ h1, h2, h3, h4, h5, h6{
 }
 
 h1, h2{
+    padding: 0 0 10px;
+    position: relative;
     &:after{
         content: '';
-        display: block;
         width: 60px;
         height: 2px;
-        margin: 10px 0 0 $gutter*-1;
+        position: absolute;
+        bottom: 0;
+        left: $gutter*-1;
         background: $secondary;
     }
 }
@@ -50,6 +53,21 @@ h2{
     font-size: 3.2rem;
     margin: 3.4em 0 1.6em;
     color: $grey;
+    &.aligncenter{
+        text-align: center;
+        &:after{
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    }
+    &.alignright{
+        text-align: right;
+        &:after{
+            right: $gutter*-1;
+            left: auto;
+        }
+    }
 }
 
 h3{
