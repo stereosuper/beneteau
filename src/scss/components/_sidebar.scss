@@ -1,4 +1,7 @@
 .sidebar-menu{
+    padding: 0 $gutter*2 0 0;
+    font-family: $roboto;
+    font-size: 1.4rem;
     > li{
         &:before{
             content: none;
@@ -7,22 +10,42 @@
             text-transform: uppercase;
         }
         li{
+            font-family: $montserrat;
             font-size: 1.2rem;
+        }
+        ul{
+            padding: 0 0 0 5px;
+            margin: 5px 0;
         }
     }
     li{
         &:before{
-            background: $grey;
+            background: $greyText;
             opacity: 0.5;
         }
     }
     a{
-        color: $grey;
+        position: relative;
         text-decoration: none;
+        color: $greyText;
+        &:after{
+            width: 20px;
+            height: 1px;
+            position: absolute;
+            bottom: -3px;
+            left: -10px;
+            background: $secondary;
+        }
+        &:hover, &:focus{
+            color: $text;
+        }
     }
     .current_page_item{
         > a{
             color: $text;
+            &:after{
+                content: '';
+            }
         }
     }
 }
