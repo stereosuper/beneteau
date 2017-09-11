@@ -366,14 +366,14 @@ a{
     }
     a{
         display: block;
-        width: calc(33% - #{$gutter*2});
+        width: calc(33% - #{$gutter});
         text-decoration: none;
         color: $text;
     }
     strong{
         display: block;
         padding: 0 0 0 $gutter;
-        margin: -15px 0 50px;
+        margin: -10px 0 50px;
         font-family: $playfairBold;
         font-size: 2.4rem;
         letter-spacing: -0.015em;
