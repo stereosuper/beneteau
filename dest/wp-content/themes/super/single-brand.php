@@ -45,15 +45,13 @@
                             echo $logo;
                     ?>
                     <span class="visually-hidden"><?php the_title(); ?></span>
-                <?php
-                    else :
-                ?>
-                    <?php the_title(); ?>
-                <?php
-                    endif;
-                ?>
-
-
+                    <?php
+                        else :
+                    ?>
+                        <?php the_title(); ?>
+                    <?php
+                        endif;
+                    ?>
                 </h1>
 
                 <div class="baseline"><?php super_the_field('baseline'); ?></div>

@@ -222,8 +222,8 @@
                             "default_value": "",
                             "placeholder": "",
                             "maxlength": "",
-                            "rows": 3,
-                            "new_lines": ""
+                            "rows": "",
+                            "new_lines": "wpautop"
                         }
                     ],
                     "min": "",
@@ -394,6 +394,23 @@
                 "param": "post_type",
                 "operator": "==",
                 "value": "page"
+            },
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "default"
+            }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            },
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "sitemap.php"
             }
         ]
     ],
@@ -407,5 +424,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1505133141
+    "modified": 1505141233
 }
