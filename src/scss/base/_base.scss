@@ -212,6 +212,21 @@ dd{
 img{
     max-width: 100%;
     height: auto;
+    &.alignnone{
+        margin: 70px 0;
+    }
+    &.aligncenter{
+        display: block;
+        margin: 70px auto;
+    }
+    &.alignleft{
+        float: left;
+        margin: 0 $gutter*2 70px 0;
+    }
+    &.alignright{
+        float: right;
+        margin: 0 0 70px $gutter*2;
+    }
 }
 
 code, pre{
