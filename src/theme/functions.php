@@ -267,3 +267,27 @@ function beneteau_taxonomies(){
     ) );
 }
 add_action( 'init', 'beneteau_taxonomies' );
+
+/*-----------------------------------------------------------------------------------*/
+/* Helpers
+/*-----------------------------------------------------------------------------------*/
+
+function super_get_field($selector, $post_id=false, $format_value=true, $default='')
+{
+    if (function_exists('the_field')) {
+        $value = get_field($selector, $post_id, $format_value);
+        if ($value) {
+            return $value;
+        }
+    }
+    return $default;
+}
+
+
+function super_the_field($selector, $post_id=false, $format_value=true)
+{
+    $field_value = super_get_field($selector, $post_id, $format_value);
+    if ($field_value) {
+        echo $field_value;
+    }
+}

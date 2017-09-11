@@ -26,7 +26,7 @@
             "label": "Logo (code source svg)",
             "name": "logo",
             "type": "text",
-            "instructions": "L'upload de svg est interdit sur WordPress pour des raisons de sécurité. Copier-coller le code source du svg des logos dans ce champs.",
+            "instructions": "L'upload de svg est interdit sur WordPress pour des raisons de sécurité. Copier-coller le code source du svg des logos dans ce champ.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -117,5 +117,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1505135534
+    "modified": 1505136039
 }
