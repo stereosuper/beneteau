@@ -6,8 +6,22 @@
 
 .container{
     max-width: 1200px;
-    padding: 0 $gutter*2;
+    padding: 0 $gutter;
     margin: 0 auto;
+}
+
+.container-sidebar{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    .content{
+        width: calc(#{$col*6} - #{$gutter/2});
+    }
+    .container{
+        max-width: 100%;
+        padding: 0;
+        margin: 0;
+    }
 }
 
 .grid{

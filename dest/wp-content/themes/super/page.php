@@ -2,13 +2,29 @@
 
 <?php if ( have_posts() ) : the_post(); ?>
 
-	<div class='container'>
+	<div class='container container-sidebar'>
+		<aside class='sidebar'>
+			<ul class='sidebar-menu'>
+				<li><a href='#'>Histoire</a></li>
+				<li class='current_page_item'>
+					<a href='#'>Stratégie</a>
+					<ul>
+						<li><a href='#'>Mot des présidents</a></li>
+						<li><a href='#'>Gouvernance</a></li>
+					</ul>
+				</li>
+				<li><a href='#'>Valeurs</a></li>
+			</ul>
+		</aside>
 
-		<h1><?php the_title(); ?></h1>
+		<div class='content'>
+			<div class='container'>
+				<h1><?php the_title(); ?></h1>
+			</div>
 
+			<?php the_content(); ?>
+		</div>
 	</div>
-	
-	<?php the_content(); ?>
 	
 <?php else : ?>
 	<div class='container'>			
