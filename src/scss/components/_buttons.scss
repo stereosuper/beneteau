@@ -26,3 +26,12 @@
         background: $primary;
     }
 }
+
+.link-doc{
+    &:before{
+        width: 23px;
+        height: 25px;
+        top: 3px;
+        background: url(../layoutImg/doc.svg) no-repeat;
+    }
+}
