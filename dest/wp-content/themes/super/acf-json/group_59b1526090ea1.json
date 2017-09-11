@@ -222,8 +222,8 @@
                             "default_value": "",
                             "placeholder": "",
                             "maxlength": "",
-                            "rows": "",
-                            "new_lines": "wpautop"
+                            "rows": 3,
+                            "new_lines": ""
                         }
                     ],
                     "min": "",
