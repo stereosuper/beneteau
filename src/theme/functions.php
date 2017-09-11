@@ -244,4 +244,26 @@ function super_scripts(){
 }
 add_action( 'wp_enqueue_scripts', 'super_scripts' );
 
-?>
+/*-----------------------------------------------------------------------------------*/
+/* Post types
+/*-----------------------------------------------------------------------------------*/
+function super_post_type(){
+    register_post_type( 'brand', array(
+        'label' => 'Marques',
+        'singular_label' => 'Marque',
+        'public' => true,
+        'menu_icon' => 'dashicons-store',
+        'supports' => array('title', 'editor', 'revisions'),
+    ) );
+}
+add_action( 'init', 'super_post_type' );
+
+function super_taxonomies(){
+    register_taxonomy( 'branch', array('brand'), array(
+        'label' => 'Secteur',
+        'singular_label' => 'Secteur',
+        'hierarchical' => true,
+        'show_admin_column' => true
+    ) );
+}
+add_action( 'init', 'super_taxonomies' );
