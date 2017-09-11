@@ -400,18 +400,6 @@
                 "operator": "==",
                 "value": "default"
             }
-        ],
-        [
-            {
-                "param": "post_type",
-                "operator": "==",
-                "value": "page"
-            },
-            {
-                "param": "post_template",
-                "operator": "==",
-                "value": "sitemap.php"
-            }
         ]
     ],
     "menu_order": 0,
@@ -424,5 +412,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1505141233
+    "modified": 1505143650
 }
