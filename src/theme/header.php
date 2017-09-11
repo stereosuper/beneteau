@@ -20,7 +20,8 @@
 				<nav role='navigation'>
 					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'menu-main' ) ); ?>
 				</nav>
-
+				
+				<!-- TODO: Lang switcher + contact page (acf field) -->
 			</div>
 		</header>
 

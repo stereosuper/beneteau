@@ -1,2 +1,21 @@
 /* Footer */
 
+.footer{
+    padding: 55px 0 50px;
+    text-align: center;
+    background: $text;
+    color: $white;
+    a{
+        color: $white;
+    }
+}
+
+.menu-footer{
+    font-family: $montserratBold;
+    font-size: 1.1rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    > li{
+        display: inline-block;
+    }
+}

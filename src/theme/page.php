@@ -2,6 +2,8 @@
 
 <?php if ( have_posts() ) : the_post(); ?>
 
+	<!-- TODO: Dynamic menu + check if menu exist to display corresponding layout -->
+
 	<div class='container container-sidebar'>
 		<aside class='sidebar'>
 			<ul class='sidebar-menu'>
