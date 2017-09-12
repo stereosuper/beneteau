@@ -6,17 +6,14 @@
 
 	<div class='container container-sidebar'>
 		<aside class='sidebar'>
-			<ul class='sidebar-menu'>
-				<li><a href='#'>Histoire</a></li>
-				<li class='current_page_item'>
-					<a href='#'>Stratégie</a>
-					<ul>
-						<li><a href='#'>Mot des présidents</a></li>
-						<li><a href='#'>Gouvernance</a></li>
-					</ul>
-				</li>
-				<li><a href='#'>Valeurs</a></li>
-			</ul>
+			<?php wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'container' => false,
+				'menu_class' => 'sidebar-menu',
+				'depth' => 0,
+				'walker' => new CustomWalkerNavSubMenu()
+			 ) );
+			?>
 		</aside>
 
 		<div class='content'>
@@ -24,9 +21,9 @@
 			<?php the_content(); ?>
 		</div>
 	</div>
-	
+
 <?php else : ?>
-	<div class='container'>			
+	<div class='container'>
 		<h1>404</h1>
 	</div>
 

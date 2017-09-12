@@ -146,7 +146,7 @@ add_filter( 'tiny_mce_before_init', 'beneteau_mce_before_init' );
 /*-----------------------------------------------------------------------------------*/
 /* Markup gallery
 /*-----------------------------------------------------------------------------------*/
-function beneteau_gallery( $output, $attr){
+function beneteau_gallery($output, $attr=array()){
     global $post, $wp_locale;
     static $instance = 0;
     $instance++;
@@ -219,6 +219,7 @@ function beneteau_css_attributes_filter($var){
 add_filter( 'nav_menu_css_class', 'beneteau_css_attributes_filter' );
 
 require_once('custom-walkers/custom-walker-nav-only-a.php');
+require_once('custom-walkers/custom-walker-nav-sub-menu.php');
 
 
 // /*-----------------------------------------------------------------------------------*/
