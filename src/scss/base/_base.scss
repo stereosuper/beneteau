@@ -365,13 +365,17 @@ a{
     }
     > .push-container{
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
     }
     a{
         display: block;
         width: calc(33% - #{$gutter});
+        margin: 0 0 0 $gutter*2;
         text-decoration: none;
         color: $text;
+        &:first-child{
+            margin: 0;
+        }
     }
     strong{
         display: block;
@@ -401,6 +405,100 @@ a{
             top: 50%;
             left: 50%;
             transform: translate3d(-50%, -50%, 0);
+        }
+    }
+}
+
+
+@media (max-width: $tablet){
+    img{
+        &.alignleft, &.alignright{
+            float: none;
+            margin: 70px 0;
+        }
+    }
+
+    .push-wrapper{
+        a{
+            width: calc(50% - #{$gutter});
+            &:last-child{
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: $phone){
+    body{
+        font-size: 1.4em;
+    }
+
+    h1{
+        font-size: 3rem;
+    }
+
+    h2{
+        font-size: 2.4rem;
+    }
+
+    h3{
+        font-size: 2rem;
+    }
+
+    h4{
+        font-size: 1.8rem;
+    }
+
+    h5{
+        font-size: 1.6rem;
+    }
+
+    h6{
+        font-size: 1.4rem;
+    }
+
+    blockquote{
+        font-size: 1.6rem;
+    }
+
+    .intro{
+        max-width: 100%;
+        float: none;
+        margin-right: 0;
+        + p{
+            margin-left: 0;
+        }
+    }
+
+    .highlighted{
+        .title{
+            font-size: 1.8rem;
+        }
+        strong{
+            font-size: 2.6rem;
+        }
+    }
+
+    .push-wrapper{
+        &:before{
+            height: 94px;
+            top: 8%;
+        }
+        a{
+            width: 100%;
+            max-width: 250px;
+            &:nth-child(2){
+                display: none;
+            }
+        }
+        .img{
+            max-width: 150px;
+            padding: 0 0 69%;
+        }
+        strong{
+            padding: 0 0 0 $gutter*2;
+            margin-top: -20px;
+            font-size: 1.8rem;
         }
     }
 }

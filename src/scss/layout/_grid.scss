@@ -37,7 +37,17 @@
 }
 
 
+@media (max-width: $tablet){
+    .col-2{
+        width: 100%;
+    }
+}
+
 @media (max-width: $desktopSmall){
+    .main{
+        padding-top: 200px;
+    }
+
     .container-sidebar{
         .content{
             width: 100%;

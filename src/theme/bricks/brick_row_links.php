@@ -26,7 +26,7 @@ $title_align = get_sub_field('title_align');
                 $link_label = get_sub_field('link_label');
             ?>
             
-                <a href='<?php echo $link; ?>' class='push'>
+                <a href='<?php echo $link; ?>'>
                     <div class='img'>
                         <?php if (!empty($image_url)) : ?><img src='<?php echo $image_url; ?>' alt='<?php echo $title; ?>'><?php endif; ?>
                     </div>
