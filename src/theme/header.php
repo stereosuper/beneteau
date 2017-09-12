@@ -17,7 +17,7 @@
 
 				<a href='<?php echo home_url('/'); ?>' title='<?php _e('Groupe Bénéteau', 'beneteau'); ?>' rel='home' class='logo'><img src='<?php echo get_template_directory_uri(); ?>/layoutImg/logo-beneteau.svg' alt='<?php _e('Groupe Bénéteau', 'beneteau'); ?>'></a>
 
-				<button class='burger' id='burger'><?php _e('Menu', 'beneteau'); ?></button>
+				<button class='burger' id='burger'><?php _e('Menu', 'beneteau'); ?> <i></i></button>
 
 				<nav role='navigation' class='nav' id='nav'>
 					<?php wp_nav_menu( array(
@@ -31,8 +31,6 @@
 						'container' => false,
 						'menu_class' => 'menu-main' ) );
 					?>
-
-					<button class='menu-close' id='close'><?php _e('Close', 'beneteau'); ?></button>
 				</nav>
 
 			</div>

@@ -32,13 +32,10 @@ $(function(){
     $('#header').on('click', '#burger', function(e){
         
         e.preventDefault();
-        $('#nav').addClass('on');
+        $(this).toggleClass('on');
+        $('#nav').toggleClass('on');
+        body.toggleClass('menu-open');
 
-    }).on('click', '#close', function(e){
-
-        e.preventDefault();
-        $('#nav').removeClass('on');
-        
     });
 
     // Since script is loaded asynchronously, load event isn't always fired !!!
