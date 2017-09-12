@@ -206,7 +206,10 @@ add_filter( 'post_gallery', 'beneteau_gallery' );
 /* Menus
 /*-----------------------------------------------------------------------------------*/
 register_nav_menus( array(
-		'primary' => 'Primary Menu',
+		'top' => 'Menu Haut (Langues et contact)',
+		'primary' => 'Menu Principal',
+		'legals' => 'Menu des mentions légales',
+		'footer' => 'Menu de pied de page',
 ) );
 
 // Cleanup WP Menu html
@@ -214,6 +217,8 @@ function beneteau_css_attributes_filter($var){
     return is_array($var) ? array_intersect($var, array('current-menu-item', 'current_page_parent')) : '';
 }
 add_filter( 'nav_menu_css_class', 'beneteau_css_attributes_filter' );
+
+require_once('custom-walkers/custom-walker-nav-only-a.php');
 
 
 // /*-----------------------------------------------------------------------------------*/

@@ -1,20 +1,30 @@
-        </main>
+		</main>
 
-        <footer role='contentinfo' class='footer'>
+		<footer role='contentinfo' class='footer'>
 			<div class='container'>
 				<!-- TODO: Dynamic content (acf fields) -->
-				<p>Copyright Groupe Bénéteau 2017 &copy; - <a href='#'>mentions légales</a> - <a href='#'>plan du site</a></p>
+				<p>
+					<?php _e(sprintf('Copyright Groupe Bénéteau %1$s &copy;', date('Y')), 'beneteau'); ?>
+					<?php wp_nav_menu( array(
+							'theme_location' => 'legals',
+							'container' => false,
+							'items_wrap' => '%3$s',
+							'fallback_cb' => 'none',
+							'walker' => new CustomWalkerNavOnlyA(), ));
+					?>
+				</p>
 
 				<!-- TODO: Dynamic menu -->
-				<ul class='menu-footer'>
-					<li><a href='#'>Informations financières</a></li>
-					<li><a href='#'>Recrutement</a></li>
-					<li><a href='#'>Contact</a></a></li>
-				</ul>
+				<?php wp_nav_menu( array(
+						'theme_location' => 'footer',
+						'container' => false,
+						'menu_class' => 'menu-footer',
+						'fallback_cb' => 'none' ) );
+				?>
 			</div>
-        </footer>
+		</footer>
 
-        
+
 		<svg width='0' height='0' style='position:absolute;z-index:-10'>
 			<defs>
 				<clipPath id='clipImg' clipPathUnits="objectBoundingBox">
@@ -24,7 +34,7 @@
 			</defs>
 		</svg>
 
-        <?php wp_footer(); ?>
+		<?php wp_footer(); ?>
 
-        </body>
-    </html>
+		</body>
+	</html>
