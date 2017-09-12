@@ -2,25 +2,23 @@
 
 		<footer role='contentinfo' class='footer'>
 			<div class='container'>
-				<!-- TODO: Dynamic content (acf fields) -->
 				<p>
-					<?php _e(sprintf('Copyright Groupe Bénéteau %1$s &copy;', date('Y')), 'beneteau'); ?>
+					<?php _e( sprintf('Copyright Groupe Bénéteau %1$s &copy;', date('Y') ), 'beneteau'); ?>
 					<?php wp_nav_menu( array(
-							'theme_location' => 'legals',
-							'container' => false,
-							'items_wrap' => '%3$s',
-							'fallback_cb' => 'none',
-							'walker' => new CustomWalkerNavOnlyA(), ));
-					?>
+						'theme_location' => 'legals',
+						'container' => false,
+						'items_wrap' => '%3$s',
+						'fallback_cb' => 'none',
+						'walker' => new CustomWalkerNavOnlyA()
+					) ); ?>
 				</p>
 
-				<!-- TODO: Dynamic menu -->
 				<?php wp_nav_menu( array(
-						'theme_location' => 'footer',
-						'container' => false,
-						'menu_class' => 'menu-footer',
-						'fallback_cb' => 'none' ) );
-				?>
+					'theme_location' => 'footer',
+					'container' => false,
+					'menu_class' => 'menu-footer',
+					'fallback_cb' => 'none'
+				) ); ?>
 			</div>
 		</footer>
 

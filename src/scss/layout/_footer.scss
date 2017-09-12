@@ -2,11 +2,15 @@
 
 .footer{
     padding: 120px 0 50px;
+    font-size: 1.4rem;
     text-align: center;
     background: $text url(../layoutImg/logo-small.svg) no-repeat 50% 50px / 30px;
     color: $white;
     a{
         color: $white;
+        &:hover, &:focus{
+            color: $primary;
+        }
     }
 }
 
@@ -26,6 +30,20 @@
         &:first-child{
             &:before{
                 margin-left: 0;
+            }
+        }
+    }
+}
+
+
+@media (max-width: $desktopSmall){
+    .menu-footer{
+        li{
+            display: block;
+            margin: 0 0 10px;
+            &:before{
+                width: 20px;
+                margin: -2px 20px 0 0;
             }
         }
     }
