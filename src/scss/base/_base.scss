@@ -458,7 +458,17 @@ a{
     }
 
     blockquote{
+        padding: 0 40px;
         font-size: 1.6rem;
+        &:before, &:after{
+            width: 20px;
+        }
+        &:before{
+            left: 0;
+        }
+        &:after{
+            right: 0;
+        }
     }
 
     .intro{
