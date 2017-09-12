@@ -8,9 +8,11 @@
     left: 0;
     right: 0;
     z-index: 10;
+    font-family: $roboto;
     background: $white;
     > .container{
         display: flex;
+        position: relative;
         align-items: center;
         justify-content: space-between;
     }
@@ -21,7 +23,6 @@
     align-items: flex-start;
     justify-content: space-between;
     margin: 0;
-    font-family: $roboto;
     font-size: 1.2rem;
     line-height: 1.2;
     > li{
@@ -104,6 +105,24 @@
     }
 }
 
+.lang{
+    position: absolute;
+    top: -20px;
+    right: $gutter*2;
+    font-size: 1rem;
+    color: $greyText;
+    a{
+        color: $text;
+    }
+    .current{
+        &:after{
+            content: '/';
+            display: inline-block;
+            margin: 0 5px;
+        }
+    }
+}
+
 
 @media (max-width: $desktopSmall){
     .header{
@@ -155,11 +174,21 @@
             transform: translate3d(0, 0, 0);
         }
         > div{
-            padding: $gutter;
+            padding: 80px $gutter $gutter;
         }
     }
 
     .burger{
         display: block;
+    }
+
+    .lang{
+        top: 30px;
+        left: 30px;
+        right: auto;
+        color: $secondary;
+        a{
+            color: $white;
+        }
     }
 }
