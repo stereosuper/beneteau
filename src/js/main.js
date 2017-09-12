@@ -32,14 +32,9 @@ $(function(){
     $('#header').on('click', '#burger', function(e){
         
         e.preventDefault();
-        $('#nav').addClass('on');
-        body.addClass('menu-open');
-
-    }).on('click', '#close', function(e){
-
-        e.preventDefault();
-        $('#nav').removeClass('on');
-        body.removeClass('menu-open');
+        $(this).toggleClass('on');
+        $('#nav').toggleClass('on');
+        body.toggleClass('menu-open');
 
     });
 
