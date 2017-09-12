@@ -8,13 +8,11 @@ $title_align = get_sub_field('title_align');
 
 <div class='push-wrapper'>
     <?php if (!empty($title)) : ?>
-	    <div class='container'>
-            <h2 class="align<?php echo $title_align; ?>"><?php echo $title; ?></h2>
-        </div>
+        <h2 class="align<?php echo $title_align; ?>"><?php echo $title; ?></h2>
     <?php endif; ?>
 
     <?php if (have_rows('blocks')) : ?>
-        <div class='container push-container'>
+        <div class='push-container'>
             <?php while (have_rows('blocks')) :
                 the_row();
 

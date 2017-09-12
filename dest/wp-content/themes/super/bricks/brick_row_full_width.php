@@ -7,7 +7,7 @@ $content = get_sub_field('content');
 
 ?>
 
-    <div class='container clearfix'>
+    <div class='clearfix'>
         <?php if (!empty($title)) : ?><h2 class="align<?php echo $title_align; ?>"><?php echo $title; ?></h2><?php endif; ?>
         <?php if (!empty($content)) : ?><?php echo $content; ?><?php endif; ?>
     </div>
