@@ -26,6 +26,8 @@
 						'menu_class' => 'menu-main' ) );
 					?>
 
+					<?php echo beezup_mlp_navigation(); ?>
+
 					<?php wp_nav_menu( array(
 						'theme_location' => 'top',
 						'container' => false,

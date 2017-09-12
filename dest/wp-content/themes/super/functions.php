@@ -319,3 +319,66 @@ function super_the_field($selector, $post_id=false, $format_value=true)
         echo $field_value;
     }
 }
+
+function beezup_mlp_navigation()
+{
+    $api = apply_filters( 'mlp_language_api', NULL );
+    if( ! is_a( $api, 'Mlp_Language_Api_Interface' ) ){
+        return '';
+    }
+
+    $translations_args = array(
+        'strict'       => FALSE,
+        'include_base' => TRUE,
+    );
+
+    $translations = $api->get_translations( $translations_args );
+    if( empty( $translations ) ){
+        return '';
+    }
+
+    $items = array();
+
+    foreach( $translations as $site_id => $translation ){
+        $url = $translation->get_remote_url();
+        if( empty( $url ) ){
+            continue;
+        }
+
+        $language = $translation->get_language();
+
+        $items[ $site_id ] = array(
+            'url'      => $url,
+            'http'     => $language->get_name( 'http' ),
+            'name'     => $language->get_name( 'text' ),
+            'priority' => $language->get_priority(),
+            'icon'     => (string) $translation->get_icon_url(),
+        );
+    }
+    ksort( $items );
+    $before = '<div class="mlp-lang-switcher" id="header-lang-switcher">';
+    $after = '</div>';
+
+    $otherLangItems = array();
+
+    foreach( $items as $site_id => $item ){
+        $text = $item[ 'name' ];
+
+        $img = '';
+
+        if( get_current_blog_id() === $site_id ){
+            $currentLangItem = '<span id="current-language" class="current-language-nav-item"><span class="current-language-item">' . $img . esc_html( $text ) . '</span><svg class="icon icon-arrow-down"><use xlink:href="#icon-arrow-down"></use></svg></span>';
+        }else{
+            $otherLangItem = sprintf(
+                '<li><a rel="alternate" hreflang="%1$s" href="%2$s">%3$s%4$s</a></li>',
+                esc_attr( $item['http'] ),
+                esc_url( $item[ 'url' ] ),
+                $img,
+                esc_html( $text )
+            );
+            array_push($otherLangItems, $otherLangItem);
+        }
+    }
+
+    return $before . $currentLangItem . '<ul id="otherLanguage" class="other-language-items">' . join( '', $otherLangItems ) . '</ul>' . $after;
+}
