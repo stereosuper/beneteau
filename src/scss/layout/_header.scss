@@ -34,14 +34,74 @@
         }
     }
     a{
-        display: block;
         text-transform: uppercase;
         text-decoration: none;
         color: $greyText;
+    }
+    ul{
+        display: none;
     }
 }
 
 .logo{
     max-width: 340px;
     margin: 0 $gutter*2 0 0;
+}
+
+.nav{
+    flex-shrink: 0;
+}
+
+.burger, .menu-close{
+    border: 0;
+    display: none;
+}
+
+
+@media (max-width: $desktopSmall){
+    .menu-main{
+        display: block;
+        > li{
+            margin: 0 0 20px;
+        }
+        br{
+            display: none;
+        }
+        ul{
+            display: block;
+            padding: 25px 0 20px 20px;
+            margin: 0;
+            li{
+                &:before{
+                    background: $white;
+                }
+            }
+            a{
+                font-family: $montserrat;
+                font-size: 1.4rem;
+                text-transform: none;
+            }
+        }
+        a{
+            font-size: 1.6rem;
+            color: $white;
+        }
+    }
+
+    .nav{
+        display: none;
+        width: 90%;
+        padding: $gutter;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: $text;
+        &.on{
+            display: block;
+        }
+    }
+
+    .burger, .menu-close{
+        display: block;
+    }
 }
