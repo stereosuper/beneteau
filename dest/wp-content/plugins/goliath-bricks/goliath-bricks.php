@@ -47,8 +47,12 @@ if (!class_exists('GoliathSimpleBricks')) {
             $template = $this->get_template($layout);
 
             if (!empty($template)) {
+                ob_start();
                 require($template);
+                $output = ob_get_clean();
             }
+
+            return $output;
         }
 
         function get_template($layout)
