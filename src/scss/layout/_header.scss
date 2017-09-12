@@ -59,6 +59,10 @@
 
 
 @media (max-width: $desktopSmall){
+    .header{
+        padding: 20px 0;
+    }
+
     .menu-main{
         display: block;
         > li{
@@ -69,9 +73,10 @@
         }
         ul{
             display: block;
-            padding: 25px 0 20px 20px;
+            padding: 25px 0 15px 20px;
             margin: 0;
             li{
+                margin: 0 0 5px;
                 &:before{
                     background: $white;
                 }
@@ -89,19 +94,31 @@
     }
 
     .nav{
-        display: none;
         width: 90%;
-        padding: $gutter;
-        position: absolute;
+        max-width: 300px;
+        position: fixed;
         top: 0;
         right: 0;
+        bottom: 0;
+        overflow: auto;
         background: $text;
+        transform: translate3d(100%, 0, 0);
+        transition: $transition;
         &.on{
-            display: block;
+            transform: translate3d(0, 0, 0);
+        }
+        > div{
+            padding: $gutter;
         }
     }
 
     .burger, .menu-close{
         display: block;
+    }
+
+    .menu-close{
+        position: absolute;
+        top: $gutter;
+        right: 25px;
     }
 }

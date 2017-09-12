@@ -33,12 +33,14 @@ $(function(){
         
         e.preventDefault();
         $('#nav').addClass('on');
+        body.addClass('menu-open');
 
     }).on('click', '#close', function(e){
 
         e.preventDefault();
         $('#nav').removeClass('on');
-        
+        body.removeClass('menu-open');
+
     });
 
     // Since script is loaded asynchronously, load event isn't always fired !!!

@@ -20,11 +20,13 @@
 				<button class='burger' id='burger'>Menu</button>
 
 				<nav role='navigation' class='nav' id='nav'>
-					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'menu-main' ) ); ?>
+					<div>
+						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => false, 'menu_class' => 'menu-main' ) ); ?>
 
-					<!-- TODO: Lang switcher + contact page (acf field) -->
+						<!-- TODO: Lang switcher + contact page (acf field) -->
 
-					<button class='menu-close' id='close'>Close</button>
+						<button class='menu-close' id='close'>Close</button>
+					</div>
 				</nav>
 
 			</div>
