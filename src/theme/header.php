@@ -20,19 +20,21 @@
 				<button class='burger' id='burger'><?php _e('Menu', 'beneteau'); ?> <i></i></button>
 
 				<nav role='navigation' class='nav' id='nav'>
-					<?php wp_nav_menu( array(
-						'theme_location' => 'primary',
-						'container' => false,
-						'menu_class' => 'menu-main' ) );
-					?>
-
+					<div>
 					<?php echo beezup_mlp_navigation(); ?>
 
-					<?php wp_nav_menu( array(
-						'theme_location' => 'top',
-						'container' => false,
-						'menu_class' => 'menu-main' ) );
-					?>
+						<?php wp_nav_menu( array(
+							'theme_location' => 'top',
+							'container' => false,
+							'menu_class' => 'menu-main'
+						) ); ?>
+						
+						<?php wp_nav_menu( array(
+							'theme_location' => 'primary',
+							'container' => false,
+							'menu_class' => 'menu-main'
+						) ); ?>
+					</div>
 				</nav>
 
 			</div>
