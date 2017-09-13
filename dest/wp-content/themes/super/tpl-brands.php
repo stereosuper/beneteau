@@ -26,10 +26,7 @@ get_header(); ?>
                 <li><a href="#todo">todo</a></li>
             </ul>
 
-            <?php
-                // Elisabeth si tu veux mettre ces visuels en sidebar, tu peux déplacer le bloc qui commence ici...
-                if ($terms) :
-            ?>
+            <?php if ($terms) : ?>
 
                 <ul class="brands-slider">
                 <?php
@@ -52,7 +49,6 @@ get_header(); ?>
 
             <?php
                 endif; // if ($terms) :
-                // Elisabeth ... et termine ici
             ?>
         </aside>
 
@@ -60,12 +56,8 @@ get_header(); ?>
 
             <div class='content-half-right content-brands'>
 
-                <?php
-                    // Ici on passe sur la deuxième colonne
-                    if ( function_exists('yoast_breadcrumb') ) {
-                        yoast_breadcrumb('<div class="breadcrumbs">','</div>');
-                    }
-                ?>
+                <?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb('<div class="breadcrumbs">','</div>'); } ?>
+
                 <h1><?php the_title(); ?></h1>
 
                 <?php
