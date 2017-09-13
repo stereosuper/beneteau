@@ -34,7 +34,7 @@ class CustomWalkerNavSubMenu extends Walker_Nav_Menu
 
         $is_current = in_array('current-menu-item', $this->classes);
 
-        if( 0 == $depth || ! $is_current )
+        if( ! $is_current )
             return;
 
         parent::start_el($output, $item, $depth, $args);
