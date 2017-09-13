@@ -27,10 +27,10 @@
 							$contact_page_url = super_get_field('contact_page_url', 'option');
 							if (!empty($contact_page_url)) :
 						?>
-						<a href="<?php echo $contact_page_url; ?>"><?php _e('Contact', 'beneteau'); ?></a>
-						<?php
-							endif; // if (!empty(contact_page_url)) :
-						?>
+							<a href='<?php echo $contact_page_url; ?>' class='link-contact'>
+								<svg class='icon'><use xlink:href='#icon-email'></use></svg>
+							</a>
+						<?php endif; ?>
 
 						<?php wp_nav_menu( array(
 							'theme_location' => 'primary',

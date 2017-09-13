@@ -6,7 +6,7 @@
             "key": "field_59b8e0df4f3bc",
             "label": "Lien vers la page contact",
             "name": "contact_page_url",
-            "type": "url",
+            "type": "page_link",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -15,8 +15,13 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": ""
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "allow_archives": 0,
+            "multiple": 0
         }
     ],
     "location": [
@@ -36,5 +41,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1505293037
+    "modified": 1505295986
 }
