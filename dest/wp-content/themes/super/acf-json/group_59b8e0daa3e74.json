@@ -1,0 +1,40 @@
+{
+    "key": "group_59b8e0daa3e74",
+    "title": "Options du thème Beneteau",
+    "fields": [
+        {
+            "key": "field_59b8e0df4f3bc",
+            "label": "Lien vers la page contact",
+            "name": "contact_page_url",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-parametres"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1505293037
+}

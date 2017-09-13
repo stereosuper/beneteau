@@ -21,13 +21,16 @@
 
 				<nav role='navigation' class='nav' id='nav'>
 					<div>
-					<?php echo beneteau_mlp_navigation(); ?>
+						<?php echo beneteau_mlp_navigation(); ?>
 
-						<?php wp_nav_menu( array(
-							'theme_location' => 'top',
-							'container' => false,
-							'menu_class' => 'menu-main'
-						) ); ?>
+						<?php
+							$contact_page_url = super_get_field('contact_page_url', 'option');
+							if (!empty($contact_page_url)) :
+						?>
+						<a href="<?php echo $contact_page_url; ?>"><?php _e('Contact', 'beneteau'); ?></a>
+						<?php
+							endif; // if (!empty(contact_page_url)) :
+						?>
 
 						<?php wp_nav_menu( array(
 							'theme_location' => 'primary',

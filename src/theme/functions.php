@@ -257,6 +257,20 @@ require_once('custom-walkers/custom-walker-nav-sub-menu.php');
 // }
 // add_action( 'widgets_init', 'super_unregister_default_widgets' );
 
+/*-----------------------------------------------------------------------------------*/
+/* Option page
+/*-----------------------------------------------------------------------------------*/
+function beneteau_add_options_page() {
+    if( function_exists('acf_add_options_page') ){
+        acf_add_options_page( array(
+            'position'   => 2,
+            'page_title' => 'Paramètres du thème',
+            'menu_title' => 'Paramètres',
+            'redirect'   => false
+        ) );
+    }
+}
+add_action('acf/init', 'beneteau_add_options_page');
 
 /*-----------------------------------------------------------------------------------*/
 /* Enqueue Styles and Scripts
