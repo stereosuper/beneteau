@@ -141,12 +141,12 @@ get_header(); ?>
         else : // if ( have_posts() ) :
     ?>
 
-        <h1>404</h1>
+        <div class='container'>
+            <h1>404</h1>
+        </div>
 
     <?php
         endif; // if ( have_posts() ) :
     ?>
-
-    </div>
 
 <?php get_footer(); ?>
