@@ -5,6 +5,8 @@ Template Name: Marques
 
 get_header(); ?>
 
+    <div class='container'>
+
     <?php if ( have_posts() ) : the_post(); ?>
 
         <?php
@@ -121,5 +123,7 @@ get_header(); ?>
     <?php
         endif; // if ( have_posts() ) :
     ?>
+
+    </div>
 
 <?php get_footer(); ?>
