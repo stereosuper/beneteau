@@ -1,7 +1,7 @@
 /* Grid */
 
 .main{
-    padding: 125px 0 125px;
+    padding: 150px 0 125px;
     overflow: hidden;
 }
 
@@ -18,6 +18,11 @@
     .content{
         width: calc(#{$col*6} - #{$gutter/2});
     }
+}
+
+.content-half-right{
+    width: calc(50% - #{$gutter});
+    float: right;
 }
 
 .grid{

@@ -26,10 +26,12 @@
     'components/buttons',
     'components/gallery',
     'components/sidebar',
-    'components/breadcrumbs';
+    'components/breadcrumbs',
+    'components/brands-slider';
 
 @import
-    'pages/home';
+    'pages/home',
+    'pages/brands';
 
 @import
     'base/print';

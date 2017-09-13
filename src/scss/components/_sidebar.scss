@@ -55,6 +55,55 @@
     }
 }
 
+.sidebar-brands{
+    width: calc(50% - #{$gutter/2});
+    padding: 117px 0 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: $text url(../layoutImg/pattern.png);
+    > ul{
+        margin: 0;
+    }
+    li{
+        &:before{
+            content: none;
+        }
+    }
+}
+
+.sidebar-menu-brands{
+    padding: 60px $gutter;
+    position: absolute;
+    top: 40vh;
+    right: 0;
+    margin: 117px 0 0;
+    z-index: 1;
+    overflow: hidden;
+    font-family: $roboto;
+    font-size: 1.4rem;
+    &:before{
+        content: '';
+        width: 160px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background: url(../layoutImg/shape.svg) no-repeat 0 0 / 100% 100%;
+        opacity: 0.85;
+    }
+    > li{
+        margin: 0 0 5px;
+    }
+    a{
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $white;
+    }
+}
+
 
 @media (max-width: $desktopSmall){
     .sidebar{

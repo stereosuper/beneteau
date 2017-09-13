@@ -19,17 +19,46 @@ get_header(); ?>
 
     <?php if ( have_posts() ) : the_post(); ?>
 
-        <div class='container container-sidebar'>
+        <aside class='sidebar-brands'>
+            <ul class="sidebar-menu-brands">
+                <li><a href="#todo">todo</a></li>
+                <li><a href="#todo">todo</a></li>
+                <li><a href="#todo">todo</a></li>
+            </ul>
 
-            <aside class='sidebar'>
-                <ul id="menu-menu-principal-1" class="sidebar-menu">
-                    <li><a href="#todo">todo</a></li>
-                    <li><a href="#todo">todo</a></li>
-                    <li><a href="#todo">todo</a></li>
+            <?php
+                // Elisabeth si tu veux mettre ces visuels en sidebar, tu peux déplacer le bloc qui commence ici...
+                if ($terms) :
+            ?>
+
+                <ul class="brands-slider">
+                <?php
+                    // Fait une première boucle sur les secteurs pour afficher les images dans le diaporama
+                    $is_active = true;
+                    foreach ($terms as $term) :
+                        $term_image = super_get_field('term_image', $term);
+                        if (is_array($term_image) && isset($term_image['ID'])) :
+                            list($image_url, $w, $h) = wp_get_attachment_image_src($term_image['ID'], 'large');
+                ?>
+                    <li class="<?php echo $term->slug, (($is_active)?' active':''); ?>">
+                        <img src="<?php echo $image_url; ?>" alt="<?php echo $term->name ?>" />
+                    </li>
+                <?php
+                            $is_active = false;
+                        endif; // if ($term_image) :
+                    endforeach; // foreach ($terms as $term) :
+                ?>
                 </ul>
-            </aside>
 
-            <div class='content'>
+            <?php
+                endif; // if ($terms) :
+                // Elisabeth ... et termine ici
+            ?>
+        </aside>
+
+        <div class='container clearfix'>
+
+            <div class='content-half-right content-brands'>
 
                 <?php
                     // Ici on passe sur la deuxième colonne
@@ -38,35 +67,6 @@ get_header(); ?>
                     }
                 ?>
                 <h1><?php the_title(); ?></h1>
-
-                <?php
-                    // Elisabeth si tu veux mettre ces visuels en sidebar, tu peux déplacer le bloc qui commence ici...
-                    if ($terms) :
-                ?>
-
-                    <ul class="branch-illustrations">
-                    <?php
-                        // Fait une première boucle sur les secteurs pour afficher les images dans le diaporama
-                        $is_active = true;
-                        foreach ($terms as $term) :
-                            $term_image = super_get_field('term_image', $term);
-                            if (is_array($term_image) && isset($term_image['ID'])) :
-                                list($image_url, $w, $h) = wp_get_attachment_image_src($term_image['ID'], 'large');
-                    ?>
-                        <li class="<?php echo $term->slug, (($is_active)?' active':''); ?>">
-                            <img src="<?php echo $image_url; ?>" alt="<?php echo $term->name ?>" />
-                        </li>
-                    <?php
-                                $is_active = false;
-                            endif; // if ($term_image) :
-                        endforeach; // foreach ($terms as $term) :
-                    ?>
-                    </ul>
-
-                <?php
-                    endif; // if ($terms) :
-                    // Elisabeth ... et termine ici
-                ?>
 
                 <?php
                     // Fait une seconde boucle sur les secteurs pour afficher les marques qui en dépendent
@@ -100,25 +100,29 @@ get_header(); ?>
                         if ( $brand_per_branch_query->have_posts() ) :
                     ?>
 
+                        <ul class='list-brands'>
                         <?php
                             while ( $brand_per_branch_query->have_posts() ) :
                                 $brand_per_branch_query->the_post();
                         ?>
-                            <a href="<?php the_permalink(); ?>">
-                                <?php
-                                    $logo = super_get_field('logo');
-                                    if (!empty($logo)) :
-                                        echo $logo;
-                                    else :
-                                        // Sans doute besoin d'un placeholder ici ?...
-                                    endif;
-                                ?>
-                                <h3 class="on-hover"><?php the_title(); ?></h3>
-                            </a>
+                            <li>
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php
+                                        $logo = super_get_field('logo');
+                                        if (!empty($logo)) :
+                                            echo $logo;
+                                        else :
+                                            // Sans doute besoin d'un placeholder ici ?...
+                                        endif;
+                                    ?>
+                                    <h3><?php the_title(); ?></h3>
+                                </a>
+                            </li>
 
                         <?php
                             endwhile; // while ( $brand_per_branch_query->have_posts() ) :
                         ?>
+                        </ul>
 
                     <?php
                         endif; // if ( $brand_per_branch_query->have_posts() ) :
