@@ -2,8 +2,6 @@
 
 <?php if ( have_posts() ) : the_post(); ?>
 
-	<!-- TODO: Dynamic menu + check if menu exist to display corresponding layout -->
-
 	<?php $sidebar_menu = wp_nav_menu( array(
 		'echo' => false,
 		'theme_location' => 'primary',
@@ -13,17 +11,20 @@
 		'walker' => new CustomWalkerNavSubMenu()
 		) );
 	?>
+
 	<div class='container<?php echo (!empty($sidebar_menu))?' container-sidebar':''; ?>'>
+		
 		<?php if (!empty($sidebar_menu)) : ?>
-		<aside class='sidebar'>
-			<?php echo $sidebar_menu; ?>
-		</aside>
+			<aside class='sidebar'>
+				<?php echo $sidebar_menu; ?>
+			</aside>
 		<?php endif; ?>
 
 		<div class='content'>
 			<h1><?php the_title(); ?></h1>
 			<?php the_content(); ?>
 		</div>
+
 	</div>
 
 <?php else : ?>
