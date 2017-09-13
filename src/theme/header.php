@@ -21,14 +21,14 @@
 
 				<nav role='navigation' class='nav' id='nav'>
 					<div>
-					<?php echo beezup_mlp_navigation(); ?>
+					<?php echo beneteau_mlp_navigation(); ?>
 
 						<?php wp_nav_menu( array(
 							'theme_location' => 'top',
 							'container' => false,
 							'menu_class' => 'menu-main'
 						) ); ?>
-						
+
 						<?php wp_nav_menu( array(
 							'theme_location' => 'primary',
 							'container' => false,
