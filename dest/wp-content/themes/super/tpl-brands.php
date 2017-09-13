@@ -5,12 +5,15 @@ Template Name: Marques
 
 get_header(); ?>
 
-    <?php
-        if ( have_posts() ) :
-            the_post();
-            $page_title = get_the_title();
-            $page_content = get_the_content();
-    ?>
+    <?php if ( have_posts() ) : the_post(); ?>
+
+        <?php
+            // Ici on passe sur la deuxième colonne
+            if ( function_exists('yoast_breadcrumb') ) {
+                yoast_breadcrumb('<div class="breadcrumbs">','</div>');
+            }
+        ?>
+        <h1><?php the_title(); ?></h1>
 
         <?php
             // Récupère les branches
@@ -45,15 +48,6 @@ get_header(); ?>
                 endforeach; // foreach ($terms as $term) :
             ?>
             </ul>
-
-            <?php
-                // Ici on passe sur la deuxième colonne
-                if ( function_exists('yoast_breadcrumb') ) {
-                    yoast_breadcrumb('<p id="breadcrumbs">','</p>');
-                }
-            ?>
-            <h1><?php echo $page_title; ?></h1>
-            <?php // echo $page_content; // Pas sur que ce soit nécessaire, en tout cas, c'est pas prévu sur la maquette, décommenter sinon ?>
 
             <?php
                 // Fait une seconde boucle sur les secteurs pour afficher les marques qui en dépendent

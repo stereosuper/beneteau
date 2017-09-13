@@ -1,7 +1,7 @@
 /* Grid */
 
 .main{
-    padding: 240px 0 125px;
+    padding: 125px 0 125px;
     overflow: hidden;
 }
 
@@ -44,10 +44,6 @@
 }
 
 @media (max-width: $desktopSmall){
-    .main{
-        padding-top: 200px;
-    }
-
     .container-sidebar{
         .content{
             width: 100%;
