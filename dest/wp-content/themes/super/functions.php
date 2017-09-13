@@ -321,7 +321,7 @@ function super_the_field($selector, $post_id=false, $format_value=true)
     }
 }
 
-function beezup_mlp_navigation()
+function beneteau_mlp_navigation()
 {
     $api = apply_filters( 'mlp_language_api', NULL );
     if( ! is_a( $api, 'Mlp_Language_Api_Interface' ) ){
