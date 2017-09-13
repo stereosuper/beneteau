@@ -13,7 +13,7 @@ get_header(); ?>
 				<h1><?php the_title(); ?></h1>
 				<?php the_content(); ?>
 
-				<h2>Pages</h2>
+				<h2><?php _e('Pages', 'beneteau'); ?></h2>
 				<ul>
 					<?php wp_list_pages( array('post_type' => 'page', 'title_li' => '', 'sort_column' => 'post_title') ); ?>
 				</ul>
@@ -24,7 +24,7 @@ get_header(); ?>
 						$posts = get_posts( array('post_type' => $postType, 'orderby' => 'title', 'posts_per_page' => -1, 'order' => 'ASC', 'tax_query' => $options) );
 
 						if(!$posts)
-							echo '<p>Nothing was found</p>';
+							echo '<p>' . _e('Pages', 'beneteau') . '</p>';
 
 						$output = "<ul>";
 						foreach( $posts as $post ){
@@ -40,14 +40,14 @@ get_header(); ?>
 					}
 				?>
 
-				<h2>Blog posts</h2>
+				<h2><?php _e('News', 'beneteau'); ?></h2>
 				<?php listPosts('post', ''); ?>
 
 			<?php endwhile; ?>
 
 		<?php else : ?>
 
-			<?php echo '404'; ?>
+			<h1>404</h1>
 
 		<?php endif; ?>
 
