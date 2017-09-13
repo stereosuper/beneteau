@@ -1,0 +1,21 @@
+<?php
+/**
+ * The template for displaying single job.
+ *
+ * $this = eolia plugin public
+ *
+ */
+$job = eolia_get_job();
+get_header();
+?>
+<!-- single-job.php -->
+<div class="post-content">
+	<?php echo do_shortcode( '[eolia_sharelink position="top" /]' ); ?>
+	<?php do_action( 'eolia_action_before_view', $job ) ?>
+	<?php the_content() ?>
+	<?php do_action( 'eolia_action_after_view', $job ) ?>
+	<?php echo do_shortcode( '[eolia_sharelink position="bottom" /]' ); ?>
+</div>
+<!-- END single-job.php -->
+<?php get_footer() ?>
+

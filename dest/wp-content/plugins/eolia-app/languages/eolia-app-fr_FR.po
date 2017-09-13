@@ -1,0 +1,1239 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Application Eolia\n"
+"POT-Creation-Date: 2017-09-05 12:31+0200\n"
+"PO-Revision-Date: 2017-09-05 12:31+0200\n"
+"Last-Translator: \n"
+"Language-Team: Ronan Pozzi <r.pozzi@eolia-consulting.com>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.3\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: node_modules\n"
+"X-Poedit-SearchPathExcluded-1: bower_components\n"
+"X-Poedit-SearchPathExcluded-2: vendor\n"
+"X-Poedit-SearchPathExcluded-3: src/libraries\n"
+
+#: App/Controllers/ApiController.php:28
+msgid "Invalid post ID."
+msgstr "PostID invalide."
+
+#: App/Controllers/FieldController.php:89
+#: App/Controllers/FieldController.php:98
+#: App/Controllers/FieldController.php:106
+#: App/Controllers/FieldController.php:113
+msgctxt "form select placeholder"
+msgid "Choose..."
+msgstr "Sélectionnez..."
+
+#: App/Controllers/FieldController.php:120
+msgctxt "form select placeholder"
+msgid "Browse..."
+msgstr "Parcourir..."
+
+#: App/Controllers/FieldController.php:126 App/EoliaWordpress.php:366
+#: public/class-eolia-app-public.php:552
+#, php-format
+msgctxt "alert"
+msgid "File size exceed %s Mo !"
+msgstr "Le fichier excède la taille limite (%s Mo) !"
+
+#: App/Controllers/FieldController.php:134
+msgctxt "form select placeholder"
+msgid "Reply here..."
+msgstr "Tapez votre réponse ici…"
+
+#: App/Controllers/FieldController.php:142
+msgid "Type here..."
+msgstr "Votre texte..."
+
+#: App/Controllers/JobController.php:68 App/EoliaWordpress.php:132
+#: App/EoliaWordpress.php:534 App/EoliaWordpress.php:560
+#: App/EoliaWordpress.php:645 App/EoliaWordpress.php:1422
+#: App/Views/Form/Fields/file.input.php:121
+msgctxt "slug"
+msgid "apply"
+msgstr "candidature"
+
+#: App/Controllers/JobController.php:79
+msgid "No offer details fields found, check your plugin configuration"
+msgstr ""
+"Aucun champ de détails offre trouvé, vérifiez votre configuration du plugin"
+
+#: App/Controllers/JobController.php:316
+msgctxt "form submit"
+msgid "Apply"
+msgstr "Postuler"
+
+#: App/Controllers/StreamController.php:138
+#, php-format
+msgctxt "admin"
+msgid "<h1>Error while updating jobs</h1><p>XML body seem to be empty (%s)</p>"
+msgstr ""
+"<h1>Erreur lors de la mise à jour des offres</h1><p>Vérifiez l’adresse "
+"fournie(%s)</p>"
+
+#: App/Controllers/StreamController.php:144
+#: App/Controllers/StreamController.php:155
+#, php-format
+msgctxt "admin"
+msgid "Error - %s"
+msgstr "Erreur - %s"
+
+#: App/Controllers/StreamController.php:151
+msgctxt "admin"
+msgid ""
+"<h1>Error while updating jobs</h1><p>One or more streams do not respond to "
+"the specified addresses</p>"
+msgstr ""
+"<h1>Erreur lors de la mise à jour des emplois</h1><p>Un ou plusieurs flux ne "
+"répondent pas aux adresses spécifiées</p>"
+
+#: App/EoliaWordpress.php:354
+#, php-format
+msgctxt "alert"
+msgid "Wrong file extensions (allowed extensions : %s)"
+msgstr "Extensions de fichier erronées (extensions autorisées : %s)"
+
+#: App/EoliaWordpress.php:361
+msgctxt "loadscreen"
+msgid "Uploading file, please wait..."
+msgstr "Téléchargement du fichier, veuillez patienter…"
+
+#: App/EoliaWordpress.php:371 App/EoliaWordpress.php:379
+#: App/EoliaWordpress.php:387
+#, php-format
+msgctxt "loadscreen"
+msgid "Fetching %s profile, please wait..."
+msgstr "Récupération du profil %s, veuillez patienter..."
+
+#: App/EoliaWordpress.php:394 App/EoliaWordpress.php:399
+#, php-format
+msgctxt "file-label"
+msgid "My %s resume"
+msgstr "Mon CV %s"
+
+#: App/EoliaWordpress.php:587
+msgctxt "Post Type General Name"
+msgid "Jobs"
+msgstr "Emplois"
+
+#: App/EoliaWordpress.php:588
+msgctxt "Post Type Singular Name"
+msgid "Job"
+msgstr "Emploi"
+
+#: App/EoliaWordpress.php:589
+msgid "Jobs"
+msgstr "Emplois"
+
+#: App/EoliaWordpress.php:590 App/EoliaWordpress.php:616
+msgid "Job"
+msgstr "Emploi"
+
+#: App/EoliaWordpress.php:591
+msgid "Job Archives"
+msgstr "Toutes les offres"
+
+#: App/EoliaWordpress.php:592
+msgid "Job Attributes"
+msgstr "Atrributs"
+
+#: App/EoliaWordpress.php:593
+msgid "Parent Job:"
+msgstr "Emploi parent:"
+
+#: App/EoliaWordpress.php:594
+msgid "All Jobs"
+msgstr "Toutes les offres"
+
+#: App/EoliaWordpress.php:595
+msgid "Add New Job"
+msgstr "Ajouter une offre"
+
+#: App/EoliaWordpress.php:596
+msgid "Add New"
+msgstr "Ajouter"
+
+#: App/EoliaWordpress.php:597
+msgid "New Job"
+msgstr "Nouvelle offre"
+
+#: App/EoliaWordpress.php:598
+msgid "Edit Job"
+msgstr "Modifier l’offre"
+
+#: App/EoliaWordpress.php:599
+msgid "Update Job"
+msgstr "Modifier l’offre"
+
+#: App/EoliaWordpress.php:600
+msgid "View Job"
+msgstr "Voir l’offre"
+
+#: App/EoliaWordpress.php:601
+msgid "View Jobs"
+msgstr "Voir les offres"
+
+#: App/EoliaWordpress.php:602
+msgid "Search Job"
+msgstr "Chercher un emploi"
+
+#: App/EoliaWordpress.php:603
+msgid "Not found"
+msgstr "Aucunes données trouvées"
+
+#: App/EoliaWordpress.php:604
+msgid "Not found in Trash"
+msgstr "Aucunes données trouvées dans la corbeille"
+
+#: App/EoliaWordpress.php:605
+msgid "Featured Image"
+msgstr "Image d’accroche"
+
+#: App/EoliaWordpress.php:606
+msgid "Set featured image"
+msgstr "Sélectionner image"
+
+#: App/EoliaWordpress.php:607
+msgid "Remove featured image"
+msgstr "Effacer l’image"
+
+#: App/EoliaWordpress.php:608
+msgid "Use as featured image"
+msgstr "Utiliser comme image d’accroche"
+
+#: App/EoliaWordpress.php:609
+msgid "INSERT INTO Job"
+msgstr "Ajouter dans l’offre"
+
+#: App/EoliaWordpress.php:610
+msgid "Uploaded to this Job"
+msgstr "Télécharger dans cet emploi"
+
+#: App/EoliaWordpress.php:611
+msgid "Jobs list"
+msgstr "Liste des offres"
+
+#: App/EoliaWordpress.php:612
+msgid "Jobs list navigation"
+msgstr "Navigation des offres"
+
+#: App/EoliaWordpress.php:613
+msgid "Filter Jobs list"
+msgstr "Filtrer les offres"
+
+#: App/EoliaWordpress.php:656
+msgctxt "Taxonomy General Name"
+msgid "Job Categories"
+msgstr "Catégories d’emploi"
+
+#: App/EoliaWordpress.php:657
+msgctxt "Taxonomy Singular Name"
+msgid "Job Category"
+msgstr "Catégories d’emploi"
+
+#: App/EoliaWordpress.php:658
+msgid "Job Category"
+msgstr "Catégorie d’emploi"
+
+#: App/EoliaWordpress.php:659
+msgid "All Job Categories"
+msgstr "Toutes les catégories d’emploi"
+
+#: App/EoliaWordpress.php:660
+msgid "Parent Category"
+msgstr "Catégorie parente"
+
+#: App/EoliaWordpress.php:661
+msgid "Parent Category:"
+msgstr "Catégorie parente:"
+
+#: App/EoliaWordpress.php:662
+msgid "New Category Name"
+msgstr "Nouvelle catégorie"
+
+#: App/EoliaWordpress.php:663
+msgid "Add New Category"
+msgstr "Ajouter une catégorie"
+
+#: App/EoliaWordpress.php:664
+msgid "Edit Category"
+msgstr "Modifier la catégorie"
+
+#: App/EoliaWordpress.php:665
+msgid "Update Category"
+msgstr "Mettre à jour la catégorie"
+
+#: App/EoliaWordpress.php:666
+msgid "View Category"
+msgstr "Voir la catégorie"
+
+#: App/EoliaWordpress.php:667
+msgid "Separate Categories with commas"
+msgstr "Séparez les catégories par des virgules"
+
+#: App/EoliaWordpress.php:668
+msgid "Add or remove Categories"
+msgstr "Ajouter ou supprimer des catégories"
+
+#: App/EoliaWordpress.php:669
+msgid "Choose from the most used"
+msgstr "Les plus utilisées"
+
+#: App/EoliaWordpress.php:670
+msgid "Popular Category"
+msgstr "Populaires"
+
+#: App/EoliaWordpress.php:671
+msgid "Search Categories"
+msgstr "Rechercher une catégorie"
+
+#: App/EoliaWordpress.php:672
+msgid "Not Found"
+msgstr "Aucunes données trouvées"
+
+#: App/EoliaWordpress.php:673
+msgid "No Job Categories"
+msgstr "Aucune catégories d’emploi"
+
+#: App/EoliaWordpress.php:674
+msgid "Job Categories list"
+msgstr "Liste des catégories d’emploi"
+
+#: App/EoliaWordpress.php:675
+msgid "Job Categories list navigation"
+msgstr "Liste des catégories d’emploi"
+
+#: App/EoliaWordpress.php:713 App/EoliaWordpress.php:759
+#: App/EoliaWordpress.php:796 App/EoliaWordpress.php:825
+#: App/EoliaWordpress.php:1111 includes/class-eolia-app-activator.php:52
+msgid "Dismiss this notice."
+msgstr "Effacer cette notification."
+
+#: App/EoliaWordpress.php:717
+#, php-format
+msgctxt "admin notice"
+msgid "No offers found in your language (%s)"
+msgstr "Aucunes offres trouvées dans votre langue (%s)"
+
+#: App/EoliaWordpress.php:763
+#, php-format
+msgctxt "admin notice"
+msgid "Successful Deleted %d %s offers"
+msgstr "%d Offres supprimées(%s)"
+
+#: App/EoliaWordpress.php:800
+#, php-format
+msgctxt "admin notice"
+msgid "Successful Updated %d %s offers"
+msgstr "%d Offres mises à jour(%s)"
+
+#: App/EoliaWordpress.php:829
+#, php-format
+msgctxt "admin notice"
+msgid "Successful Added %d %s offers"
+msgstr "%d Offres ajoutées(%s)"
+
+#: App/EoliaWordpress.php:889 App/EoliaWordpress.php:1240
+msgctxt "admin notice"
+msgid "Dismiss this notice."
+msgstr "Effacer cette notification."
+
+#: App/EoliaWordpress.php:895
+msgctxt "admin notice"
+msgid "It seem like there is no offers in stream the stream."
+msgstr "Aucune offres trouvées dans le flux."
+
+#: App/EoliaWordpress.php:1019
+msgid "Uncategorized"
+msgstr "Non classé"
+
+#: App/EoliaWordpress.php:1115
+#, php-format
+msgctxt "admin notice"
+msgid "Successful Updated %d job categories"
+msgstr "%d catégories mises à jour"
+
+#: App/EoliaWordpress.php:1246
+msgctxt "admin notice"
+msgid "It seem that there is no fields in application/offer stream."
+msgstr "Aucun champs trouvé dans le flux."
+
+#: App/Models/JobModel.php:163 public/partials/single-results.php:42
+msgctxt "search-results"
+msgid "Uncategorized"
+msgstr "Non catégorisé"
+
+#: App/Models/JobModel.php:333
+#, php-format
+msgid "Error while saving the %d offer"
+msgstr "Erreur lors de la sauvegarde de l’offre %d"
+
+#: App/Views/Form/Fields/file.input.php:32
+msgctxt "form uploaded"
+msgid "Browse..."
+msgstr "Parcourir..."
+
+#: App/Views/Form/Fields/file.input.php:50
+msgctxt "upload"
+msgid "Googledrive"
+msgstr "Googledrive"
+
+#: App/Views/Form/Fields/file.input.php:66
+msgctxt "upload"
+msgid "Dropbox"
+msgstr "Dropbox"
+
+#: App/Views/Form/Fields/file.input.php:71
+#: App/Views/Form/Fields/file.input.php:83
+#: App/Views/Form/Fields/file.input.php:87
+#: App/Views/Form/Fields/file.input.php:99
+#: App/Views/Form/Fields/file.input.php:149
+#, php-format
+msgctxt "apply_with"
+msgid "Apply with %s"
+msgstr "Postuler avec %s"
+
+#: App/Views/Job/Fields/navigation.field.php:30
+msgctxt "apply button"
+msgid "Back"
+msgstr "Retour"
+
+#: App/Views/Job/Fields/navigation.field.php:39
+msgctxt "apply button"
+msgid "Apply"
+msgstr "Postuler"
+
+#: admin/class-eolia-app-admin.php:132
+msgid "Eolia Espace Candidat - Setup"
+msgstr "Eolia Espace Candidat - Configuration"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:18
+#: admin/partials/eolia-app-admin-display-apply-job.php:18
+msgctxt "admin form builder heading"
+msgid "Available general fields"
+msgstr "Champs generaux disponibles"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:22
+#: admin/partials/eolia-app-admin-display-joboffer.php:77
+msgctxt "admin form builder"
+msgid "Title"
+msgstr "Titre"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:27
+#: admin/partials/eolia-app-admin-display-apply-free.php:37
+#: admin/partials/eolia-app-admin-display-apply-free.php:47
+#: admin/partials/eolia-app-admin-display-apply-free.php:97
+#: admin/partials/eolia-app-admin-display-apply-job.php:23
+#: admin/partials/eolia-app-admin-display-apply-job.php:29
+#: admin/partials/eolia-app-admin-display-apply-job.php:35
+#: admin/partials/eolia-app-admin-display-apply-job.php:47
+#: admin/partials/eolia-app-admin-display-apply-job.php:87
+#: admin/partials/eolia-app-admin-display-joboffer.php:80
+#: admin/partials/eolia-app-admin-display-joboffer.php:87
+#: admin/partials/eolia-app-admin-display-joboffer.php:94
+#: admin/partials/eolia-app-admin-display-joboffer.php:101
+#: admin/partials/eolia-app-admin-display-joboffer.php:117
+msgctxt "admin form builder button"
+msgid "Add to form"
+msgstr "Ajouter"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:28
+#: admin/partials/eolia-app-admin-display-apply-free.php:38
+#: admin/partials/eolia-app-admin-display-apply-free.php:48
+#: admin/partials/eolia-app-admin-display-apply-free.php:98
+#: admin/partials/eolia-app-admin-display-apply-job.php:24
+#: admin/partials/eolia-app-admin-display-apply-job.php:30
+#: admin/partials/eolia-app-admin-display-apply-job.php:36
+#: admin/partials/eolia-app-admin-display-apply-job.php:89
+#: admin/partials/eolia-app-admin-display-joboffer.php:118
+#: admin/partials/eolia-app-admin-display-results.php:114
+#: admin/partials/eolia-app-admin-display-search.php:309
+msgctxt "admin form builder placeholder"
+msgid "Click to add"
+msgstr "Cliquer pour ajouter"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:32
+#: admin/partials/eolia-app-admin-display-joboffer.php:84
+msgctxt "admin form builder"
+msgid "Separator"
+msgstr "Séparateur"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:42
+#: admin/partials/eolia-app-admin-display-joboffer.php:91
+msgctxt "admin form builder"
+msgid "Text"
+msgstr "Texte"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:51
+msgctxt "admin form builder heading"
+msgid "Available apply fields"
+msgstr "Champs candidats disponibles"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:61
+#: admin/partials/eolia-app-admin-display-apply-job.php:58
+msgctxt "admin form builder input-type"
+msgid "Entry field"
+msgstr "Champs de saisie"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:68
+#: admin/partials/eolia-app-admin-display-apply-job.php:63
+msgctxt "admin form builder input-type"
+msgid "Select field"
+msgstr "Liste"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:75
+#: admin/partials/eolia-app-admin-display-apply-job.php:68
+msgctxt "admin form builder input-type"
+msgid "Date field"
+msgstr "Date"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:82
+#: admin/partials/eolia-app-admin-display-apply-job.php:73
+msgctxt "admin form builder input-type"
+msgid "Upload field"
+msgstr "Téléchargement"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:108
+#: admin/partials/eolia-app-admin-display-apply-job.php:98
+#: admin/partials/eolia-app-admin-display-joboffer.php:128
+msgctxt "admin form builder heading"
+msgid "Selected form field"
+msgstr "Champs choisis"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:110
+#: admin/partials/eolia-app-admin-display-apply-job.php:99
+#: admin/partials/eolia-app-admin-display-joboffer.php:130
+msgctxt "admin form builder subheading"
+msgid "Drag and drop to reorder the table rows"
+msgstr "Glissez & déposez les champs pour les organiser"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:117
+#: admin/partials/eolia-app-admin-display-apply-job.php:105
+msgctxt "admin form builder table-header"
+msgid "Field"
+msgstr "Champ"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:118
+#: admin/partials/eolia-app-admin-display-apply-job.php:106
+msgctxt "admin form builder table-header"
+msgid "Required"
+msgstr "Réquis"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:119
+#: admin/partials/eolia-app-admin-display-apply-job.php:107
+msgctxt "admin form builder table-header"
+msgid "Mobile"
+msgstr "Mobile"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:120
+#: admin/partials/eolia-app-admin-display-apply-job.php:108
+msgctxt "admin form builder table-header"
+msgid "Component"
+msgstr "Composant"
+
+#: admin/partials/eolia-app-admin-display-apply-free.php:125
+#: admin/partials/eolia-app-admin-display-apply-job.php:113
+#: admin/partials/eolia-app-admin-display-joboffer.php:148
+msgctxt "admin form builder"
+msgid "No field selected"
+msgstr "Aucun champ choisis"
+
+#: admin/partials/eolia-app-admin-display-apply-job.php:39
+#: admin/partials/eolia-app-admin-display-joboffer.php:73
+#: admin/partials/eolia-app-admin-display-joboffer.php:104
+#: admin/partials/eolia-app-admin-display-results.php:98
+msgctxt "admin form builder heading"
+msgid "Available fields"
+msgstr "Champs disponibles"
+
+#: admin/partials/eolia-app-admin-display-apply-job.php:43
+msgctxt "admin form builder input-type"
+msgid "Custom Questions"
+msgstr "Question personnalisée"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:17
+msgid "reCaptcha Key"
+msgstr "Clef reCaptcha"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:23
+msgid "Your reCaptcha API Key"
+msgstr "API Key"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:35
+msgid "reCaptcha Secret"
+msgstr "Clef secrète reCaptcha"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:41
+msgid "Your reCaptcha API Secret"
+msgstr "reCaptcha API Secret"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:53
+msgid "Maximum file size for uploads"
+msgstr "Taille maximum d'un fichier"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:60
+msgid "ex : 10 for 10Mo"
+msgstr "ex : 10 pour 10Mo"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:72
+msgid "Use GoogleDrive upload"
+msgstr "Utiliser GoogleDrive"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:79
+#: admin/partials/eolia-app-admin-display-formfunc.php:140
+#: admin/partials/eolia-app-admin-display-formfunc.php:201
+#: admin/partials/eolia-app-admin-display-formfunc.php:262
+#: admin/partials/eolia-app-admin-display-formfunc.php:323
+#: admin/partials/eolia-app-admin-display-formfunc.php:389
+#: admin/partials/eolia-app-admin-display-joboffer.php:24
+#: admin/partials/eolia-app-admin-display-search.php:22
+#: admin/partials/eolia-app-admin-display-search.php:44
+msgid "Yes"
+msgstr "Oui"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:86
+#: admin/partials/eolia-app-admin-display-formfunc.php:147
+#: admin/partials/eolia-app-admin-display-formfunc.php:208
+#: admin/partials/eolia-app-admin-display-formfunc.php:269
+#: admin/partials/eolia-app-admin-display-formfunc.php:330
+#: admin/partials/eolia-app-admin-display-formfunc.php:396
+#: admin/partials/eolia-app-admin-display-joboffer.php:31
+#: admin/partials/eolia-app-admin-display-search.php:27
+#: admin/partials/eolia-app-admin-display-search.php:51
+msgid "No"
+msgstr "Non"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:94
+msgid "API Key"
+msgstr "API Key"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:107
+#: admin/partials/eolia-app-admin-display-formfunc.php:114
+msgid "Client ID"
+msgstr "GDrive Client ID"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:133
+msgid "Use DropBox upload"
+msgstr "Utiliser Dropbox"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:156
+msgid "App Key"
+msgstr "App Key"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:161
+#: admin/partials/eolia-app-admin-display-formfunc.php:283
+#: admin/partials/eolia-app-admin-display-formfunc.php:344
+msgid "AppId"
+msgstr "App ID"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:170
+#: admin/partials/eolia-app-admin-display-formfunc.php:175
+#: admin/partials/eolia-app-admin-display-formfunc.php:231
+#: admin/partials/eolia-app-admin-display-formfunc.php:236
+#: admin/partials/eolia-app-admin-display-formfunc.php:292
+#: admin/partials/eolia-app-admin-display-formfunc.php:297
+#: admin/partials/eolia-app-admin-display-formfunc.php:353
+#: admin/partials/eolia-app-admin-display-formfunc.php:358
+msgid "Secret"
+msgstr "Secret"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:192
+#: admin/partials/eolia-app-admin-display-formfunc.php:253
+#: admin/partials/eolia-app-admin-display-formfunc.php:314
+#, php-format
+msgid "Use Apply with %s"
+msgstr "Utiliser \"Postuler avec %s\""
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:217
+#: admin/partials/eolia-app-admin-display-formfunc.php:222
+msgid "Token"
+msgstr "Token"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:278
+#: admin/partials/eolia-app-admin-display-formfunc.php:339
+msgid "Id"
+msgstr "Id"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:375
+msgid "Use TextKernel API"
+msgstr "Utiliser TextKernel"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:380
+msgid "You must install the \"Soap\" php extension on your server"
+msgstr ""
+"Vous devez installer l'extension PHP \"soap\" sur votre serveur pour "
+"bénéficier du parsing textkernel"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:404
+msgid "API Url"
+msgstr "Url de l'API"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:409
+msgid "URL"
+msgstr "URL"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:418
+msgid "TextKernel Account"
+msgstr "Compte TextKernel"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:423
+msgid "Account"
+msgstr "Compte"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:432
+msgid "TextKernel Login"
+msgstr "Identifiant TextKernel"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:436
+#: admin/partials/eolia-app-admin-display-formfunc.php:439
+msgid "Login"
+msgstr "Identifiant"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:446
+#: admin/partials/eolia-app-admin-display-formfunc.php:450
+msgid "Password"
+msgstr "Mot de passe"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:463
+msgid "Custom form variable"
+msgstr "Formulaire customizés"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:470
+msgctxt "admin form builder"
+msgid "Select which field is gonna define custom form functions"
+msgstr "Selectionnez le champs pour la customization"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:480
+msgctxt "admin form builder"
+msgid "Don't use custom forms override"
+msgstr "N'utilisez pas de surcharge"
+
+#: admin/partials/eolia-app-admin-display-formfunc.php:496
+msgctxt "admin form builder description"
+msgid ""
+"With this parameter, you can now create a PHP function in your theme like :"
+"<strong>doEoliaCustomForm<em>Value_Of_<span class=\"cfspan\"></span></"
+"em>($atts), doEoliaCustomForm<em>Value2_Of_<span class=\"cfspan\"></span></"
+"em>($atts)</strong>... in your theme function.php file"
+msgstr ""
+
+#: admin/partials/eolia-app-admin-display-general.php:16
+msgctxt "admin general settings"
+msgid "Job offers feed (WS)"
+msgstr "Flux des offres(WS)"
+
+#: admin/partials/eolia-app-admin-display-general.php:29
+msgctxt "admin general settings"
+msgid "Job offer fields (WSP)"
+msgstr "Flux des champs postes(WSP)"
+
+#: admin/partials/eolia-app-admin-display-general.php:43
+msgctxt "admin general settings"
+msgid "User application fields (WSC)"
+msgstr "Flux des champs candidat(WSC)"
+
+#: admin/partials/eolia-app-admin-display-general.php:57
+msgctxt "admin general settings"
+msgid "Apply receiving mail(robot)"
+msgstr "Email de réception(robot)"
+
+#: admin/partials/eolia-app-admin-display-general.php:70
+msgctxt "admin general settings"
+msgid "Thanks page URL(Offers)"
+msgstr "Page de remerciements(Offres)"
+
+#: admin/partials/eolia-app-admin-display-general.php:83
+msgctxt "admin general settings"
+msgid "Tanks page(Spontaneous Apply)"
+msgstr "Page de remerciements(Candidature Spontanée)"
+
+#: admin/partials/eolia-app-admin-display-general.php:100
+msgctxt "admin heading"
+msgid "Manual Import"
+msgstr "Import manuel"
+
+#: admin/partials/eolia-app-admin-display-general.php:103
+msgctxt "admin button"
+msgid "Import now"
+msgstr "Importer"
+
+#: admin/partials/eolia-app-admin-display-general.php:107
+msgctxt "admin heading"
+msgid "Cron update URL"
+msgstr "URL Déclenchement mise à jours"
+
+#: admin/partials/eolia-app-admin-display-general.php:112
+msgctxt "admin heading"
+msgid "Eolia Shortcodes"
+msgstr "Shortcodes Eolia"
+
+#: admin/partials/eolia-app-admin-display-general.php:116
+msgctxt "admin shortcode"
+msgid "Search Engine shortcode"
+msgstr "Moteur de recherche"
+
+#: admin/partials/eolia-app-admin-display-general.php:123
+msgctxt "admin shortcode"
+msgid "Spontaneous Apply form"
+msgstr "Candidature Spontanée"
+
+#: admin/partials/eolia-app-admin-display-joboffer.php:16
+#: admin/partials/eolia-app-admin-display-joboffer.php:38
+msgctxt "admin social"
+msgid "Show social share buttons"
+msgstr "Afficher les boutons de partage"
+
+#: admin/partials/eolia-app-admin-display-joboffer.php:45
+msgctxt "admin social"
+msgid "Show before"
+msgstr "Afficher avant"
+
+#: admin/partials/eolia-app-admin-display-joboffer.php:52
+msgctxt "admin social"
+msgid "Show afters"
+msgstr "Afficher après"
+
+#: admin/partials/eolia-app-admin-display-joboffer.php:59
+msgctxt "admin social"
+msgid "Show before AND after"
+msgstr "Afficher avant & après"
+
+#: admin/partials/eolia-app-admin-display-joboffer.php:67
+msgctxt "admin form builder heading"
+msgid "Offer page builder"
+msgstr "Personnalisation des offres"
+
+#: admin/partials/eolia-app-admin-display-joboffer.php:98
+msgctxt "admin form builder"
+msgid "Apply/Back button"
+msgstr "Bouton Postuler/Retour"
+
+#: admin/partials/eolia-app-admin-display-joboffer.php:135
+msgctxt "admin form builder table-header"
+msgid "Title"
+msgstr "Titre"
+
+#: admin/partials/eolia-app-admin-display-joboffer.php:138
+msgctxt "admin form builder table-header tooltip"
+msgid "Leave empty to use default"
+msgstr "Laisser vide pour utiliser la valeur par défaut"
+
+#: admin/partials/eolia-app-admin-display-joboffer.php:141
+msgctxt "admin form builder table-header"
+msgid "Microdata type"
+msgstr "Type de microdata"
+
+#: admin/partials/eolia-app-admin-display-joboffer.php:142
+msgctxt "admin form builder table-header"
+msgid "Before/After text"
+msgstr "Texte avant/après"
+
+#: admin/partials/eolia-app-admin-display-joboffer.php:143
+msgctxt "admin form builder table-header"
+msgid "Show as"
+msgstr "Afficher comme"
+
+#: admin/partials/eolia-app-admin-display-results.php:16
+msgctxt "admin results settings"
+msgid "Order by"
+msgstr "Regrouper par"
+
+#: admin/partials/eolia-app-admin-display-results.php:20
+msgctxt "Default category slug"
+msgid "Uncategorized"
+msgstr "Non classé"
+
+#: admin/partials/eolia-app-admin-display-results.php:35
+msgctxt "admin results settings"
+msgid "Order offers by"
+msgstr "Trier les offres par"
+
+#: admin/partials/eolia-app-admin-display-results.php:51
+msgid "ASC"
+msgstr "Croissant"
+
+#: admin/partials/eolia-app-admin-display-results.php:55
+msgid "DESC"
+msgstr "Décroissant"
+
+#: admin/partials/eolia-app-admin-display-results.php:63
+msgid "SEO Jobs description field"
+msgstr "Description de l’offre(SEO)"
+
+#: admin/partials/eolia-app-admin-display-results.php:83
+msgctxt "admin results settings"
+msgid "Accordeon start limit"
+msgstr "Point de déclenchement de l'accordeon"
+
+#: admin/partials/eolia-app-admin-display-results.php:103
+msgctxt "admin results settings heading"
+msgid "Availables columns"
+msgstr "Colonnes disponibles"
+
+#: admin/partials/eolia-app-admin-display-results.php:113
+msgctxt "admin results settings"
+msgid "Add to columns"
+msgstr "Ajouter la colonne"
+
+#: admin/partials/eolia-app-admin-display-results.php:124
+msgctxt "admin results settings heading"
+msgid "Selected columns"
+msgstr "Colonnes sélectionnées"
+
+#: admin/partials/eolia-app-admin-display-results.php:125
+msgctxt "admin results settings subheading"
+msgid "Drag and drop to reorder the table rows"
+msgstr "Glissez & déposez les champs pour les organiser"
+
+#: admin/partials/eolia-app-admin-display-results.php:129
+msgctxt "admin results settings subheading"
+msgid "No headings selected"
+msgstr "Aucune entête selectionnée"
+
+#: admin/partials/eolia-app-admin-display-results.php:136
+msgctxt "admin results settings subheading"
+msgid "Your offers will be displayed below"
+msgstr "Les offres s'afficherons en dessous"
+
+#: admin/partials/eolia-app-admin-display-search.php:16
+msgctxt "admin search settings label"
+msgid "Search by keywords"
+msgstr "Recherche par mots clés"
+
+#: admin/partials/eolia-app-admin-display-search.php:34
+msgctxt "admin search settings label"
+msgid "Job offer geolocation"
+msgstr "Géolocalisation des offres"
+
+#: admin/partials/eolia-app-admin-display-search.php:59
+msgctxt "admin search settings label"
+msgid "GoogleMap Api key"
+msgstr "Clef API GoogleMap"
+
+#: admin/partials/eolia-app-admin-display-search.php:64
+msgctxt "admin search settings placeholder"
+msgid "API Key"
+msgstr "API Key"
+
+#: admin/partials/eolia-app-admin-display-search.php:72
+msgctxt "admin search settings label"
+msgid "Googlemap Autozoom/Autocenter"
+msgstr "Autozoom/Autocentrage"
+
+#: admin/partials/eolia-app-admin-display-search.php:84
+msgctxt "admin search settings label"
+msgid "GoogleMap Default Latitude"
+msgstr "Latitude par default"
+
+#: admin/partials/eolia-app-admin-display-search.php:89
+msgctxt "admin search settings placeholder"
+msgid "Default Latitude"
+msgstr "Latitude"
+
+#: admin/partials/eolia-app-admin-display-search.php:97
+msgctxt "admin search settings label"
+msgid "GoogleMap Default Longitude"
+msgstr "Longitude par default"
+
+#: admin/partials/eolia-app-admin-display-search.php:102
+msgctxt "admin search settings placeholder"
+msgid "Default Longitude"
+msgstr "Longitude"
+
+#: admin/partials/eolia-app-admin-display-search.php:110
+msgctxt "admin search settings label"
+msgid "GoogleMap Default Zoom"
+msgstr "Zoom par default"
+
+#: admin/partials/eolia-app-admin-display-search.php:115
+msgctxt "admin search settings placeholder"
+msgid "Default Zoom"
+msgstr "Zoom"
+
+#: admin/partials/eolia-app-admin-display-search.php:123
+msgctxt "admin search settings label"
+msgid "GoogleMap markers"
+msgstr "Marqueurs GoogleMap"
+
+#: admin/partials/eolia-app-admin-display-search.php:132
+#: admin/partials/eolia-app-admin-display-search.php:156
+#: admin/partials/eolia-app-admin-display-search.php:180
+#: admin/partials/eolia-app-admin-display-search.php:204
+#: admin/partials/eolia-app-admin-display-search.php:228
+#: admin/partials/eolia-app-admin-display-search.php:252
+msgctxt "admin search settings"
+msgid "Select icon"
+msgstr "Sélectionnez une icône"
+
+#: admin/partials/eolia-app-admin-display-search.php:144
+#: admin/partials/eolia-app-admin-display-search.php:168
+#: admin/partials/eolia-app-admin-display-search.php:192
+#: admin/partials/eolia-app-admin-display-search.php:216
+#: admin/partials/eolia-app-admin-display-search.php:240
+#, php-format
+msgctxt "admin settings search googlemap"
+msgid "Level %d Group Marker"
+msgstr "Marqueurs du niveau %d"
+
+#: admin/partials/eolia-app-admin-display-search.php:263
+#: admin/partials/eolia-app-admin-display-search.php:268
+msgctxt "admin search settings heading"
+msgid "Search Engine criterias"
+msgstr "Critères de recherche"
+
+#: admin/partials/eolia-app-admin-display-search.php:271
+msgctxt "admin search settings subheading"
+msgid "Drag and drop to reorder the table rows"
+msgstr "Glissez & déposez les champs pour les organiser"
+
+#: admin/partials/eolia-app-admin-display-search.php:277
+msgctxt "admin search settings subheading"
+msgid "No fields selected"
+msgstr "Aucun champ choisis"
+
+#: admin/partials/eolia-app-admin-display-search.php:293
+msgctxt "admin search settings heading"
+msgid "Available fields"
+msgstr "Champs disponibles"
+
+#: admin/partials/eolia-app-admin-display-search.php:307
+msgctxt "admin search settings button"
+msgid "Add to criteria"
+msgstr "Ajouter aux critères"
+
+#: admin/partials/eolia-app-admin-display.php:20
+msgctxt "admin tab title"
+msgid "General"
+msgstr "Générale"
+
+#: admin/partials/eolia-app-admin-display.php:21
+msgctxt "admin tab long-title"
+msgid "General settings"
+msgstr "Configuration Générale"
+
+#: admin/partials/eolia-app-admin-display.php:28
+msgctxt "admin tab title"
+msgid "Search engine"
+msgstr "Moteur de recherche"
+
+#: admin/partials/eolia-app-admin-display.php:29
+msgctxt "admin tab long-title"
+msgid "Search engine setup"
+msgstr "Configuration du moteur de recherche"
+
+#: admin/partials/eolia-app-admin-display.php:34
+msgctxt "admin tab title"
+msgid "Search engine results page"
+msgstr "Résultats de recherche"
+
+#: admin/partials/eolia-app-admin-display.php:35
+msgctxt "admin tab long-title"
+msgid "Displaying search engine results"
+msgstr "Affiche les résultats suite à une recherche"
+
+#: admin/partials/eolia-app-admin-display.php:40
+msgctxt "admin tab title"
+msgid "Job Offers"
+msgstr "Offres d'emplois"
+
+#: admin/partials/eolia-app-admin-display.php:41
+msgctxt "admin tab long-title"
+msgid "Show all job offers page setup"
+msgstr "Affiche les réglages de la page emploi"
+
+#: admin/partials/eolia-app-admin-display.php:48
+msgctxt "admin tab title"
+msgid "Offer questionnaire"
+msgstr "Formulaire"
+
+#: admin/partials/eolia-app-admin-display.php:49
+msgctxt "admin tab long-title"
+msgid "Offer questionnaire form setup"
+msgstr "Réglages du formulaire"
+
+#: admin/partials/eolia-app-admin-display.php:55
+msgctxt "admin tab title"
+msgid "Unsolicited application questionnaire"
+msgstr "Candidature Spontanée"
+
+#: admin/partials/eolia-app-admin-display.php:56
+msgctxt "admin tab long-title"
+msgid "Unsolicited application questionnaire setup"
+msgstr "Réglages Candidature Spontanée"
+
+#: admin/partials/eolia-app-admin-display.php:62
+msgctxt "admin tab title"
+msgid "Advanced setup"
+msgstr "Avancé"
+
+#: admin/partials/eolia-app-admin-display.php:63
+msgctxt "admin tab long-title"
+msgid "Advanced setup"
+msgstr "Configuration avancée"
+
+#: admin/partials/eolia-app-admin-display.php:72
+msgctxt "admin title"
+msgid "Eolia Candidate Front-End"
+msgstr "Eolia Espace Candidat"
+
+#: admin/partials/eolia-app-admin-display.php:89
+msgid "Coming soon..."
+msgstr "Bientôt..."
+
+#: eolia-app-widget.php:13
+msgctxt "widget"
+msgid "Latest Offers"
+msgstr "Dernières offres"
+
+#: eolia-app-widget.php:33
+msgctxt "widget"
+msgid "Widget Title"
+msgstr "Titre"
+
+#: eolia-app-widget.php:43
+msgctxt "widget"
+msgid "Intro text"
+msgstr "Texte d'introduction"
+
+#: eolia-app-widget.php:53
+msgctxt "widget"
+msgid "Offer count"
+msgstr "Nombre à afficher"
+
+#: eolia-app-widget.php:63
+msgctxt "widget"
+msgid "Template"
+msgstr "Template"
+
+#: public/class-eolia-app-public.php:251
+msgid ""
+"<h1>Error sending your information</h1><p>Your application could not be "
+"sent, please try again in a moment.</p>"
+msgstr ""
+"<h1>Erreur</h1><p>Erreur lors de la récèption de votre profil, veuillez "
+"réitérer ultérieurement .</p>"
+
+#: public/class-eolia-app-public.php:254
+#, php-format
+msgid "Error sending your information - %s"
+msgstr "Erreur d'envoi - %s"
+
+#: public/class-eolia-app-public.php:313
+msgid "Application"
+msgstr "Candidature"
+
+#: public/class-eolia-app-public.php:318
+msgid "Language"
+msgstr "Langue"
+
+#: public/class-eolia-app-public.php:322
+msgctxt "form recaptcha error"
+msgid "You must complete reCaptcha challenge"
+msgstr "Vous devez remplir le champs reCaptcha"
+
+#: public/class-eolia-app-public.php:336
+msgctxt "form recaptcha error"
+msgid ""
+"Error with captcha, please re-submit your application, or contact the "
+"administrator."
+msgstr ""
+"Le captcha semble ne pas correspondre, veuillez réessayer ou contacter "
+"l’administrateur."
+
+#: public/class-eolia-app-public.php:346
+msgctxt "form mail error"
+msgid "You must privide a valid email address."
+msgstr "Vous devez saisir une adresse e-mail valide."
+
+#: public/class-eolia-app-public.php:476
+msgid "Error expected response from Eolia API"
+msgstr "Erreur, aucune réponse de l'API Eolia"
+
+#: public/class-eolia-app-public.php:480
+msgid "Error while getting Eolia API token"
+msgstr "Erreur lors de la réception des informations de sécurité API"
+
+#: public/class-eolia-app-public.php:537
+#, php-format
+msgctxt "alert"
+msgid ""
+"Wrong file extensions (allowed extensions : %s)<br/>Current extension : %s"
+msgstr ""
+"Extensions de fichier erronées (extensions autorisées : %s)<br/>Extension "
+"actuelle : %s"
+
+#: public/class-eolia-app-public.php:602
+msgid "Unsolicited application"
+msgstr "Candidature spontanée"
+
+#: public/class-eolia-app-public.php:617 public/class-eolia-app-public.php:619
+#, php-format
+msgid ""
+"<p>Error while sending your apply, please contact the administrator</p>%s"
+msgstr ""
+"<p>Erreur lors de l'envoi de votre demande, veuillez contacter "
+"l'administrateur </p>%s"
+
+#: public/class-eolia-app-public.php:946
+msgid "No file found"
+msgstr "Aucunes données trouvées"
+
+#: public/class-eolia-app-public.php:949
+msgid "Textkernel is not activated in your configuration"
+msgstr "TextKernel semble ne pas être configurer"
+
+#: public/class-eolia-app-public.php:1077
+msgid "Partagez :"
+msgstr "Partagez :"
+
+#: public/class-eolia-app-public.php:1078
+#: public/class-eolia-app-public.php:1079
+#: public/class-eolia-app-public.php:1080
+#: public/class-eolia-app-public.php:1081
+#: public/class-eolia-app-public.php:1082
+#, php-format
+msgid "Share on %s"
+msgstr "Partagez sur %s"
+
+#: public/partials/single-jobsearch.php:22
+msgid "Missing search criteria in Eolia App admin."
+msgstr "Il manque des paramètre de recherche dans les réglages du plugin."
+
+#: public/partials/single-jobsearch.php:34
+msgctxt "form search label"
+msgid "Keywords"
+msgstr "Mots-clés"
+
+#: public/partials/single-jobsearch.php:41
+msgctxt "form search placeholder"
+msgid "Keywords"
+msgstr "Mots-clés"
+
+#: public/partials/single-jobsearch.php:70
+msgid "Search"
+msgstr "Rechercher"
+
+#: public/partials/single-jobsearch.php:103
+#: public/partials/single-jobsearch.php:111
+msgid "Close"
+msgstr "Fermer"
+
+#: public/partials/single-jobsearch.php:106
+msgid "All our offers"
+msgstr "Toutes nos offres"
+
+#: public/partials/single-results.php:98
+msgctxt "seaerch-results"
+msgid "No offers founded."
+msgstr "Aucune offre trouvée."

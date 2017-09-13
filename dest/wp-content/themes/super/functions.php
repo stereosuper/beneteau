@@ -357,7 +357,7 @@ function beezup_mlp_navigation()
         );
     }
     ksort( $items );
-    $before = '<div class="mlp-lang-switcher" id="header-lang-switcher">';
+    $before = '<div class="lang" id="lang">';
     $after = '</div>';
 
     $otherLangItems = array();
@@ -368,10 +368,10 @@ function beezup_mlp_navigation()
         $img = '';
 
         if( get_current_blog_id() === $site_id ){
-            $currentLangItem = '<span id="current-language" class="current-language-nav-item"><span class="current-language-item">' . $img . esc_html( $text ) . '</span><svg class="icon icon-arrow-down"><use xlink:href="#icon-arrow-down"></use></svg></span>';
+            $currentLangItem = '<span class="current">' . esc_html( $text ) . '</span>';
         }else{
             $otherLangItem = sprintf(
-                '<li><a rel="alternate" hreflang="%1$s" href="%2$s">%3$s%4$s</a></li>',
+                '<a rel="alternate" hreflang="%1$s" href="%2$s">%3$s%4$s</a>',
                 esc_attr( $item['http'] ),
                 esc_url( $item[ 'url' ] ),
                 $img,
@@ -381,5 +381,5 @@ function beezup_mlp_navigation()
         }
     }
 
-    return $before . $currentLangItem . '<ul id="otherLanguage" class="other-language-items">' . join( '', $otherLangItems ) . '</ul>' . $after;
+    return $before . $currentLangItem . join( '', $otherLangItems ) . $after;
 }
