@@ -4,17 +4,21 @@
 
 	<!-- TODO: Dynamic menu + check if menu exist to display corresponding layout -->
 
-	<div class='container container-sidebar'>
+	<?php $sidebar_menu = wp_nav_menu( array(
+		'echo' => false,
+		'theme_location' => 'primary',
+		'container' => false,
+		'menu_class' => 'sidebar-menu',
+		'depth' => 0,
+		'walker' => new CustomWalkerNavSubMenu()
+		) );
+	?>
+	<div class='container<?php echo (!empty($sidebar_menu))?' container-sidebar':''; ?>'>
+		<?php if (!empty($sidebar_menu)) : ?>
 		<aside class='sidebar'>
-			<?php wp_nav_menu( array(
-				'theme_location' => 'primary',
-				'container' => false,
-				'menu_class' => 'sidebar-menu',
-				'depth' => 0,
-				'walker' => new CustomWalkerNavSubMenu()
-			 ) );
-			?>
+			<?php echo $sidebar_menu; ?>
 		</aside>
+		<?php endif; ?>
 
 		<div class='content'>
 			<h1><?php the_title(); ?></h1>
