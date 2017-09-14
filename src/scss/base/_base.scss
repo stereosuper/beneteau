@@ -100,12 +100,12 @@ p{
 }
 
 b, strong{
-    font-family: $montserrat;
+    font-family: $montserratSemiBold;
     font-weight: 400;
 }
 
 i, em{
-    
+    font-family: $montserratLightIt;
 }
 
 blockquote, .baseline{
@@ -251,12 +251,29 @@ code, pre{
     background: grey;
 }
 
-hr{
-    height: 1px;
-    max-width: 250px;
+hr, .sep{
+    width: $col*6;
+    min-width: 350px;
+    height: 2px;
     border: 0;
-    margin: 3em auto 5em;
-    background: $black;
+    clear: both;
+    margin: 5em auto;
+    background: #E4EAEE;
+}
+.sep{
+    position: relative;
+    &:after{
+        content: '';
+        width: 85px;
+        height: 45px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        background: $white url(../layoutImg/logo-sep.svg) no-repeat 50% 50%;
+    }
 }
 
 
