@@ -43,22 +43,24 @@
                         ?>
                     </h1>
 
-                    <div class="baseline"><?php super_the_field('baseline'); ?></div>
+                    <p class="baseline"><?php super_the_field('baseline'); ?></p>
 
-                    <?php the_content(); ?>
+                    <div class='text'><?php the_content(); ?></div>
 
                     <?php
                         $website = super_get_field('website');
                         if (!empty($website)) :
                             $parsed_website = parse_url($website);
                     ?>
-                    <a href="<?php echo $website; ?>" target="_blank" class="shame dont-tell-arnaudban"><?php _e('Visitez ', 'beneteau'); echo (isset($parsed_website['host']))?$parsed_website['host']:$website; ?></a>
+                    <a href="<?php echo $website; ?>" target="_blank" class="btn"><?php _e('Visitez ', 'beneteau'); echo (isset($parsed_website['host']))?$parsed_website['host']:$website; ?></a>
                     <?php
                         endif;
                     ?>
 
-                    <?php previous_post_link( '<strong>%link</strong>' ); ?>
-                    <?php next_post_link( '<strong>%link</strong>' ); ?>
+                    <div class='clearfix'>
+                        <?php previous_post_link( '%link' ); ?>
+                        <?php next_post_link( '%link' ); ?>
+                    </div>
                 </div>
             </article>
 
