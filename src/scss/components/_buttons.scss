@@ -59,14 +59,19 @@
     }
 }
 
-.btn{
+
+.btn, .btn-invert{
     display: inline-block;
     padding: 20px 60px;
+    border: 1px solid transparent;
     font-family: $montserratBold;
     font-size: 1.1rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
     text-decoration: none;
+}
+
+.btn{
     background: $grey;
     color: $white;
     &:hover, &:focus{
@@ -74,6 +79,16 @@
         background: $primary;
     }
 }
+
+.btn-invert{
+    border-color: $grey;
+    color: $text;
+    &:hover, &:focus{
+        color: $white;
+        background: $text;
+    }
+}
+
 
 .btn-close{
     width: 24px;
