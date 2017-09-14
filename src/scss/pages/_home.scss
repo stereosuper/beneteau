@@ -1,1 +1,67 @@
 /* Home specific style */
+
+.home-news{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 12em;
+    .push-container{
+        width: 50%;
+        padding: 0 $gutter 0 0;
+        a{
+            width: calc(50% - #{$gutter});
+        }
+        .img{
+            padding: 0 0 114%;
+        }
+        time{
+            display: block;
+            margin: -50px 0 25px;
+            font-family: $roboto;
+            font-size: 1.4rem;
+            letter-spacing: -0.02em;
+            color: $greyText;
+        }
+        h3{
+            margin: 0;
+            font-family: $playfairBold;
+            font-size: 2.4rem;
+            letter-spacing: -0.015em;
+            line-height: 1;
+            text-transform: none;
+        }
+    }
+    .text{
+        width: calc(#{$col*3} - #{$gutter});
+    }
+}
+
+.home-talent{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 8em;
+    img{
+        width: calc(50% - #{$gutter});
+    }
+    .text{
+        width: calc(#{$col*3} - #{$gutter});
+    }
+    h2{
+        margin-top: -10px;
+    }
+    + .sep{
+        width: 100%;
+        margin: 0 0 8em;
+    }
+}
+
+.home-brands{
+    display: flex;
+    justify-content: space-between;
+    .text{
+        width: calc(#{$col*3} - #{$gutter});
+    }
+    h2{
+        margin-top: -10px;
+    }
+}

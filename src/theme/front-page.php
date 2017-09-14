@@ -33,7 +33,7 @@
 			</div>
 		</div>
 
-		<div class'home-talent'>
+		<div class='home-talent'>
 			<img src='<?php echo get_template_directory_uri(); ?>/img/boat.png' alt=''>
 
 			<div class='text'>
@@ -45,12 +45,13 @@
 
 		<div class='sep'></div>
 
-		<div class'home-brands'>
+		<div class='home-brands'>
 			<div class='text'>
 				<h2>Marques & Services</h2>
 				<p>Maecenas id posuere massa, facilisis imperdiet nunc. Nulla quis consequat ante. Aenean in ligula lacinia, convallis orci sed, feugiat tortor.</p>
 				<a href='#' class='btn-invert'>Nos marques et services</a>
 			</div>
+			<div></div>
 		</div>
 
 	</div>
