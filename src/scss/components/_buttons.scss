@@ -74,3 +74,29 @@
         background: $primary;
     }
 }
+
+.btn-close{
+    width: 24px;
+    height: 25px;
+    position: relative;
+    text-indent: -99em;
+    overflow: hidden;
+    &:before, &:after{
+        content: '';
+        width: 30px;
+        height: 2px;
+        position: absolute;
+        top: 0;
+        background: $text;
+    }
+    &:before{
+        left: 0;
+        transform-origin: 0 0;
+        transform: rotate(45deg) translate3d(3px, 0, 0);
+    }
+    &:after{
+        right: 0;
+        transform-origin: 100% 0;
+        transform: rotate(-45deg) translate3d(-3px, 0, 0);
+    }
+}

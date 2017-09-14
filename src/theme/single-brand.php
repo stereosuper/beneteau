@@ -27,15 +27,6 @@
                 <div class='content-half-right content-brand'>
                     <?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb('<div class="breadcrumbs">','</div>'); } ?>
 
-                    <?php
-                        $back_url = goliath_get_page_url_by_template('tpl-brands.php');
-                        if (!empty($back_url)) :
-                    ?>
-                    <a href="<?php echo $back_url; ?>" class="close"><?php _e('Fermer', 'beneteau'); ?></a>
-                    <?php
-                        endif;
-                    ?>
-
                     <h1>
                         <?php
                             $logo = super_get_field('logo');
@@ -65,6 +56,13 @@
                     <?php
                         endif;
                     ?>
+
+                    <?php
+                        $back_url = goliath_get_page_url_by_template('tpl-brands.php');
+                        if (!empty($back_url)) :
+                    ?>
+                        <a href="<?php echo $back_url; ?>" class="btn-close"><?php _e('Fermer', 'beneteau'); ?></a>
+                    <?php endif; ?>
 
                     <div class='clearfix'>
                         <?php previous_post_link( '%link' ); ?>

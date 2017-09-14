@@ -72,6 +72,7 @@
 }
 
 .content-brand{
+    position: relative;
     text-align: center;
     > h1{
         margin: 1.3em 0 0.7em;
@@ -95,5 +96,10 @@
     }
     .link-next{
         float: right;
+    }
+    > .btn-close{
+        position: absolute;
+        top: 0;
+        right: 0;
     }
 }
