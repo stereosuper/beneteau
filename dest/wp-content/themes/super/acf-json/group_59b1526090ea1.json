@@ -23,6 +23,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_59ba569fcda3d",
+                            "label": "Ancre",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Ancre permettant de créer un lien sur une section de la page. Ne doit contenir que des caractères non-accentués non-spéciaux et pas d'espaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_59b153a1f0c42",
                             "label": "Titre",
                             "name": "title",
@@ -95,6 +114,25 @@
                     "label": "Deux colonnes",
                     "display": "block",
                     "sub_fields": [
+                        {
+                            "key": "field_59ba5717cda40",
+                            "label": "Ancre",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Ancre permettant de créer un lien sur une section de la page. Ne doit contenir que des caractères non-accentués non-spéciaux et pas d'espaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
                         {
                             "key": "field_59b153dbf0c43",
                             "label": "Titre du module",
@@ -188,6 +226,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_59ba56f4cda3e",
+                            "label": "Ancre",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Ancre permettant de créer un lien sur une section de la page. Ne doit contenir que des caractères non-accentués non-spéciaux et pas d'espaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_59b15b0837f9d",
                             "label": "Titre",
                             "name": "title",
@@ -222,8 +279,8 @@
                             "default_value": "",
                             "placeholder": "",
                             "maxlength": "",
-                            "rows": 3,
-                            "new_lines": ""
+                            "rows": "",
+                            "new_lines": "wpautop"
                         }
                     ],
                     "min": "",
@@ -235,6 +292,25 @@
                     "label": "Liens",
                     "display": "block",
                     "sub_fields": [
+                        {
+                            "key": "field_59ba5732cda41",
+                            "label": "Ancre",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Ancre permettant de créer un lien sur une section de la page. Ne doit contenir que des caractères non-accentués non-spéciaux et pas d'espaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
                         {
                             "key": "field_59b29dc7e3f4e",
                             "label": "Titre",
@@ -412,5 +488,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1505143650
+    "modified": 1505384266
 }
