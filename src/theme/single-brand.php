@@ -24,7 +24,7 @@
 
             <article class='container clearfix'>
                 
-                <div class='content-half-right content-brands'>
+                <div class='content-half-right content-brand'>
                     <?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb('<div class="breadcrumbs">','</div>'); } ?>
 
                     <h1>
