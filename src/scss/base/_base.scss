@@ -100,6 +100,7 @@ p{
 }
 
 b, strong{
+    font-family: $montserrat;
     font-weight: 400;
 }
 
@@ -107,14 +108,9 @@ i, em{
     
 }
 
-blockquote{
-    max-width: 510px;
-    padding: 0 80px;
+blockquote, .baseline{
     position: relative;
-    margin: 2.5em auto;
     font: 2rem/1.2 $playfairBold;
-    text-align: center;
-    color: $grey;
     &:before, &:after{
         content: '';
         width: 30px;
@@ -125,6 +121,13 @@ blockquote{
         margin: auto;
         background: $primary;
     }
+}
+blockquote{
+    max-width: 510px;
+    padding: 0 80px;
+    margin: 2.5em auto;
+    text-align: center;
+    color: $grey;
     &:before{
         left: 15px;
     }
@@ -139,6 +142,15 @@ blockquote{
         &:after{
             content: ' »';
         }
+    }
+}
+.baseline{
+    padding: 0 120px;
+    &:before{
+        left: 50px;
+    }
+    &:after{
+        right: 50px;
     }
 }
 

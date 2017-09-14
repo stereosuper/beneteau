@@ -222,6 +222,21 @@ require_once('custom-walkers/custom-walker-nav-only-a.php');
 require_once('custom-walkers/custom-walker-nav-sub-menu.php');
 
 
+/*-----------------------------------------------------------------------------------*/
+/* Nav links
+/*-----------------------------------------------------------------------------------*/
+function beneteau_next_class( $output ){
+    $output = str_replace('</a>', '<svg class="icon"><use xlink:href="#icon-right"></use></svg></a>', $output);
+    return str_replace('<a href=', '<a class="link-next" href=', $output);
+}
+function beneteau_prev_class( $output ){
+    $output = str_replace('</a>', '<svg class="icon"><use xlink:href="#icon-left"></use></svg></a>', $output);
+    return str_replace('<a href=', '<a class="link-prev" href=', $output);
+}
+add_filter('next_post_link', 'beneteau_next_class');
+add_filter('previous_post_link', 'beneteau_prev_class');
+
+
 // /*-----------------------------------------------------------------------------------*/
 // /* Sidebar & Widgets
 // /*-----------------------------------------------------------------------------------*/
@@ -257,6 +272,7 @@ require_once('custom-walkers/custom-walker-nav-sub-menu.php');
 // }
 // add_action( 'widgets_init', 'super_unregister_default_widgets' );
 
+
 /*-----------------------------------------------------------------------------------*/
 /* Option page
 /*-----------------------------------------------------------------------------------*/
@@ -272,6 +288,7 @@ function beneteau_add_options_page() {
 }
 add_action('acf/init', 'beneteau_add_options_page');
 
+
 /*-----------------------------------------------------------------------------------*/
 /* Enqueue Styles and Scripts
 /*-----------------------------------------------------------------------------------*/
@@ -286,6 +303,7 @@ function beneteau_scripts(){
     wp_deregister_script( 'wp-embed' );
 }
 add_action( 'wp_enqueue_scripts', 'beneteau_scripts' );
+
 
 /*-----------------------------------------------------------------------------------*/
 /* Post types
@@ -311,10 +329,10 @@ function beneteau_taxonomies(){
 }
 add_action( 'init', 'beneteau_taxonomies' );
 
+
 /*-----------------------------------------------------------------------------------*/
 /* Helpers
 /*-----------------------------------------------------------------------------------*/
-
 function super_get_field($selector, $post_id=false, $format_value=true, $default='')
 {
     if (function_exists('the_field')) {
