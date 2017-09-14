@@ -392,10 +392,10 @@ a{
         z-index: -1;
         background: $bg;
     }
-    > .push-container{
-        display: flex;
-        justify-content: center;
-    }
+}
+.push-container{
+    display: flex;
+    justify-content: center;
     a{
         display: block;
         width: calc(33% - #{$gutter});
