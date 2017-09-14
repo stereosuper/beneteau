@@ -23,9 +23,18 @@
             </aside>
 
             <article class='container clearfix'>
-                
+
                 <div class='content-half-right content-brands'>
                     <?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb('<div class="breadcrumbs">','</div>'); } ?>
+
+                    <?php
+                        $back_url = goliath_get_page_url_by_template('tpl-brands.php');
+                        if (!empty($back_url)) :
+                    ?>
+                    <a href="<?php echo $back_url; ?>" class="close"><?php _e('Fermer', 'beneteau'); ?></a>
+                    <?php
+                        endif;
+                    ?>
 
                     <h1>
                         <?php

@@ -335,6 +335,38 @@ function super_the_field($selector, $post_id=false, $format_value=true)
     }
 }
 
+
+/**
+ * Retourne la première page utilisant le template donné
+ *
+ * @param type $template_name
+ * @return type
+ */
+function goliath_get_page_by_template($template_name) {
+  $posts_args = array(
+    'numberposts'     => 1,
+    'meta_key'        => '_wp_page_template',
+    'meta_value'      => $template_name,
+    'post_type'       => 'page',
+  );
+  $posts = get_posts($posts_args);
+  if (is_array($posts) && isset($posts[0])) {
+    return $posts[0];
+  }
+}
+
+
+/**
+ * Retourne le permalien de la première page utilisant le template donné
+ *
+ * @param type $template_name
+ * @return type
+ */
+function goliath_get_page_url_by_template($template_name) {
+  $page = goliath_get_page_by_template($template_name);
+  return get_permalink($page->ID);
+}
+
 function beneteau_mlp_navigation()
 {
     $api = apply_filters( 'mlp_language_api', NULL );
