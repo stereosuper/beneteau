@@ -42,7 +42,7 @@
         display: flex;
         width: 50%;
         height: 100%;
-        padding: $gutter $gutter*2 150px;
+        padding: 40px $gutter*2 180px;
         position: relative;
         align-items: center;
         float: right;
@@ -56,7 +56,7 @@
             bottom: 0;
             z-index: -1;
             background: url(../layoutImg/shape.svg) no-repeat 0 100% / 130%;
-            opacity: 0.9;
+            opacity: 0.85;
         }
         p{
             max-width: 360px;
@@ -65,9 +65,27 @@
         }
     }
     > p{
+        width: 130px;
+        height: 120px;
+        padding: 55px 15px 20px 35px;
         position: absolute;
         right: 0;
         bottom: 0;
+        margin: 0;
+        font-family: $roboto;
+        font-size: 1rem;
+        line-height: 1.1;
+        text-transform: uppercase;
+        text-align: right;
+        background: url(../layoutImg/small-shape.svg) no-repeat 0 0 / 100% 100%;
+        strong{
+            font-family: $robotoBold;
+            font-size: 2.2rem;
+            color: $white;
+        }
+        span{
+            font-size: 1.4rem;
+        }
     }
 }
 

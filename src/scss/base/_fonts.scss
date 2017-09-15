@@ -55,6 +55,14 @@
 }
 
 @font-face{
+    font-family: 'RobotoCondensed Bold';
+    src: url('../fonts/robotocondensed-bold-webfont.woff2') format('woff2'),
+         url('../fonts/robotocondensed-bold-webfont.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face{
     font-family: 'PlayfairDisplay Bold';
     src: url('../fonts/playfairdisplay-bold-webfont.woff2') format('woff2'),
          url('../fonts/playfairdisplay-bold-webfont.woff') format('woff');
