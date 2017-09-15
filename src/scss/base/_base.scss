@@ -251,17 +251,15 @@ code, pre{
     background: grey;
 }
 
-hr, .sep{
+hr{
     width: $col*6;
     min-width: 350px;
     height: 2px;
     border: 0;
+    position: relative;
     clear: both;
     margin: 5em auto;
     background: #E4EAEE;
-}
-.sep{
-    position: relative;
     &:after{
         content: '';
         width: 85px;

@@ -4,6 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     margin: 0 0 12em;
     .push-container{
         width: 50%;
@@ -41,6 +42,7 @@
     justify-content: space-between;
     margin: 0 0 8em;
     img{
+        display: block;
         width: calc(50% - #{$gutter});
     }
     .text{
@@ -49,7 +51,7 @@
     h2{
         margin-top: -10px;
     }
-    + .sep{
+    + hr{
         width: 100%;
         margin: 0 0 8em;
     }
@@ -63,5 +65,75 @@
     }
     h2{
         margin-top: -10px;
+    }
+}
+
+
+@media (max-width: $desktop){
+    .home-news{
+        .push-container{
+            width: $col*6;
+            padding: 0;
+            margin: 0 auto 50px;
+        }
+        .text{
+            width: $col*6;
+            margin: 0 auto;
+        }
+    }
+
+    .home-talent{
+        .text{
+            width: calc(#{$col*4} - #{$gutter});
+        }
+    }
+}
+
+@media (max-width: $desktopSmall){
+    .home-talent{
+        display: block;
+        img{
+            width: $col*6;
+            margin: 0 auto 50px;
+        }
+        .text{
+            width: $col*6;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media (max-width: $tablet){
+    .home-news{
+        .push-container, .text{
+            width: 100%;
+        }
+    }
+
+    .home-talent{
+        img, .text{
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: $phone){
+    .home-news{
+        .push-container{
+            max-width: 300px;
+            a{
+                width: 100%;
+                &:nth-child(2){
+                    display: none;
+                }
+            }
+            .img{
+                padding: 0 0 90%;
+            }
+            h3{
+                padding: 0 0 0 $gutter*2;
+                font-size: 1.8rem;
+            }
+        }
     }
 }

@@ -43,7 +43,7 @@
 			</div>
 		</div>
 
-		<div class='sep'></div>
+		<hr>
 
 		<div class='home-brands'>
 			<div class='text'>
