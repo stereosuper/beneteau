@@ -82,6 +82,7 @@
 
 .btn-invert{
     border-color: $grey;
+    background: $white;
     color: $text;
     &:hover, &:focus{
         color: $white;

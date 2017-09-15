@@ -2,10 +2,36 @@
 
 <?php if ( have_posts() ) : the_post(); ?>
 
+	<!-- Alain:  le premier titre de la première slide est le h1 de la page --> 
+	<div class='slider-home'>
+		<ul>
+			<li class='on' style='background-image:url(<?php echo get_template_directory_uri(); ?>/img/boat.png)'>
+				<div class='container clearfix'>
+					<div class='txt'>
+						<div>
+							<h1 class='title'><?php the_title(); ?></h1>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscingvitae enim cursus pretium. Etiam ultricies pharetra tempor. Mauris nec dolor molestie purus maximus mattis vel ut</p>
+							<a href='#' class='btn-invert'>Découvrir le groupe</a>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li style='background-image:url(<?php echo get_template_directory_uri(); ?>/img/boat.png)'>
+				<div class='container clearfix'>
+					<div class='txt'>
+						<div>
+							<h2 class='title'>Nous rejoindre</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscingvitae enim cursus pretium. Etiam ultricies pharetra tempor. Mauris nec dolor molestie purus maximus mattis vel ut</p>
+							<a href='#' class='btn-invert'>Consulter nos offres</a>
+						</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+		<p>Cours de l'action: <strong>14,515<span>€</span></strong></p>
+	</div>
+
 	<div class='container'>
-		
-		<h1><?php the_title(); ?></h1>
-		<?php the_content(); ?>
 
 		<h2 class='aligncenter'>Actualités</h2>
 
