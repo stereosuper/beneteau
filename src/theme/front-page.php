@@ -51,7 +51,19 @@
 				<p>Maecenas id posuere massa, facilisis imperdiet nunc. Nulla quis consequat ante. Aenean in ligula lacinia, convallis orci sed, feugiat tortor.</p>
 				<a href='#' class='btn-invert'>Nos marques et services</a>
 			</div>
-			<div></div>
+			<div class='home-carousel'>
+				<ul>
+					<li><img src='<?php echo get_template_directory_uri(); ?>/img/beneteau.svg'></li>
+					<li><img src='<?php echo get_template_directory_uri(); ?>/img/bh.svg'></li>
+					<li><img src='<?php echo get_template_directory_uri(); ?>/img/cnb-pro.svg'></li>
+					<li><img src='<?php echo get_template_directory_uri(); ?>/img/cnb-yb.svg'></li>
+					<li><img src='<?php echo get_template_directory_uri(); ?>/img/coco-sweet.svg'></li>
+					<li><img src='<?php echo get_template_directory_uri(); ?>/img/eyb.svg'></li>
+					<li><img src='<?php echo get_template_directory_uri(); ?>/img/four-winns.svg'></li>
+					<li><img src='<?php echo get_template_directory_uri(); ?>/img/glastron.svg'></li>
+					<li><img src='<?php echo get_template_directory_uri(); ?>/img/irm.svg'></li>
+				</ul>
+			</div>
 		</div>
 
 	</div>
