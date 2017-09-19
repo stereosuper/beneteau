@@ -314,7 +314,7 @@ function beneteau_post_type(){
         'singular_label' => 'Marque',
         'public' => true,
         'menu_icon' => 'dashicons-store',
-        'supports' => array('title', 'editor', 'revisions'),
+        'supports' => array('title', 'editor', 'excerpt', 'revisions'),
     ) );
 }
 add_action( 'init', 'beneteau_post_type' );
