@@ -23,10 +23,10 @@
         },
         {
             "key": "field_59b68871e7d93",
-            "label": "Logo (code source svg)",
+            "label": "Logo (au format svg)",
             "name": "logo",
-            "type": "text",
-            "instructions": "L'upload de svg est interdit sur WordPress pour des raisons de sécurité. Copier-coller le code source du svg des logos dans ce champ.",
+            "type": "file",
+            "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -34,11 +34,11 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "return_format": "url",
+            "library": "all",
+            "min_size": "",
+            "max_size": "",
+            "mime_types": "svg"
         },
         {
             "key": "field_59b68781b7a43",
@@ -117,5 +117,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1505136039
+    "modified": 1505836228
 }

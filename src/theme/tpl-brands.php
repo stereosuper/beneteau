@@ -20,10 +20,26 @@ get_header(); ?>
     <?php if ( have_posts() ) : the_post(); ?>
 
         <aside class='sidebar-brands'>
+
             <ul class="sidebar-menu-brands">
-                <li><a href="#todo">todo</a></li>
-                <li><a href="#todo">todo</a></li>
-                <li><a href="#todo">todo</a></li>
+                <?php if ($terms) : ?>
+
+                    <ul class="brands-slider">
+                    <?php
+                        // Fait une première boucle sur les secteurs pour afficher les images dans le diaporama
+                        $is_active = true;
+                        foreach ($terms as $term) :
+                    ?>
+                        <li><a href="#section-<?php echo $term->slug; ?>"><?php echo $term->name; ?></a></li>
+                    <?php
+                            $is_active = false;
+                        endforeach; // foreach ($terms as $term) :
+                    ?>
+                    </ul>
+
+                <?php
+                    endif; // if ($terms) :
+                ?>
             </ul>
 
             <?php if ($terms) : ?>
@@ -66,7 +82,7 @@ get_header(); ?>
                         foreach ($terms as $term) :
                 ?>
 
-                    <h2><?php echo $term->name; ?></h2>
+                    <h2 id="section-<?php echo $term->slug; ?>"><?php echo $term->name; ?></h2>
 
                     <?php
                         // Cf. http://codex.wordpress.org/Class_Reference/WP_Query
@@ -96,17 +112,12 @@ get_header(); ?>
                         <?php
                             while ( $brand_per_branch_query->have_posts() ) :
                                 $brand_per_branch_query->the_post();
+
+                                $logo = super_get_field('logo');
                         ?>
                             <li>
                                 <a href="<?php the_permalink(); ?>">
-                                    <?php
-                                        $logo = super_get_field('logo');
-                                        if (!empty($logo)) :
-                                            echo $logo;
-                                        else :
-                                            // Sans doute besoin d'un placeholder ici ?...
-                                        endif;
-                                    ?>
+                                    <?php if (!empty($logo)) : ?><img src="<?php echo $logo; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" /><?php endif; ?>
                                     <h3><?php the_title(); ?></h3>
                                 </a>
                             </li>

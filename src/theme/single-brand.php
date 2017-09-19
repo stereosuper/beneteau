@@ -31,11 +31,10 @@
                         <?php
                             $logo = super_get_field('logo');
                             if (!empty($logo)) :
-                                echo $logo;
-                        ?>
+                        ?><img src="<?php echo $logo; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" /><?php endif; ?>
                         <span class="visually-hidden"><?php the_title(); ?></span>
                         <?php
-                            else :
+                            if (empty($logo)) :
                         ?>
                             <?php the_title(); ?>
                         <?php
