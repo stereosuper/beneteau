@@ -4,8 +4,8 @@
     text-align: left;
     color: $greyText;
     a{
+        border: 0;
         font-family: $montserratBold;
-        text-decoration: none;
         color: inherit;
         &:hover, &:focus{
             color: $primary;

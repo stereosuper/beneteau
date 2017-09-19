@@ -278,16 +278,19 @@ hr{
 /******* LIENS / BOUTONS *******/
 
 a{
-    color: $primary;
+    border-bottom: 1px solid;
+    font-family: $montserrat;
+    text-decoration: none;
+    color: $blue;
     transition: $transition;
     &:focus, &:hover{
-        color: $secondary;
+        color: #19456B;
     }
     &:focus{
         outline: 0;
     }
     &:active{
-        filter: saturate(200%);
+        border-color: transparent;
     }
 }
 
@@ -397,8 +400,8 @@ a{
     a{
         display: block;
         width: calc(33% - #{$gutter});
+        border: 0;
         margin: 0 0 0 $gutter*2;
-        text-decoration: none;
         color: $text;
         &:first-child{
             margin: 0;

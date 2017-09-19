@@ -3,11 +3,13 @@
 .link, .link-doc, .link-prev, .link-next{
     display: inline-block;
     padding: 0 0 0 60px;
+    border: 0;
     position: relative;
     font-family: $montserratBold;
     font-size: 1.1rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
+    text-decoration: underline;
     color: $text;
 }
 
@@ -68,7 +70,7 @@
     font-size: 1.1rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    text-decoration: none;
+    
 }
 
 .btn{

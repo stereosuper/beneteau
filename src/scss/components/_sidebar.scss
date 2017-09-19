@@ -30,8 +30,8 @@
         }
     }
     a{
+        border: 0;
         position: relative;
-        text-decoration: none;
         color: $greyText;
         &:after{
             width: 20px;
@@ -98,8 +98,8 @@
         margin: 0 0 5px;
     }
     a{
+        border: 0;
         text-transform: uppercase;
-        text-decoration: none;
         color: $white;
     }
 }

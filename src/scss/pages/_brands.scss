@@ -28,10 +28,10 @@
     a{
         display: flex;
         padding: $gutter;
+        border: 0;
         flex-wrap: wrap;
         align-items: center;
         justify-content: center;
-        text-decoration: none;
         &:hover, &:focus{
             opacity: 1;
             > svg{
