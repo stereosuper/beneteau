@@ -203,6 +203,12 @@
 }
 
 @media (max-width: $desktopSmall){
+    .home{
+        .main{
+            padding-top: 97px;
+        }
+    }
+
     .home-talent{
         display: block;
         img{

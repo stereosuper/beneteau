@@ -75,7 +75,8 @@
 }
 
 .sidebar-menu-brands{
-    min-width: 50%;
+    width: 50%;
+    max-width: 300px;
     padding: 90px $gutter;
     position: absolute;
     top: 25vh;
