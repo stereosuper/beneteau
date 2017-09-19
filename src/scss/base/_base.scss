@@ -465,6 +465,10 @@ a{
 }
 
 @media (max-width: $tablet){
+    body{
+        font-size: 1.4em;
+    }
+    
     img{
         &.alignleft, &.alignright{
             float: none;
@@ -483,9 +487,7 @@ a{
 }
 
 @media (max-width: $phone){
-    body{
-        font-size: 1.4em;
-    }
+    
 
     h1{
         font-size: 3rem;

@@ -1,0 +1,58 @@
+.grid-contact{
+    .img{
+        height: 0;
+        padding: 0 0 70%;
+        position: relative;
+        overflow: hidden;
+        background: #b0d2f0 url(../layoutImg/logo-small.svg) no-repeat 50% 50% / 40px;
+    }
+    img{
+        width: auto;
+        height: auto;
+        min-width: 100%;
+        min-height: 100%;
+        max-width: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+    h2{
+        margin: 1.2em 0 0;
+        color: $text;
+    }
+    .btn-invert-block{
+        margin: 1.5em 0 0;
+    }
+}
+
+.contact-address{
+    h2{
+        margin-bottom: 0;
+    }
+    .address, .tel{
+        display: inline-block;
+        vertical-align: top;
+    }
+    .address{
+        width: 33.3333%;
+        margin: 0 20px 0 0;
+    }
+    .icon{
+        width: 33px;
+        height: 33px;
+        padding: 5px;
+        border: 2px solid $secondary;
+        margin: 0 15px 0 0;
+        border-radius: 50%;
+        color: $grey;
+    }
+}
+
+
+@media (max-width: $tablet){
+    .grid-contact{
+        //display: block;
+        //max-width: 300px;
+    }
+}

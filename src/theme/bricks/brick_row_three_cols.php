@@ -8,13 +8,13 @@ $title_align = get_sub_field('title_align');
 ?>
 
 <?php if (!empty($anchor)) : ?><a name="<?php echo $anchor; ?>"></a><?php endif; ?>
-<div class='push-wrapper'>
+
     <?php if (!empty($title)) : ?>
         <h2 class="align<?php echo $title_align; ?>"><?php echo $title; ?></h2>
     <?php endif; ?>
 
     <?php if (have_rows('blocks')) : ?>
-        <div class='push-container'>
+        <div class='grid grid-contact'>
             <?php while (have_rows('blocks')) :
                 the_row();
 
@@ -29,15 +29,12 @@ $title_align = get_sub_field('title_align');
                 $content = get_sub_field('content');
             ?>
 
-                <a href='<?php echo $link; ?>'>
-                    <div class='img'>
-                        <?php if (!empty($image_url)) : ?><img src='<?php echo $image_url; ?>' alt='<?php echo $title; ?>'><?php endif; ?>
-                    </div>
-                    <strong><?php echo $title; ?></strong>
-                    <?php if (!empty($content)) : ?><p><?php echo $content; ?></p><?php endif; ?>
-                    <span class='link'><?php echo $link_label; ?></span>
-                </a>
+                <div class='col-3'>
+                    <div class='img'><?php if (!empty($image_url)) : ?><img src='<?php echo $image_url; ?>' alt='<?php echo $title; ?>'><?php endif; ?></div>
+                    <h2><?php echo $title; ?></h2>
+                    <?php if (!empty($content)) : ?><?php echo $content; ?><?php endif; ?>
+                    <a href='<?php echo $link; ?>' class='btn-invert-block'><?php echo $link_label; ?></a>
+                </div>
             <?php endwhile ?>
         </div>
     <?php endif; ?>
-</div>

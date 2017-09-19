@@ -67,16 +67,18 @@
     }
 }
 
-
-.btn, .btn-invert{
+.btn, .btn-invert, .btn-invert-block{
     display: inline-block;
-    padding: 20px 60px;
     border: 1px solid transparent;
     position: relative;
     font-family: $montserratBold;
     font-size: 1.1rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
+    text-align: center;
+}
+.btn, .btn-invert{
+    padding: 20px 60px;
     &:before{
         left: 10px;
         transform-origin: 100% 0;
@@ -116,7 +118,7 @@
     }
 }
 
-.btn-invert{
+.btn-invert, .btn-invert-block{
     border-color: $grey;
     background: $white;
     color: $text;
@@ -124,6 +126,12 @@
         color: $white;
         background: $text;
     }
+}
+
+.btn-invert-block{
+    width: 100%;
+    max-width: 300px;
+    padding: 20px;
 }
 
 

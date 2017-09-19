@@ -214,7 +214,7 @@ register_nav_menus( array(
 
 // Cleanup WP Menu html
 function beneteau_css_attributes_filter($var){
-    return is_array($var) ? array_intersect($var, array('current-menu-item', 'current_page_parent')) : '';
+    return is_array($var) ? array_intersect($var, array('current-menu-item', 'current_page_parent', 'hidden')) : '';
 }
 add_filter( 'nav_menu_css_class', 'beneteau_css_attributes_filter' );
 
