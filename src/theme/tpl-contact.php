@@ -20,7 +20,7 @@ get_header();
 
 	<div class='container<?php echo (!empty($sidebar_menu))?' container-sidebar':''; ?>'>
 
-		<?php if (!empty($sidebar_menu)) : ?>
+		<?php if (strpos($sidebar_menu, '<li')!==FALSE) : ?>
 			<aside class='sidebar'>
 				<?php echo $sidebar_menu; ?>
 			</aside>
