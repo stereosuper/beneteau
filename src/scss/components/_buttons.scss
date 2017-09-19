@@ -13,19 +13,25 @@
     color: $text;
 }
 
-.link, .link-doc{
-    &:before{
+.link, .link-doc, .btn, .btn-invert{
+    &:before, &:after{
         content: '';
         position: absolute;
         top: 0;
-        left: 0;
         bottom: 0;
         margin: auto;
+        transform: $transition;
+    }
+    &:before{
+        left: 0;
+    }
+    &:after{
+        right: 0;
     }
 }
 
-.link{
-    &:before{
+.link, .btn, .btn-invert{
+    &:before, &:after{
         width: 25px;
         height: 1px;
         background: $primary;
@@ -66,11 +72,36 @@
     display: inline-block;
     padding: 20px 60px;
     border: 1px solid transparent;
+    position: relative;
     font-family: $montserratBold;
     font-size: 1.1rem;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    
+    &:before{
+        left: 10px;
+        transform-origin: 100% 0;
+        opacity: 0;
+        transition: opacity 0.15s ease-in-out, 0.15s transform 0.15s ease-in-out;
+    }
+    &:after{
+        right: 10px;
+        transform-origin: 0 0;
+        transform: scaleX(0);
+        transition: $transition;
+    }
+    &:before, &:after{
+        background: $secondary;
+    }
+    &:hover, &:focus{
+        &:before{
+            opacity: 1;
+            transform: scaleX(0);
+        }
+        &:after{
+            transform: scaleX(1);
+            transition: 0.15s 0.25s ease-in-out;
+        }
+    }
 }
 
 .btn{
@@ -78,7 +109,10 @@
     color: $white;
     &:hover, &:focus{
         color: $white;
-        background: $primary;
+        background: #667B8E;
+    }
+    &:active{
+        background: $grey;
     }
 }
 
