@@ -19,7 +19,7 @@
                 "59c124d451c82": {
                     "key": "59c124d451c82",
                     "name": "brick_row_three_cols",
-                    "label": "Trois colonnes contact",
+                    "label": "Trois colonnes (spécifique contact)",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -202,6 +202,117 @@
                                     "maxlength": ""
                                 }
                             ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "59c12ac7bb611": {
+                    "key": "59c12ac7bb611",
+                    "name": "brick_row_headquarters",
+                    "label": "Siège (spécifique contact)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_59c12b0abb612",
+                            "label": "Ancre",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_59c12b26bb613",
+                            "label": "Titre",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_59c12cf498d06",
+                            "label": "Alignement du titre",
+                            "name": "title_align",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "left": "Gauche",
+                                "center": "Centre",
+                                "right": "Droite"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "",
+                            "layout": "horizontal",
+                            "return_format": "value"
+                        },
+                        {
+                            "key": "field_59c12b3cbb614",
+                            "label": "Adresse",
+                            "name": "address",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": "",
+                            "new_lines": "wpautop"
+                        },
+                        {
+                            "key": "field_59c12b5abb615",
+                            "label": "Téléphone",
+                            "name": "phone",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -679,5 +790,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1505831025
+    "modified": 1505832222
 }
