@@ -353,15 +353,30 @@ a{
     z-index: 1;
     text-align: center;
     color: $white;
-    &:after{
+    &.no-img{
+        &:after{
+            background: $text url(../layoutImg/pattern.png);
+            opacity: 1;
+        }
+    }
+    &:after, &:before{
         content: '';
         position: absolute;
         top: 0;
-        left: -100vw;
+        left: calc(50% - 65vw);
         bottom: 0;
-        right: -100vw;
+        right: calc(-50% + 8vw);
         z-index: -1;
-        background: $text url(../layoutImg/pattern.png);
+    }
+    &:after{
+        background: #19456B;
+        opacity: 0.7;
+    }
+    &:before{
+        z-index: -1;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
     }
     .title{
         display: block;
@@ -439,6 +454,15 @@ a{
     }
 }
 
+
+@media (max-width: $desktopSmall){
+    .highlighted{
+        &:before, &:after{
+            left: -$gutter;
+            right: -$gutter;
+        }
+    }
+}
 
 @media (max-width: $tablet){
     img{
