@@ -260,19 +260,29 @@
 @media (max-width: $phone){
     .home-news{
         .push-container{
-            max-width: 300px;
+            max-width: 400px;
+            flex-wrap: wrap;
             a{
                 width: 100%;
+                margin: 0;
                 &:nth-child(2){
-                    display: none;
+                    margin-top: 5em;
                 }
             }
             .img{
-                padding: 0 0 90%;
+                max-width: 50%;
+                min-width: 140px;
+                padding: 0 0 50%;
             }
             h3{
+                display: inline-block;
+                max-width: 270px;
                 padding: 0 0 0 $gutter*2;
                 font-size: 1.8rem;
+                line-height: 1.2;
+            }
+            time{
+                margin: -40px 0 5px;
             }
         }
     }
