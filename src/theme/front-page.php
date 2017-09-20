@@ -3,9 +3,9 @@
 <?php if ( have_posts() ) : the_post(); ?>
 
 	<!-- Alain:  le premier titre de la première slide est le h1 de la page --> 
-	<div class='slider-home'>
-		<ul>
-			<li class='on'>
+	<div class='slider-home' id='sliderHome'>
+		<ul class='slider'>
+			<li class='slide on'>
 				<div class='img' style='background-image:url(<?php echo get_template_directory_uri(); ?>/img/boat.png)'></div>
 				<div class='container clearfix'>
 					<div class='txt'>
@@ -17,7 +17,7 @@
 					</div>
 				</div>
 			</li>
-			<li>
+			<li class='slide'>
 				<div class='img' style='background-image:url(<?php echo get_template_directory_uri(); ?>/img/boat.png)'></div>
 				<div class='container clearfix'>
 					<div class='txt'>
@@ -29,6 +29,10 @@
 					</div>
 				</div>
 			</li>
+		</ul>
+		<ul class='slider-nav'>
+			<li><button type='button' class='on'>1</button></li>
+			<li><button type='button'>2</button></li>
 		</ul>
 		<p>Cours de l'action: <strong>14,515<span>€</span></strong></p>
 	</div>

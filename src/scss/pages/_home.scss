@@ -9,11 +9,11 @@
 .slider-home{
     height: 600px;
     position: relative;
-    ul{
+    .slider{
         height: 100%;
         margin: 0;
     }
-    li{
+    .slide{
         height: 100%;
         display: none;
         &:before{
@@ -92,6 +92,38 @@
         }
         span{
             font-size: 1.4rem;
+        }
+    }
+    .slider-nav{
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        top: 30px;
+        right: 25px;
+        margin: 0;
+        z-index: 1;
+        > li{
+            margin: 0 5px;
+            &:before{
+                content: none;
+            }
+        }
+        button{
+            width: 8px;
+            height: 8px;
+            border: 0;
+            overflow: hidden;
+            text-indent: -99em;
+            border-radius: 50%;
+            background: $white;
+            opacity: 0.5;
+            &.on{
+                transform: scale(1.2);
+                opacity: 1;
+            }
+            &:focus, &:hover{
+                opacity: 1;
+            }
         }
     }
 }
@@ -258,10 +290,10 @@
         > p{
             display: none;
         }
-        ul{
+        .slider{
             height: auto;
         }
-        li{
+        .slide{
             height: auto;
         }
         .img{
@@ -284,6 +316,11 @@
         .title{
             margin-top: 40px;
             color: $text;
+        }
+        .slider-nav{
+            top: 65vw;
+            left: 25px;
+            transform: scale(1.2);
         }
     }
 
