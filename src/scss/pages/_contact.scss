@@ -51,10 +51,16 @@
 
 
 @media (max-width: $tablet){
-    // .grid-contact{
-    //     display: block;
-    //     max-width: 300px;
-    // }
+    .grid-contact{
+        display: block;
+        max-width: $col*5;
+        margin: 0 auto;
+        .col-3{
+            width: 100%;
+            margin: 0 0 5em;
+        }
+    }
+
     .contact-address{
         .address{
             width: 50%;
@@ -64,6 +70,10 @@
 }
 
 @media (max-width: $phone){
+    .grid-contact{
+        max-width: 100%;
+    }
+
     .contact-address{
         .address{
             width: 100%;
