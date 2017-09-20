@@ -51,8 +51,22 @@
 
 
 @media (max-width: $tablet){
-    .grid-contact{
-        //display: block;
-        //max-width: 300px;
+    // .grid-contact{
+    //     display: block;
+    //     max-width: 300px;
+    // }
+    .contact-address{
+        .address{
+            width: 50%;
+            margin: 0;
+        }
+    }
+}
+
+@media (max-width: $phone){
+    .contact-address{
+        .address{
+            width: 100%;
+        }
     }
 }
