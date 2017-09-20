@@ -12,7 +12,7 @@
 		) );
 	?>
 
-	<div class='container<?php echo (!empty($sidebar_menu))?' container-sidebar':''; ?>'>
+	<div class='container<?php echo (strpos($sidebar_menu, '<li')!==FALSE)?' container-sidebar':''; ?>'>
 
 		<?php if (strpos($sidebar_menu, '<li')!==FALSE) : ?>
 			<aside class='sidebar'>
