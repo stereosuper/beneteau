@@ -1,3 +1,9 @@
+.page-template-tpl-brands, .single-brand{
+    .main{
+        padding-bottom: 0;
+    }
+}
+
 .content-brands{
     h2{
         margin: 0 0 20px;
@@ -82,6 +88,7 @@
 }
 
 .content-brand{
+    padding-bottom: 125px;
     position: relative;
     text-align: center;
     > h1{
