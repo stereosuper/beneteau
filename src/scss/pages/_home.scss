@@ -16,15 +16,22 @@
     li{
         height: 100%;
         display: none;
-        background-size: cover;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
         &:before{
             content: none;
         }
         &.on{
             display: block;
         }
+    }
+    .img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-size: cover;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
     }
     .container{
         height: 100%;
@@ -209,6 +216,16 @@
         }
     }
 
+    .slider-home{
+        .txt{
+            width: 75%;
+            padding-right: 0;
+            &:after{
+                width: 75vw;
+            }
+        }
+    }
+
     .home-talent{
         display: block;
         img{
@@ -235,6 +252,41 @@
 }
 
 @media (max-width: $tablet){
+    .slider-home{
+        height: auto;
+        margin: 0 0 9em;
+        > p{
+            display: none;
+        }
+        ul{
+            height: auto;
+        }
+        li{
+            height: auto;
+        }
+        .img{
+            height: 70vw;
+        }
+        .txt{
+            display: block;
+            width: 100%;
+            height: auto;
+            float: none;
+            padding: 70vw 0 0;
+            &:after{
+                content: none;
+            }
+            p{
+                max-width: none;
+                color: $text;
+            }
+        }
+        .title{
+            margin-top: 40px;
+            color: $text;
+        }
+    }
+
     .home-news{
         .push-container, .text{
             width: 100%;

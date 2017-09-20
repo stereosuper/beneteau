@@ -5,7 +5,8 @@
 	<!-- Alain:  le premier titre de la première slide est le h1 de la page --> 
 	<div class='slider-home'>
 		<ul>
-			<li class='on' style='background-image:url(<?php echo get_template_directory_uri(); ?>/img/boat.png)'>
+			<li class='on'>
+				<div class='img' style='background-image:url(<?php echo get_template_directory_uri(); ?>/img/boat.png)'></div>
 				<div class='container clearfix'>
 					<div class='txt'>
 						<div>
@@ -16,7 +17,8 @@
 					</div>
 				</div>
 			</li>
-			<li style='background-image:url(<?php echo get_template_directory_uri(); ?>/img/boat.png)'>
+			<li>
+				<div class='img' style='background-image:url(<?php echo get_template_directory_uri(); ?>/img/boat.png)'></div>
 				<div class='container clearfix'>
 					<div class='txt'>
 						<div>
