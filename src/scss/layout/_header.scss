@@ -201,6 +201,9 @@
                 font-family: $montserrat;
                 font-size: 1.4rem;
                 text-transform: none;
+                &:after{
+                    content: none;
+                }
             }
             ul{
                 display: none;
@@ -209,6 +212,9 @@
         a{
             font-size: 1.6rem;
             color: $white;
+            &:hover, &:focus{
+                color: rgba($white, 0.7);
+            }
         }
     }
 
