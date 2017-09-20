@@ -1,10 +1,14 @@
 'use strict';
 
-var $ = require('jquery-slim');
+var $ = require('jquery');
+global.jQuery = $;
 
 // require('gsap');
 require('gsap/CSSPlugin');
 var TweenLite = require('gsap/TweenLite');
+
+require('featherlight/release/featherlight.min.js');
+require('featherlight/release/featherlight.gallery.min.js');
 
 
 $(function(){

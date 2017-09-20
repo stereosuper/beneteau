@@ -17,6 +17,10 @@
     'abstracts/placeholders';
 
 @import
+    'plugins/featherlight',
+    'plugins/featherlight.gallery';
+
+@import
     'layout/grid',
     'layout/forms',
     'layout/header',

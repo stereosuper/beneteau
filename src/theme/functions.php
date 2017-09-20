@@ -190,9 +190,11 @@ function beneteau_gallery($output, $attr=array()){
     if( empty($attachments) ) return '';
 
     $selector = "gallery-{$instance}";
-    $output = "<ul class='gallery' id='$selector'>";
+    $output = "<ul class='gallery' id='$selector' data-featherlight-gallery
+    data-featherlight-filter='a'>";
 
     foreach( $attachments as $id => $attachment ){
+        //$output .= '<li><a href="' . wp_get_attachment_image_url($id, 'full') . '" data-featherlight="image">' . wp_get_attachment_image($id, $size) . '</a></li>';
         $output .= '<li><a href="' . wp_get_attachment_image_url($id, 'full') . '">' . wp_get_attachment_image($id, $size) . '</a></li>';
     }
 

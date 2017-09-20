@@ -13,6 +13,7 @@
         }
     }
     a{
+        border: 0;
         position: absolute;
         top: 0;
         left: 0;
@@ -29,6 +30,40 @@
         position: relative;
         left: 50%;
         transform: translate3d(-50%, 0, 0);
+    }
+}
+
+.featherlight{
+    .featherlight-close-icon{
+        top: 2px;
+        right: 2px;
+        font-family: $montserratBold;
+    }
+}
+.featherlight-next, .featherlight-previous{
+    &:hover{
+        background: none;
+        span{
+            opacity: 1;
+        }
+    }
+    span{
+        display: block;
+        width: 25px;
+        font-size: 30px;
+        text-shadow: none;
+        opacity: 0;
+        transition: $transition;
+    }
+}
+.featherlight-next{
+    span{
+        right: 20px;
+    }
+}
+.featherlight-previous{
+    span{
+        left: 20px;
     }
 }
 

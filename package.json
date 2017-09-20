@@ -2,7 +2,10 @@
   "name": "beneteau",
   "version": "0.0.0",
   "main": "gulpfile.js",
-  "dependencies": {},
+  "dependencies": {
+    "featherlight": "^1.7.9",
+    "jquery": "^3.2.1"
+  },
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^7.3.0",
