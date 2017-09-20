@@ -36,12 +36,38 @@
         &:first-child{
             padding: 0;
         }
+        &.current-menu-item, &.current_page_parent{
+            > a{
+                &:after{
+                    transform: scaleX(1);
+                }
+            }
+        }
     }
     a{
         border: 0;
+        position: relative;
         font-family: inherit;
         text-transform: uppercase;
         color: $greyText;
+        &:after{
+            content: '';
+            width: 17px;
+            height: 1px;
+            position: absolute;
+            left: -9px;
+            bottom: -10px;
+            background: $primary;
+            transform: scaleX(0);
+            transition: $transition;
+
+        }
+        &:hover, &:focus{
+            color: $text;
+            &:after{
+                transform: scaleX(1);
+            }
+        }
     }
     ul{
         display: none;
@@ -119,6 +145,9 @@
     a{
         font-family: inherit;
         color: $text;
+        &:hover, &:focus{
+            color: $primary;
+        }
     }
     .current{
         &:after{
@@ -137,6 +166,9 @@
     right: $gutter;
     font-size: 1rem;
     color: $text;
+    &:hover, &:focus{
+        color: $primary;
+    }
 }
 
 
