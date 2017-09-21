@@ -7,6 +7,7 @@
 		<ul class='slider-img'>
 			<?php
 				$first_class = 'first-on';
+				$count = 0;
 				while (super_have_rows('slider')) :
 					the_row();
 					$image = get_sub_field('homeslider_image');
@@ -14,6 +15,7 @@
 					if(is_array($image) && isset($image['ID'])) {
 						list($image_url, $w, $h) = wp_get_attachment_image_src($image['ID'], 'full');
 					}
+					$count ++;
 			?>
 			<li class='slide slide-img <?php echo $first_class; ?>'>
 				<div class='img' style='background-image:url(<?php echo $image_url; ?>)'></div>
@@ -50,10 +52,13 @@
 				endwhile; // while (super_have_rows('slider')) :
 			?>
 		</ul>
-		<ul class='slider-nav'>
-			<li><button type='button' class='on'>1</button></li>
-			<li><button type='button'>2</button></li>
-		</ul>
+		<?php if( $count > 1 ) : $navCount = 0; ?>
+			<ul class='slider-nav'>
+				<?php while( $navCount < $count ) : ?>
+					<li><button type='button' <?php if( $navCount === 0 ) echo "class='on'"; ?>><?php echo $navCount+1; ?></button></li>
+				<?php $navCount ++; endwhile; ?>
+			</ul>
+		<?php endif; ?>
 		<p>Cours de l'action: <strong>14,515<span>€</span></strong></p>
 	</div>
 	<?php endif; // if (super_have_rows('slider')) : ?>

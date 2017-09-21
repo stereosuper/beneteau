@@ -10,12 +10,13 @@ var throttle = require('./throttle.js');
 module.exports = function( slider, windowWidth ){
     if( !slider.length ) return;
 
+    var slidesImg = slider.find('.slide-img');
+    var slidesTxt = slider.find('.slide-txt');
+
+    if( slidesImg.length < 2 ) return;
 
     var activeSlideImg = slider.find('.slide-img.first-on'), newActiveSlideImg;
     var activeSlideTxt = slider.find('.slide-txt.first-on'), newActiveSlideTxt;
-
-    var slidesImg = slider.find('.slide-img');
-    var slidesTxt = slider.find('.slide-txt');
 
     var sliderNav = slider.find('.slider-nav');
 

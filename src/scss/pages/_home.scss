@@ -315,6 +315,9 @@
         }
         .slide-txt{
             height: auto;
+            &.first-on{
+                position: relative;
+            }
         }
         .slide-img{
             height: 70vw;
