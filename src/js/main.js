@@ -24,7 +24,7 @@ $(function(){
     }
 
     function loadHandler(){
-        slider( $('#sliderHome') );
+        slider( $('#sliderHome'), windowWidth );
     }
 
 

@@ -9,7 +9,7 @@
 				<div class='img' style='background-image:url(<?php echo get_template_directory_uri(); ?>/img/boat.png)'></div>
 			</li>
 			<li class='slide slide-img'>
-				<div class='img' style='background-image:url(<?php echo get_template_directory_uri(); ?>/img/boat2.png)'></div>
+				<div class='img' style='background-image:url(<?php echo get_template_directory_uri(); ?>/img/boat.png)'></div>
 			</li>
 		</ul>
 		<div class='bg-txt'></div>

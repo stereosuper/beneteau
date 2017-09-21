@@ -3,7 +3,11 @@ var $ = require('jquery');
 require('gsap/CSSPlugin');
 var TweenLite = require('gsap/TweenLite');
 
-module.exports = function(slider){
+window.requestAnimFrame = require('./requestAnimFrame.js');
+var throttle = require('./throttle.js');
+
+
+module.exports = function( slider, windowWidth ){
     if( !slider.length ) return;
 
 
@@ -20,9 +24,6 @@ module.exports = function(slider){
 
     function slide(index, button){
         setSliderTimeout();
-
-        activeSlideImg = slider.find('.slide-img.on');
-        activeSlideTxt = slider.find('.slide-txt.on');
 
         if( index ){
             newActiveSlideImg = slidesImg.eq(index);
@@ -53,9 +54,12 @@ module.exports = function(slider){
         TweenLite.fromTo(newActiveSlideTxt.find('.txt'), 0.5, {opacity: 0, x: '-50px'}, {opacity: 1, x: 0, delay: 0.6});
         TweenLite.fromTo(newActiveSlideTxt.find('.button'), 0.5, {opacity: 0, x: '-50px'}, {opacity: 1, x: 0, delay: 0.7});
 
-        button.addClass('on').parent().siblings().find('button').removeClass('on');
+        activeSlideImg = slider.find('.slide-img.on');
+        activeSlideTxt = slider.find('.slide-txt.on');
 
-        console.log(button);
+        windowWidth > 780 ? slider.attr('style', '') : slider.height(activeSlideTxt.height());
+
+        button.addClass('on').parent().siblings().find('button').removeClass('on');
     }
 
     function setSliderTimeout(){
@@ -69,6 +73,8 @@ module.exports = function(slider){
     activeSlideTxt.removeClass('first-on').addClass('on').find('.title');
     TweenLite.set([activeSlideTxt.find('.title'), activeSlideTxt.find('.txt'), activeSlideTxt.find('.button')], {opacity: 1});
 
+    windowWidth > 780 ? slider.attr('style', '') : slider.height(activeSlideTxt.height());
+
     setSliderTimeout();
 
 
@@ -80,5 +86,10 @@ module.exports = function(slider){
 
     $(window).on('focusout', function(){
         clearTimeout(timeOut);
-    }).on('focusin', setSliderTimeout);
+    }).on('focusin', setSliderTimeout).on('resize', throttle(function(){
+        requestAnimFrame( function(){
+            windowWidth = window.outerWidth;
+            windowWidth > 780 ? slider.attr('style', '') : slider.height(activeSlideTxt.height());
+        } );
+    }, 60));
 }

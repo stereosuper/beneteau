@@ -9,6 +9,7 @@
 .slider-home{
     height: 600px;
     position: relative;
+    transition: $transition 0.5s;
     ul{
         margin: 0;
         > li{
@@ -312,10 +313,10 @@
         > p{
             display: none;
         }
-        .slide{
+        .slide-txt{
             height: auto;
         }
-        .img{
+        .slide-img{
             height: 70vw;
         }
         .wrapper-txt{
