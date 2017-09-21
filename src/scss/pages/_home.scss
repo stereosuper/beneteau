@@ -124,6 +124,9 @@
         top: 30px;
         right: 25px;
         z-index: 3;
+        .no-js &{
+            display: none;
+        }
         > li{
             margin: 0 5px;
         }

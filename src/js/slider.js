@@ -9,6 +9,12 @@ module.exports = function(slider){
 
     var activeSlideImg = slider.find('.slide-img.first-on'), newActiveSlideImg;
     var activeSlideTxt = slider.find('.slide-txt.first-on'), newActiveSlideTxt;
+
+    var slidesImg = slider.find('.slide-img');
+    var slidesTxt = slider.find('.slide-txt');
+
+    var sliderNav = slider.find('.slider-nav');
+
     var timeOut;
 
 
@@ -19,15 +25,15 @@ module.exports = function(slider){
         activeSlideTxt = slider.find('.slide-txt.on');
 
         if( index ){
-            newActiveSlideImg = slider.find('.slide-img').eq(index);
-            newActiveSlideTxt = slider.find('.slide-txt').eq(index);
+            newActiveSlideImg = slidesImg.eq(index);
+            newActiveSlideTxt = slidesTxt.eq(index);
         }else{
-            newActiveSlideImg = activeSlideImg.next('.slide-img').length ? activeSlideImg.next('.slide-img') : slider.find('.slide-img').eq(0);
-            newActiveSlideTxt = activeSlideTxt.next('.slide-txt').length ? activeSlideTxt.next('.slide-txt') : slider.find('.slide-txt').eq(0);
+            newActiveSlideImg = activeSlideImg.next('.slide-img').length ? activeSlideImg.next('.slide-img') : slidesImg.eq(0);
+            newActiveSlideTxt = activeSlideTxt.next('.slide-txt').length ? activeSlideTxt.next('.slide-txt') : slidesTxt.eq(0);
         }
 
         if( !button ){
-            button = slider.find('.slide-nav').find('.on').next().length ? slider.find('.slide-nav').find('.on').next().find('button') : slider.find('.slide-nav').find('li').eq(0).find('button');
+            button = sliderNav.find('.on').parent().next().length ? sliderNav.find('.on').parent().next().find('button') : sliderNav.find('li').eq(0).find('button');
         }
 
         TweenLite.to(activeSlideTxt.find('.title'), 0.5, {opacity: 0, x: '50px'});
@@ -35,42 +41,44 @@ module.exports = function(slider){
         TweenLite.to(activeSlideTxt.find('.button'), 0.5, {opacity: 0, x: '50px', delay: 0.2});
 
         TweenLite.to(activeSlideImg, 0.7, {opacity: 0, delay: 0.5});
+        
         activeSlideImg.removeClass('on');
-
         activeSlideTxt.removeClass('on');
 
         newActiveSlideImg.addClass('on');
-        activeSlideImg = $('#sliderHome').find('.slide-img.on');
-        TweenLite.to(activeSlideImg, 0.7, {opacity: 1});
+        TweenLite.to(newActiveSlideImg, 0.7, {opacity: 1});
 
         newActiveSlideTxt.addClass('on');
-        activeSlideTxt = slider.find('.slide-txt.on');
-        TweenLite.fromTo(activeSlideTxt.find('.title'), 0.5, {opacity: 0, x: '-50px'}, {opacity: 1, x: 0, delay: 0.5});
-        TweenLite.fromTo(activeSlideTxt.find('.txt'), 0.5, {opacity: 0, x: '-50px'}, {opacity: 1, x: 0, delay: 0.6});
-        TweenLite.fromTo(activeSlideTxt.find('.button'), 0.5, {opacity: 0, x: '-50px'}, {opacity: 1, x: 0, delay: 0.7});
+        TweenLite.fromTo(newActiveSlideTxt.find('.title'), 0.5, {opacity: 0, x: '-50px'}, {opacity: 1, x: 0, delay: 0.5});
+        TweenLite.fromTo(newActiveSlideTxt.find('.txt'), 0.5, {opacity: 0, x: '-50px'}, {opacity: 1, x: 0, delay: 0.6});
+        TweenLite.fromTo(newActiveSlideTxt.find('.button'), 0.5, {opacity: 0, x: '-50px'}, {opacity: 1, x: 0, delay: 0.7});
 
         button.addClass('on').parent().siblings().find('button').removeClass('on');
+
+        console.log(button);
     }
 
     function setSliderTimeout(){
-        clearTimeout(timeOut);
-        timeOut = setTimeout(slide, 8000);
+        clearTimeout( timeOut );
+        timeOut = setTimeout( slide, 8000 );
     }
 
 
-    activeSlideImg.removeClass('first-on').addClass('on').css({'opacity': 1});
+    activeSlideImg.removeClass('first-on').addClass('on').css('opacity', 1);
 
-    activeSlideTxt.removeClass('first-on').addClass('on').find('.title').css({'opacity': 1});
-    activeSlideTxt.find('.txt').css({'opacity': 1});
-    activeSlideTxt.find('.button').css({'opacity': 1});
+    activeSlideTxt.removeClass('first-on').addClass('on').find('.title');
+    TweenLite.set([activeSlideTxt.find('.title'), activeSlideTxt.find('.txt'), activeSlideTxt.find('.button')], {opacity: 1});
 
     setSliderTimeout();
 
+
     slider.on('click', 'button', function(e){
         e.preventDefault();
-
         if( $(this).hasClass('on') ) return;
-
         slide($(this).parent().index(), $(this));        
     });
+
+    $(window).on('focusout', function(){
+        clearTimeout(timeOut);
+    }).on('focusin', setSliderTimeout);
 }
