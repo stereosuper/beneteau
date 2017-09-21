@@ -400,9 +400,8 @@ a{
         content: '';
         height: 145px;
         position: absolute;
-        top: 20%;
         left: -100vw;
-        bottom: 0;
+        bottom: 68%;
         right: -100vw;
         z-index: -1;
         background: $bg;
@@ -410,6 +409,8 @@ a{
 }
 .push-container{
     display: flex;
+    max-width: 840px;
+    margin: 0 auto;
     justify-content: center;
     text-align: right;
     a{
@@ -421,35 +422,84 @@ a{
         &:first-child{
             margin: 0;
         }
+        &:hover, &:focus{
+            .img-wrapper{
+                &:after{
+                    transform: translate3d(0, -10px, 0) skewY(-17deg);
+                }
+            }
+            .img{
+                transform: translate3d(0, 10px, 0) skewY(-17deg);
+                > img, >.bg{
+                    transform: translate3d(-50%, calc(-50% - 10px), 0) skewY(17deg);
+                }
+            }
+            .link{
+                &:before{
+                    transform: scaleX(0);
+                }
+                &:after{
+                    transform: scaleX(1);
+                    transition: 0.15s 0.25s ease-in-out;
+                }
+            }
+        }
     }
     strong{
         display: block;
-        padding: 0 0 0 $gutter;
-        margin: -10px 0 50px;
+        padding: 0 0 0 25px;
+        position: relative;
+        margin: 20px 0 50px;
+        z-index: 1;
         font-family: $playfairBold;
         font-size: 2.4rem;
         letter-spacing: -0.015em;
         line-height: 1;
+        color: $grey;
     }
     .link{
+        padding: 0 40px;
+        margin: 0 -40px 0 0;
         text-decoration: underline;
+    }
+    .img-wrapper{
+        position: relative;
+        &:after{
+            content: '';
+            height: 52px;
+            position: absolute;
+            bottom: -22px;
+            left: 0;
+            right: -2px;
+            border-top-left-radius: 30px;
+            background: #fff;
+            transform: translate3d(0, 0, 0) skewY(-17deg);
+            transition: $transition;
+        }
     }
     .img{
         height: 0;
-        padding: 0 0 126.5%;
+        padding: 0 0 94%;
         position: relative;
-        clip-path: url(#clipImg);
-        background: $text url(../layoutImg/pattern.png);
-        > img{
+        overflow: hidden;
+        border-top-left-radius: 30px;
+        transform: translate3d(0, 0, 0) skewY(-17deg);
+        transition: $transition;
+        > img, .bg{
             width: auto;
             height: auto;
             min-width: 100%;
-            min-height: 100%;
+            min-height: 133%;
             max-width: none;
+            max-height: 300px;
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0) skewY(17deg);
+            transition: $transition;
+        }
+        > .bg{
+            background: $text url(../layoutImg/pattern.png);
         }
     }
 }
@@ -487,8 +537,6 @@ a{
 }
 
 @media (max-width: $phone){
-    
-
     h1{
         font-size: 3rem;
     }
@@ -548,7 +596,6 @@ a{
     .push-wrapper{
         &:before{
             height: 94px;
-            top: 8%;
         }
         a{
             width: 100%;
@@ -557,13 +604,17 @@ a{
                 display: none;
             }
         }
-        .img{
+        .img-wrapper{
             max-width: 150px;
-            padding: 0 0 69%;
+        }
+        .img{
+            > img, > .bg{
+                max-height: 185px;
+            }
         }
         strong{
             padding: 0 0 0 $gutter*2;
-            margin-top: -20px;
+            margin-top: 0;
             font-size: 1.8rem;
         }
     }
