@@ -3,7 +3,7 @@
 		<footer role='contentinfo' class='footer'>
 			<div class='container'>
 				<p>
-					<?php _e( sprintf('Copyright Groupe Bénéteau %1$s &copy;', date('Y') ), 'beneteau'); ?>
+					<?php _e( sprintf('Copyright Groupe Beneteau %1$s &copy;', date('Y') ), 'beneteau'); ?>
 					<?php wp_nav_menu( array(
 						'theme_location' => 'legals',
 						'container' => false,
