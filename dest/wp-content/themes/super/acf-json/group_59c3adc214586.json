@@ -1,9 +1,9 @@
 {
-    "key": "group_59b1526090ea1",
-    "title": "Mise en forme avancée",
+    "key": "group_59c3adc214586",
+    "title": "Mise en forme avancée (accueil)",
     "fields": [
         {
-            "key": "field_59b15269946d5",
+            "key": "field_59c3adc21f94a",
             "label": "Mise en forme avancée",
             "name": "bricks",
             "type": "flexible_content",
@@ -23,7 +23,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_59ba569fcda3d",
+                            "key": "field_59c3adc22493b",
                             "label": "Ancre",
                             "name": "anchor",
                             "type": "text",
@@ -42,7 +42,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_59b153a1f0c42",
+                            "key": "field_59c3adc224958",
                             "label": "Titre",
                             "name": "title",
                             "type": "text",
@@ -61,7 +61,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_59b1594368b23",
+                            "key": "field_59c3adc224972",
                             "label": "Alignement du titre",
                             "name": "title_align",
                             "type": "radio",
@@ -86,7 +86,7 @@
                             "return_format": "value"
                         },
                         {
-                            "key": "field_59b1529d946d6",
+                            "key": "field_59c3adc2249d0",
                             "label": "Contenu",
                             "name": "content",
                             "type": "wysiwyg",
@@ -115,7 +115,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_59ba5717cda40",
+                            "key": "field_59c3adc2249f6",
                             "label": "Ancre",
                             "name": "anchor",
                             "type": "text",
@@ -134,7 +134,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_59b153dbf0c43",
+                            "key": "field_59c3adc224a5c",
                             "label": "Titre du module",
                             "name": "title",
                             "type": "text",
@@ -153,7 +153,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_59b159d8c0a12",
+                            "key": "field_59c3adc224a76",
                             "label": "Alignement du titre",
                             "name": "title_align",
                             "type": "radio",
@@ -178,7 +178,7 @@
                             "return_format": "value"
                         },
                         {
-                            "key": "field_59b15328a0046",
+                            "key": "field_59c3adc224aec",
                             "label": "Colonne de gauche",
                             "name": "left_col_content",
                             "type": "wysiwyg",
@@ -197,7 +197,7 @@
                             "delay": 0
                         },
                         {
-                            "key": "field_59b15350a0047",
+                            "key": "field_59c3adc224b23",
                             "label": "Colonne de droite",
                             "name": "right_col_content",
                             "type": "wysiwyg",
@@ -226,7 +226,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_59ba56f4cda3e",
+                            "key": "field_59c3adc224b43",
                             "label": "Ancre",
                             "name": "anchor",
                             "type": "text",
@@ -245,7 +245,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_59b15b0837f9d",
+                            "key": "field_59c3adc224b5a",
                             "label": "Titre",
                             "name": "title",
                             "type": "text",
@@ -264,7 +264,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_59b15b1237f9e",
+                            "key": "field_59c3adc224b70",
                             "label": "Contenu",
                             "name": "content",
                             "type": "textarea",
@@ -293,7 +293,7 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_59ba5732cda41",
+                            "key": "field_59c3adc224b86",
                             "label": "Ancre",
                             "name": "anchor",
                             "type": "text",
@@ -312,7 +312,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_59b29dc7e3f4e",
+                            "key": "field_59c3adc224b9b",
                             "label": "Titre",
                             "name": "title",
                             "type": "text",
@@ -331,7 +331,7 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_59b29dd2e3f4f",
+                            "key": "field_59c3adc224bb1",
                             "label": "Alignement du titre",
                             "name": "title_align",
                             "type": "radio",
@@ -356,7 +356,7 @@
                             "return_format": "value"
                         },
                         {
-                            "key": "field_59b15bc0cee0a",
+                            "key": "field_59c3adc224bc6",
                             "label": "Blocs",
                             "name": "blocks",
                             "type": "repeater",
@@ -375,7 +375,7 @@
                             "button_label": "",
                             "sub_fields": [
                                 {
-                                    "key": "field_59b15bfbcee0c",
+                                    "key": "field_59c3adc2782ff",
                                     "label": "Titre",
                                     "name": "title",
                                     "type": "text",
@@ -394,7 +394,7 @@
                                     "maxlength": ""
                                 },
                                 {
-                                    "key": "field_59b15c1dcee0e",
+                                    "key": "field_59c3adc278344",
                                     "label": "Image",
                                     "name": "image",
                                     "type": "image",
@@ -418,7 +418,7 @@
                                     "mime_types": ""
                                 },
                                 {
-                                    "key": "field_59b15bd3cee0b",
+                                    "key": "field_59c3adc278387",
                                     "label": "Lien",
                                     "name": "link",
                                     "type": "url",
@@ -434,7 +434,7 @@
                                     "placeholder": ""
                                 },
                                 {
-                                    "key": "field_59b15c4ecee0f",
+                                    "key": "field_59c3adc2783ad",
                                     "label": "Libellé du lien",
                                     "name": "link_label",
                                     "type": "text",
@@ -460,7 +460,7 @@
                 }
             },
             "button_label": "Ajouter un élément",
-            "min": 1,
+            "min": "",
             "max": ""
         }
     ],
@@ -478,14 +478,14 @@
             },
             {
                 "param": "page_type",
-                "operator": "!=",
+                "operator": "==",
                 "value": "front_page"
             }
         ]
     ],
-    "menu_order": 0,
+    "menu_order": 2,
     "position": "normal",
-    "style": "seamless",
+    "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": [
@@ -493,5 +493,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1505996192
+    "modified": 1505997336
 }

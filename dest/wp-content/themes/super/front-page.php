@@ -2,40 +2,53 @@
 
 <?php if ( have_posts() ) : the_post(); ?>
 
-	<!-- Alain:  le premier titre de la première slide est le h1 de la page --> 
+	<?php if (super_have_rows('slider')) : ?>
 	<div class='slider-home' id='sliderHome'>
 		<ul class='slider-img'>
-			<li class='slide slide-img first-on'>
-				<div class='img' style='background-image:url(<?php echo get_template_directory_uri(); ?>/img/boat.png)'></div>
+			<?php
+				$first_class = 'first-on';
+				while (super_have_rows('slider')) :
+					the_row();
+					$image = get_sub_field('homeslider_image');
+					$image_url = '';
+					if(is_array($image) && isset($image['ID'])) {
+						list($image_url, $w, $h) = wp_get_attachment_image_src($image['ID'], 'full');
+					}
+			?>
+			<li class='slide slide-img <?php echo $first_class; ?>'>
+				<div class='img' style='background-image:url(<?php echo $image_url; ?>)'></div>
 			</li>
-			<li class='slide slide-img'>
-				<div class='img' style='background-image:url(<?php echo get_template_directory_uri(); ?>/img/boat.png)'></div>
-			</li>
+			<?php
+					$first_class = '';
+				endwhile; // while (super_have_rows('slider')) :
+			?>
 		</ul>
 		<div class='bg-txt'></div>
 		<ul class='slider-txt'>
-			<li class='slide slide-txt first-on'>
+			<?php
+				$first_class = 'first-on';
+				while (super_have_rows('slider')) :
+					the_row();
+					$title = get_sub_field('homeslider_title');
+					$excerpt = get_sub_field('homeslider_excerpt');
+					$link = get_sub_field('homeslider_link');
+					$link_label = get_sub_field('homeslider_link_label');
+			?>
+			<li class='slide slide-txt <?php echo $first_class; ?>'>
 				<div class='container clearfix'>
 					<div class='wrapper-txt'>
 						<div>
-							<h1 class='title'><?php the_title(); ?></h1>
-							<p class='txt'>Lorem ipsum dolor sit amet, consectetur adipiscingvitae enim cursus pretium. Etiam ultricies pharetra tempor. Mauris nec dolor molestie purus maximus mattis vel ut</p>
-							<div class='button'><a href='#' class='btn-invert'>Découvrir le groupe</a></div>
+							<h1 class='title'><?php echo $title; ?></h1>
+							<p class='txt'><?php echo $excerpt; ?></p>
+							<?php if (!empty($link)) : ?><div class='button'><a href='<?php echo $link; ?>' class='btn-invert'><?php echo $link_label; ?></a></div><?php endif; ?>
 						</div>
 					</div>
 				</div>
 			</li>
-			<li class='slide slide-txt'>
-				<div class='container clearfix'>
-					<div class='wrapper-txt'>
-						<div>
-							<h2 class='title'>Nous rejoindre</h2>
-							<p class='txt'>Lorem ipsum dolor sit amet, consectetur adipiscingvitae enim cursus pretium. Etiam ultricies pharetra tempor. Mauris nec dolor molestie purus maximus mattis vel ut</p>
-							<div class='button'><a href='#' class='btn-invert'>Consulter nos offres</a></div>
-						</div>
-					</div>
-				</div>
-			</li>
+			<?php
+					$first_class = '';
+				endwhile; // while (super_have_rows('slider')) :
+			?>
 		</ul>
 		<ul class='slider-nav'>
 			<li><button type='button' class='on'>1</button></li>
@@ -43,6 +56,7 @@
 		</ul>
 		<p>Cours de l'action: <strong>14,515<span>€</span></strong></p>
 	</div>
+	<?php endif; // if (super_have_rows('slider')) : ?>
 
 	<div class='container'>
 

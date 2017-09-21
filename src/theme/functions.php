@@ -355,6 +355,14 @@ function super_the_field($selector, $post_id=false, $format_value=true)
     }
 }
 
+function super_have_rows( $selector, $post_id = false )
+{
+    if (function_exists('have_rows')) {
+        return have_rows( $selector, $post_id );
+    }
+    return false;
+}
+
 
 /**
  * Retourne la première page utilisant le template donné

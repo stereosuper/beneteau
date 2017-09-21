@@ -13,9 +13,9 @@ $title_align = get_sub_field('title_align');
         <h2 class="align<?php echo $title_align; ?>"><?php echo $title; ?></h2>
     <?php endif; ?>
 
-    <?php if (have_rows('blocks')) : ?>
+    <?php if (super_have_rows('blocks')) : ?>
         <div class='grid grid-contact'>
-            <?php while (have_rows('blocks')) :
+            <?php while (super_have_rows('blocks')) :
                 the_row();
 
                 $title = get_sub_field('title');
