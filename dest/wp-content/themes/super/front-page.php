@@ -4,27 +4,34 @@
 
 	<!-- Alain:  le premier titre de la première slide est le h1 de la page --> 
 	<div class='slider-home' id='sliderHome'>
-		<ul class='slider'>
-			<li class='slide on'>
+		<ul class='slider-img'>
+			<li class='slide slide-img first-on'>
 				<div class='img' style='background-image:url(<?php echo get_template_directory_uri(); ?>/img/boat.png)'></div>
+			</li>
+			<li class='slide slide-img'>
+				<div class='img' style='background-image:url(<?php echo get_template_directory_uri(); ?>/img/boat2.png)'></div>
+			</li>
+		</ul>
+		<div class='bg-txt'></div>
+		<ul class='slider-txt'>
+			<li class='slide slide-txt first-on'>
 				<div class='container clearfix'>
-					<div class='txt'>
+					<div class='wrapper-txt'>
 						<div>
 							<h1 class='title'><?php the_title(); ?></h1>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscingvitae enim cursus pretium. Etiam ultricies pharetra tempor. Mauris nec dolor molestie purus maximus mattis vel ut</p>
-							<a href='#' class='btn-invert'>Découvrir le groupe</a>
+							<p class='txt'>Lorem ipsum dolor sit amet, consectetur adipiscingvitae enim cursus pretium. Etiam ultricies pharetra tempor. Mauris nec dolor molestie purus maximus mattis vel ut</p>
+							<div class='button'><a href='#' class='btn-invert'>Découvrir le groupe</a></div>
 						</div>
 					</div>
 				</div>
 			</li>
-			<li class='slide'>
-				<div class='img' style='background-image:url(<?php echo get_template_directory_uri(); ?>/img/boat.png)'></div>
+			<li class='slide slide-txt'>
 				<div class='container clearfix'>
-					<div class='txt'>
+					<div class='wrapper-txt'>
 						<div>
 							<h2 class='title'>Nous rejoindre</h2>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscingvitae enim cursus pretium. Etiam ultricies pharetra tempor. Mauris nec dolor molestie purus maximus mattis vel ut</p>
-							<a href='#' class='btn-invert'>Consulter nos offres</a>
+							<p class='txt'>Lorem ipsum dolor sit amet, consectetur adipiscingvitae enim cursus pretium. Etiam ultricies pharetra tempor. Mauris nec dolor molestie purus maximus mattis vel ut</p>
+							<div class='button'><a href='#' class='btn-invert'>Consulter nos offres</a></div>
 						</div>
 					</div>
 				</div>
