@@ -65,31 +65,7 @@
 
 	<div class='container'>
 
-		<h2 class='aligncenter'>Actualités</h2>
-
-		<div class='home-news'>
-			<div class='push-container'>
-				<a href='#'>
-					<div class='img'>
-						<img src='<?php echo get_template_directory_uri(); ?>/img/boat.png' alt=''>
-					</div>
-					<time>10/08/2017</time>
-					<h3>Les salons nautiques européens de la rentrée</h3>
-				</a>
-				<a href='#'>
-					<div class='img'>
-						<img src='<?php echo get_template_directory_uri(); ?>/img/boat.png' alt=''>
-					</div>
-					<time>24/07/2017</time>
-					<h3>CNB 66 : Les premières navigations</h3>
-				</a>
-			</div>
-
-			<div class='text'>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis venenatis risus, nec aliquet velit. Nunc scelerisque, est id vehicula bibendum, massa arcu laoreet magna.</p>
-				<a href='#' class='link'>Toutes les actualités</a>
-			</div>
-		</div>
+		<?php echo the_content(); ?>
 
 		<div class='home-talent'>
 			<img src='<?php echo get_template_directory_uri(); ?>/img/boat.png' alt=''>
