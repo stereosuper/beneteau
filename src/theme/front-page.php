@@ -67,8 +67,6 @@
 
 		<?php echo the_content(); ?>
 
-		<hr>
-
 		<div class='home-brands'>
 			<div class='text'>
 				<h2>Marques & Services</h2>

@@ -234,6 +234,15 @@
                     "min": "",
                     "max": ""
                 },
+                "59c3c885620d2": {
+                    "key": "59c3c885620d2",
+                    "name": "brick_row_home_separator",
+                    "label": "Séparateur (spécifique accueil)",
+                    "display": "block",
+                    "sub_fields": [],
+                    "min": "",
+                    "max": ""
+                },
                 "59b15282a55a4": {
                     "key": "59b15282a55a4",
                     "name": "brick_row_full_width",
@@ -711,5 +720,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1506002526
+    "modified": 1506003194
 }
