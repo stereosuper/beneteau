@@ -33,24 +33,21 @@ $title_align = get_sub_field('title_align');
                     $brand_query->the_post();
 
                     $logo = super_get_field('logo');
-                    print_r($logo);
                     $website = super_get_field('website');
-                    $email = super_get_field('contact_email');
-                    $link_url = get_permalink();
-                    if (!empty($email)) {
-                        $link_url = 'mailto:'.$email;
+                    $contact_type = super_get_field('contact_type');
+                    if ($contact_type=='url') {
+                        $link_url = super_get_field('contact_url');
                     } else {
-                        if (!empty($website)) {
-                            $link_url = $website;
-                        }
+                        $link_url = 'mailto:'.super_get_field('contact_email');
                     }
+                    $excerpt = super_get_field('contact_excerpt');
             ?>
                     <a href='<?php echo $link_url; ?>'>
                         <div class="logo">
-                            <?php if (!empty($logo)) : ?><?php echo $logo; ?><?php endif; ?>
+                            <?php if (!empty($logo)) : ?><img src="<?php echo $logo; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" /><?php endif; ?>
                             <?php if (empty($logo)) : ?><?php the_title(); ?><?php endif; ?>
                         </div>
-                        <?php if (!empty($post->post_excerpt)) : ?><p><?php echo $post->post_excerpt; ?></p><?php endif; ?>
+                        <?php if (!empty($excerpt)) : ?><p><?php echo $excerpt; ?></p><?php endif; ?>
                         <span class='link'><?php _e('Contacter', 'beneteau'); ?></span>
                     </a>
             <?php
