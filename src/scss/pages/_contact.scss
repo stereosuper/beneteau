@@ -1,34 +1,49 @@
-.grid-contact{
+.grid-brands, .grid-contact{
     .img{
         height: 0;
         padding: 0 0 70%;
         position: relative;
-        overflow: hidden;
-        background: #b0d2f0 url(../layoutImg/logo-small.svg) no-repeat 50% 50% / 40px;
     }
     img{
         width: auto;
         height: auto;
-        min-width: 100%;
-        min-height: 100%;
-        max-width: none;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate3d(-50%, -50%, 0);
     }
+    .col-3{
+        margin: 0 0 5em;
+    }
+    .btn-invert-block{
+        margin: 3.7em 0 0;
+    }
+}
+.grid-contact{
+    .img{
+        overflow: hidden;
+        background: #b0d2f0 url(../layoutImg/logo-small.svg) no-repeat 50% 50% / 40px;
+    }
+    img{
+        min-width: 100%;
+        min-height: 100%;
+        max-width: none;
+    }
     h2{
         margin: 1.2em 0 0;
         color: $text;
     }
-    .btn-invert-block{
-        margin: 1.5em 0 0;
+}
+.grid-brands{
+    img{
+        max-width: 70%;
+        max-height: 70%;
     }
 }
 
 .contact-address{
     h2{
-        margin-bottom: 0;
+        margin: 0;
     }
     .address, .tel{
         display: inline-block;
@@ -57,7 +72,12 @@
         margin: 0 auto;
         .col-3{
             width: 100%;
-            margin: 0 0 5em;
+        }
+    }
+
+    .grid-brands{
+        .col-3{
+            width: calc(50% - #{$gutter});
         }
     }
 
@@ -72,6 +92,16 @@
 @media (max-width: $phone){
     .grid-contact{
         max-width: 100%;
+    }
+
+    .grid-brands{
+        display: block;
+        .col-3{
+            width: 100%;
+        }
+        .btn-invert-block{
+            margin: 3.7em auto 0;
+        }
     }
 
     .contact-address{
