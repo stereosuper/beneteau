@@ -67,16 +67,6 @@
 
 		<?php echo the_content(); ?>
 
-		<div class='home-talent'>
-			<img src='<?php echo get_template_directory_uri(); ?>/img/boat.png' alt=''>
-
-			<div class='text'>
-				<h2>Talents</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis venenatis risus, nec aliquet velit. Nunc scelerisque, est id vehicula bibendum, arcu laoreet magna.</p>
-				<a href='#' class='btn-invert'>Découvrir nos métiers</a>
-			</div>
-		</div>
-
 		<hr>
 
 		<div class='home-brands'>
