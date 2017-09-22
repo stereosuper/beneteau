@@ -24,7 +24,7 @@ get_header(); ?>
             <ul class="sidebar-menu-brands">
                 <?php if ($terms) : ?>
 
-                    <ul class="brands-slider">
+                    <ul class="brands-slider" id='submenu'>
                     <?php
                         // Fait une première boucle sur les secteurs pour afficher les images dans le diaporama
                         $is_active = true;

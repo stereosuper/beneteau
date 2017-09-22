@@ -15,6 +15,9 @@
     transition: transform $transition;
     &.small{
         transform: translate3d(0, -50px, 0);
+        &.off{
+            transform: translate3d(0, -100%, 0);
+        }
         > .container{
             transform: translate3d(0, 25px, 0);
         }
@@ -22,9 +25,7 @@
             transform: scale(0.8);
         }
     }
-    &.off{
-        transform: translate3d(0, -100%, 0);
-    }
+    
     > .container{
         display: flex;
         width: 100%;
@@ -191,8 +192,8 @@
     .header{
         height: 97px;
         padding: 20px 0;
-        transform: none !important;
         &.small{
+            transform: none;
             > .container{
                 transform: none;
             }

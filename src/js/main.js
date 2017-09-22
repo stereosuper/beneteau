@@ -11,7 +11,9 @@ $(function(){
 
     window.requestAnimFrame = require('./requestAnimFrame.js');
     var throttle = require('./throttle.js');
+    
     var slider = require('./slider.js');
+    var submenu = require('./submenu.js');
 
     var body = $('body');
     var header = $('#header');
@@ -43,6 +45,10 @@ $(function(){
 
     // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
 
+    // Submenu Anchors
+    submenu( $('#submenu'), windowHeight );
+
+    // Responsive Header
     header.on('click', '#burger', function(e){
         
         e.preventDefault();
