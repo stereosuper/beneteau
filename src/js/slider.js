@@ -24,8 +24,6 @@ module.exports = function( slider, windowWidth ){
 
 
     function slide(index, button){
-        setSliderTimeout();
-
         if( index ){
             newActiveSlideImg = slidesImg.eq(index);
             newActiveSlideTxt = slidesTxt.eq(index);
@@ -46,6 +44,8 @@ module.exports = function( slider, windowWidth ){
         
         activeSlideImg.removeClass('on');
         activeSlideTxt.removeClass('on');
+
+        setSliderTimeout();
 
         newActiveSlideImg.addClass('on');
         TweenLite.to(newActiveSlideImg, 0.7, {opacity: 1});
