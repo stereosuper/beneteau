@@ -27,7 +27,7 @@ $link_label = get_sub_field('link_label');
                     // Status Parameters
                     'post_status' => 'publish',
                     // Pagination Parameters
-                    'posts_per_page' => -1,
+                    'posts_per_page' => 9
                 );
 
                 $brands_query = new WP_Query($query_args);

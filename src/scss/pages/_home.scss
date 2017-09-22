@@ -165,6 +165,9 @@
         }
         .img{
             padding: 0 0 77%;
+            > img, .bg{
+                min-height: 140%;
+            }
         }
         time, h3{
             position: relative;

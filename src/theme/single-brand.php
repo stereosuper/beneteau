@@ -41,8 +41,13 @@
                             endif;
                         ?>
                     </h1>
-
-                    <p class="baseline"><?php super_the_field('baseline'); ?></p>
+                    
+                    <?php
+                        $baseline = super_get_field('baseline');
+                        if( $baseline ) :
+                    ?>
+                        <p class="baseline"><?php echo $baseline; ?></p>
+                    <?php endif; ?>
 
                     <div class='text'><?php the_content(); ?></div>
 
