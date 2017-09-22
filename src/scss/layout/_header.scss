@@ -22,6 +22,9 @@
             transform: scale(0.8);
         }
     }
+    &.off{
+        transform: translate3d(0, -100%, 0);
+    }
     > .container{
         display: flex;
         width: 100%;
@@ -188,10 +191,10 @@
     .header{
         height: 97px;
         padding: 20px 0;
+        transform: none !important;
         &.small{
-            transform: translate3d(0, -30px, 0);
             > .container{
-                transform: translate3d(0, 15px, 0);
+                transform: none;
             }
         }
     }

@@ -17,8 +17,19 @@ $(function(){
     var header = $('#header');
     // window.outerWidth returns the window width including the scroll, but it's not working with $(window).outerWidth
     var windowWidth = window.outerWidth, windowHeight = $(window).height();
-    var scrollTop;
+    var scrollTop, lastScrollTop, scrollDir;
 
+
+    function detectScrollDir(){
+        if(scrollTop > lastScrollTop){
+            scrollDir = -1;
+        }else if(scrollTop < lastScrollTop){
+            scrollDir = 1;
+        }else{
+            scrollDir = 0;
+        }
+        lastScrollTop = scrollTop;
+    }
 
     function resizeHandler(){
         windowWidth = window.outerWidth;
@@ -51,8 +62,16 @@ $(function(){
 
     $(document).on('scroll', throttle(function(){
         scrollTop = $(document).scrollTop();
+        
+        detectScrollDir();
 
         scrollTop > 50 ? header.addClass('small') : header.removeClass('small');
+
+        if( scrollTop > 200 ){
+            scrollDir < 1 ? header.addClass('off') : header.removeClass('off');
+        }else{
+            header.removeClass('off');
+        }
     }, 60));
 
 });
