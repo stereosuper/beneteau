@@ -17,6 +17,14 @@
         li{
             font-family: $montserrat;
             font-size: 1.2rem;
+            &.active{
+                > a{
+                    color: $text;
+                }
+                &:before{
+                    background: $secondary;
+                }
+            }
         }
         ul{
             padding: 0 0 0 5px;
@@ -24,6 +32,7 @@
         }
     }
     li{
+        margin: 0 0 5px;
         &:before{
             background: $greyText;
             opacity: 0.5;
@@ -46,7 +55,7 @@
             color: $text;
         }
     }
-    .current_page_item{
+    .current-menu-item{
         > a{
             color: $text;
             &:after{
