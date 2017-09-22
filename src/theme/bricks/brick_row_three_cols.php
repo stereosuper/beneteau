@@ -7,11 +7,11 @@ $title_align = get_sub_field('title_align');
 
 ?>
 
-<?php if (!empty($anchor)) : ?><a name="<?php echo $anchor; ?>"></a><?php endif; ?>
-
-    <?php if (!empty($title)) : ?>
-        <h2 class="align<?php echo $title_align; ?>"><?php echo $title; ?></h2>
-    <?php endif; ?>
+    <?php if (!empty($title)){ ?>
+       <h2 id='<?php echo $anchor; ?>' class="align<?php echo $title_align; ?>"><?php echo $title; ?></h2>
+   <?php }else if(!empty($anchor)){ ?>
+       <div id='<?php echo $anchor; ?>'></div>
+   <?php } ?>
 
     <?php if (super_have_rows('blocks')) : ?>
         <div class='grid grid-contact'>

@@ -8,8 +8,11 @@ $content = get_sub_field('content');
 
 ?>
 
-    <?php if (!empty($anchor)) : ?><a name="<?php echo $anchor; ?>"></a><?php endif; ?>
-    <div class='clearfix'>
-        <?php if (!empty($title)) : ?><h2 class="align<?php echo $title_align; ?>"><?php echo $title; ?></h2><?php endif; ?>
-        <?php if (!empty($content)) : ?><?php echo $content; ?><?php endif; ?>
-    </div>
+<div class='clearfix'>
+    <?php if (!empty($title)){ ?>
+        <h2 id='<?php echo $anchor; ?>' class="align<?php echo $title_align; ?>"><?php echo $title; ?></h2>
+    <?php }else if(!empty($anchor)){ ?>
+        <div id='<?php echo $anchor; ?>'></div>
+    <?php } ?>
+    <?php if (!empty($content)) : ?><?php echo $content; ?><?php endif; ?>
+</div>

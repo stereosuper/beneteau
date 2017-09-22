@@ -9,8 +9,12 @@ window.requestAnimFrame = require('./requestAnimFrame.js');
 var throttle = require('./throttle.js');
 
 
-module.exports = function( submenu, windowHeight ){
+module.exports = function( submenu, windowHeight, child ){
     if( !submenu.length ) return;
+
+    if( child && submenu.find('.current-menu-item').find('.sub-menu').length ){
+        submenu = submenu.find('.current-menu-item').find('.sub-menu');
+    }
 
     var scrollTop;
     var thisSection;

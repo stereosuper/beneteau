@@ -13,6 +13,7 @@ get_header();
 		'theme_location' => 'primary',
 		'container' => false,
 		'menu_class' => 'sidebar-menu',
+		'menu_id' => 'submenu',
 		'depth' => 0,
 		'walker' => new CustomWalkerNavSubMenu()
 		) );

@@ -47,6 +47,7 @@ $(function(){
 
     // Submenu Anchors
     submenu( $('#submenu'), windowHeight );
+    submenu( $('#submenuWrapper'), windowHeight, true );
 
     // Responsive Header
     header.on('click', '#burger', function(e){
