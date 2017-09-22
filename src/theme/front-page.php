@@ -29,6 +29,7 @@
 		<ul class='slider-txt'>
 			<?php
 				$first_class = 'first-on';
+				$title_level = 'h1';
 				while (super_have_rows('slider')) :
 					the_row();
 					$title = get_sub_field('homeslider_title');
@@ -40,7 +41,7 @@
 				<div class='container clearfix'>
 					<div class='wrapper-txt'>
 						<div>
-							<h1 class='title'><?php echo $title; ?></h1>
+							<<?php echo $title_level; ?>  class='title'><?php echo $title; ?></<?php echo $title_level; ?>>
 							<p class='txt'><?php echo $excerpt; ?></p>
 							<?php if (!empty($link)) : ?><div class='button'><a href='<?php echo $link; ?>' class='btn-invert'><?php echo $link_label; ?></a></div><?php endif; ?>
 						</div>
@@ -48,6 +49,7 @@
 				</div>
 			</li>
 			<?php
+					$title_level = 'h2';
 					$first_class = '';
 				endwhile; // while (super_have_rows('slider')) :
 			?>
