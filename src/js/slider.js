@@ -20,13 +20,16 @@ module.exports = function( slider, windowWidth ){
 
     var sliderNav = slider.find('.slider-nav');
 
-    var timeOut;
+    var done = true;
 
 
     function slide(index, button){
-        if( index ){
+        done = false;
+        
+        if( index > -1 ){
             newActiveSlideImg = slidesImg.eq(index);
             newActiveSlideTxt = slidesTxt.eq(index);
+            
         }else{
             newActiveSlideImg = activeSlideImg.next('.slide-img').length ? activeSlideImg.next('.slide-img') : slidesImg.eq(0);
             newActiveSlideTxt = activeSlideTxt.next('.slide-txt').length ? activeSlideTxt.next('.slide-txt') : slidesTxt.eq(0);
@@ -36,24 +39,24 @@ module.exports = function( slider, windowWidth ){
             button = sliderNav.find('.on').parent().next().length ? sliderNav.find('.on').parent().next().find('button') : sliderNav.find('li').eq(0).find('button');
         }
 
-        TweenLite.to(activeSlideTxt.find('.title'), 0.5, {opacity: 0, x: '50px'});
-        TweenLite.to(activeSlideTxt.find('.txt'), 0.5, {opacity: 0, x: '50px', delay: 0.1});
-        TweenLite.to(activeSlideTxt.find('.button'), 0.5, {opacity: 0, x: '50px', delay: 0.2});
+        TweenLite.fromTo(activeSlideTxt.find('.title'), 0.5, {opacity: 1, x: 0}, {opacity: 0, x: '50px', overwrite: true});
+        TweenLite.fromTo(activeSlideTxt.find('.txt'), 0.5, {opacity: 1, x: 0}, {opacity: 0, x: '50px', delay: 0.1, overwrite: true});
+        TweenLite.fromTo(activeSlideTxt.find('.button'), 0.5, {opacity: 1, x: 0}, {opacity: 0, x: '50px', delay: 0.2, overwrite: true});
 
-        TweenLite.to(activeSlideImg, 0.7, {opacity: 0, delay: 0.5});
+        TweenLite.fromTo(activeSlideImg, 0.7, {opacity: 1}, {opacity: 0, delay: 0.5, overwrite: true});
         
         activeSlideImg.removeClass('on');
         activeSlideTxt.removeClass('on');
 
-        setSliderTimeout();
-
         newActiveSlideImg.addClass('on');
-        TweenLite.to(newActiveSlideImg, 0.7, {opacity: 1});
+        TweenLite.fromTo(newActiveSlideImg, 0.7, {opacity: 0}, {opacity: 1, overwrite: true});
 
         newActiveSlideTxt.addClass('on');
-        TweenLite.fromTo(newActiveSlideTxt.find('.title'), 0.5, {opacity: 0, x: '-50px'}, {opacity: 1, x: 0, delay: 0.5});
-        TweenLite.fromTo(newActiveSlideTxt.find('.txt'), 0.5, {opacity: 0, x: '-50px'}, {opacity: 1, x: 0, delay: 0.6});
-        TweenLite.fromTo(newActiveSlideTxt.find('.button'), 0.5, {opacity: 0, x: '-50px'}, {opacity: 1, x: 0, delay: 0.7});
+        TweenLite.fromTo(newActiveSlideTxt.find('.title'), 0.5, {opacity: 0, x: '-50px'}, {opacity: 1, x: 0, delay: 0.5, overwrite: true});
+        TweenLite.fromTo(newActiveSlideTxt.find('.txt'), 0.5, {opacity: 0, x: '-50px'}, {opacity: 1, x: 0, delay: 0.6, overwrite: true});
+        TweenLite.fromTo(newActiveSlideTxt.find('.button'), 0.5, {opacity: 0, x: '-50px'}, {opacity: 1, x: 0, delay: 0.7, onComplete: function(){
+            done = true;
+        }, overwrite: true});
 
         activeSlideImg = slider.find('.slide-img.on');
         activeSlideTxt = slider.find('.slide-txt.on');
@@ -61,11 +64,12 @@ module.exports = function( slider, windowWidth ){
         windowWidth > 780 ? slider.attr('style', '') : slider.height(activeSlideTxt.height());
 
         button.addClass('on').parent().siblings().find('button').removeClass('on');
+
+        setSliderTimeout();
     }
 
     function setSliderTimeout(){
-        clearTimeout( timeOut );
-        timeOut = setTimeout( slide, 8000 );
+        TweenLite.delayedCall( 8, slide );
     }
 
 
@@ -81,12 +85,14 @@ module.exports = function( slider, windowWidth ){
 
     slider.on('click', 'button', function(e){
         e.preventDefault();
-        if( $(this).hasClass('on') ) return;
-        slide($(this).parent().index(), $(this));        
+        if( !$(this).hasClass('on') && done ){
+            TweenLite.killDelayedCallsTo( slide );
+            slide($(this).parent().index(), $(this));
+        }
     });
 
     $(window).on('focusout', function(){
-        clearTimeout(timeOut);
+        TweenLite.killDelayedCallsTo( slide );
     }).on('focusin', setSliderTimeout).on('resize', throttle(function(){
         requestAnimFrame( function(){
             windowWidth = window.outerWidth;
