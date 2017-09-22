@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Yoast SEO - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2017-08-07 15:58:36+0000\n"
+"PO-Revision-Date: 2017-09-21 16:55:53+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,9 +11,82 @@ msgstr ""
 "Language: fr\n"
 "Project-Id-Version: Plugins - Yoast SEO - Stable (latest release)\n"
 
+#: inc/class-wpseo-rank.php:137
+msgid "Readability: Good"
+msgstr "Lisibilité : Bonne"
+
+#: inc/class-wpseo-rank.php:136
+msgid "Readability: OK"
+msgstr "Lisibilité : OK"
+
+#: inc/class-wpseo-rank.php:135
+msgid "Readability: Needs improvement"
+msgstr "Lisibilité : Peut être améliorée"
+
+#: inc/class-wpseo-rank.php:119
+msgid "SEO: Needs improvement"
+msgstr "SEO : Peut être amélioré"
+
+#: admin/views/licenses.php:162 admin/views/licenses.php:220
+msgid "Activate your license on My Yoast"
+msgstr "Activez votre licence sur My Yoast"
+
+#: admin/views/licenses.php:161 admin/views/licenses.php:219
+msgid "Not activated"
+msgstr "Non activé"
+
+#: admin/views/licenses.php:159 admin/views/licenses.php:217
+msgid "Manage your license on My Yoast"
+msgstr "Gérez votre licence sur My Yoast"
+
+#: admin/views/licenses.php:158 admin/views/licenses.php:216
+msgid "Activated"
+msgstr "Activé"
+
+#: admin/class-yoast-form.php:204
+msgid "%1s recommendations for you"
+msgstr "%1s recommandations pour vous"
+
+#: admin/class-meta-columns.php:205
+msgid "All Readability Scores"
+msgstr "Tous les scores de lisibilité"
+
+#: admin/class-meta-columns.php:202
+msgid "Filter by Readability Score"
+msgstr "Filtrer par score de lisibilité"
+
+#. translators: %1$s expands to the product name. %2$s expands to a link to My
+#. Yoast
+#: admin/class-license-page-manager.php:197
+msgid "You are not receiving updates or support! Fix this problem by adding this site and enabling %1$s for it in %2$s."
+msgstr "Vous ne recevez ni mises à jour, ni support ! Réglez ce problème en ajoutant ce site et activez %1$s pour ce domaine dans %2$s."
+
+#: vendor/yoast/whip/src/facades/wordpress.php:29
+msgid "Remind me again in 4 weeks."
+msgstr "Me le rappeler dans 4 semaines."
+
+#. translators: %1$s expands to the request method
+#: admin/class-remote-request.php:67
+msgid "Request method %1$s is not valid."
+msgstr "La méthode de requête %1$s n’est pas valide."
+
 #: admin/views/tabs/tool/import-seo.php:27
 msgid "Import from Jetpack SEO"
 msgstr "Importer depuis Jetpack SEO"
+
+#: admin/views/partial-alerts-warnings.php:12
+msgid "Muted notifications:"
+msgstr "Notifications masquées :"
+
+#: admin/views/partial-alerts-errors.php:12
+msgid "Muted problems:"
+msgstr "Problèmes masqués :"
+
+#. translators: %1$s expands to the social network's name, %2$s to Yoast SEO
+#. Premium.
+#: admin/class-social-admin.php:170
+msgid "Do you want to preview what it will look like if people share this post on %1$s? You can, with %2$s."
+msgstr "Souhaitez-vous voir ce à quoi ressemblera le partage de cet article sur %1$s ? Vous le pouvez, avec %2$s."
 
 #: admin/class-premium-upsell-admin-block.php:64
 msgid "Find out why you should upgrade to %s &raquo;"
@@ -22,6 +95,25 @@ msgstr "Découvrez pourquoi vous devriez passer à %s »"
 #: admin/class-premium-upsell-admin-block.php:61
 msgid "Go premium!"
 msgstr "Passer à la version Premium"
+
+#: admin/class-premium-upsell-admin-block.php:58
+msgid "Dismiss %s upgrade motivation"
+msgstr "Rejeter %s propositions de passage vers la version Pro."
+
+#: admin/views/tabs/dashboard/features.php:54
+msgid "This feature helps you improve the internal link structure of your site. If you want to know more about the why and how of internal linking, check out the %1$sarticle about internal linking on Yoast.com%2$s."
+msgstr "Cette fonctionnalité vous aide à améliorer le maillage interne de votre site. Si vous souhaitez en apprendre plus sur le pourquoi et le comment, jetez un œil à %1$sl’article à ce sujet sur Yoast.com (en anglais)%2$s."
+
+#. translators: %1$s: Yoast SEO. %2$s: Version number of Yoast SEO. %3$s: link
+#. to knowledge base article about solving table issue. %4$s: is anchor
+#. closing.
+#: admin/links/class-link-table-accessible-notifier.php:36
+msgid ""
+"The <strong>Text link counter</strong> feature (introduced in %1$s %2$s) is currently disabled. For this feature to work %1$s needs to create a table in your database. We were unable to create this table automatically.\n"
+"\t\t\t\t\tPlease read the following %3$sknowledge base article%4$s to find out how to resolve this problem."
+msgstr ""
+"La fonctionnalité du <strong>compteur de liens</strong> (introduite dans %1$s %2$s) est actuellement désactivée. Pour qu’elle fonctionne, %1$s a besoin de créer une table dans votre base de données. Nous n’avons pas pu le faire automatiquement.\n"
+"\t\t\t\t\tVeuillez lire cet %3$sarticle de notre base de connaissances (en anglais)%4$s pour comprendre comment résoudre le problème."
 
 #: admin/links/class-link-reindex-dashboard.php:164
 msgid "Good job! All the links in your texts have been counted."
@@ -68,6 +160,35 @@ msgstr "Les liens dans tous vos textes publics doivent être comptés. Cela four
 msgid "Text link counter"
 msgstr "Compteur de lien textuel"
 
+#. translators: 1: link to yoast.com post about internal linking suggestion. 2:
+#. is anchor closing. 3: button to the recalculation option. 4: closing button
+#: admin/links/class-link-notifier.php:89
+msgid ""
+"To make sure all the links in your texts are counted, we need to analyze all your texts.\n"
+"\t\t\t\t\tAll you have to do is press the following button and we'll go through all your texts for you.\n"
+"\n"
+"\t\t\t\t\t%3$sCount links%4$s\n"
+"\n"
+"\t\t\t\t\tThe Text link counter feature provides insights in how many links are found in your text and how many links are referring to your text. This is very helpful when you are improving your %1$sinternal linking%2$s."
+msgstr ""
+"Pour s’assurer que tous les liens dans vos textes sont comptés, nous devons analysés tous vos textes.\n"
+"\t\t\t\t\tTout ce que vous avez à faire, c’est de cliquer sur le bouton ci-dessous et nous le ferons pour vous.\n"
+"\n"
+"\t\t\t\t\t%3$sCompter les liens%4$s\n"
+"\n"
+"\t\t\t\t\tLa fonctionnalité du compteur de liens vous fournit le nombre de liens présents dans vos textes et combien pointent vers vos textes. C’est utile si vous souhaitez optimiser votre %1$smaillage interne%2$s."
+
+#. translators: %1$s: Yoast SEO. %2$s: Version number of Yoast SEO. %3$s: PHP
+#. version %4$s: The current PHP versione. %5$s link to knowledge base article
+#. about solving PHP issue. %6$s: is anchor closing.
+#: admin/links/class-link-compatibility-notifier.php:36
+msgid ""
+"The <strong>Text link counter</strong> feature (introduced in %1$s %2$s) is currently disabled. For this feature to work %1$s requires at least PHP version %3$s. We have detected PHP version %4$s on this website.\n"
+"\t\t\t\t\tPlease read the following %5$sknowledge base article%6$s to find out how to resolve this problem."
+msgstr ""
+"La fonctionnalité du <strong>compteur de liens</strong> (introduite dans %1$s %2$s) est actuellement désactivée. Pour qu’elle fonctionne, %1$s nécessite au moins PHP version %3$s. Nous avons détecté la version %4$s sur ce site.\n"
+"\t\t\t\t\tVeuillez lire cet %5$sarticle de notre base de connaissances (en anglais)%6$s pour comprendre comment résoudre le problème."
+
 #: admin/links/class-link-columns.php:159
 msgid "# internal links to"
 msgstr "# vers liens internes"
@@ -84,6 +205,13 @@ msgstr "# liens dans l’article"
 msgid "Number of internal links in this post. See \"Yoast Columns\" text in the help tab for more info."
 msgstr "Nombre de liens internes dans cet article. Voir « Colonnes Yoast » dans l’onglet Aide pour plus d’info."
 
+#. translators: %1$s: Yoast SEO, %2$s: Link to article about content analysis,
+#. %3$s: Anchor closing, %4$s: Link to article about text links, %5$s: Emphasis
+#. open tag, %6$s: Emphasis close tag
+#: admin/class-yoast-columns.php:30
+msgid "%1$s adds several columns to this page. We've written an article about %2$show to use the SEO score and Readability score%3$s. The links columns show the number of articles on this site linking %5$sto%6$s this article and the number of URLs linked %5$sfrom%6$s this article. Learn more about %4$show to use these features to improve your internal linking%3$s, which greatly enhances your SEO."
+msgstr "%1$s ajoute plusieurs colonnes à cette page. Nous avons écrit un article expliquant %2$scomment utiliser les scores SEO et de lisibilité%3$s. La colonne des liens affiche le nombre de contenus sur ce site faisant des liens %5$svers%6$s ce contenu et le nombre d’URL visées %5$spar%6$s ce contenu. Apprenez-en plus sur %4$sl’utilisation de ces fonctionnalités et l’amélioration de votre maillage interne%3$s, ce qui améliore fortement votre référencement naturel."
+
 #. translators: %s expands to Yoast
 #: admin/class-yoast-columns.php:26
 msgid "%s Columns"
@@ -92,6 +220,10 @@ msgstr "Colonnes %s"
 #: admin/class-meta-columns.php:69 admin/taxonomy/class-taxonomy-columns.php:55
 msgid "Readability score"
 msgstr "Score de lisibilité"
+
+#: admin/banner/class-admin-banner-sidebar.php:361
+msgid "Take the online Structured Data Training course and learn how to create rich snippets!"
+msgstr "Suivez la formation en ligne « Structured Data Training » et apprenez à créer des extraits enrichis !"
 
 #: languages/yoast-seo-js.php:208
 msgid "The focus keyword appears only in %2$d (out of %1$d) subheadings in your copy. Try to use it in at least one more subheading."
@@ -141,7 +273,7 @@ msgstr "%1$sAperçu des réseaux sociaux%2$s: Facebook &amp; Twitter"
 msgid "Scroll to see the preview content."
 msgstr "Faire défiler pour voir l’aperçu du contenu."
 
-#: languages/yoast-components.php:81
+#: languages/yoast-components.php:84
 msgid "Enter authorization code here..."
 msgstr "Saisissez le code d’autorisation ici&hellip;"
 
@@ -625,7 +757,7 @@ msgstr "La méta description spécifiée compte plus de %1$d caractères. En la 
 msgid "The keyword density is %1$s, which is too low; the focus keyword was found %2$d times."
 msgstr "La densité du mot-clé est de %1$s, ce qui est trop faible, le mot-clé a été trouvé %2$d fois."
 
-#: languages/yoast-components.php:26
+#: languages/yoast-components.php:29
 msgid "Step %1$d: %2$s"
 msgstr "Étape %1$d : %2$s"
 
@@ -865,115 +997,115 @@ msgstr "La phrase clé fait plus de 10 mots, elle devrait être plus courte."
 msgid "ok"
 msgstr "OK"
 
-#: languages/yoast-components.php:121
+#: languages/yoast-components.php:124
 msgid "Choose an image"
 msgstr "Choisir une image"
 
-#: languages/yoast-components.php:117
+#: languages/yoast-components.php:120
 msgid "Remove the image"
 msgstr "Supprimer cette image"
 
-#: languages/yoast-components.php:114
+#: languages/yoast-components.php:117
 msgid "company logo image preview"
 msgstr "Aperçu de l’image du logo de la société"
 
-#: languages/yoast-components.php:111
+#: languages/yoast-components.php:114
 msgid "Choose image"
 msgstr "Choisir une image"
 
-#: languages/yoast-components.php:108
+#: languages/yoast-components.php:111
 msgid "MailChimp signup failed:"
 msgstr "Échec d’inscription à MailChimp :"
 
-#: languages/yoast-components.php:105
+#: languages/yoast-components.php:108
 msgid "Sign Up!"
 msgstr "Abonnez-vous !"
 
-#: languages/yoast-components.php:102
+#: languages/yoast-components.php:105
 msgid "Name"
 msgstr "Nom"
 
-#: languages/yoast-components.php:96
+#: languages/yoast-components.php:99
 msgid "There is an error with the request."
 msgstr "Une erreur s’est produite avec votre requête."
 
-#: languages/yoast-components.php:90
+#: languages/yoast-components.php:93
 msgid "Select profile"
 msgstr "Sélectionnez un profil"
 
-#: languages/yoast-components.php:87
+#: languages/yoast-components.php:90
 msgid "Choose a profile"
 msgstr "Choisissez un profil"
 
-#: languages/yoast-components.php:75
+#: languages/yoast-components.php:78
 msgid "Reauthenticate with Google"
 msgstr "Se ré-authentifier avec Google"
 
-#: languages/yoast-components.php:72
+#: languages/yoast-components.php:75
 msgid "To allow %s to fetch your Google Search Console information, please enter your Google Authorization Code. Clicking the button below will open a new window."
 msgstr "Pour permettre à %s de récupérer vos informations de la Google Search Console, veuillez saisir votre code d’autorisation de Google. Lorsque vous cliquerez sur le bouton ci-dessous une nouvelle fenêtre s’ouvrira."
 
-#: languages/yoast-components.php:66
+#: languages/yoast-components.php:69
 msgid "Search Result Preview"
 msgstr "Aperçu du résultat de la recherche"
 
-#: languages/yoast-components.php:63
+#: languages/yoast-components.php:66
 msgid "URL preview: "
 msgstr "Aperçu de l’URL : "
 
-#: languages/yoast-components.php:60 languages/yoast-seo-js.php:395
+#: languages/yoast-components.php:63 languages/yoast-seo-js.php:395
 msgid "Please provide a meta description by editing the snippet below."
 msgstr "Merci de fournir une méta description en modifiant l’extrait ci-dessous."
 
-#: languages/yoast-components.php:57 languages/yoast-seo-js.php:353
+#: languages/yoast-components.php:60 languages/yoast-seo-js.php:353
 msgid "Edit snippet"
 msgstr "Modifier l’extrait"
 
-#: languages/yoast-components.php:54
+#: languages/yoast-components.php:57
 msgid "Search Result Form"
 msgstr "Formulaire du résultat de recherche"
 
-#: languages/yoast-components.php:51 languages/yoast-seo-js.php:380
+#: languages/yoast-components.php:54 languages/yoast-seo-js.php:380
 msgid "You can click on each element in the preview to jump to the Snippet Editor."
 msgstr "Vous pouvez cliquez sur n’importe quel élément de l’aperçu pour retourner dans l’éditeur d’extrait."
 
-#: languages/yoast-components.php:47
+#: languages/yoast-components.php:50
 msgid "SEO title preview: "
 msgstr "Aperçu du titre SEO : "
 
-#: languages/yoast-components.php:43
+#: languages/yoast-components.php:46
 msgid "This is an example title - edit by clicking here"
 msgstr "Un exemple de titre - modifiez-le en cliquant ici"
 
-#: languages/yoast-components.php:39
+#: languages/yoast-components.php:42
 msgid "Slug preview: "
 msgstr "Aperçu de l’identifiant : "
 
-#: languages/yoast-components.php:36
+#: languages/yoast-components.php:39
 msgid "Meta description preview: "
 msgstr "Aperçu de la méta description : "
 
-#: languages/yoast-components.php:32
+#: languages/yoast-components.php:35
 msgid "Please provide a meta description by editing it here."
 msgstr "Veuillez fournir une méta description en la modifiant ci-dessous."
 
-#: languages/yoast-components.php:29
+#: languages/yoast-components.php:32
 msgid "Close search result form"
 msgstr "Fermer le formulaire du résultat de recherche"
 
-#: languages/yoast-components.php:23
+#: languages/yoast-components.php:26
 msgid "A problem occurred when saving the current step, {{link}}please file a bug report{{/link}} describing what step you are on and which changes you want to make (if any)."
 msgstr "Un problème est survenu lors de l’enregistrement de l’étape en cours, {{link}}veuillez envoyer un rapport de bug{{/link}} décrivant l’étape sur laquelle vous vous trouvez et quels changements vous voulez y faire (le cas échéant)."
 
-#: languages/yoast-components.php:17
+#: languages/yoast-components.php:20
 msgid "Close the Wizard"
 msgstr "Fermer l’assistant"
 
-#: languages/yoast-components.php:11
+#: languages/yoast-components.php:14
 msgid "Previous step"
 msgstr "Étape précédente"
 
-#: languages/yoast-components.php:5
+#: languages/yoast-components.php:8
 msgid "Next step"
 msgstr "Étape suivante"
 
@@ -1128,6 +1260,10 @@ msgstr "Au fait, savez-vous que nous avons aussi une %1$sextension Premium%2$s 
 #: admin/class-bulk-editor-list-table.php:763
 msgid "(no title)"
 msgstr "(sans titre)"
+
+#: languages/yoast-components.php:5
+msgid "%s installation wizard"
+msgstr "%s assistant d’installation"
 
 #: admin/views/tabs/dashboard/features.php:72
 msgid "%1$s comes with a lot of features. You can enable / disable some of them below."
@@ -1742,7 +1878,7 @@ msgid "Content optimization"
 msgstr "Optimisation du contenu"
 
 #: admin/google_search_console/views/gsc-display.php:47
-#: languages/yoast-components.php:84
+#: languages/yoast-components.php:87
 msgid "Enter your Google Authorization Code and press the Authenticate button."
 msgstr "Saisissez votre code d’autorisation de Google et appuyez sur le bouton d’authentification."
 
@@ -2256,6 +2392,11 @@ msgstr "Activé"
 msgid "Disabled"
 msgstr "Désactivé"
 
+#. translators: %1$s: expands to Yoast SEO, %2$s: expands to Ryte.
+#: admin/views/dashboard-widget.php:87
+msgid "%1$s has not fetched your site's indexability status yet from %2$s"
+msgstr "%1$s n’a pas encore récupéré l’état d’indexabilité depuis %2$s."
+
 #. translators: %s: wp_title() function
 #: inc/class-wpseo-replace-vars.php:1119
 msgid "The separator defined in your theme's %s tag."
@@ -2286,6 +2427,12 @@ msgstr "Analyser le site en entier"
 #: admin/views/dashboard-widget.php:99
 msgid "Fetch the current status"
 msgstr "Récupérer l’état actuel"
+
+#. translators: %1$s: opens a link to a related knowledge base article, %2$s:
+#. expands to Yoast SEO, %3$s: closes the link, %4$s: expands to Ryte.
+#: admin/views/dashboard-widget.php:76
+msgid "%1$s%2$s has not been able to fetch your site's indexability status%3$s from %4$s"
+msgstr "%1$s%2$s n’a pas pu récupérer l’état d’indexabilité%3$s depuis %4$s."
 
 #: admin/views/dashboard-widget.php:60
 msgid "Your homepage can be indexed by search engines."
@@ -3821,7 +3968,7 @@ msgid "Save Profile"
 msgstr "Enregistrer le profil"
 
 #: admin/google_search_console/views/gsc-display.php:80
-#: languages/yoast-components.php:93
+#: languages/yoast-components.php:96
 msgid "There were no profiles found"
 msgstr "Aucun profil n’a été trouvé. "
 
@@ -3838,12 +3985,12 @@ msgid "Reauthenticate with Google "
 msgstr "Se ré-authentifier avec Google"
 
 #: admin/google_search_console/views/gsc-display.php:51
-#: languages/yoast-components.php:78
+#: languages/yoast-components.php:81
 msgid "Authenticate"
 msgstr "S’authentifier"
 
 #: admin/google_search_console/views/gsc-display.php:45
-#: languages/yoast-components.php:69
+#: languages/yoast-components.php:72
 msgid "Get Google Authorization Code"
 msgstr "Obtenir un Code d’Autorisation Google"
 
@@ -4187,20 +4334,20 @@ msgstr "Autres"
 msgid "Archives"
 msgstr "Archives"
 
-#: languages/yoast-components.php:99
+#: languages/yoast-components.php:102
 msgid "Email"
 msgstr "E-mail"
 
-#: languages/yoast-components.php:14
+#: languages/yoast-components.php:17
 msgid "Previous"
 msgstr "Précédent"
 
-#: languages/yoast-components.php:8
+#: languages/yoast-components.php:11
 msgid "Next"
 msgstr "Suivant"
 
 #: admin/google_search_console/views/gsc-redirect-nopremium.php:18
-#: languages/yoast-components.php:20
+#: languages/yoast-components.php:23
 msgid "Close"
 msgstr "Fermer"
 
