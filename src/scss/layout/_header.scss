@@ -12,12 +12,23 @@
     z-index: 10;
     font-family: $roboto;
     background: $white;
+    transition: transform $transition;
+    &.small{
+        transform: translate3d(0, -50px, 0);
+        > .container{
+            transform: translate3d(0, 25px, 0);
+        }
+        .logo{
+            transform: scale(0.8);
+        }
+    }
     > .container{
         display: flex;
         width: 100%;
         position: relative;
         align-items: center;
         justify-content: space-between;
+        transition: transform $transition;
     }
 }
 
@@ -78,6 +89,7 @@
     max-width: 340px;
     border: 0;
     margin: 0 $gutter*2 0 0;
+    transform-origin: 0 50%;
 }
 
 .nav{
@@ -176,6 +188,12 @@
     .header{
         height: 97px;
         padding: 20px 0;
+        &.small{
+            transform: translate3d(0, -30px, 0);
+            > .container{
+                transform: translate3d(0, 15px, 0);
+            }
+        }
     }
 
     .menu-main{

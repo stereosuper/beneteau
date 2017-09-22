@@ -14,8 +14,10 @@ $(function(){
     var slider = require('./slider.js');
 
     var body = $('body');
+    var header = $('#header');
     // window.outerWidth returns the window width including the scroll, but it's not working with $(window).outerWidth
     var windowWidth = window.outerWidth, windowHeight = $(window).height();
+    var scrollTop;
 
 
     function resizeHandler(){
@@ -30,7 +32,7 @@ $(function(){
 
     // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
 
-    $('#header').on('click', '#burger', function(e){
+    header.on('click', '#burger', function(e){
         
         e.preventDefault();
         $(this).toggleClass('on');
@@ -48,7 +50,9 @@ $(function(){
     }, 60));
 
     $(document).on('scroll', throttle(function(){
+        scrollTop = $(document).scrollTop();
 
+        scrollTop > 50 ? header.addClass('small') : header.removeClass('small');
     }, 60));
 
 });
