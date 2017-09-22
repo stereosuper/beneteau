@@ -156,7 +156,7 @@
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin: 0 0 12em;
+    margin: 6.5em 0 12em;
     .push-container{
         width: 50%;
         padding: 0 $gutter 0 0;
@@ -164,11 +164,15 @@
             width: calc(50% - #{$gutter});
         }
         .img{
-            padding: 0 0 114%;
+            padding: 0 0 77%;
+        }
+        time, h3{
+            position: relative;
+            z-index: 1;
         }
         time{
             display: block;
-            margin: -50px 0 25px;
+            margin: -20px 0 25px;
             font-family: $roboto;
             font-size: 1.4rem;
             letter-spacing: -0.02em;
@@ -382,10 +386,14 @@
                     margin-top: 5em;
                 }
             }
-            .img{
+            .img-wrapper{
                 max-width: 50%;
                 min-width: 140px;
-                padding: 0 0 50%;
+            }
+            .img{
+                > img, > .bg{
+                    max-height: 215px;
+                }
             }
             h3{
                 display: inline-block;

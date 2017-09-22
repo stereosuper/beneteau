@@ -30,8 +30,11 @@ $content = get_sub_field('content');
                     $news_query->the_post();
         ?>
         <a href='<?php the_permalink() ?>'>
-            <div class='img'>
-                <?php the_post_thumbnail('medium'); ?>
+            <div class='img-wrapper'>
+                <div class='img'>
+                    <div class='bg'></div>
+                    <?php the_post_thumbnail('medium'); ?>
+                </div>
             </div>
             <time><?php the_time(__('d/m/Y', 'beneteau')); ?></time>
             <h3><?php the_title(); ?></h3>
