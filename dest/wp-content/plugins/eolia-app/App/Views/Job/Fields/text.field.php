@@ -35,7 +35,8 @@ if ( ! isset( $options->markup ) ) {
 }
 
 ?>
-<div class="<?php echo $attributes['class'] ?>" data-field-id="<?php echo $field->get_id() ?>" data-field-value="<?php echo esc_attr($field->get_value()) ?>">
+<div class="<?php echo $attributes['class'] ?>" data-field-id="<?php echo $field->get_id() ?>"
+     data-field-value="<?php echo esc_attr( $field->get_value() ) ?>">
 	<div class="eolia_field_inner eolia_field_inner--<?php echo $field->get_component() ?>">
 		<<?php echo $options->markup ?>>
 		<span class="eolia_field_inner_before">

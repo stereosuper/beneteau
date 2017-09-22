@@ -43,10 +43,6 @@ class StreamController {
 	 */
 	private static $_instance;
 	/**
-	 * @var mixed|void
-	 */
-	private $options;
-	/**
 	 * @var
 	 */
 	private static $offers;
@@ -58,6 +54,10 @@ class StreamController {
 	 * @var
 	 */
 	private static $application_fields;
+	/**
+	 * @var mixed|void
+	 */
+	private $options;
 
 	/**
 	 * Stream constructor.
@@ -67,7 +67,18 @@ class StreamController {
 	}
 
 	/**
-	 * @param string $type      The stream type.
+	 * @return \Eolia\Controllers\StreamController
+	 */
+	public static function get_instance() {
+		if ( null === self::$_instance ) {
+			self::$_instance = new self();
+		}
+
+		return self::$_instance;
+	}
+
+	/**
+	 * @param string    $type   The stream type.
 	 *
 	 * @param null|bool $forced If we force cache refresh.
 	 *
@@ -105,7 +116,7 @@ class StreamController {
 	}
 
 	/**
-	 * @param  string $url     The file url to get.
+	 * @param  string   $url   The file url to get.
 	 * @param null|bool $force If we force refresh.
 	 *
 	 * @return bool|string
@@ -127,8 +138,8 @@ class StreamController {
 			curl_setopt( $curl, CURLOPT_URL, $url );
 			curl_setopt( $curl, CURLOPT_RETURNTRANSFER, true );
 			curl_setopt( $curl, CURLOPT_HEADER, false );
-			$stream = curl_exec( $curl );
-			$httpcode = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+			$stream   = curl_exec( $curl );
+			$httpcode = curl_getinfo( $curl, CURLINFO_HTTP_CODE );
 			curl_close( $curl );
 
 			if ( ! $stream || $httpcode !== 200 ) {
@@ -164,17 +175,6 @@ class StreamController {
 
 		return $output;
 
-	}
-
-	/**
-	 * @return \Eolia\Controllers\StreamController
-	 */
-	public static function get_instance() {
-		if ( null === self::$_instance ) {
-			self::$_instance = new self();
-		}
-
-		return self::$_instance;
 	}
 
 

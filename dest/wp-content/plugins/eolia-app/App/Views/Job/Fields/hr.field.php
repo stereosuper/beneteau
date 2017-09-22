@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /** @var \Eolia\Controllers\FieldController $field */
 $options    = $field->get_options();
 $attributes = array(
-	'class' => 'eolia_field eolia_field--'.$field->get_component(),
+	'class' => 'eolia_field eolia_field--' . $field->get_component(),
 );
 ?>
 <div class="<?php echo $attributes['class'] ?>" data-field-id="<?php echo $field->get_id() ?>">

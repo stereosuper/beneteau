@@ -106,17 +106,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<?php
 				/** @var \Eolia\Models\FieldModel $field */
 				foreach ( $fields as $field ) {
-					if ( !$field->get_label()) {
+					if ( ! $field->get_label() ) {
 						continue;
 					}
 					echo '
-                            <li class="field" data-type="' . $field->get_type() . '" data-component="'.$field->get_component().'">
-                                <span class="field_label"><span class="fa fa-fw ' . ( $field->get_type() === 'datetime' ? 'fa-calendar' : 'fa-font' ) . '"></span>' . stripslashes(
-							$field->get_label()
-						) . '</span>
-                                <input type="button" data-id="' . $field->get_id() . '" data-type="' . $field->get_type() . '" data-component="'.$field->get_component().'" class="add_field button button-small" value="' . _x( 'Add to form',
-							'admin form builder button', $this->plugin_name ) . '" title="' . _x( 'Click to add',
-							'admin form builder placeholder' ) . '" />
+                            <li class="field" data-type="' . $field->get_type(
+						) . '" data-component="' . $field->get_component() . '">
+                                <span class="field_label"><span class="fa fa-fw ' . ( $field->get_type(
+						) === 'datetime' ? 'fa-calendar' : 'fa-font' ) . '"></span>' . stripslashes(
+						     $field->get_label()
+					     ) . '</span>
+                                <input type="button" data-id="' . $field->get_id() . '" data-type="' . $field->get_type(
+						) . '" data-component="' . $field->get_component(
+						) . '" class="add_field button button-small" value="' . _x(
+						     'Add to form',
+						     'admin form builder button', $this->plugin_name
+					     ) . '" title="' . _x(
+						     'Click to add',
+						     'admin form builder placeholder'
+					     ) . '" />
                             </li>
                         ';
 				}

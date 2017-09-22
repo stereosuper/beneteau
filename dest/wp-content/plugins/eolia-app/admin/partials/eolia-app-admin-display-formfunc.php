@@ -385,20 +385,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<label for="<?php echo $this->plugin_name; ?>-is_textkernel1">
 					<input type="radio" id="<?php echo $this->plugin_name; ?>-is_textkernel1"
 					       name="<?php echo $this->plugin_name; ?>[is_textkernel]"
-					       value="1" <?php echo ( $options['is_textkernel'] == 1 && class_exists( 'SoapClient' ) ) ? 'checked="checked"' : ''; ?> /><?= __(
+					       value="1" <?php echo ( $options['is_textkernel'] == 1 && class_exists(
+							'SoapClient'
+						) ) ? 'checked="checked"' : ''; ?> /><?= __(
 						'Yes'
 					) ?>
 				</label>
 				<label for="<?php echo $this->plugin_name; ?>-is_textkernel0">
 					<input type="radio" id="<?php echo $this->plugin_name; ?>-is_textkernel0"
 					       name="<?php echo $this->plugin_name; ?>[is_textkernel]"
-					       value="0" <?php echo ( false == $options['is_textkernel'] || ! class_exists( 'SoapClient' ) ) ? 'checked="checked"' : ''; ?> /><?= __(
+					       value="0" <?php echo ( false == $options['is_textkernel'] || ! class_exists(
+							'SoapClient'
+						) ) ? 'checked="checked"' : ''; ?> /><?= __(
 						'No'
 					) ?>
 				</label>
 			</td>
 		</tr>
-		<tr class="if_is_textkernel <?php echo ( false == $options['is_textkernel'] || ! class_exists( 'SoapClient' ) ) ? 'wpeolia_hidden' : ''; ?>">
+		<tr class="if_is_textkernel <?php echo ( false == $options['is_textkernel'] || ! class_exists(
+				'SoapClient'
+			) ) ? 'wpeolia_hidden' : ''; ?>">
 			<th class="row decal">
 				<label for="<?php echo $this->plugin_name; ?>-textkernel_url">
 					<span><?= __( 'API Url', 'admin form builder label', $this->plugin_name ); ?> :</span>
@@ -412,7 +418,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				       value="<?php echo $options['textkernel_url']; ?>"/>
 			</td>
 		</tr>
-		<tr class="if_is_textkernel <?php echo ( false == $options['is_textkernel'] || ! class_exists( 'SoapClient' ) ) ? 'wpeolia_hidden' : ''; ?>">
+		<tr class="if_is_textkernel <?php echo ( false == $options['is_textkernel'] || ! class_exists(
+				'SoapClient'
+			) ) ? 'wpeolia_hidden' : ''; ?>">
 			<th class="row decal">
 				<label for="<?php echo $this->plugin_name; ?>-textkernel_account">
 					<span><?= __( 'TextKernel Account', 'admin form builder label', $this->plugin_name ); ?> :</span>
@@ -426,7 +434,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 				       value="<?php echo $options['textkernel_account']; ?>"/>
 			</td>
 		</tr>
-		<tr class="if_is_textkernel <?php echo ( false == $options['is_textkernel'] || ! class_exists( 'SoapClient' ) ) ? 'wpeolia_hidden' : ''; ?>">
+		<tr class="if_is_textkernel <?php echo ( false == $options['is_textkernel'] || ! class_exists(
+				'SoapClient'
+			) ) ? 'wpeolia_hidden' : ''; ?>">
 			<th class="row decal">
 				<label for="<?php echo $this->plugin_name; ?>-textkernel_login">
 					<span><?= __( 'TextKernel Login', 'admin form builder label', $this->plugin_name ); ?> :</span>
@@ -488,7 +498,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 						} else {
 							$selected = '';
 						}
-						echo '<option value="' . $field->get_id() . '" ' . $selected . '>' . ( ! empty( $field->get_label() ) ? $field->get_label() : $field->get_id() ) . '</option>';
+						echo '<option value="' . $field->get_id(
+							) . '" ' . $selected . '>' . ( ! empty( $field->get_label() ) ? $field->get_label(
+							) : $field->get_id() ) . '</option>';
 					} ?>
 				</select>
 				<p class="help">

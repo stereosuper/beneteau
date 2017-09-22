@@ -2,6 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // don't access directly
 }
+
 /**
  * Register all actions and filters for the plugin.
  *

@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</th>
 			<td>
 				<select name="<?php echo $this->plugin_name; ?>[res_main_category]">
-					<option value="uncategorized"><?php _ex('Uncategorized', 'Default category slug'); ?></option>
+					<option value="uncategorized"><?php _ex( 'Uncategorized', 'Default category slug' ); ?></option>
 					<?php /** @var \Eolia\Controllers\FieldController $field */
 					foreach ( $fields as $field ) :
 						if ( empty( $field->get_label() ) ) {
@@ -25,7 +25,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 						}
 						?>
 						<option
-							value="<?= $field->get_id() ?>"<?= ( $options['res_main_category'] === $field->get_id() ? ' selected="selected"' : '' ) ?>><?= trim( $field->get_label() ) ?></option>
+							value="<?= $field->get_id() ?>"<?= ( $options['res_main_category'] === $field->get_id(
+						) ? ' selected="selected"' : '' ) ?>><?= trim( $field->get_label() ) ?></option>
 					<?php endforeach; ?>
 				</select>
 			</td>
@@ -43,7 +44,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 						}
 						?>
 						<option
-							value="<?= $field->get_id() ?>" <?= ( $options['res_orderby'] === $field->get_id() ? ' selected="selected"' : '' ) ?>><?= trim( $field->get_label() ) ?></option>
+							value="<?= $field->get_id() ?>" <?= ( $options['res_orderby'] === $field->get_id(
+						) ? ' selected="selected"' : '' ) ?>><?= trim( $field->get_label() ) ?></option>
 					<?php endforeach; ?>
 				</select>
 				<select name="<?php echo $this->plugin_name; ?>[res_order]">
@@ -60,19 +62,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<tr>
 			<th class="row">
 				<label for="<?php echo $this->plugin_name; ?>-description_field">
-					<span><?= __( 'SEO Jobs description field', 'admin form builder label', $this->plugin_name ); ?> :</span>
+					<span><?= __( 'SEO Jobs description field', 'admin form builder label', $this->plugin_name ); ?>
+						:</span>
 				</label>
 			</th>
 			<td>
 				<select name="<?php echo $this->plugin_name; ?>[description_field]">
 					<?php /** @var \Eolia\Controllers\FieldController $field */
-					foreach ($fields as $field ) :
+					foreach ( $fields as $field ) :
 						if ( empty( $field->get_label() ) ) {
 							continue;
 						}
 						?>
 						<option
-							value="<?= $field->get_id() ?>" <?= ( array_key_exists('description_field', $options) && $options['description_field'] === $field->get_id() ? ' selected="selected"' : '' ) ?>><?= trim( $field->get_label() ) ?></option>
+							value="<?= $field->get_id() ?>" <?= ( array_key_exists(
+								                                      'description_field', $options
+							                                      ) && $options['description_field'] === $field->get_id(
+						) ? ' selected="selected"' : '' ) ?>><?= trim( $field->get_label() ) ?></option>
 					<?php endforeach; ?>
 				</select>
 			</td>
@@ -110,9 +116,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 					echo '
 				                            <li class="field">
 				                                &raquo; <span class="field_label">' . $field->get_label() . '</span>
-				                                <input type="button" data-type="' . $field->get_type() . '" data-id="' . $field->get_id() . '" class="add_field button button-small" value="' . _x( 'Add to columns',
-							'admin results settings', $this->plugin_name ) . '" title="' . _x( 'Click to add',
-							'admin form builder placeholder' ) . '" />
+				                                <input type="button" data-type="' . $field->get_type(
+						) . '" data-id="' . $field->get_id() . '" class="add_field button button-small" value="' . _x(
+						     'Add to columns',
+						     'admin results settings', $this->plugin_name
+					     ) . '" title="' . _x(
+						     'Click to add',
+						     'admin form builder placeholder'
+					     ) . '" />
 				                            </li>
 				                        ';
 				}
@@ -122,19 +133,25 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 		<div class="selected_fields_area">
 			<h4><?php _ex( 'Selected columns', 'admin results settings heading', $this->plugin_name ); ?> :</h4>
-			<p><?= _x( 'Drag and drop to reorder the table rows', 'admin results settings subheading',
-					$this->plugin_name ) ?></p>
+			<p><?= _x(
+					'Drag and drop to reorder the table rows', 'admin results settings subheading',
+					$this->plugin_name
+				) ?></p>
 			<table id="selected_fields" class="widefat">
 				<tr class="sortable">
-					<td class="none"><em><?= _x( 'No headings selected', 'admin results settings subheading',
-								$this->plugin_name ) ?></em></td>
+					<td class="none"><em><?= _x(
+								'No headings selected', 'admin results settings subheading',
+								$this->plugin_name
+							) ?></em></td>
 				</tr>
 			</table>
 			<table class="widefat content_simulator">
 				<tr>
 
-					<td><?= _x( 'Your offers will be displayed below', 'admin results settings subheading',
-							$this->plugin_name ) ?></td>
+					<td><?= _x(
+							'Your offers will be displayed below', 'admin results settings subheading',
+							$this->plugin_name
+						) ?></td>
 				</tr>
 				<tr class="alternate">
 					<td>Offre #1</td>
@@ -172,6 +189,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 
 
+			
 			</script>
 		</div>
 

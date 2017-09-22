@@ -104,7 +104,7 @@ interface JobInterface {
 	 *
 	 * @return mixed
 	 */
-	public function get_language($twoletters = null);
+	public function get_language( $twoletters = null );
 
 	/**
 	 * @param $lang

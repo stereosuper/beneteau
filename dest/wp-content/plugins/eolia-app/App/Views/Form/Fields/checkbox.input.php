@@ -2,6 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // don't access directly
 }
+
 /**
  * Copyright (c) 2017 Eolia Consulting
  *
@@ -24,20 +25,26 @@ use Eolia\Controllers\FieldController;
  * Time: 19:02
  */
 /** @var FieldController $field */
-if (! $field->get_values()) {
+if ( ! $field->get_values() ) {
 	return false;
 }
 ?>
-<div class="eolia_form-row eolia_form-row-check eolia_form-row--<?php echo $field->get_component() ?><?php echo ! $field->is_mobile() ? ' eolia_form-row--mobile-hidden' : null ?>" data-field-id="<?php echo $field->get_id() ?>">
+<div class="eolia_form-row eolia_form-row-check eolia_form-row--<?php echo $field->get_component(
+) ?><?php echo ! $field->is_mobile() ? ' eolia_form-row--mobile-hidden' : null ?>"
+     data-field-id="<?php echo $field->get_id() ?>">
 	<div class="eolia_form-group<?php echo $field->get_required() ? ' eolia_form-group--required' : null ?>"
 	     data-field-id="<?php echo $field->get_id() ?>">
 		<p class="eolia_field_label<?php echo $field->get_required() ? ' eolia_field_label--required' : null ?>">
 			<?php echo $field->get_label() ?>
 		</p>
-		<?php foreach ($field->get_values() as $key => $value): ?>
+		<?php foreach ( $field->get_values() as $key => $value ): ?>
 			<label>
-				<input type="checkbox" <?php echo FieldController::formatAttributes($field->get_field_attributes()) ?>
-				       value="<?php echo $key ?>" <?php if(isset($_GET[$field->get_id()]) && !empty($_GET[$field->get_id()])) : ?> checked<?php endif ?>/>
+				<input type="checkbox" <?php echo FieldController::formatAttributes( $field->get_field_attributes() ) ?>
+				       value="<?php echo $key ?>" <?php if ( isset(
+					                                             $_GET[ $field->get_id() ]
+				                                             ) && ! empty(
+					$_GET[ $field->get_id() ]
+					) ) : ?> checked<?php endif ?>/>
 				<?php echo $value['label'] ?>
 			</label>
 		<?php endforeach ?>

@@ -80,7 +80,9 @@ class JobController extends JobModel {
 					'eolia-app'
 				) . '</div>';
 		}
-		$content = '<div class="eolia_job" data-job-id="'.$this->get_id().'" data-job-category="' . sanitize_title( $this->get_category() ) . '" itemscope="" itemtype="http://schema.org/JobPosting">';
+		$content = '<div class="eolia_job" data-job-id="' . $this->get_id() . '" data-job-category="' . sanitize_title(
+				$this->get_category()
+			) . '" itemscope="" itemtype="http://schema.org/JobPosting">';
 		$content = apply_filters( 'eolia_filter_before_view', $content, $this );
 		$row     = 0;
 		foreach ( $selected_fields as $selected_field ) {
@@ -307,7 +309,8 @@ class JobController extends JobModel {
 		if ( ! $this->get_id() ) {
 			$data_ga_type = 'data-ga="Offer::Apply::Unsolicited"';
 		} else {
-			$data_ga_type = 'data-ga="Offer::Apply::' . sanitize_title( $this->get_title() ) . ' ' . $this->get_id() . '"';
+			$data_ga_type = 'data-ga="Offer::Apply::' . sanitize_title( $this->get_title() ) . ' ' . $this->get_id(
+				) . '"';
 		};
 
 		$content[] = '<div class="eolia_form-row eolia_form-row--input eolia_form-row--submit" id="eolia-submit"><div class="eolia_form-group" data-field="submit"><input type="submit" value="' . apply_filters(

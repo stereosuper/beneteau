@@ -2,6 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // don't access directly
 }
+
 use Eolia\Controllers\FieldController;
 
 $options            = get_option( 'eolia-app' );
@@ -54,7 +55,8 @@ $application_fields = eolia_get_fields( 'application_fields' );
 				/** @var FieldController $field */
 				foreach ( $application_fields as $field ) {
 					if ( ! empty( $field->get_label() ) ) {
-						echo '<li class="field" data-type="' . $field->get_type() . '" data-component="' . $field->get_component() . '"><span class="field_label">';
+						echo '<li class="field" data-type="' . $field->get_type(
+							) . '" data-component="' . $field->get_component() . '"><span class="field_label">';
 						switch ( $field->get_component() ) {
 							case 'text':
 								echo '<span class="fa fa-fw fa-i-cursor" title="' . _x(
@@ -94,9 +96,15 @@ $application_fields = eolia_get_fields( 'application_fields' );
 							echo ' <em>[parent : ' . $parent->get_label() . ']</em>';
 						}
 						echo '</span>';
-						echo '<input type="button" data-id="' . $field->get_id() . '" data-type="' . $field->get_type() . '" data-component="' . $field->get_component() . '" class="add_field button button-small" value="' . _x( 'Add to form',
-								'admin form builder button', $this->plugin_name ) . '" title="' . _x( 'Click to add',
-								'admin form builder placeholder', $this->plugin_name ) . '"/>';
+						echo '<input type="button" data-id="' . $field->get_id() . '" data-type="' . $field->get_type(
+							) . '" data-component="' . $field->get_component(
+							) . '" class="add_field button button-small" value="' . _x(
+							     'Add to form',
+							     'admin form builder button', $this->plugin_name
+						     ) . '" title="' . _x(
+							     'Click to add',
+							     'admin form builder placeholder', $this->plugin_name
+						     ) . '"/>';
 						echo '</li> ';
 					}
 				}

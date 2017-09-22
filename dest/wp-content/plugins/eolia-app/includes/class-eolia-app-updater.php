@@ -2,6 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // don't access directly
 }
+
 /**
  * Created by PhpStorm.
  * User: ronan

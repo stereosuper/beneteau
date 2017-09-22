@@ -95,8 +95,10 @@ $app     = \Eolia\EoliaWordpress::get_instance();
 	<!-- END single-results.php -->
 <?php else: ?>
 	<div
-		class="eolia_results eolia_results--no-results"><?php _ex( 'No offers founded.',
+		class="eolia_results eolia_results--no-results"><?php _ex(
+			'No offers founded.',
 			'seaerch-results',
-			'eolia-app' ) ?></div>
+			'eolia-app'
+		) ?></div>
 <?php endif ?>
 

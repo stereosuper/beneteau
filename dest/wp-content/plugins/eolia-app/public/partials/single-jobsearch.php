@@ -31,13 +31,17 @@ if ( ! $selected_fields = json_decode( $options['search_criteria'] ) ): ?>
 				<?php if ( array_key_exists( 'keywordsearch', $options ) ) : ?>
 					<div class="eolia_form-row eolia_row--keywords">
 						<div class="eolia_form-group eolia_form-form-group--keywords">
-							<label class="eolia_field_label" for="keywords"><?php _ex( 'Keywords',
+							<label class="eolia_field_label" for="keywords"><?php _ex(
+									'Keywords',
 									'form search label',
-									'eolia-app' ) ?></label>
+									'eolia-app'
+								) ?></label>
 							<input type="text" class="eolia_input eolia_input--text eolia_input--keywords" id="keywords"
 							       name="keywords"
-							       value="<?php echo array_key_exists( 'keywords',
-								       $_REQUEST ) ? $_REQUEST['keywords'] : '' ?>"
+							       value="<?php echo array_key_exists(
+								       'keywords',
+								       $_REQUEST
+							       ) ? $_REQUEST['keywords'] : '' ?>"
 							       placeholder="<?php _ex( 'Keywords', 'form search placeholder', 'eolia-app' ) ?>"/>
 						</div>
 					</div>
@@ -51,8 +55,8 @@ if ( ! $selected_fields = json_decode( $options['search_criteria'] ) ): ?>
 					$field = $fields[ $selected_field->name ];
 
 					if ( 'select' === $field->get_component() ) {
-						$field_name   = $field->get_id() . ( $selected_field->is_multiple ? '[]' : '' );
-						$field_id     = $field->get_id();
+						$field_name = $field->get_id() . ( $selected_field->is_multiple ? '[]' : '' );
+						$field_id = $field->get_id();
 						$display_name = $field->get_label();
 						$fieldOptions = array( 'row_id' => $row_id ++ );
 						if ( $selected_field->is_multiple ) {
@@ -87,9 +91,13 @@ if ( ! $selected_fields = json_decode( $options['search_criteria'] ) ): ?>
 									foreach ( $category as $key => $job ) {
 										$location = (array) get_post_meta( $job->ID, 'location', true );
 										if ( isset( $location['lat'], $location['lng'] ) ) {
-											echo '[' . $location['lat'] . ', ' . $location['lng'] . ', ' . get_post_meta( $job->ID,
+											echo '[' . $location['lat'] . ', ' . $location['lng'] . ', ' . get_post_meta(
+													$job->ID,
 													'id',
-													true ) . ', "' . get_the_title( $job->ID ) . '", "' . get_the_permalink( $job->ID ) . '"],';
+													true
+												) . ', "' . get_the_title( $job->ID ) . '", "' . get_the_permalink(
+												     $job->ID
+											     ) . '"],';
 										}
 									}
 								}

@@ -19,12 +19,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 				<label for="eolia-app-keywordsearch1">
 					<input type="radio" id="eolia-app-keywordsearch1"
 					       name="eolia-app[keywordsearch]"
-					       value="1" <?php echo ( true == $options['keywordsearch'] ) ? 'checked' : null; ?> /><?php _e( 'Yes' ); ?>
+					       value="1" <?php echo ( true == $options['keywordsearch'] ) ? 'checked' : null; ?> /><?php _e(
+						'Yes'
+					); ?>
 				</label>
 				<label for="eolia-app-keywordsearch0">
 					<input type="radio" id="eolia-app-keywordsearch0"
 					       name="eolia-app[keywordsearch]"
-					       value="0" <?php echo ( false == $options['keywordsearch'] ) ? 'checked' : null; ?> /><?php _e( 'No' ); ?>
+					       value="0" <?php echo ( false == $options['keywordsearch'] ) ? 'checked' : null; ?> /><?php _e(
+						'No'
+					); ?>
 				</label>
 			</td>
 		</tr>
@@ -69,13 +73,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<tr class="if_geoloc <?php echo ( false == $options['geoloc'] ) ? 'wpeolia_hidden' : ''; ?>">
 			<th class="row">
 				<label for="eolia-app-gmap_autozoom">
-					<span><?= _x( 'Googlemap Autozoom/Autocenter', 'admin search settings label', 'eolia-app' ) ?></span>
+					<span><?= _x(
+							'Googlemap Autozoom/Autocenter', 'admin search settings label', 'eolia-app'
+						) ?></span>
 				</label>
 			</th>
 			<td>
 				<input type="checkbox" class="regular-text"
 				       id="eolia-app-gmap_autozoom"
-				       name="eolia-app[gmap_autozoom]" value="1" <?php echo false != $options['gmap_autozoom'] ? 'checked' : null; ?>/>
+				       name="eolia-app[gmap_autozoom]"
+				       value="1" <?php echo false != $options['gmap_autozoom'] ? 'checked' : null; ?>/>
 			</td>
 		</tr>
 		<tr class="if_geoloc <?php echo ( false == $options['geoloc'] ) ? 'wpeolia_hidden' : ''; ?>">
@@ -129,9 +136,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 					     style="height:40px;vertical-align: top;"/>
 					&nbsp; <input type="button" class="upload_img_button button"
 					              data-binding="eolia-app[marker_img]"
-					              value="<?php echo esc_attr_x( 'Select icon',
+					              value="<?php echo esc_attr_x(
+						              'Select icon',
 						              'admin search settings',
-						              'eolia-app' ); ?>"/>
+						              'eolia-app'
+					              ); ?>"/>
 					<input type="hidden" name="eolia-app[marker_img]" class="img_attachment_id"
 					       value="<?php echo $options['marker_img']; ?>">
 				</div>
@@ -153,9 +162,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 					     style="height:40px;vertical-align: top;"/>
 					&nbsp; <input type="button" class="upload_img_button button"
 					              data-binding="eolia-app[marker_level1_img]"
-					              value="<?php echo esc_attr_x( 'Select icon',
+					              value="<?php echo esc_attr_x(
+						              'Select icon',
 						              'admin search settings',
-						              'eolia-app' ); ?>"/>
+						              'eolia-app'
+					              ); ?>"/>
 					<input type="hidden" name="eolia-app[marker_level1_img]"
 					       class="img_attachment_id" value="<?php echo $options['marker_level1_img']; ?>">
 				</div>
@@ -177,9 +188,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 					     style="height:40px;vertical-align: top;"/>
 					&nbsp; <input type="button" class="upload_img_button button"
 					              data-binding="eolia-app[marker_level2_img]"
-					              value="<?php echo esc_attr_x( 'Select icon',
+					              value="<?php echo esc_attr_x(
+						              'Select icon',
 						              'admin search settings',
-						              'eolia-app' ); ?>"/>
+						              'eolia-app'
+					              ); ?>"/>
 					<input type="hidden" name="eolia-app[marker_level2_img]"
 					       class="img_attachment_id" value="<?php echo $options['marker_level2_img']; ?>">
 				</div>
@@ -201,9 +214,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 					     style="height:40px;vertical-align: top;"/>
 					&nbsp; <input type="button" class="upload_img_button button"
 					              data-binding="eolia-app[marker_level3_img]"
-					              value="<?php echo esc_attr_x( 'Select icon',
+					              value="<?php echo esc_attr_x(
+						              'Select icon',
 						              'admin search settings',
-						              'eolia-app' ); ?>"/>
+						              'eolia-app'
+					              ); ?>"/>
 					<input type="hidden" name="eolia-app[marker_level3_img]"
 					       class="img_attachment_id" value="<?php echo $options['marker_level3_img']; ?>">
 				</div>
@@ -225,9 +240,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 					     style="height:40px;vertical-align: top;"/>
 					&nbsp; <input type="button" class="upload_img_button button"
 					              data-binding="eolia-app[marker_level4_img]"
-					              value="<?php echo esc_attr_x( 'Select icon',
+					              value="<?php echo esc_attr_x(
+						              'Select icon',
 						              'admin search settings',
-						              'eolia-app' ); ?>"/>
+						              'eolia-app'
+					              ); ?>"/>
 					<input type="hidden" name="eolia-app[marker_level4_img]"
 					       class="img_attachment_id" value="<?php echo $options['marker_level4_img']; ?>">
 				</div>
@@ -249,9 +266,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 					     style="height:40px;vertical-align: top;"/>
 					&nbsp; <input type="button" class="upload_img_button button"
 					              data-binding="eolia-app[marker_level5_img]"
-					              value="<?php echo esc_attr_x( 'Select icon',
+					              value="<?php echo esc_attr_x(
+						              'Select icon',
 						              'admin search settings',
-						              'eolia-app' ); ?>"/>
+						              'eolia-app'
+					              ); ?>"/>
 					<input type="hidden" name="eolia-app[marker_level5_img]"
 					       class="img_attachment_id" value="<?php echo $options['marker_level5_img']; ?>">
 				</div>
@@ -285,6 +304,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 						}
 						?>
 
+					
 					</script>
 				</div>
 			</div>
@@ -298,16 +318,22 @@ if ( ! defined( 'ABSPATH' ) ) {
 						foreach ( $fields as $field ) {
 							if ( 'select' === $field->get_component() && $field->get_label() ) {
 								$counter_fields ++;
-								echo '<li class="field ' . ( ( $counter_fields % 2 === 0 ) ? 'field_mod' : '' ) . '"><span class="field_label">&raquo; ' . $field->get_label();
+								echo '<li class="field ' . ( ( $counter_fields % 2 === 0 ) ? 'field_mod' : '' ) . '"><span class="field_label">&raquo; ' . $field->get_label(
+									);
 								if ( $field->get_parentId() && array_key_exists( $field->get_parentId(), $fields ) ) {
 									/** @var \Eolia\Models\FieldModel $parent */
 									$parent = $fields[ $field->get_parentId() ];
 									echo ' <em>[parent : ' . $parent->get_label() . ']</em>';
 								}
-								echo '</span><input type="button" data-id="' . $field->get_id() . '" class="add_field button button-small" value="' . esc_attr_x( 'Add to criteria',
-										'admin search settings button',
-										'eolia-app' ) . '" title="' . esc_attr_x( 'Click to add',
-										'admin form builder placeholder' ) . '"/></li>';
+								echo '</span><input type="button" data-id="' . $field->get_id(
+									) . '" class="add_field button button-small" value="' . esc_attr_x(
+									     'Add to criteria',
+									     'admin search settings button',
+									     'eolia-app'
+								     ) . '" title="' . esc_attr_x(
+									     'Click to add',
+									     'admin form builder placeholder'
+								     ) . '"/></li>';
 							}
 						}
 						?>

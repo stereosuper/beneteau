@@ -52,9 +52,9 @@ class Wp_Eolia_App_Admin {
 	 *
 	 * @since    1.0.0
 	 *
-	 * @param      string $plugin_name    The name of this plugin.
-	 * @param      string $version        The version of this plugin.
-	 * @param      array $current_options The saved options of this plugin.
+	 * @param      string $plugin_name     The name of this plugin.
+	 * @param      string $version         The version of this plugin.
+	 * @param      array  $current_options The saved options of this plugin.
 	 */
 	public function __construct( $plugin_name, $version, $current_options ) {
 
@@ -239,8 +239,10 @@ class Wp_Eolia_App_Admin {
 			$options['res_orderby'] = $input['res_orderby'];
 		}
 		if ( isset( $input['res_main_category'] ) ) {
-			if ( array_key_exists( 'res_main_category',
-					$options ) && $input['res_main_category'] !== $options['res_main_category'] ) {
+			if ( array_key_exists(
+				     'res_main_category',
+				     $options
+			     ) && $input['res_main_category'] !== $options['res_main_category'] ) {
 				$this->updateCategories( $input['res_main_category'] );
 			}
 			$options['res_main_category'] = $input['res_main_category'];
@@ -343,10 +345,14 @@ class Wp_Eolia_App_Admin {
 		if ( isset( $input['textkernel_url'] ) ) {
 			$options['textkernel_url'] = esc_sql( trim( $input['textkernel_url'] ) );
 		}
-		if ( isset( $input['textkernel_account'] ) && trim( $input['textkernel_account'] ) !== $options['textkernel_account'] ) {
+		if ( isset( $input['textkernel_account'] ) && trim(
+			                                              $input['textkernel_account']
+		                                              ) !== $options['textkernel_account'] ) {
 			$options['textkernel_account'] = base64_encode( esc_sql( trim( $input['textkernel_account'] ) ) );
 		}
-		if ( isset( $input['textkernel_login'] ) && trim( $input['textkernel_login'] ) !== $options['textkernel_login'] ) {
+		if ( isset( $input['textkernel_login'] ) && trim(
+			                                            $input['textkernel_login']
+		                                            ) !== $options['textkernel_login'] ) {
 			$options['textkernel_login'] = base64_encode( esc_sql( trim( $input['textkernel_login'] ) ) );
 		}
 		if ( isset( $input['textkernel_mdp'] ) && trim( $input['textkernel_mdp'] ) !== $options['textkernel_mdp'] ) {

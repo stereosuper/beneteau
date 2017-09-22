@@ -16,7 +16,7 @@
  * Plugin Name:       Espace Candidats Wordpress par Eolia Software
  * Plugin URI:        http://www.eolia-consulting.com
  * Description:       Fonctionnalités de l'Espace Candidat par Eolia Software
- * Version:           2.0.80
+ * Version:           2.0.86
  * Author:            Ronan Pozzi (Eolia Software)
  * Author URI:        http://www.eolia-consulting.com
  * License:           Private

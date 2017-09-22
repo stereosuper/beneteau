@@ -64,7 +64,7 @@ class Wp_Eolia_App_Public {
 	 *
 	 * @param      string $plugin_name The name of the plugin.
 	 * @param      string $version     The version of this plugin.
-	 * @param      array $options      The saved options of this plugin.
+	 * @param      array  $options     The saved options of this plugin.
 	 */
 	public function __construct( $plugin_name, $version, $options ) {
 		$this->plugin_name = $plugin_name;
@@ -187,9 +187,11 @@ class Wp_Eolia_App_Public {
 		if ( $query->have_posts() ) {
 			while ( $query->have_posts() ) {
 				$query->the_post();
-				$group                             = get_post_meta( get_the_ID(),
+				$group                             = get_post_meta(
+					get_the_ID(),
 					$options['res_main_category'],
-					true );
+					true
+				);
 				$results[ $group ][ get_the_ID() ] = get_post();
 			}
 		}
@@ -316,36 +318,54 @@ class Wp_Eolia_App_Public {
 
 		$out_code     .= 'langue : ' . $locale . "\r\n";
 		$out_readable .= '<tr><td>' . __( 'Language', 'eolia-app' ) . '</td><td>' . $locale . '</td></tr>';
-		if ( isset( $this->options['recaptcha_key'], $this->options['recaptcha_secret'] ) && ( ! empty( trim( $this->options['recaptcha_key'] ) ) && ! empty( trim( $this->options['recaptcha_secret'] ) ) ) ) {
-			if ( ! array_key_exists( 'g-recaptcha-response',
-					$_REQUEST ) || empty( $_REQUEST['g-recaptcha-response'] ) ) {
+		if ( isset( $this->options['recaptcha_key'], $this->options['recaptcha_secret'] ) && ( ! empty(
+				trim(
+					$this->options['recaptcha_key']
+				)
+				) && ! empty( trim( $this->options['recaptcha_secret'] ) ) ) ) {
+			if ( ! array_key_exists(
+					'g-recaptcha-response',
+					$_REQUEST
+				) || empty( $_REQUEST['g-recaptcha-response'] ) ) {
 				wp_die( _x( 'You must complete reCaptcha challenge', 'form recaptcha error', $this->plugin_name ) );
 			}
 			$args = array(
 				'body' => array(
 					'secret'   => $this->options['recaptcha_secret'],
 					'response' => $_REQUEST['g-recaptcha-response'],
-					'remoteip' => array_key_exists( 'HTTP_X_FORWARDED_FOR',
-						$_SERVER ) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'],
+					'remoteip' => array_key_exists(
+						'HTTP_X_FORWARDED_FOR',
+						$_SERVER
+					) ? $_SERVER['HTTP_X_FORWARDED_FOR'] : $_SERVER['REMOTE_ADDR'],
 				),
 			);
 
 			$response  = wp_remote_post( 'https://www.google.com/recaptcha/api/siteverify', $args );
 			$recaptcha = json_decode( $response['body'] );
 			if ( ! isset( $recaptcha->success ) || empty( $recaptcha->success ) || ! $recaptcha->success ) {
-				wp_die( _x( 'Error with captcha, please re-submit your application, or contact the administrator.',
-					'form recaptcha error',
-					$this->plugin_name ) );
+				wp_die(
+					_x(
+						'Error with captcha, please re-submit your application, or contact the administrator.',
+						'form recaptcha error',
+						$this->plugin_name
+					)
+				);
 			}
 			unset( $_REQUEST['g-recaptcha-response'] );
 		}
 
-		if ( ! isset( $_REQUEST['email'] ) || empty( $_REQUEST['email'] ) || ! filter_var( $_REQUEST['email'],
-				FILTER_VALIDATE_EMAIL )
+		if ( ! isset( $_REQUEST['email'] ) || empty( $_REQUEST['email'] ) || ! filter_var(
+				$_REQUEST['email'],
+				FILTER_VALIDATE_EMAIL
+			)
 		) {
-			wp_die( _x( 'You must privide a valid email address.',
-				'form mail error',
-				$this->plugin_name ) );
+			wp_die(
+				_x(
+					'You must privide a valid email address.',
+					'form mail error',
+					$this->plugin_name
+				)
+			);
 		}
 		/** The current user REQUEST. @var array $_REQUEST */
 		foreach ( $_REQUEST as $k => $v ) {
@@ -533,13 +553,15 @@ class Wp_Eolia_App_Public {
 					$extension = str_replace( '.', '', strtolower( strrchr( $file['name'], '.' ) ) );
 					if ( ! in_array( $extension, \Eolia\EoliaWordpress::$file_extensions, true ) ) {
 						wp_die(
-							sprintf( _x(
-								'Wrong file extensions (allowed extensions : %s)<br/>Current extension : %s',
-								'alert',
-								'eolia-app'
-							),
+							sprintf(
+								_x(
+									'Wrong file extensions (allowed extensions : %s)<br/>Current extension : %s',
+									'alert',
+									'eolia-app'
+								),
 								implode( ', ', \Eolia\EoliaWordpress::$file_extensions ),
-								$extension )
+								$extension
+							)
 						);
 					}
 
@@ -579,29 +601,51 @@ class Wp_Eolia_App_Public {
 			$mail->SMTPSecure = 'ssl';
 			$mail->Port       = 465;
 
-			$mail->addCustomHeader( 'X-MC-Tags',
-				implode( ',',
+			$mail->addCustomHeader(
+				'X-MC-Tags',
+				implode(
+					',',
 					array(
 						get_bloginfo( 'name' ),
-					) ) );
+					)
+				)
+			);
 
-			$mail->addCustomHeader( 'X-MC-Metadata',
-				json_encode( array(
-					'job_id'      => is_a( $job_object, \Eolia\Interfaces\JobInterface::class ) ? $job_object->get_id() : false,
-					'job_ref'     => is_a( $job_object, \Eolia\Interfaces\JobInterface::class ) ? $job_object->get_ref() : false,
-					'apply_email' => $_REQUEST['email'],
-					'apply_type'  => is_a( $job_object, \Eolia\Interfaces\JobInterface::class ) ? 'normal' : 'unsolicited',
-				) ) );
+			$mail->addCustomHeader(
+				'X-MC-Metadata',
+				json_encode(
+					array(
+						'job_id'      => is_a(
+							$job_object, \Eolia\Interfaces\JobInterface::class
+						) ? $job_object->get_id() : false,
+						'job_ref'     => is_a(
+							$job_object, \Eolia\Interfaces\JobInterface::class
+						) ? $job_object->get_ref() : false,
+						'apply_email' => $_REQUEST['email'],
+						'apply_type'  => is_a(
+							$job_object, \Eolia\Interfaces\JobInterface::class
+						) ? 'normal' : 'unsolicited',
+					)
+				)
+			);
 
 			$mail->setFrom( 'wordpress@eolia-mail.com', get_bloginfo( 'name' ) );
-			$mail->addAddress( apply_filters( 'eolia_filter_mail_to',
-				$this->options['application_email'],
-				$job_object ) );     // Add a recipient
+			$mail->addAddress(
+				apply_filters(
+					'eolia_filter_mail_to',
+					$this->options['application_email'],
+					$job_object
+				)
+			);     // Add a recipient
 
-			$mail->Subject = apply_filters( 'eolia_filter_mail_subject',
-				( ! method_exists( $job_object, 'get_ref' ) || ! $job_object->get_ref() ? __( 'Unsolicited application',
-					'eolia-app' ) : $job_object->get_ref() ),
-				$job_object );
+			$mail->Subject = apply_filters(
+				'eolia_filter_mail_subject',
+				( ! method_exists( $job_object, 'get_ref' ) || ! $job_object->get_ref() ? __(
+					'Unsolicited application',
+					'eolia-app'
+				) : $job_object->get_ref() ),
+				$job_object
+			);
 
 			$mail->Body = $message;
 
@@ -621,19 +665,28 @@ class Wp_Eolia_App_Public {
 				}
 			}
 		} catch ( phpmailerException $e ) {
-			wp_die( sprintf( __( '<p>Error while sending your apply, please contact the administrator</p>%s', 'eolia-app' ), $e->errorMessage() ) );
+			wp_die(
+				sprintf(
+					__( '<p>Error while sending your apply, please contact the administrator</p>%s', 'eolia-app' ),
+					$e->errorMessage()
+				)
+			);
 		} catch ( Exception $e ) {
-			wp_die( sprintf( __( '<p>Error while sending your apply, please contact the administrator</p>%s', 'eolia-app' ), $e->getMessage() ) );
+			wp_die(
+				sprintf(
+					__( '<p>Error while sending your apply, please contact the administrator</p>%s', 'eolia-app' ),
+					$e->getMessage()
+				)
+			);
 		}
 
 		return $mail;
 	}
 
 	public function prefix_local_email( $email ) {
-		if ( false === preg_match( '/^[a-z]{2}-/', $email ) && false !== strpos( $email, 'redirection-eolia.com' ) ) {
+		if ( ! preg_match( '/^[a-z]{2}-/', $email ) && false !== strpos( $email, 'redirection-eolia.com' ) ) {
 			$prefix = substr( get_locale(), 0, 2 );
-
-			return $prefix . $email;
+			$email  = $prefix . '-' . $email;;
 		}
 
 		return $email;
@@ -972,7 +1025,7 @@ class Wp_Eolia_App_Public {
 	 * @since    1.0.0
 	 * @access   public
 	 *
-	 * @param array $atts     Shortcode attributes.
+	 * @param array  $atts    Shortcode attributes.
 	 * @param string $content SHortcode content.
 	 *
 	 * @return bool|string
@@ -1060,7 +1113,7 @@ HTML;
 	 * @access   public
 	 * @see      \Wp_Eolia_App_Public::declare_shortcodes
 	 *
-	 * @param array $atts     Shortcode attributes.
+	 * @param array  $atts    Shortcode attributes.
 	 * @param string $content Shortcode content.
 	 *
 	 */
@@ -1074,8 +1127,10 @@ HTML;
 			wp_enqueue_style( 'font-awesome' );
 			$output .= '
             <ul class="share-social-menu">
-                <li class="share_label">' . apply_filters( 'eolia_filter_share_btn_label',
-					__( 'Partagez :', 'eolia-app' ) ) . '</li>
+                <li class="share_label">' . apply_filters(
+					'eolia_filter_share_btn_label',
+					__( 'Partagez :', 'eolia-app' )
+				) . '</li>
                 <li><a href="#" title="' . sprintf( __( 'Share on %s', 'eolia-app' ), 'Facebook' ) . '" data-ga="Social::Share::Facebook" class="facebook_link"><span class="fa fa-fw fa-facebook"></span></a></li>
                 <li><a href="#" title="' . sprintf( __( 'Share on %s', 'eolia-app' ), 'Twitter' ) . '" data-ga="Social::Share::Twitter" class="twitter_link"><span class="fa fa-fw fa-twitter"></span></a></li>
                 <li><a href="#" title="' . sprintf( __( 'Share on %s', 'eolia-app' ), 'Google+' ) . '" data-ga="Social::Share::Google+" class="googleplus_link"><span class="fa fa-fw fa-google-plus"></span></a></li>

@@ -2,6 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // don't access directly
 }
+
 /**
  * Fired during plugin activation.
  *
@@ -12,8 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @subpackage Wp_Eolia_App/includes
  * @author     Eolia Software / Luc DIDIER <contact@lucdidier.com>
  */
-class Wp_Eolia_App_Activator
-{
+class Wp_Eolia_App_Activator {
 
 	/**
 	 * Short Description. (use period)
@@ -54,9 +54,11 @@ class Wp_Eolia_App_Activator
 			}
 		);
 
-		wp_die( '<p>The <strong>Eolia Espace Candidat</strong> plugin requires ' . $flag . '  version ' . $version . ' or greater.</p><p>Your actual ' . $flag . ' version is : ' . $actual_version . '</p>',
+		wp_die(
+			'<p>The <strong>Eolia Espace Candidat</strong> plugin requires ' . $flag . '  version ' . $version . ' or greater.</p><p>Your actual ' . $flag . ' version is : ' . $actual_version . '</p>',
 			'Plugin Activation Error',
-			array( 'response' => 200, 'back_link' => true ) );
+			array( 'response' => 200, 'back_link' => true )
+		);
 
 		return false;
 	}

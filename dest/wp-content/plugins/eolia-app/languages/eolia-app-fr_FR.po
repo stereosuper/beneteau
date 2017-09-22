@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Application Eolia\n"
-"POT-Creation-Date: 2017-09-05 12:31+0200\n"
-"PO-Revision-Date: 2017-09-05 12:31+0200\n"
+"POT-Creation-Date: 2017-09-20 10:34+0200\n"
+"PO-Revision-Date: 2017-09-20 10:36+0200\n"
 "Last-Translator: \n"
 "Language-Team: Ronan Pozzi <r.pozzi@eolia-consulting.com>\n"
 "Language: fr_FR\n"
@@ -40,7 +40,7 @@ msgctxt "form select placeholder"
 msgid "Browse..."
 msgstr "Parcourir..."
 
-#: App/Controllers/FieldController.php:126 App/EoliaWordpress.php:366
+#: App/Controllers/FieldController.php:126 App/EoliaWordpress.php:359
 #: public/class-eolia-app-public.php:552
 #, php-format
 msgctxt "alert"
@@ -57,9 +57,9 @@ msgid "Type here..."
 msgstr "Votre texte..."
 
 #: App/Controllers/JobController.php:68 App/EoliaWordpress.php:132
-#: App/EoliaWordpress.php:534 App/EoliaWordpress.php:560
-#: App/EoliaWordpress.php:645 App/EoliaWordpress.php:1422
-#: App/Views/Form/Fields/file.input.php:121
+#: App/EoliaWordpress.php:527 App/EoliaWordpress.php:553
+#: App/EoliaWordpress.php:638 App/EoliaWordpress.php:1407
+#: App/Views/Form/Fields/file.input.php:126
 msgctxt "slug"
 msgid "apply"
 msgstr "candidature"
@@ -98,273 +98,273 @@ msgstr ""
 "<h1>Erreur lors de la mise à jour des emplois</h1><p>Un ou plusieurs flux ne "
 "répondent pas aux adresses spécifiées</p>"
 
-#: App/EoliaWordpress.php:354
+#: App/EoliaWordpress.php:347
 #, php-format
 msgctxt "alert"
 msgid "Wrong file extensions (allowed extensions : %s)"
 msgstr "Extensions de fichier erronées (extensions autorisées : %s)"
 
-#: App/EoliaWordpress.php:361
+#: App/EoliaWordpress.php:354
 msgctxt "loadscreen"
 msgid "Uploading file, please wait..."
 msgstr "Téléchargement du fichier, veuillez patienter…"
 
-#: App/EoliaWordpress.php:371 App/EoliaWordpress.php:379
-#: App/EoliaWordpress.php:387
+#: App/EoliaWordpress.php:364 App/EoliaWordpress.php:372
+#: App/EoliaWordpress.php:380
 #, php-format
 msgctxt "loadscreen"
 msgid "Fetching %s profile, please wait..."
 msgstr "Récupération du profil %s, veuillez patienter..."
 
-#: App/EoliaWordpress.php:394 App/EoliaWordpress.php:399
+#: App/EoliaWordpress.php:387 App/EoliaWordpress.php:392
 #, php-format
 msgctxt "file-label"
 msgid "My %s resume"
 msgstr "Mon CV %s"
 
-#: App/EoliaWordpress.php:587
+#: App/EoliaWordpress.php:580
 msgctxt "Post Type General Name"
 msgid "Jobs"
 msgstr "Emplois"
 
-#: App/EoliaWordpress.php:588
+#: App/EoliaWordpress.php:581
 msgctxt "Post Type Singular Name"
 msgid "Job"
 msgstr "Emploi"
 
-#: App/EoliaWordpress.php:589
+#: App/EoliaWordpress.php:582
 msgid "Jobs"
 msgstr "Emplois"
 
-#: App/EoliaWordpress.php:590 App/EoliaWordpress.php:616
+#: App/EoliaWordpress.php:583 App/EoliaWordpress.php:609
 msgid "Job"
 msgstr "Emploi"
 
-#: App/EoliaWordpress.php:591
+#: App/EoliaWordpress.php:584
 msgid "Job Archives"
 msgstr "Toutes les offres"
 
-#: App/EoliaWordpress.php:592
+#: App/EoliaWordpress.php:585
 msgid "Job Attributes"
 msgstr "Atrributs"
 
-#: App/EoliaWordpress.php:593
+#: App/EoliaWordpress.php:586
 msgid "Parent Job:"
 msgstr "Emploi parent:"
 
-#: App/EoliaWordpress.php:594
+#: App/EoliaWordpress.php:587
 msgid "All Jobs"
 msgstr "Toutes les offres"
 
-#: App/EoliaWordpress.php:595
+#: App/EoliaWordpress.php:588
 msgid "Add New Job"
 msgstr "Ajouter une offre"
 
-#: App/EoliaWordpress.php:596
+#: App/EoliaWordpress.php:589
 msgid "Add New"
 msgstr "Ajouter"
 
-#: App/EoliaWordpress.php:597
+#: App/EoliaWordpress.php:590
 msgid "New Job"
 msgstr "Nouvelle offre"
 
-#: App/EoliaWordpress.php:598
+#: App/EoliaWordpress.php:591
 msgid "Edit Job"
 msgstr "Modifier l’offre"
 
-#: App/EoliaWordpress.php:599
+#: App/EoliaWordpress.php:592
 msgid "Update Job"
 msgstr "Modifier l’offre"
 
-#: App/EoliaWordpress.php:600
+#: App/EoliaWordpress.php:593
 msgid "View Job"
 msgstr "Voir l’offre"
 
-#: App/EoliaWordpress.php:601
+#: App/EoliaWordpress.php:594
 msgid "View Jobs"
 msgstr "Voir les offres"
 
-#: App/EoliaWordpress.php:602
+#: App/EoliaWordpress.php:595
 msgid "Search Job"
 msgstr "Chercher un emploi"
 
-#: App/EoliaWordpress.php:603
+#: App/EoliaWordpress.php:596
 msgid "Not found"
 msgstr "Aucunes données trouvées"
 
-#: App/EoliaWordpress.php:604
+#: App/EoliaWordpress.php:597
 msgid "Not found in Trash"
 msgstr "Aucunes données trouvées dans la corbeille"
 
-#: App/EoliaWordpress.php:605
+#: App/EoliaWordpress.php:598
 msgid "Featured Image"
 msgstr "Image d’accroche"
 
-#: App/EoliaWordpress.php:606
+#: App/EoliaWordpress.php:599
 msgid "Set featured image"
 msgstr "Sélectionner image"
 
-#: App/EoliaWordpress.php:607
+#: App/EoliaWordpress.php:600
 msgid "Remove featured image"
 msgstr "Effacer l’image"
 
-#: App/EoliaWordpress.php:608
+#: App/EoliaWordpress.php:601
 msgid "Use as featured image"
 msgstr "Utiliser comme image d’accroche"
 
-#: App/EoliaWordpress.php:609
+#: App/EoliaWordpress.php:602
 msgid "INSERT INTO Job"
 msgstr "Ajouter dans l’offre"
 
-#: App/EoliaWordpress.php:610
+#: App/EoliaWordpress.php:603
 msgid "Uploaded to this Job"
 msgstr "Télécharger dans cet emploi"
 
-#: App/EoliaWordpress.php:611
+#: App/EoliaWordpress.php:604
 msgid "Jobs list"
 msgstr "Liste des offres"
 
-#: App/EoliaWordpress.php:612
+#: App/EoliaWordpress.php:605
 msgid "Jobs list navigation"
 msgstr "Navigation des offres"
 
-#: App/EoliaWordpress.php:613
+#: App/EoliaWordpress.php:606
 msgid "Filter Jobs list"
 msgstr "Filtrer les offres"
 
-#: App/EoliaWordpress.php:656
+#: App/EoliaWordpress.php:649
 msgctxt "Taxonomy General Name"
 msgid "Job Categories"
 msgstr "Catégories d’emploi"
 
-#: App/EoliaWordpress.php:657
+#: App/EoliaWordpress.php:650
 msgctxt "Taxonomy Singular Name"
 msgid "Job Category"
 msgstr "Catégories d’emploi"
 
-#: App/EoliaWordpress.php:658
+#: App/EoliaWordpress.php:651
 msgid "Job Category"
 msgstr "Catégorie d’emploi"
 
-#: App/EoliaWordpress.php:659
+#: App/EoliaWordpress.php:652
 msgid "All Job Categories"
 msgstr "Toutes les catégories d’emploi"
 
-#: App/EoliaWordpress.php:660
+#: App/EoliaWordpress.php:653
 msgid "Parent Category"
 msgstr "Catégorie parente"
 
-#: App/EoliaWordpress.php:661
+#: App/EoliaWordpress.php:654
 msgid "Parent Category:"
 msgstr "Catégorie parente:"
 
-#: App/EoliaWordpress.php:662
+#: App/EoliaWordpress.php:655
 msgid "New Category Name"
 msgstr "Nouvelle catégorie"
 
-#: App/EoliaWordpress.php:663
+#: App/EoliaWordpress.php:656
 msgid "Add New Category"
 msgstr "Ajouter une catégorie"
 
-#: App/EoliaWordpress.php:664
+#: App/EoliaWordpress.php:657
 msgid "Edit Category"
 msgstr "Modifier la catégorie"
 
-#: App/EoliaWordpress.php:665
+#: App/EoliaWordpress.php:658
 msgid "Update Category"
 msgstr "Mettre à jour la catégorie"
 
-#: App/EoliaWordpress.php:666
+#: App/EoliaWordpress.php:659
 msgid "View Category"
 msgstr "Voir la catégorie"
 
-#: App/EoliaWordpress.php:667
+#: App/EoliaWordpress.php:660
 msgid "Separate Categories with commas"
 msgstr "Séparez les catégories par des virgules"
 
-#: App/EoliaWordpress.php:668
+#: App/EoliaWordpress.php:661
 msgid "Add or remove Categories"
 msgstr "Ajouter ou supprimer des catégories"
 
-#: App/EoliaWordpress.php:669
+#: App/EoliaWordpress.php:662
 msgid "Choose from the most used"
 msgstr "Les plus utilisées"
 
-#: App/EoliaWordpress.php:670
+#: App/EoliaWordpress.php:663
 msgid "Popular Category"
 msgstr "Populaires"
 
-#: App/EoliaWordpress.php:671
+#: App/EoliaWordpress.php:664
 msgid "Search Categories"
 msgstr "Rechercher une catégorie"
 
-#: App/EoliaWordpress.php:672
+#: App/EoliaWordpress.php:665
 msgid "Not Found"
 msgstr "Aucunes données trouvées"
 
-#: App/EoliaWordpress.php:673
+#: App/EoliaWordpress.php:666
 msgid "No Job Categories"
 msgstr "Aucune catégories d’emploi"
 
-#: App/EoliaWordpress.php:674
+#: App/EoliaWordpress.php:667
 msgid "Job Categories list"
 msgstr "Liste des catégories d’emploi"
 
-#: App/EoliaWordpress.php:675
+#: App/EoliaWordpress.php:668
 msgid "Job Categories list navigation"
 msgstr "Liste des catégories d’emploi"
 
-#: App/EoliaWordpress.php:713 App/EoliaWordpress.php:759
-#: App/EoliaWordpress.php:796 App/EoliaWordpress.php:825
-#: App/EoliaWordpress.php:1111 includes/class-eolia-app-activator.php:52
+#: App/EoliaWordpress.php:706 App/EoliaWordpress.php:752
+#: App/EoliaWordpress.php:789 App/EoliaWordpress.php:818
+#: App/EoliaWordpress.php:1096 includes/class-eolia-app-activator.php:52
 msgid "Dismiss this notice."
 msgstr "Effacer cette notification."
 
-#: App/EoliaWordpress.php:717
+#: App/EoliaWordpress.php:710
 #, php-format
 msgctxt "admin notice"
 msgid "No offers found in your language (%s)"
 msgstr "Aucunes offres trouvées dans votre langue (%s)"
 
-#: App/EoliaWordpress.php:763
+#: App/EoliaWordpress.php:756
 #, php-format
 msgctxt "admin notice"
 msgid "Successful Deleted %d %s offers"
 msgstr "%d Offres supprimées(%s)"
 
-#: App/EoliaWordpress.php:800
+#: App/EoliaWordpress.php:793
 #, php-format
 msgctxt "admin notice"
 msgid "Successful Updated %d %s offers"
 msgstr "%d Offres mises à jour(%s)"
 
-#: App/EoliaWordpress.php:829
+#: App/EoliaWordpress.php:822
 #, php-format
 msgctxt "admin notice"
 msgid "Successful Added %d %s offers"
 msgstr "%d Offres ajoutées(%s)"
 
-#: App/EoliaWordpress.php:889 App/EoliaWordpress.php:1240
+#: App/EoliaWordpress.php:882 App/EoliaWordpress.php:1225
 msgctxt "admin notice"
 msgid "Dismiss this notice."
 msgstr "Effacer cette notification."
 
-#: App/EoliaWordpress.php:895
+#: App/EoliaWordpress.php:888
 msgctxt "admin notice"
 msgid "It seem like there is no offers in stream the stream."
 msgstr "Aucune offres trouvées dans le flux."
 
-#: App/EoliaWordpress.php:1019
+#: App/EoliaWordpress.php:1012
 msgid "Uncategorized"
 msgstr "Non classé"
 
-#: App/EoliaWordpress.php:1115
+#: App/EoliaWordpress.php:1100
 #, php-format
 msgctxt "admin notice"
 msgid "Successful Updated %d job categories"
 msgstr "%d catégories mises à jour"
 
-#: App/EoliaWordpress.php:1246
+#: App/EoliaWordpress.php:1231
 msgctxt "admin notice"
 msgid "It seem that there is no fields in application/offer stream."
 msgstr "Aucun champs trouvé dans le flux."
@@ -384,21 +384,21 @@ msgctxt "form uploaded"
 msgid "Browse..."
 msgstr "Parcourir..."
 
-#: App/Views/Form/Fields/file.input.php:50
+#: App/Views/Form/Fields/file.input.php:53
 msgctxt "upload"
 msgid "Googledrive"
 msgstr "Googledrive"
 
-#: App/Views/Form/Fields/file.input.php:66
+#: App/Views/Form/Fields/file.input.php:69
 msgctxt "upload"
 msgid "Dropbox"
 msgstr "Dropbox"
 
-#: App/Views/Form/Fields/file.input.php:71
-#: App/Views/Form/Fields/file.input.php:83
+#: App/Views/Form/Fields/file.input.php:74
 #: App/Views/Form/Fields/file.input.php:87
-#: App/Views/Form/Fields/file.input.php:99
-#: App/Views/Form/Fields/file.input.php:149
+#: App/Views/Form/Fields/file.input.php:91
+#: App/Views/Form/Fields/file.input.php:104
+#: App/Views/Form/Fields/file.input.php:155
 #, php-format
 msgctxt "apply_with"
 msgid "Apply with %s"
@@ -771,7 +771,7 @@ msgstr "Importer"
 #: admin/partials/eolia-app-admin-display-general.php:107
 msgctxt "admin heading"
 msgid "Cron update URL"
-msgstr "URL Déclenchement mise à jours"
+msgstr "URL Déclenchement mises à jour"
 
 #: admin/partials/eolia-app-admin-display-general.php:112
 msgctxt "admin heading"
@@ -1015,7 +1015,7 @@ msgstr "Ajouter aux critères"
 #: admin/partials/eolia-app-admin-display.php:20
 msgctxt "admin tab title"
 msgid "General"
-msgstr "Générale"
+msgstr "Général"
 
 #: admin/partials/eolia-app-admin-display.php:21
 msgctxt "admin tab long-title"
@@ -1177,7 +1177,7 @@ msgstr ""
 msgid "Unsolicited application"
 msgstr "Candidature spontanée"
 
-#: public/class-eolia-app-public.php:617 public/class-eolia-app-public.php:619
+#: public/class-eolia-app-public.php:624 public/class-eolia-app-public.php:626
 #, php-format
 msgid ""
 "<p>Error while sending your apply, please contact the administrator</p>%s"
@@ -1185,23 +1185,23 @@ msgstr ""
 "<p>Erreur lors de l'envoi de votre demande, veuillez contacter "
 "l'administrateur </p>%s"
 
-#: public/class-eolia-app-public.php:946
+#: public/class-eolia-app-public.php:947
 msgid "No file found"
 msgstr "Aucunes données trouvées"
 
-#: public/class-eolia-app-public.php:949
+#: public/class-eolia-app-public.php:950
 msgid "Textkernel is not activated in your configuration"
 msgstr "TextKernel semble ne pas être configurer"
 
-#: public/class-eolia-app-public.php:1077
+#: public/class-eolia-app-public.php:1078
 msgid "Partagez :"
 msgstr "Partagez :"
 
-#: public/class-eolia-app-public.php:1078
 #: public/class-eolia-app-public.php:1079
 #: public/class-eolia-app-public.php:1080
 #: public/class-eolia-app-public.php:1081
 #: public/class-eolia-app-public.php:1082
+#: public/class-eolia-app-public.php:1083
 #, php-format
 msgid "Share on %s"
 msgstr "Partagez sur %s"

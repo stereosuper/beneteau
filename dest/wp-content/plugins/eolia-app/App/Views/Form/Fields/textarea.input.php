@@ -27,7 +27,8 @@ use Eolia\Controllers\FieldController;
 /** @var FieldController $field */
 $options = $field->get_options();
 ?>
-<div class="eolia_form-row eolia_form-row--<?php echo $field->get_component() ?><?php echo ! $field->is_mobile() ? ' eolia_form-row--mobile-hidden' : null ?>"
+<div class="eolia_form-row eolia_form-row--<?php echo $field->get_component() ?><?php echo ! $field->is_mobile(
+) ? ' eolia_form-row--mobile-hidden' : null ?>"
      data-field-id="<?php echo $field->get_id() ?>">
 	<div class="eolia_form-group<?php echo $field ? ' eolia_form-group--required' : null ?>"
 	     data-field-id="<?php echo $field->get_id() ?>">
@@ -35,6 +36,10 @@ $options = $field->get_options();
 		       for="<?php echo $field->get_id() ?>">
 			<?php echo $field->get_label() ?>
 		</label>
-		<textarea <?php echo FieldController::formatAttributes( $field->get_field_attributes() ) ?>><?php if ( isset( $_GET[ $field->get_id() ] ) && ! empty( $_GET[ $field->get_id() ] ) ) : ?><?php echo $_GET[ $field->get_id() ] ?><?php endif ?></textarea>
+		<textarea <?php echo FieldController::formatAttributes(
+			$field->get_field_attributes()
+		) ?>><?php if ( isset( $_GET[ $field->get_id() ] ) && ! empty(
+				$_GET[ $field->get_id() ]
+				) ) : ?><?php echo $_GET[ $field->get_id() ] ?><?php endif ?></textarea>
 	</div>
 </div>

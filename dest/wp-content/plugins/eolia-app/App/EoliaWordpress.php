@@ -19,8 +19,7 @@
  * Time: 23:53
  */
 
-namespace Eolia
-{
+namespace Eolia {
 
 	if ( ! defined( 'ABSPATH' ) ) {
 		exit; // don't access directly
@@ -102,12 +101,16 @@ namespace Eolia
 			$this->options     = get_option( 'eolia-app' );
 			$this->lang        = get_locale();
 
-			add_action( 'init',
+			add_action(
+				'init',
 				function () {
 					if ( ! is_admin() ) {
-						$this->lang = function_exists( 'pll_current_language' ) ? pll_current_language( 'locale' ) : get_locale();
+						$this->lang = function_exists( 'pll_current_language' ) ? pll_current_language(
+							'locale'
+						) : get_locale();
 					}
-				} );
+				}
+			);
 
 			add_action( 'init', array( $this, 'job_post_type' ) );
 			add_action( 'init', array( $this, 'job_post_taxonomy' ) );
@@ -127,7 +130,8 @@ namespace Eolia
 			add_action( 'rss2_ns', array( $this, 'add_eolia_rss_namespace' ) );
 			add_action( 'rss2_item', array( $this, 'add_eolia_rss_fields' ) );
 
-			add_filter( 'the_content',
+			add_filter(
+				'the_content',
 				function ( $content ) {
 					$apply_suffix = _x( 'apply', 'slug', 'eolia-app' );
 
@@ -141,7 +145,8 @@ namespace Eolia
 					}
 
 					return $content;
-				} );
+				}
+			);
 
 			add_filter( 'post_type_link', array( $this, 'job_category_permalink' ), 10, 2 );
 			add_filter(
@@ -197,7 +202,7 @@ namespace Eolia
 		 */
 		public function set_current_menu_title_as_global( $sorted_menu_items ) {
 			foreach ( $sorted_menu_items as $menu_item ) {
-				if ( $menu_item->current && $menu_item->type === 'post_type_archive') {
+				if ( $menu_item->current && $menu_item->type === 'post_type_archive' ) {
 					$GLOBALS['eolia_archive_title'] = $menu_item->title;
 					break;
 				}
@@ -235,13 +240,6 @@ namespace Eolia
 				'posts_per_page' => - 1,
 				'orderby'        => 'meta_value',
 				'order'          => $this->options['res_order'],
-				'meta_query'     => array(
-					'relation' => 'AND',
-					array(
-						'key'   => 'lang',
-						'value' => get_locale(),
-					),
-				),
 			);
 
 			if ( isset( $_REQUEST['ids'] ) ) {
@@ -263,9 +261,11 @@ namespace Eolia
 				return null;
 			}
 			foreach ( $query->posts as $post ) {
-				$category                          = get_post_meta( $post->ID,
+				$category                          = get_post_meta(
+					$post->ID,
 					$this->options['res_main_category'],
-					true );
+					true
+				);
 				$results[ $category ][ $post->ID ] = $post;
 			}
 			ksort( $results );
@@ -390,12 +390,14 @@ namespace Eolia
 						),
 						'Viadeo'
 					),
-					'fichier_viadeo'        => sprintf( _x(
-						'My %s resume',
-						'file-label',
-						'eolia-app'
+					'fichier_viadeo'        => sprintf(
+						_x(
+							'My %s resume',
+							'file-label',
+							'eolia-app'
+						),
+						'Viadeo'
 					),
-						'Viadeo' ),
 					'fichier_indeed'        => sprintf( _x( 'My %s resume', 'file-label', 'eolia-app' ), 'Indeed' ),
 				),
 			);
@@ -481,8 +483,8 @@ namespace Eolia
 		}
 
 		/**
-		 * @param string $permalink The permalink.
-		 * @param \WP_Post $post    The post ID.
+		 * @param string   $permalink The permalink.
+		 * @param \WP_Post $post      The post ID.
 		 *
 		 * @return mixed
 		 */
@@ -493,8 +495,8 @@ namespace Eolia
 			if ( $category = get_the_terms( $post->ID, 'job_category' ) ) {
 				$permalink = str_replace( '%job_category%', current( $category )->slug, $permalink );
 			} else {
-                $permalink = str_replace('%job_category%/', '', $permalink);
-            }
+				$permalink = str_replace( '%job_category%/', '', $permalink );
+			}
 
 			return $permalink;
 		}
@@ -502,8 +504,10 @@ namespace Eolia
 		public function generate_taxonomy_rewrite_rules( $wp_rewrite ) {
 			$rules      = array();
 			$post_types = get_post_types( array( 'name' => 'job', 'public' => true, '_builtin' => false ), 'objects' );
-			$taxonomies = get_taxonomies( array( 'name' => 'job_category', 'public' => true, '_builtin' => false ),
-				'objects' );
+			$taxonomies = get_taxonomies(
+				array( 'name' => 'job_category', 'public' => true, '_builtin' => false ),
+				'objects'
+			);
 
 			foreach ( $post_types as $post_type ) {
 				$post_type_name = $post_type->name; // 'job'
@@ -511,11 +515,13 @@ namespace Eolia
 
 				foreach ( $taxonomies as $taxonomy ) {
 					if ( $taxonomy->object_type[0] == $post_type_name ) {
-						$terms = get_categories( array(
-							'type'       => $post_type_name,
-							'taxonomy'   => $taxonomy->name,
-							'hide_empty' => 0,
-						) );
+						$terms = get_categories(
+							array(
+								'type'       => $post_type_name,
+								'taxonomy'   => $taxonomy->name,
+								'hide_empty' => 0,
+							)
+						);
 						foreach ( $terms as $term ) {
 							$rules[ $post_type_slug . '/' . $term->slug . '/?$' ] = 'index.php?' . $term->taxonomy . '=' . $term->slug;
 						}
@@ -733,8 +739,12 @@ namespace Eolia
 
 			$query = new WP_Query( $args );
 			foreach ( $query->posts as $post ) {
-				$lang                                                         = function_exists( 'pll_get_post_language' ) ? pll_get_post_language( $post->ID,
-					'locale' ) : get_post_meta( $post->ID, 'lang', true );
+				$lang                                                         = function_exists(
+					'pll_get_post_language'
+				) ? pll_get_post_language(
+					$post->ID,
+					'locale'
+				) : get_post_meta( $post->ID, 'lang', true );
 				$posts[ $lang ][ get_post_meta( $post->ID, 'job_id', true ) ] = $post;
 			}
 			wp_reset_query();
@@ -862,9 +872,9 @@ namespace Eolia
 		}
 
 		/**
-		 * @param bool|null $forced To force job update.
+		 * @param bool|null   $forced To force job update.
 		 *
-		 * @param null|string $lang The current language.
+		 * @param null|string $lang   The current language.
 		 *
 		 * @return array|bool
 		 * @throws \ErrorException
@@ -909,7 +919,11 @@ namespace Eolia
 				$job->set_language( str_replace( '-', '_', $item->version->__toString() ) );
 				$job->set_id( $item->id->__toString() );
 
-				$title = isset( $item->saisie1 ) && ! empty( trim( $item->saisie1->__toString() ) ) ? $item->saisie1->__toString() : $item->nomposte->__toString();
+				$title = isset( $item->saisie1 ) && ! empty(
+				trim(
+					$item->saisie1->__toString()
+				)
+				) ? $item->saisie1->__toString() : $item->nomposte->__toString();
 
 				$job->set_title( $title );
 
@@ -931,13 +945,19 @@ namespace Eolia
 					$job->set_modified( $modified );
 				}
 
-				if ( array_key_exists( 'description_field',
-						$this->options ) && isset( $item->{$this->options['description_field']} ) && ! empty( $this->options['description_field'] ) ) {
-					$job->set_description( html_entity_decode( $item->{$this->options['description_field']}->__toString() ) );
+				if ( array_key_exists(
+					     'description_field',
+					     $this->options
+				     ) && isset( $item->{$this->options['description_field']} ) && ! empty( $this->options['description_field'] ) ) {
+					$job->set_description(
+						html_entity_decode( $item->{$this->options['description_field']}->__toString() )
+					);
 				}
 
-				if ( array_key_exists( 'res_main_category',
-						$this->options ) && isset( $item->{$this->options['res_main_category']} ) && ! empty( $item->{$this->options['res_main_category']} ) ) {
+				if ( array_key_exists(
+					     'res_main_category',
+					     $this->options
+				     ) && isset( $item->{$this->options['res_main_category']} ) && ! empty( $item->{$this->options['res_main_category']} ) ) {
 					$job->set_category( $item->{$this->options['res_main_category']}->__toString() );
 				} else {
 					$job->set_category( 'uncategorized' );
@@ -1015,23 +1035,17 @@ namespace Eolia
 
 			foreach ( $all_jobs as $lang => $jobs ) {
 				$lang = substr( $lang, 0, 2 );
-				if ( ! get_term_by( 'slug', 'uncategorized-' . $lang, 'job_category' ) ) {
-					$term = wp_insert_term( __( 'Uncategorized' ),
+				if ( ! $term = get_term_by( 'slug', 'uncategorized-' . $lang, 'job_category' ) ) {
+					$term = wp_insert_term(
+						__( 'Uncategorized' ),
 						'job_category',
 						array(
 							'slug' => 'uncategorized-' . $lang,
-						) );
+						)
+					);
 					if ( function_exists( 'pll_set_term_language' ) && ! is_wp_error( $term ) ) {
 						pll_set_term_language( $term['term_id'], $lang );
 					}
-
-					$terms_localized[ $lang ] = $term['term_id'];
-				}
-			}
-
-			if ( function_exists( 'pll_save_term_translations' ) ) {
-				foreach ( $terms_localized as $term => $values ) {
-					pll_save_term_translations( $values );
 				}
 			}
 
@@ -1347,8 +1361,7 @@ namespace Eolia
 	}
 }
 
-namespace
-{
+namespace {
 
 	use Eolia\Controllers\JobController;
 	use Eolia\EoliaWordpress;

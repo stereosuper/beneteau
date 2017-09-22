@@ -2,6 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // don't access directly
 }
+
 /**
  * Fired during plugin deactivation.
  *
@@ -12,8 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @subpackage Wp_Eolia_App/includes
  * @author     Eolia Software / Luc DIDIER <contact@lucdidier.com>
  */
-class Wp_Eolia_App_Deactivator
-{
+class Wp_Eolia_App_Deactivator {
 
 	/**
 	 * Short Description. (use period)

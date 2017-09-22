@@ -85,7 +85,7 @@ class FieldModel implements FieldInterface {
 	 * FieldModel constructor.
 	 *
 	 * @param null|string $field_id
-	 * @param string $type
+	 * @param string      $type
 	 *
 	 * @throws \Exception
 	 */

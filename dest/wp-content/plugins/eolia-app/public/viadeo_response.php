@@ -1,7 +1,7 @@
 <?php
 @session_start();
-if (isset($_GET['code'])) {
-	if ($_SESSION['viadeo_state'] == $_GET['state']) {
+if ( isset( $_GET['code'] ) ) {
+	if ( $_SESSION['viadeo_state'] == $_GET['state'] ) {
 		$_SESSION['viadeo_code'] = $_GET['code'];
 	}
 }

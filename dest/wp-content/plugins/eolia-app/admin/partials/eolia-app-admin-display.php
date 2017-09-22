@@ -53,7 +53,9 @@ if ( ! empty( $options['application_fields_url'] ) ) {
 
 	$tabs['eolia_apply_free'] = [
 		'title'       => _x( 'Unsolicited application questionnaire', 'admin tab title', $this->plugin_name ),
-		'long_title'  => _x( 'Unsolicited application questionnaire setup', 'admin tab long-title', $this->plugin_name ),
+		'long_title'  => _x(
+			'Unsolicited application questionnaire setup', 'admin tab long-title', $this->plugin_name
+		),
 		'description' => '',
 		'view'        => 'eolia-app-admin-display-apply-free',
 	];
@@ -83,7 +85,9 @@ if ( ! empty( $options['application_fields_url'] ) ) {
 		<p><?php echo $tabs[ $active_tab ]['description']; ?></p>
 
 		<?php
-		if ( ! empty( $tabs[ $active_tab ]['view'] ) && is_file( dirname( __FILE__ ) . '/' . $tabs[ $active_tab ]['view'] . '.php' ) ) {
+		if ( ! empty( $tabs[ $active_tab ]['view'] ) && is_file(
+				dirname( __FILE__ ) . '/' . $tabs[ $active_tab ]['view'] . '.php'
+			) ) {
 			include( $tabs[ $active_tab ]['view'] . '.php' );
 		} else {
 			echo '<p>' . __( 'Coming soon...', $this->plugin_name ) . '</p>';

@@ -159,7 +159,9 @@ class JobModel implements JobInterface {
 			$this->add_additionnal_field( $key, get_post_meta( $query->post->ID, $key, true ) );
 		}
 
-		if ( false !== strpos( 'uncategorized', $options['res_main_category'] ) || !get_post_meta( $query->post->ID, $options['res_main_category'], true ) ) {
+		if ( false !== strpos( 'uncategorized', $options['res_main_category'] ) || ! get_post_meta(
+				$query->post->ID, $options['res_main_category'], true
+			) ) {
 			$this->set_category( _x( 'Uncategorized', 'search-results', 'eolia-app' ) );
 		} else {
 			$this->set_category( get_post_meta( $query->post->ID, $options['res_main_category'], true ) );
@@ -299,8 +301,12 @@ class JobModel implements JobInterface {
 		$post = array(
 			'post_author'       => 1,
 			'post_title'        => $this->get_title(),
-			'post_name'         => sanitize_title( implode( '-',
-				array( $this->get_id(), $this->get_title(), $this->get_language( true ) ) ) ),
+			'post_name'         => sanitize_title(
+				implode(
+					'-',
+					array( $this->get_id(), $this->get_title(), $this->get_language( true ) )
+				)
+			),
 			'post_date'         => $this->get_created()->format( 'Y-m-d H:i:s' ),
 			'post_modified'     => $this->get_modified()->format( 'Y-m-d H:i:s' ),
 			'post_modified_gmt' => '',
@@ -316,11 +322,13 @@ class JobModel implements JobInterface {
 					'lang'      => $this->get_language(),
 					'location'  => $this->get_location(),
 					'questions' => $this->get_questions(),
-				) ),
+				)
+			),
 		);
 
 		if ( $query->have_posts() ) {
-			if ( $this->get_modified() !== $this->get_created() && $query->post->post_modified < $this->get_modified()->format( 'Y-m-d H:i:s' ) ) {
+			if ( $this->get_modified() !== $this->get_created() && $query->post->post_modified < $this->get_modified(
+				)->format( 'Y-m-d H:i:s' ) ) {
 				$post    = array_merge( (array) $query->post, $post );
 				$post_id = $post['ID'];
 				wp_update_post( $post );
@@ -348,7 +356,11 @@ class JobModel implements JobInterface {
 
 		// Force update modified.
 		global $wpdb;
-		$wpdb->query( 'UPDATE ' . $wpdb->prefix . 'posts SET post_modified = \'' . esc_sql( $this->get_modified()->format( 'Y-m-d H:i:s' ) ) . '\' WHERE ID = ' . esc_sql( $post_id ) );
+		$wpdb->query(
+			'UPDATE ' . $wpdb->prefix . 'posts SET post_modified = \'' . esc_sql(
+				$this->get_modified()->format( 'Y-m-d H:i:s' )
+			) . '\' WHERE ID = ' . esc_sql( $post_id )
+		);
 
 		return $post_id;
 	}

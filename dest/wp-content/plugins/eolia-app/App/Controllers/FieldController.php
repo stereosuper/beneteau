@@ -39,7 +39,7 @@ class FieldController extends FieldModel {
 	 * Field constructor.
 	 *
 	 * @param null|string $field The field ID.
-	 * @param string $type       application_fields|offer_fields.
+	 * @param string      $type  application_fields|offer_fields.
 	 *
 	 */
 	public function __construct( $field = null, $type = 'offer_fields' ) {

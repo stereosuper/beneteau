@@ -2,6 +2,7 @@
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // don't access directly
 }
+
 use Eolia\Controllers\FieldController;
 
 $options            = get_option( 'eolia-app' );
@@ -40,39 +41,50 @@ $application_fields = eolia_get_fields( 'application_fields' );
 			<ul class="availables_fields">
 				<li class="field" data-type="custom" data-component="questions">
 					<span class="field_label"> <span
-							class="fa fa-fw fa-question-circle-o"></span><?= _x( 'Custom Questions',
+							class="fa fa-fw fa-question-circle-o"></span><?= _x(
+							'Custom Questions',
 							'admin form builder input-type',
-							$this->plugin_name ) ?></span>
+							$this->plugin_name
+						) ?></span>
 					<input type="button" data-id="questions" class="add_field button button-small"
 					       value="<?= _x( 'Add to form', 'admin form builder button', $this->plugin_name ); ?>"/>
 				</li>
 				<?php
 				/** @var \Eolia\Controllers\FieldController $field */
 				foreach ( $application_fields as $field ) {
-					if ( !$field->get_label() ) {
+					if ( ! $field->get_label() ) {
 						continue;
 					}
-					echo '<li class="field" data-type="' . $field->get_type() . '" data-component="' . $field->get_component() . '"><span class="field_label">';
+					echo '<li class="field" data-type="' . $field->get_type(
+						) . '" data-component="' . $field->get_component() . '"><span class="field_label">';
 					switch ( $field->get_component() ) {
 						case 'text':
-							echo '<span class="fa fa-fw fa-i-cursor" title="' . _x( 'Entry field',
+							echo '<span class="fa fa-fw fa-i-cursor" title="' . _x(
+									'Entry field',
 									'admin form builder input-type',
-									$this->plugin_name ) . '"></span>';
+									$this->plugin_name
+								) . '"></span>';
 							break;
 						case 'select':
-							echo '<span class="fa fa-fw fa-caret-square-o-down" title="' . _x( 'Select field',
+							echo '<span class="fa fa-fw fa-caret-square-o-down" title="' . _x(
+									'Select field',
 									'admin form builder input-type',
-									$this->plugin_name ) . '"></span>';
+									$this->plugin_name
+								) . '"></span>';
 							break;
 						case 'datepicker':
-							echo '<span class="fa fa-fw fa-calendar" title="' . _x( 'Date field',
+							echo '<span class="fa fa-fw fa-calendar" title="' . _x(
+									'Date field',
 									'admin form builder input-type',
-									$this->plugin_name ) . '"></span>';
+									$this->plugin_name
+								) . '"></span>';
 							break;
 						case 'file':
-							echo '<span class="fa fa-fw fa-paperclip" title="' . _x( 'Upload field',
+							echo '<span class="fa fa-fw fa-paperclip" title="' . _x(
+									'Upload field',
 									'admin form builder input-type',
-									$this->plugin_name ) . '"></span>';
+									$this->plugin_name
+								) . '"></span>';
 							break;
 					}
 					echo $field->get_label();
@@ -84,10 +96,16 @@ $application_fields = eolia_get_fields( 'application_fields' );
 						echo ' <em>[parent : ' . $parent->get_label() . ']</em>';
 					}
 					echo '</span>';
-					echo '<input type="button" data-id="' . $field->get_id() . '" data-type="' . $field->get_type() . '" data-component="' . $field->get_component() . '" class="add_field button button-small" value="' . _x( 'Add to form',
-							'admin form builder button',
-							$this->plugin_name ) . '" title="' . _x( 'Click to add',
-							'admin form builder placeholder', $this->plugin_name ) . '" />';
+					echo '<input type="button" data-id="' . $field->get_id() . '" data-type="' . $field->get_type(
+						) . '" data-component="' . $field->get_component(
+						) . '" class="add_field button button-small" value="' . _x(
+						     'Add to form',
+						     'admin form builder button',
+						     $this->plugin_name
+					     ) . '" title="' . _x(
+						     'Click to add',
+						     'admin form builder placeholder', $this->plugin_name
+					     ) . '" />';
 					echo '</li>';
 				}
 				?>
@@ -96,9 +114,11 @@ $application_fields = eolia_get_fields( 'application_fields' );
 
 		<div class="selected_fields_area">
 			<h4><?= _x( 'Selected form field', 'admin form builder heading', $this->plugin_name ) ?></h4>
-			<p><?= _x( 'Drag and drop to reorder the table rows',
+			<p><?= _x(
+					'Drag and drop to reorder the table rows',
 					'admin form builder subheading',
-					$this->plugin_name ) ?></p>
+					$this->plugin_name
+				) ?></p>
 			<table id="selected_fields" class="widefat sortable">
 				<thead>
 				<tr>
