@@ -10,7 +10,7 @@
     a{
         color: $white;
         &:hover, &:focus{
-            color: $primary;
+            color: $secondary;
         }
     }
 }
@@ -27,6 +27,7 @@
             width: 30px;
             height: 1px;
             margin: -2px 35px 0 75px;
+            background: $secondary;
         }
         &:first-child{
             &:before{
