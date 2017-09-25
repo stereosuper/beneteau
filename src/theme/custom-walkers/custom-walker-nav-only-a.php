@@ -53,7 +53,7 @@ class CustomWalkerNavOnlyA extends Walker_Nav_Menu {
    * @param int $current_page Menu item ID.
    * @param object $args
    */
-  function start_el(&$output, $item, $depth=0, $args=array()) {
+  function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
     global $wp_query;
 
     $attributes  = ! empty( $item->attr_title ) ? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
