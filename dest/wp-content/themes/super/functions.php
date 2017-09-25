@@ -129,6 +129,16 @@ function beneteau_mce_before_init( $styles ){
             'classes' => 'link-doc'
         ),
         array(
+            'title' => 'Bouton clair',
+            'selector' => 'a',
+            'classes' => 'btn-invert'
+        ),
+        array(
+            'title' => 'Bouton foncé',
+            'selector' => 'a',
+            'classes' => 'btn'
+        ),
+        array(
             'title' => 'Introduction',
             'block' => 'p',
             'classes' => 'intro'
