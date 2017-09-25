@@ -10,7 +10,13 @@
     letter-spacing: 0.22em;
     text-transform: uppercase;
     text-decoration: underline;
-    color: $text;
+    color: $grey;
+    &:hover, &:focus{
+        color: $text;
+    }
+    &:active{
+        color: $grey;
+    }
 }
 
 .link, .link-doc, .btn, .btn-invert{
@@ -34,29 +40,32 @@
     &:before, &:after{
         width: 25px;
         height: 1px;
-        background: $primary;
+        background: $secondary;
         transition: $transition;
-    }
-    &:before{
-        transform-origin: 100% 0;
+        transform-origin: 0 0;
     }
     &:after{
-        transform-origin: 0 0;
+        background: $primary;
         transform: scaleX(0);
+    }
+    &:hover, &:focus{
+        &:before{
+            background: $primary;
+            transform: scaleX(1);
+        }
+    }
+    &:active{
+        &:before{
+            opacity: 0;
+        }
+        &:after{
+            transform: scaleX(1);
+        }
     }
 }
 
 .link{
     padding-right: 60px;
-    &:hover, &:focus{
-        &:before{
-            transform: scaleX(0);
-        }
-        &:after{
-            transform: scaleX(1);
-            transition: 0.15s 0.25s ease-in-out;
-        }
-    }
 }
 
 .link-doc{
@@ -108,30 +117,19 @@
     padding: 20px 60px;
     &:before{
         left: 10px;
-        opacity: 0;
-        transition: opacity 0.15s ease-in-out, 0.15s transform 0.15s ease-in-out;
+        transform: scaleX(0);
     }
     &:after{
         right: 10px;
-    }
-    &:before, &:after{
-        background: $secondary;
-    }
-    &:hover, &:focus{
-        &:before{
-            opacity: 1;
-            transform: scaleX(0);
-        }
-        &:after{
-            transform: scaleX(1);
-            transition: 0.15s 0.25s ease-in-out;
-        }
     }
 }
 
 .btn{
     background: $grey;
     color: $white;
+    &:before, &:after{
+        background: $secondary !important;
+    }
     &:hover, &:focus{
         color: $white;
         background: #667B8E;
@@ -144,10 +142,14 @@
 .btn-invert, .btn-invert-block{
     border-color: $grey;
     background: $white;
-    color: $text;
+    color: $grey;
     &:hover, &:focus{
-        color: $white;
-        background: $text;
+        color: $text;
+        border-color: $text;
+    }
+    &:active{
+        border-color: $grey;
+        color: $grey;
     }
 }
 
