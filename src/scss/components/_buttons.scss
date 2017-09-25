@@ -92,14 +92,38 @@
         margin: auto;
         font-size: 1.8rem;
         color: $primary;
+        transition: $transition;
     }
 }
-
+.link-prev{
+    &:hover, &:focus{
+        transform: translate3d(-10px, 0, 0);
+        > .icon{
+            transform: translate3d(5px, 0, 0);
+        }
+    }
+    &:active{
+        > .icon{
+            transform: translate3d(-5px, 0, 0);
+        }
+    }
+}
 .link-next{
     padding: 0 60px 0 0;
     > .icon{
         left: auto;
         right: 0;
+    }
+    &:hover, &:focus{
+        transform: translate3d(10px, 0, 0);
+        > .icon{
+            transform: translate3d(-5px, 0, 0);
+        }
+    }
+    &:active{
+        > .icon{
+            transform: translate3d(5px, 0, 0);
+        }
     }
 }
 
@@ -185,5 +209,11 @@
         right: 0;
         transform-origin: 100% 0;
         transform: rotate(-45deg) translate3d(-3px, 0, 0);
+    }
+    &:hover, &:focus{
+        transform: rotate(180deg);
+    }
+    &:active{
+        color: $grey;
     }
 }
