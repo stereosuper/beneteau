@@ -38,6 +38,12 @@
         top: 2px;
         right: 2px;
         font-family: $montserratBold;
+        background: none;
+        color: $white;
+    }
+    .featherlight-content{
+        padding: 0;
+        border: 0;
     }
 }
 .featherlight-next, .featherlight-previous{
@@ -49,21 +55,26 @@
     }
     span{
         display: block;
-        width: 25px;
+        width: 22px;
+        height: 22px;
+        margin-top: -20px;
         font-size: 30px;
         text-shadow: none;
         opacity: 0;
+        text-indent: -99em;
         transition: $transition;
     }
 }
 .featherlight-next{
     span{
         right: 20px;
+        background: url(../layoutImg/right.svg) no-repeat 50% 50%;
     }
 }
 .featherlight-previous{
     span{
         left: 20px;
+        background: url(../layoutImg/left.svg) no-repeat 50% 50%;
     }
 }
 
