@@ -474,7 +474,7 @@ a{
             border-top-left-radius: 30px;
             background: #fff;
             transform: translate3d(0, 0, 0) skewY(-17deg);
-            transition: $transition;
+            //transition: $transition;
         }
     }
     .img{
@@ -484,7 +484,7 @@ a{
         overflow: hidden;
         border-top-left-radius: 30px;
         transform: translate3d(0, 0, 0) skewY(-17deg);
-        transition: $transition;
+        //transition: $transition;
         > img, .bg{
             width: auto;
             height: auto;
@@ -496,7 +496,7 @@ a{
             top: 50%;
             left: 50%;
             transform: translate3d(-50%, -50%, 0) skewY(17deg);
-            transition: $transition;
+            //transition: $transition;
         }
         > .bg{
             background: $text url(../layoutImg/pattern.png);
