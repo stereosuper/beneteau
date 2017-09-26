@@ -14,6 +14,8 @@ $content = get_sub_field('content');
 <div class='home-news'>
     <div class='push-container'>
         <?php
+            global $post;
+
             // Cf. http://codex.wordpress.org/Class_Reference/WP_Query
             $query_args = array(
                 // Type Parameters
@@ -28,14 +30,22 @@ $content = get_sub_field('content');
             if ($news_query->have_posts()) :
                 while ($news_query->have_posts()) :
                     $news_query->the_post();
+                    $img_uri = false;
+                    $wztp_uri = false;
+                    if (class_exists(('WiztopicSync'))) {
+                        $wztp_uri =  WiztopicSync::getPermalink($post->ID);
+                        $img_uri = WiztopicSync::getMediaPermalink($post->ID, 'medium');
+                    }
         ?>
-        <a href='<?php the_permalink() ?>'>
+        <a href='<?php echo ($wztp_uri)?$wztp_uri:'#';  ?>'>
+            <?php if ($img_uri) : ?>
             <div class='img-wrapper'>
                 <div class='img'>
                     <div class='bg'></div>
-                    <?php the_post_thumbnail('medium'); ?>
+                    <img src="<?php echo $img_uri; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
                 </div>
             </div>
+            <?php endif; // if ($img_uri) : ?>
             <time><?php the_time(__('d/m/Y', 'beneteau')); ?></time>
             <h3><?php the_title(); ?></h3>
         </a>
