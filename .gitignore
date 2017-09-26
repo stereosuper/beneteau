@@ -30,3 +30,7 @@ dest/license.txt
 /dest/wp-content/index.php
 /dest/readme.html
 /dest/wp-content/uploads
+/dest/wp-content/plugins/advanced-custom-fields-pro
+/dest/wp-content/plugins/multilingual-press
+/dest/wp-content/plugins/wordpress-seo
+/dest/wp-content/plugins/wp-api-menus
