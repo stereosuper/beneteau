@@ -14,7 +14,7 @@ $link_label = get_sub_field('link_label');
 
 ?>
 
-<div class='home-talent'>
+<div class='home-talent isAnimated'>
     <?php if (!empty($anchor)) : ?><a name="<?php echo $anchor; ?>"></a><?php endif; ?>
 
     <?php if (!empty($image_url)) : ?><img src="<?php echo $image_url; ?>" alt="<?php echo esc_attr($title); ?>"/><?php endif; ?>

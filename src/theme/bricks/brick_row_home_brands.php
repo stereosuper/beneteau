@@ -11,7 +11,7 @@ $link_label = get_sub_field('link_label');
 
 <?php if (!empty($anchor)) : ?><a name="<?php echo $anchor; ?>"></a><?php endif; ?>
 
-<div class='home-brands'>
+<div class='home-brands isAnimated'>
     <div class='text'>
         <h2><?php echo $title; ?></h2>
         <p><?php echo $content; ?></p>

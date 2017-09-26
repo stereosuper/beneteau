@@ -46,7 +46,7 @@ $content = get_sub_field('content');
         ?>
     </div>
 
-    <div class='text'>
+    <div class='text isAnimated'>
         <p><?php echo $content; ?></p>
         <a href='<?php echo (get_option('page_for_posts')?get_permalink(get_option('page_for_posts')):get_site_url()); ?>' class='link'><?php _e('Toutes les actualités', 'beneteau'); ?></a>
     </div>

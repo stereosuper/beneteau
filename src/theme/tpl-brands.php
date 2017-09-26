@@ -74,7 +74,7 @@ get_header(); ?>
 
                 <?php if ( function_exists('yoast_breadcrumb') ) { yoast_breadcrumb('<div class="breadcrumbs">','</div>'); } ?>
 
-                <h1><?php the_title(); ?></h1>
+                <h1 class='isAnimated'><?php the_title(); ?></h1>
 
                 <?php
                     // Fait une seconde boucle sur les secteurs pour afficher les marques qui en dépendent
@@ -82,7 +82,7 @@ get_header(); ?>
                         foreach ($terms as $term) :
                 ?>
 
-                    <h2 id="section-<?php echo $term->slug; ?>"><?php echo $term->name; ?></h2>
+                    <h2 class='isAnimated' id="section-<?php echo $term->slug; ?>"><?php echo $term->name; ?></h2>
 
                     <?php
                         // Cf. http://codex.wordpress.org/Class_Reference/WP_Query

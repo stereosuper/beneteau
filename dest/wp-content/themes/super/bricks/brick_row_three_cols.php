@@ -14,7 +14,7 @@ $title_align = get_sub_field('title_align');
    <?php } ?>
 
     <?php if (super_have_rows('blocks')) : ?>
-        <div class='grid grid-contact'>
+        <div class='grid grid-contact isAnimated'>
             <?php while (super_have_rows('blocks')) :
                 the_row();
 
