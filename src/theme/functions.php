@@ -65,7 +65,9 @@ add_filter( 'login_errors', create_function('$a', "return null;") );
 /*-----------------------------------------------------------------------------------*/
 // Remove some useless admin stuff
 function beneteau_remove_submenus() {
-    remove_menu_page( 'edit.php' );
+    if (strpos($_SERVER['SERVER_NAME'], '.dev')<0) {
+        remove_menu_page( 'edit.php' );
+    }
     remove_submenu_page( 'themes.php', 'themes.php' );
 }
 add_action( 'admin_menu', 'beneteau_remove_submenus', 999 );
