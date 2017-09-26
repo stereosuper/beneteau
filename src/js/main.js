@@ -65,10 +65,13 @@ $(function(){
     window.sr = ScrollReveal({reset: true});
     // initScrollReval('.isAnimated');
     sr.reveal('.isAnimated');
+    sr.reveal('.content-brand .baseline', { duration: 1500, origin: 'right', scale: 1, distance: '60px' });
+    sr.reveal('.exergue', { easing: 'ease-in-out', duration: 500, origin: 'left', scale: 0.9, distance: '60px' });
+    sr.reveal('.list-brands >li:nth-child(2n+0)', { easing: 'ease-in-out', duration: 600, origin: 'left', scale: 0.5, distance: '30px' });
+    sr.reveal('.list-brands >li:nth-child(2n+1)', { easing: 'ease-in-out', duration: 600, origin: 'right', scale: 0.5, distance: '30px' });
+    
     /*
     sr.reveal('.content');
-    //scrollreveal citation
-    sr.reveal('.citation', { duration: 1500,origin: 'right',scale: 1,distance: '60px' });//scrollreveal exerguer
     sr.reveal('.exergue', { easing: 'ease-in-out',duration: 500,origin: 'left',scale: 0.9,distance: '60px' });
     sr.reveal('.push .before', { easing: 'ease-in-out',duration: 500,rotate: { x: 0, y: 0, z: 0 },scale:1, opacity:0,distance: '80px', beforeReveal: function (domEl) {showpush($(".spritepush"));} });
     sr.reveal('.push', { duration: 800,origin: 'bottom',scale: 1,distance: '60px' });//scrollreveal exerguer
