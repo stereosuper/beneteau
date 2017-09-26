@@ -59,6 +59,24 @@ $(function(){
         $('#nav').toggleClass('on');
         body.toggleClass('menu-open');
 
+    }).on('mouseenter', 'a', function(){
+
+        if( $(this).parents('.sub-menu').length ) return;
+
+        if( $(this).parents('#header').find('.sub-menu').length ){
+            $(this).parents('#header').find('.sub-menu').removeClass('on');
+        }
+
+        if( $(this).siblings('.sub-menu').length ){
+            $(this).siblings('.sub-menu').addClass('on');
+        }
+
+    }).on('mouseleave', '#nav', function(){
+
+        if( $(this).find('.sub-menu').length ){
+            $(this).find('.sub-menu').removeClass('on');
+        }
+
     });
 
     // ScrollReveal

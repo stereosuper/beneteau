@@ -65,7 +65,7 @@ add_filter( 'login_errors', create_function('$a', "return null;") );
 /*-----------------------------------------------------------------------------------*/
 // Remove some useless admin stuff
 function beneteau_remove_submenus() {
-    if (strpos($_SERVER['SERVER_NAME'], '.dev')<0) {
+    if( strpos($_SERVER['SERVER_NAME'], '.dev') < 0 ){
         remove_menu_page( 'edit.php' );
     }
     remove_submenu_page( 'themes.php', 'themes.php' );
@@ -221,7 +221,6 @@ add_filter( 'post_gallery', 'beneteau_gallery' );
 /* Menus
 /*-----------------------------------------------------------------------------------*/
 register_nav_menus( array(
-		'top' => 'Menu Haut (Langues et contact)',
 		'primary' => 'Menu Principal',
 		'legals' => 'Menu des mentions légales',
 		'footer' => 'Menu de pied de page',
@@ -235,6 +234,7 @@ add_filter( 'nav_menu_css_class', 'beneteau_css_attributes_filter' );
 
 require_once('custom-walkers/custom-walker-nav-only-a.php');
 require_once('custom-walkers/custom-walker-nav-sub-menu.php');
+require_once('custom-walkers/custom-walker-nav-wrap-submenu.php');
 
 
 /*-----------------------------------------------------------------------------------*/

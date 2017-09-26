@@ -37,7 +37,8 @@
 						<?php wp_nav_menu( array(
 							'theme_location' => 'primary',
 							'container' => false,
-							'menu_class' => 'menu-main'
+							'menu_class' => 'menu-main',
+							'walker' => new Wrap_Submenu()
 						) ); ?>
 					</div>
 				</nav>
