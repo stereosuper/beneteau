@@ -363,11 +363,12 @@ a{
         }
     }
     &:before, &:after{
+        width: 100vw;
         position: absolute;
         top: 0;
-        left: calc(50% - 65vw);
+        left: 50%;
         bottom: 0;
-        right: calc(-50% + 8vw);
+        margin-left: -50vw;
         z-index: -1;
     }
     &:before{
@@ -516,15 +517,6 @@ a{
     }
 }
 
-
-@media (max-width: $desktopSmall){
-    .highlighted{
-        &:before, &:after{
-            left: -$gutter;
-            right: -$gutter;
-        }
-    }
-}
 
 @media (max-width: $tablet){
     body{
