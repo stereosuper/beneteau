@@ -354,13 +354,15 @@ a{
     text-align: center;
     color: $white;
     &.no-img{
-        &:after{
+        &:before{
             background: $text url(../layoutImg/pattern.png);
             opacity: 1;
         }
+        &:after{
+            content: '';
+        }
     }
-    &:after, &:before{
-        content: '';
+    &:before, &:after{
         position: absolute;
         top: 0;
         left: calc(50% - 65vw);
@@ -368,12 +370,23 @@ a{
         right: calc(-50% + 8vw);
         z-index: -1;
     }
-    &:after{
+    &:before{
+        content: '';
         background: #19456B;
         opacity: 0.7;
     }
-    &:before{
-        z-index: -1;
+    &:after{
+        content: none;
+        background: linear-gradient(45deg, rgba($text, 0) 20%, $text 55%);
+    }
+    .bg-img{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        bottom: 0;
+        width: 100vw;
+        margin-left: -50vw;
+        z-index: -2;
         background-repeat: no-repeat;
         background-size: cover;
         background-position: 50% 50%;
