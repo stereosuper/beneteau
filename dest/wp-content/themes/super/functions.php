@@ -484,25 +484,25 @@ function beneteau_register_required_plugins() {
             'slug'        => 'advanced-custom-fields-pro',
             'source'     => get_template_directory_uri() . '/plugins/advanced-custom-fields-pro.zip',
             'required'    => true,
-            'force_activation' => false,
+            'force_activation' => false
         ),
 		array(
 			'name'        => 'WordPress SEO by Yoast',
 			'slug'        => 'wordpress-seo',
             'required'    => false,
-            'force_activation' => false,
+            'force_activation' => false
 		),
         array(
             'name'        => 'MultilingualPress',
             'slug'        => 'multilingual-press',
             'required'    => false,
-            'force_activation' => false,
+            'force_activation' => false
         ),
         array(
             'name'        => 'WP REST API Menus',
             'slug'        => 'wp-api-menus',
             'required'    => true,
-            'force_activation' => false,
+            'force_activation' => false
         ),
 	);
 

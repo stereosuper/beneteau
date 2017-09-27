@@ -38,14 +38,16 @@ $content = get_sub_field('content');
                     }
         ?>
         <a href='<?php echo ($wztp_uri)?$wztp_uri:'#';  ?>'>
-            <?php if ($img_uri) : ?>
+            
             <div class='img-wrapper'>
                 <div class='img'>
                     <div class='bg'></div>
-                    <img src="<?php echo $img_uri; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                    <?php if ($img_uri) : ?>
+                        <img src="<?php echo $img_uri; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                    <?php endif; // if ($img_uri) : ?>
                 </div>
             </div>
-            <?php endif; // if ($img_uri) : ?>
+            
             <time><?php the_time(__('d/m/Y', 'beneteau')); ?></time>
             <h3><?php the_title(); ?></h3>
         </a>
