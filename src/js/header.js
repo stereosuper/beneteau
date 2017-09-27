@@ -47,24 +47,30 @@ module.exports = function(body, header){
             submenuFirstItem = submenuList.children('li').eq(0);
 
             if( submenuList.children('li').eq(2).length ){
-                menuX = - (submenuFirstItem.offset().left + submenuFirstItem.width() + 30 - $(this).offset().left);
+                menuX = - (submenuFirstItem.offset().left + submenuFirstItem.width() - $(this).offset().left);
                 
                 if(submenuList.children('li').eq(2).offset().left + submenuList.children('li').eq(2).width() + menuX < navLeft + navWidth){
                     TweenLite.set(submenuList, {x: menuX});
+                }else{
+                    submenuList.find('li').addClass('right');
                 }
             }else if( submenuList.children('li').eq(1).length ){
-                menuX = - (submenuFirstItem.offset().left - $(this).offset().left + 30);
+                menuX = $(this).offset().left - submenuFirstItem.offset().left;
                 
                 if(submenuList.children('li').eq(1).offset().left + submenuList.children('li').eq(1).width() + menuX < navLeft + navWidth){
                     TweenLite.set(submenuList, {x: menuX});
-                }else if( submenuList.children('li').eq(1).offset().left + submenuList.children('li').eq(1).width() + submenuList.children('li').eq(1).width() < navLeft + navWidth ){
+                }else if( submenuList.children('li').eq(1).offset().left + submenuList.children('li').eq(1).width() < navLeft + navWidth ){
                     TweenLite.set(submenuList, {x: submenuList.children('li').eq(1).width()});
+                    submenuList.find('li').addClass('right');
                 }
             }else if( submenuFirstItem.length ){
-                menuX = - (submenuFirstItem.offset().left - $(this).offset().left + 30);
+                menuX = $(this).offset().left - submenuFirstItem.offset().left;
                 
-                if(submenuList.children('li').eq(0).offset().left + submenuList.children('li').eq(0).width() + menuX < navLeft + navWidth){
+                if(submenuFirstItem.offset().left + submenuFirstItem.width() + menuX < navLeft + navWidth){
                     TweenLite.set(submenuList, {x: menuX});
+                }else if( submenuFirstItem.offset().left + submenuFirstItem.width()*2 < navLeft + navWidth ){
+                    TweenLite.set(submenuList, {x: submenuFirstItem.width()*2});
+                    submenuList.find('li').addClass('right');
                 }
             }
         }

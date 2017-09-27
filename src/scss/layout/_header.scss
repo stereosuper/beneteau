@@ -92,6 +92,7 @@
         right: 0;
         top: 100%;
         margin: 1px 0 0;
+        text-align: center;
         z-index: -1;
         opacity: 0;
         transform: translate3d(0, -100%, 0);
@@ -114,10 +115,13 @@
         }
         > ul{
             display: flex;
+            //width: $col*3;
             width: $col*6;
             padding: 15px 0;
             flex-wrap: wrap;
-            margin: 0 0 0 auto;
+            //margin: 0 0 0 auto;
+            margin: 0 auto;
+            justify-content: center;
         }
         li{
             width: 33.3333%;
@@ -125,10 +129,17 @@
                 content: none;
                 background: $white;
             }
+            // &.right{
+            //     text-align: right;
+            //     a{
+            //         padding: 15px 0 15px $gutter;
+            //     }
+            // }
         }
         a{
             display: inline-block;
             padding: 15px $gutter;
+            //padding: 15px $gutter 15px 0;
             font-family: $montserrat;
             font-size: 1.4rem;
             text-transform: none;
