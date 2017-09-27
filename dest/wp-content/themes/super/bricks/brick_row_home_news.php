@@ -41,10 +41,13 @@ $content = get_sub_field('content');
             
             <div class='img-wrapper'>
                 <div class='img'>
-                    <div class='bg'></div>
-                    <?php if ($img_uri) : ?>
-                        <img src="<?php echo $img_uri; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-                    <?php endif; // if ($img_uri) : ?>
+                    <div class='inner'>
+                        <?php if (empty($img_uri)) { ?>
+                            <div class='bg'></div>
+                        <?php }else{ ?>
+                            <img src="<?php echo $img_uri; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                        ><?php } ?>
+                    </div>
                 </div>
             </div>
             
