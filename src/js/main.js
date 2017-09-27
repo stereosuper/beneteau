@@ -15,6 +15,7 @@ $(function(){
     var slider = require('./slider.js');
     var submenu = require('./submenu.js');
     var initScrollReveal = require('./initScrollReveal.js');
+    var animHeader = require('./header.js');
 
     var body = $('body');
     var header = $('#header');
@@ -40,6 +41,10 @@ $(function(){
     }
 
     function loadHandler(){
+        // Header
+        animHeader(body, header);
+
+        // Slider home
         slider( $('#sliderHome'), windowWidth );
     }
 
@@ -47,38 +52,9 @@ $(function(){
     // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
     initScrollReveal();
 
-    // Submenu Anchors
+    // Submenu (in pages) Anchors
     submenu( $('#submenu'), windowHeight );
     submenu( $('#submenuWrapper'), windowHeight, true );
-
-    // Responsive Header
-    header.on('click', '#burger', function(e){
-        
-        e.preventDefault();
-        $(this).toggleClass('on');
-        $('#nav').toggleClass('on');
-        body.toggleClass('menu-open');
-
-    }).on('mouseenter', 'a', function(){
-
-        if( $(this).parents('.sub-menu').length ) return;
-
-        if( $(this).parents('#header').find('.sub-menu').length ){
-            $(this).parents('#header').find('.sub-menu').removeClass('on');
-        }
-
-        if( $(this).siblings('.sub-menu').length ){
-            $(this).siblings('.sub-menu').addClass('on');
-        }
-
-    }).on('mouseleave', '#nav', function(){
-
-        if( $(this).find('.sub-menu').length ){
-            $(this).find('.sub-menu').removeClass('on');
-        }
-
-    });
-
     
 
     // Since script is loaded asynchronously, load event isn't always fired !!!

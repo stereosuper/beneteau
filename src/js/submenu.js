@@ -1,5 +1,4 @@
 var $ = require('jquery');
-global.jQuery = $;
 
 require('gsap/CSSPlugin');
 require('gsap/ScrollToPlugin');
