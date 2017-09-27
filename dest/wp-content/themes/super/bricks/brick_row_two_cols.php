@@ -9,13 +9,15 @@ $right_col_content = get_sub_field('right_col_content');
 
 ?>
 
-<?php if (!empty($title)){ ?>
-    <h2 id='<?php echo $anchor; ?>' class="align<?php echo $title_align; ?>"><?php echo $title; ?></h2>
-<?php }else if(!empty($anchor)){ ?>
-    <div id='<?php echo $anchor; ?>'></div>
-<?php } ?>
+<div class='isAnimated'>
+    <?php if (!empty($title)){ ?>
+        <h2 id='<?php echo $anchor; ?>' class="align<?php echo $title_align; ?>"><?php echo $title; ?></h2>
+    <?php }else if(!empty($anchor)){ ?>
+        <div id='<?php echo $anchor; ?>'></div>
+    <?php } ?>
 
-<div class='grid'>
-    <?php if (!empty($left_col_content)) : ?><div class="col-2"><?php echo $left_col_content; ?></div><?php endif; ?>
-    <?php if (!empty($right_col_content)) : ?><div class="col-2"><?php echo $right_col_content; ?></div><?php endif; ?>
+    <div class='grid'>
+        <?php if (!empty($left_col_content)) : ?><div class="col-2"><?php echo $left_col_content; ?></div><?php endif; ?>
+        <?php if (!empty($right_col_content)) : ?><div class="col-2"><?php echo $right_col_content; ?></div><?php endif; ?>
+    </div>
 </div>

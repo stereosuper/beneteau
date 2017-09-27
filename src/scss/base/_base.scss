@@ -396,8 +396,7 @@ a{
 .push-wrapper{
     position: relative;
     z-index: 1;
-    &:before{
-        content: '';
+    .push-banner{
         height: 145px;
         position: absolute;
         left: -100vw;
@@ -594,7 +593,7 @@ a{
     }
 
     .push-wrapper{
-        &:before{
+        .push-banner{
             height: 94px;
         }
         a{

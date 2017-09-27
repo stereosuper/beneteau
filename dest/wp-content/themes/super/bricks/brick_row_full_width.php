@@ -8,7 +8,7 @@ $content = get_sub_field('content');
 
 ?>
 
-<div class='clearfix'>
+<div class='clearfix isAnimated'>
     <?php if (!empty($title)){ ?>
         <h2 id='<?php echo $anchor; ?>' class="align<?php echo $title_align; ?>"><?php echo $title; ?></h2>
     <?php }else if(!empty($anchor)){ ?>

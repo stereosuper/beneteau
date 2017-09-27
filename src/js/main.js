@@ -2,7 +2,6 @@
 
 var $ = require('jquery');
 global.jQuery = $;
-var ScrollReveal = require('scrollreveal');
 
 require('featherlight/release/featherlight.min.js');
 require('featherlight/release/featherlight.gallery.min.js');
@@ -15,7 +14,7 @@ $(function(){
     
     var slider = require('./slider.js');
     var submenu = require('./submenu.js');
-    var initScrollReval = require('./initScrollReveal.js');
+    var initScrollReveal = require('./initScrollReveal.js');
 
     var body = $('body');
     var header = $('#header');
@@ -46,6 +45,7 @@ $(function(){
 
 
     // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
+    initScrollReveal();
 
     // Submenu Anchors
     submenu( $('#submenu'), windowHeight );
@@ -79,27 +79,7 @@ $(function(){
 
     });
 
-    // ScrollReveal
-    window.sr = ScrollReveal({reset: true});
-    // initScrollReval('.isAnimated');
-    sr.reveal('.isAnimated');
-    sr.reveal('.content-brand .baseline', { duration: 1500, origin: 'right', scale: 1, distance: '60px' });
-    sr.reveal('.exergue', { easing: 'ease-in-out', duration: 500, origin: 'left', scale: 0.9, distance: '60px' });
-    sr.reveal('.list-brands >li:nth-child(2n+0)', { easing: 'ease-in-out', duration: 600, origin: 'left', scale: 0.5, distance: '30px' });
-    sr.reveal('.list-brands >li:nth-child(2n+1)', { easing: 'ease-in-out', duration: 600, origin: 'right', scale: 0.5, distance: '30px' });
     
-    /*
-    sr.reveal('.content');
-    sr.reveal('.exergue', { easing: 'ease-in-out',duration: 500,origin: 'left',scale: 0.9,distance: '60px' });
-    sr.reveal('.push .before', { easing: 'ease-in-out',duration: 500,rotate: { x: 0, y: 0, z: 0 },scale:1, opacity:0,distance: '80px', beforeReveal: function (domEl) {showpush($(".spritepush"));} });
-    sr.reveal('.push', { duration: 800,origin: 'bottom',scale: 1,distance: '60px' });//scrollreveal exerguer
-    //scrollreveal sur la liste des marques et services
-    sr.reveal('.item-marque:nth-child(2n+0)', { easing: 'ease-in-out',duration: 600,origin: 'left',scale: 0.5,distance: '30px' });
-    sr.reveal('.item-marque:nth-child(2n+1)', { easing: 'ease-in-out',duration: 600,origin: 'right',scale: 0.5,distance: '30px' });
-    if($("body").hasClass('home')){
-    sr.reveal('.actu', { beforeReveal: function (domEl) {showpush($(".spritepush"));} });
-    }
-    */
 
     // Since script is loaded asynchronously, load event isn't always fired !!!
     document.readyState === 'complete' ? loadHandler() : $(window).on('load', loadHandler);

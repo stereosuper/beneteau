@@ -13,7 +13,7 @@ $image = get_sub_field('image');
     <style>.highlighted:before{ background-image: url(<?php echo $image; ?>); }</style>
 <?php endif; ?>
 
-<div class='highlighted <?php if (empty($image)) : ?> no-img <?php endif; ?>' id='<?php echo $anchor; ?>'>
+<div class='isAnimated highlighted <?php if (empty($image)) : ?> no-img <?php endif; ?>' id='<?php echo $anchor; ?>'>
     <?php if (!empty($title)) : ?><span class='title'><?php echo $title; ?></span><?php endif; ?>
     <?php if (!empty($content)) : ?><strong><?php echo $content; ?></strong><?php endif; ?>
 </div>
