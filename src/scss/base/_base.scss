@@ -442,9 +442,11 @@ a{
                 }
             }
             .img{
-                transform: translate3d(0, 10px, 0) skewY(-17deg);
-                > img, >.bg{
-                    transform: translate3d(-50%, calc(-50% - 10px), 0) skewY(17deg);
+                transform: translate3d(0, 10px, 0) skewY(-17deg) rotate(0.000001deg);
+                .inner{
+                    > img, >.bg{
+                        transform: translate3d(0, -10px, 0) skewY(17deg) rotate(0.000001deg);
+                    }
                 }
             }
             .link{
@@ -487,7 +489,7 @@ a{
             border-top-left-radius: 30px;
             background: #fff;
             transform: translate3d(0, 0, 0) skewY(-17deg);
-            //transition: $transition;
+            transition: $transition;
         }
     }
     .img{
@@ -496,24 +498,34 @@ a{
         position: relative;
         overflow: hidden;
         border-top-left-radius: 30px;
-        transform: translate3d(0, 0, 0) skewY(-17deg);
-        //transition: $transition;
-        > img, .bg{
-            width: auto;
-            height: auto;
-            min-width: 100%;
-            min-height: 133%;
-            max-width: none;
-            max-height: 300px;
+        transform: translate3d(0, 0, 0) skewY(-17deg) rotate(0.000001deg);
+        transition: $transition;
+        .inner{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate3d(-50%, -50%, 0) skewY(17deg);
-            //transition: $transition;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            > img, .bg{
+                flex-shrink: 0;
+                width: auto;
+                height: auto;
+                min-width: 100%;
+                min-height: 133%;
+                max-width: none;
+                max-height: 300px;
+                transform: skewY(17deg) rotate(0.000001deg);
+                transition: $transition;
+            }
+            > .bg{
+                background: $text url(../layoutImg/pattern.png);
+            }
         }
-        > .bg{
-            background: $text url(../layoutImg/pattern.png);
-        }
+        
     }
 }
 
