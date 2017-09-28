@@ -30,7 +30,6 @@
         display: flex;
         width: 100%;
         position: relative;
-        //align-items: center;
         justify-content: space-between;
         transition: transform $transition;
     }
@@ -114,32 +113,19 @@
             background: $white;
         }
         > ul{
-            display: flex;
-            //width: $col*3;
-            width: $col*6;
+            display: inline-flex;
             padding: 15px 0;
-            flex-wrap: wrap;
-            //margin: 0 0 0 auto;
             margin: 0 auto;
-            justify-content: center;
         }
         li{
-            width: 33.3333%;
             &:before{
                 content: none;
                 background: $white;
             }
-            // &.right{
-            //     text-align: right;
-            //     a{
-            //         padding: 15px 0 15px $gutter;
-            //     }
-            // }
         }
         a{
             display: inline-block;
             padding: 15px $gutter;
-            //padding: 15px $gutter 15px 0;
             font-family: $montserrat;
             font-size: 1.4rem;
             text-transform: none;
@@ -286,6 +272,7 @@
             margin: 0;
             z-index: 1;
             opacity: 1;
+            text-align: left;
             transform: none;
             &:after{
                 content: none;
@@ -294,6 +281,7 @@
                 display: block;
                 width: 100%;
                 padding: 0;
+                transform: none !important;
             }
             li{
                 width: 100%;

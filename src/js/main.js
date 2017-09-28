@@ -42,7 +42,7 @@ $(function(){
 
     function loadHandler(){
         // Header
-        animHeader(body, header);
+        animHeader( body, header, windowWidth );
 
         // Slider home
         slider( $('#sliderHome'), windowWidth );
