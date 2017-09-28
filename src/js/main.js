@@ -77,10 +77,12 @@ $(function(){
 
         scrollTop > 50 ? header.addClass('small') : header.removeClass('small');
 
-        if( scrollTop > 200 ){
-            scrollDir < 1 ? header.addClass('off') : header.removeClass('off');
-        }else{
-            header.removeClass('off');
+        if( !body.hasClass('page-template-tpl-brands') && !body.hasClass('single-brand') ){
+            if( scrollTop > 200 ){
+                scrollDir < 1 ? header.addClass('off') : header.removeClass('off');
+            }else{
+                header.removeClass('off');
+            }
         }
     }, 60));
 

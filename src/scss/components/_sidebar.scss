@@ -110,11 +110,12 @@
 
 .sidebar-brands{
     width: calc(50% - #{$gutter/2});
-    //padding: 117px 0 0;
+    padding: 67px 0 0;
     position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
+    overflow: hidden;
     background: $text url(../layoutImg/pattern.svg);
     backface-visibility: hidden;
     > ul{
@@ -139,6 +140,7 @@
     overflow: hidden;
     font-family: $roboto;
     font-size: 1.4rem;
+    line-height: 1.2;
     &:before{
         content: '';
         width: 100%;
@@ -151,7 +153,7 @@
         opacity: 0.85;
     }
     li{
-        margin: 0 0 5px;
+        margin: 0 0 10px;
         &.active{
             > a{
                 opacity: 1;

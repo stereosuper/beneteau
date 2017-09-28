@@ -3,3 +3,30 @@
         width: 100%;
     }
 }
+
+
+@media (max-width: $desktop){
+    .brands-slider{
+        img{
+            width: auto;
+            height: auto;
+            min-width: 100%;
+            min-height: 400px;
+            max-width: none;
+            position: relative;
+            left: 50%;
+            transform: translate3d(-50%, 0, 0);
+        }
+    }
+}
+
+@media (max-width: $tablet){
+    .brands-slider{
+        img{
+            width: 100%;
+            min-height: 0;
+            left: 0;
+            transform: none;
+        }
+    }
+}
