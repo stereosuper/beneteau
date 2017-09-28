@@ -32,12 +32,14 @@ module.exports = function(body, header, windowWidth){
 
         if( $(this).siblings('.sub-menu').length ){
             $(this).siblings('.sub-menu').addClass('on');
+            header.addClass('hover');
         }
 
     }).on('mouseleave', '#nav', function(){
 
         if( $(this).find('.sub-menu').length ){
             $(this).find('.sub-menu').removeClass('on');
+            header.removeClass('hover');
             TweenLite.set($(this).siblings('.sub-menu').children('ul'), {x: 0, delay: 0.3});
         }
 
