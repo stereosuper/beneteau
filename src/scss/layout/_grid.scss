@@ -14,7 +14,7 @@
 
 .container-sidebar{
     display: flex;
-    align-items: flex-start;
+    //align-items: flex-start;
     justify-content: space-between;
     .content{
         width: calc(#{$col*6} - #{$gutter/2});

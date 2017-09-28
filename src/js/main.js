@@ -16,6 +16,7 @@ $(function(){
     var submenu = require('./submenu.js');
     var initScrollReveal = require('./initScrollReveal.js');
     var animHeader = require('./header.js');
+    var sticky = require('./sticky.js');
 
     var body = $('body');
     var header = $('#header');
@@ -51,6 +52,11 @@ $(function(){
 
     // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
     initScrollReveal();
+
+    // Sticky
+    sticky($('#blockSticky'), 130, {
+        minimumWidth: 960
+    });
 
     // Submenu (in pages) Anchors
     submenu( $('#submenu'), windowHeight );

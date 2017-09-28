@@ -22,8 +22,11 @@ get_header();
 	<div class='container<?php echo (strpos($sidebar_menu, '<li')!==FALSE)?' container-sidebar':''; ?>'>
 
 		<?php if (strpos($sidebar_menu, '<li')!==FALSE) : ?>
-			<aside class='sidebar'>
-				<?php echo $sidebar_menu; ?>
+			<aside class='sidebar wrapper-sticky'>
+				<div class='content-sidebar' id='blockSticky'>
+					<span class='bg-sidebar'></span>
+					<?php echo $sidebar_menu; ?>
+				</div>
 			</aside>
 		<?php endif; ?>
 

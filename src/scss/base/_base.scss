@@ -315,8 +315,14 @@ a{
     @include clearfix;
 }
 
-.pos-relative{
+.pos-relative, .wrapper-sticky{
     position: relative;
+}
+.sticky{
+    position: fixed !important;
+}
+.sticky-stuck{
+    position: absolute !important;
 }
 
 .align-center{
