@@ -355,7 +355,7 @@ a{
     color: $white;
     &.no-img{
         &:before{
-            background: $text url(../layoutImg/pattern.png);
+            background: $text url(../layoutImg/pattern.svg);
             opacity: 1;
         }
         &:after{
@@ -553,7 +553,7 @@ a{
                 transform-style: preserve-3d;
             }
             > .bg{
-                background: $text url(../layoutImg/pattern.png);
+                background: $text url(../layoutImg/pattern.svg);
             }
         }
         
