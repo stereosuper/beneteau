@@ -7,8 +7,11 @@
 }
 
 .slider-home{
-    height: 600px;
+    height: 75vh;
+    max-height: 600px;
+    min-height: 410px;
     position: relative;
+    overflow: hidden;
     transition: $transition 0.5s;
     ul{
         margin: 0;
@@ -86,6 +89,7 @@
     }
     .bg-txt{
         width: 50vw;
+        min-height: 540px;
         position: absolute;
         top: 0;
         right: 0;
@@ -254,6 +258,23 @@
 }
 
 
+@media (max-height: 720px){
+    .slider-home{
+        .wrapper-txt{
+            padding-bottom: 100px;
+        }
+    }
+}
+
+@media (max-height: 630px){
+    .slider-home{
+        .wrapper-txt{
+            align-items: flex-start;
+        }
+    }
+}
+
+
 @media (max-width: $desktop){
     .home-news{
         .push-container{
@@ -319,6 +340,8 @@
 @media (max-width: $tablet){
     .slider-home{
         height: auto;
+        min-height: 0;
+        max-height: none;
         margin: 0 0 9em;
         > p{
             display: none;
