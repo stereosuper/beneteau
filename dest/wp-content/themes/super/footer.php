@@ -22,6 +22,7 @@
 			</div>
 		</footer>
 
+		<div id='menuBg' class='menu-bg'></div>
 
 		<svg width='0' height='0' style='position:absolute;z-index:-10'>
 			<defs>

@@ -130,16 +130,6 @@
             transform: translate3d(0, 0, 0);
             transition: opacity $transition, transform $transition;
         }
-        // &:after{
-        //     content: '';
-        //     position: absolute;
-        //     top: 0;
-        //     bottom: 0;
-        //     left: calc(50% - 50vw);
-        //     right: calc(50% - 50vw);
-        //     z-index: -1;
-        //     background: $white;
-        // }
         > ul{
             display: inline-flex;
             padding: 15px 0;
@@ -265,6 +255,23 @@
     color: $text;
     &:hover, &:focus{
         color: $primary;
+    }
+}
+
+.menu-bg{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background: $grey;
+    opacity: 0;
+    transition: opacity $transition, 0s z-index 0.3s;
+    &.on{
+        z-index: 9;
+        opacity: 0.7;
+        transition: opacity $transition;
     }
 }
 

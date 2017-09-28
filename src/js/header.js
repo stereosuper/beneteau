@@ -13,6 +13,7 @@ module.exports = function(body, header, windowWidth){
     var nav = $('#nav');
     var menuX;
     var submenu, submenuList, submenuLeft, submenuWidth, linkCenter;
+    var menuBg = $('#menuBg');
 
 
     header.on('click', '#burger', function(e){
@@ -21,6 +22,7 @@ module.exports = function(body, header, windowWidth){
         $(this).toggleClass('on');
         nav.toggleClass('on');
         body.toggleClass('menu-open');
+        menuBg.toggleClass('on');
 
     }).on('mouseenter', 'a', function(){
 
@@ -28,11 +30,14 @@ module.exports = function(body, header, windowWidth){
 
         if( header.find('.sub-menu').length ){
             header.find('.sub-menu').removeClass('on');
+            header.removeClass('hover');
+            if( !body.hasClass('menu-open') ) menuBg.removeClass('on');
         }
 
         if( $(this).siblings('.sub-menu').length ){
             $(this).siblings('.sub-menu').addClass('on');
             header.addClass('hover');
+            if( !body.hasClass('menu-open') ) menuBg.addClass('on');
         }
 
     }).on('mouseleave', '#nav', function(){
@@ -40,6 +45,7 @@ module.exports = function(body, header, windowWidth){
         if( $(this).find('.sub-menu').length ){
             $(this).find('.sub-menu').removeClass('on');
             header.removeClass('hover');
+            if( !body.hasClass('menu-open') ) menuBg.removeClass('on');
             TweenLite.set($(this).siblings('.sub-menu').children('ul'), {x: 0, delay: 0.3});
         }
 
