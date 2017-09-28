@@ -1,8 +1,27 @@
 .sidebar{
     width: calc(25% - 15px);
+    max-width: 180px;
     margin: 8em 0 0;
+    &.js-show-logo{
+        .logo-reduced{
+            opacity: 1;
+        }
+    }
+    .logo-reduced{
+        display: block;
+        width: 24px;
+        height: 34px;
+        position: absolute;
+        left: 0;
+        top: -38px;
+        background: url(../layoutImg/logo-reduced.svg) 50% 50% no-repeat;
+        background-size: contain;
+        transition: $transition;
+        opacity: 0;
+    }
 }
 .content-sidebar{
+    display: inline-block;
     position: relative;
     z-index: 1;
     &:before, &:after{
@@ -10,8 +29,7 @@
         display: block;
         width: 226px;
         position: absolute;
-        left: 50%;
-        margin-left: -113px;
+        left: -$gutter;
         background-repeat: no-repeat;
         background-position: 50% 50%;
         z-index: -1;
@@ -32,8 +50,7 @@
         position: absolute;
         top: 57px;
         bottom: 25px;
-        left: 50%;
-        margin-left: -113px;
+        left: -$gutter;
         background: rgba($white, 0.9);
         z-index: -1;
     }
