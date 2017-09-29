@@ -25,41 +25,30 @@ get_header(); ?>
                 <?php if ($terms) : ?>
 
                     <ul class="brands-slider" id='submenu'>
-                    <?php
-                        // Fait une première boucle sur les secteurs pour afficher les images dans le diaporama
-                        $is_active = true;
-                        foreach ($terms as $term) :
-                    ?>
-                        <li><a href="#section-<?php echo $term->slug; ?>"><?php echo $term->name; ?></a></li>
-                    <?php
-                            $is_active = false;
-                        endforeach; // foreach ($terms as $term) :
-                    ?>
+                        <?php foreach ($terms as $term) : ?>
+                            <li><a href="#section-<?php echo $term->slug; ?>"><?php echo $term->name; ?></a></li>
+                        <?php endforeach; ?>
                     </ul>
 
-                <?php
-                    endif; // if ($terms) :
-                ?>
+                <?php endif; // if ($terms) : ?>
             </ul>
 
-            <?php if ($terms) : ?>
+            <?php if ($terms) : $count = 0; ?>
 
-                <ul class="brands-slider">
+                <ul class="brand-slider" id='brandsImg'>
                 <?php
-                    // Fait une première boucle sur les secteurs pour afficher les images dans le diaporama
-                    $is_active = true;
                     foreach ($terms as $term) :
                         $term_image = super_get_field('term_image', $term);
-                        if (is_array($term_image) && isset($term_image['ID'])) :
-                            list($image_url, $w, $h) = wp_get_attachment_image_src($term_image['ID'], 'large');
+                        if (is_array($term_image) && isset($term_image['id'])) :
                 ?>
-                    <li class="<?php echo $term->slug, (($is_active)?' active':''); ?>">
-                        <img src="<?php echo $image_url; ?>" alt="<?php echo $term->name ?>" />
-                    </li>
+                    <?php if($count === 0){
+                        echo wp_get_attachment_image( $term_image['id'], 'full', '', array('class' => 'on') );
+                    }else{
+                        echo wp_get_attachment_image( $term_image['id'], 'full' );
+                    } ?>
                 <?php
-                            $is_active = false;
                         endif; // if ($term_image) :
-                    endforeach; // foreach ($terms as $term) :
+                    $count ++; endforeach; // foreach ($terms as $term) :
                 ?>
                 </ul>
 

@@ -13,6 +13,9 @@ module.exports = function( submenu, windowHeight ){
 
     var scrollTop;
     var thisSection;
+    var thisLi;
+
+    var brandsImg = $('#brandsImg');
 
     function detectSectionsTop(){
         if( $(this).attr('href').lastIndexOf('#', 0) !== 0 ) return;
@@ -33,7 +36,13 @@ module.exports = function( submenu, windowHeight ){
 
         submenu.find('a').each(function(){
             if( $(this).attr('href').lastIndexOf('#', 0) === 0 ){
-                scrollTop >= $($(this).attr('href')).data('top') - windowHeight/3 ? $(this).parent().addClass('active').siblings().removeClass('active') : $(this).parent().removeClass('active');
+                thisLi = $(this).parent();
+
+                scrollTop >= $($(this).attr('href')).data('top') - windowHeight/3 ? thisLi.addClass('active').siblings().removeClass('active') : thisLi.removeClass('active');
+
+                if( brandsImg.length && thisLi.hasClass('active') ){
+                    brandsImg.find('img').eq(thisLi.index()).addClass('on').siblings().removeClass('on');
+                }
             }
         });
     }, 60));

@@ -1,9 +1,3 @@
-.brands-slider{
-    img{
-        width: 100%;
-    }
-}
-
 .brand-slider{
     position: relative;
     img{
@@ -23,7 +17,7 @@
 
 
 @media (max-width: $desktop){
-    .brand-slider, .brands-slider{
+    .brand-slider{
         img{
             width: auto;
             height: auto;
@@ -34,16 +28,10 @@
             transform: translate3d(-50%, 0, 0);
         }
     }
-
-    .brands-slider{
-        img{
-            position: relative;
-        }
-    }
 }
 
 @media (max-width: $tablet){
-    .brand-slider, .brands-slider{
+    .brand-slider{
         img{
             width: 100%;
             min-height: 0;
