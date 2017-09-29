@@ -24,6 +24,7 @@
 .content-sidebar{
     display: inline-block;
     position: relative;
+    min-height: 82px;
     z-index: 1;
     &:before, &:after{
         content: '';
