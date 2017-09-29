@@ -35,7 +35,7 @@ get_header(); ?>
 
             <?php if ($terms) : $count = 0; ?>
 
-                <ul class="brand-slider" id='brandsImg'>
+                <ul class="brand-slider brands-slider" id='brandsImg'>
                 <?php
                     foreach ($terms as $term) :
                         $term_image = super_get_field('term_image', $term);

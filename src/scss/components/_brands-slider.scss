@@ -15,6 +15,12 @@
     }
 }
 
+.brands-slider{
+    img{
+        transition: opacity $transition, 0s z-index 0.3s;
+    }
+}
+
 
 @media (max-width: $desktop){
     .brand-slider{
