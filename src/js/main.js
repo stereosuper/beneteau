@@ -61,6 +61,11 @@ $(function(){
     // Submenu (in pages) Anchors
     submenu( $('#submenu'), windowHeight );
     submenu( $('#submenuWrapper'), windowHeight, true );
+
+    // Prevent popins from opening on mobile
+    $.featherlight.defaults.beforeOpen = function(){
+        if( windowWidth <= 580 ) return false;
+    };
     
 
     // Since script is loaded asynchronously, load event isn't always fired !!!
