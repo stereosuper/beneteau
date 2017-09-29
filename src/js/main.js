@@ -22,6 +22,7 @@ $(function(){
 
     var body = $('body');
     var header = $('#header');
+    var sidebar = $('#sidebar');
     // window.outerWidth returns the window width including the scroll, but it's not working with $(window).outerWidth
     var windowWidth = window.outerWidth, windowHeight = $(window).height();
     var scrollTop, lastScrollTop, scrollDir;
@@ -92,9 +93,16 @@ $(function(){
 
         if( !body.hasClass('page-template-tpl-brands') && !body.hasClass('single-brand') ){
             if( scrollTop > 200 ){
-                scrollDir < 1 ? header.addClass('off') : header.removeClass('off');
+                if( scrollDir < 1 ){
+                    header.addClass('off');
+                    if( sidebar.length ) sidebar.addClass('js-show-logo');
+                }else{
+                    header.removeClass('off');
+                    if( sidebar.length ) sidebar.removeClass('js-show-logo');
+                }
             }else{
                 header.removeClass('off');
+                if( sidebar.length ) sidebar.removeClass('js-show-logo');
             }
         }
     }, 60));
