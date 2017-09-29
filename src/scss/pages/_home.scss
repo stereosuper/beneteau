@@ -235,7 +235,7 @@
 
 .home-carousel{
     width: 100%;
-    margin: -$gutter 0 0 $gutter*2;
+    margin: -50px 0 0 $gutter*2;
     ul{
         display: flex;
         flex-wrap: wrap;
@@ -243,17 +243,23 @@
         margin: 0;
     }
     li{
-        display: flex;
         width: calc(33.333% - #{$gutter/2});
-        padding: $gutter;
-        align-items: center;
-        justify-content: center;
+        height: 0;
+        padding: 0 $gutter 20%;
+        position: relative;
         &:before{
             content: none;
         }
     }
     img{
-        max-width: 80%;
+        max-width: 60%;
+        max-height: 60%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
     }
 }
 
@@ -398,7 +404,9 @@
         }
     }
     .home-carousel{
-        width: 100%;
+        width: calc(100% + #{2*$gutter});
+        margin-left: -$gutter;
+        margin-right: -$gutter;
     }
 }
 
@@ -439,7 +447,8 @@
     .home-carousel{
         li{
             width: 50%;
-            &:last-child{
+            padding-bottom: 30%;
+            &:nth-child(8){
                 display: none;
             }
         }

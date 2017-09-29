@@ -18,6 +18,7 @@ $(function(){
     var animHeader = require('./header.js');
     var sticky = require('./sticky.js');
     var brandSlider = require('./brandSlider.js');
+    var brandsHome = require('./brandsHome.js');
 
     var body = $('body');
     var header = $('#header');
@@ -70,6 +71,9 @@ $(function(){
 
     // Single brand slider
     brandSlider( $('#sliderBrand') );
+
+    // Brands home
+    brandsHome( $('#brandsHome') );
     
 
     // Since script is loaded asynchronously, load event isn't always fired !!!
