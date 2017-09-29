@@ -60,7 +60,7 @@ $(function(){
 
     // Submenu (in pages) Anchors
     submenu( $('#submenu'), windowHeight );
-    submenu( $('#submenuWrapper'), windowHeight, true );
+    //submenu( $('#submenuWrapper'), windowHeight, true );
 
     // Prevent popins from opening on mobile
     $.featherlight.defaults.beforeOpen = function(){

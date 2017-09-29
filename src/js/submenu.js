@@ -8,32 +8,32 @@ window.requestAnimFrame = require('./requestAnimFrame.js');
 var throttle = require('./throttle.js');
 
 
-module.exports = function( submenu, windowHeight, child ){
+module.exports = function( submenu, windowHeight ){
     if( !submenu.length ) return;
-
-    if( child && submenu.find('.current-menu-item').find('.sub-menu').length ){
-        submenu = submenu.find('.current-menu-item').find('.sub-menu');
-    }
 
     var scrollTop;
     var thisSection;
 
-    submenu.on('click', 'a', function(e){
-        e.preventDefault();
-        TweenLite.to(window, 0.5, {scrollTo: $($(this).attr('href')).data('top') - 100});
-    }).find('a').each(function(){
+    function detectSectionsTop(){
+        if( $(this).attr('href').lastIndexOf('#', 0) !== 0 ) return;
+
         thisSection = $($(this).attr('href'));
         thisSection.data('top', thisSection.offset().top);
-    });
+    }
+
+    submenu.on('click', 'a', function(e){
+        if( $(this).attr('href').lastIndexOf('#', 0) === 0 ){
+            e.preventDefault();
+            TweenLite.to(window, 0.5, {scrollTo: $($(this).attr('href')).data('top') - 100});
+        }
+    }).find('a').each(detectSectionsTop);
 
     $(document).on('scroll', throttle(function(){
         scrollTop = $(document).scrollTop();
 
         submenu.find('a').each(function(){
-            if( scrollTop >= $($(this).attr('href')).data('top') - windowHeight/3 ){
-                $(this).parent().addClass('active').siblings().removeClass('active');
-            }else{
-                $(this).parent().removeClass('active');
+            if( $(this).attr('href').lastIndexOf('#', 0) === 0 ){
+                scrollTop >= $($(this).attr('href')).data('top') - windowHeight/3 ? $(this).parent().addClass('active').siblings().removeClass('active') : $(this).parent().removeClass('active');
             }
         });
     }, 60));
@@ -42,10 +42,7 @@ module.exports = function( submenu, windowHeight, child ){
         requestAnimFrame(function(){
             windowHeight = $(window).height();
 
-            submenu.find('a').each(function(){
-                thisSection = $($(this).attr('href'));
-                thisSection.data('top', thisSection.offset().top);
-            });
+            submenu.find('a').each(detectSectionsTop);
         });
     }, 60));
 }
