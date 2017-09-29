@@ -1,13 +1,15 @@
 .gallery{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: block;
+    width: calc(100% + #{2*$gutter});
+    margin-left: -$gutter;
     > li{
-        width: calc(33% - #{$gutter});
+        display: inline-block;
+        vertical-align: top;
+        width: calc(33.3333% - #{2*$gutter});
         height: 0;
         padding: 0 0 20.5%;
         position: relative;
-        margin: 0 0 50px;
+        margin: 0 $gutter 50px;
         &:before{
             content: none;
         }
@@ -89,9 +91,11 @@
 
 @media (max-width: $desktopSmall){
     .gallery{
+        width: calc(100% + #{$gutter});
+        margin-left: -#{$gutter/2};
         > li{
-            width: calc(33% - #{$gutter/2});
-            margin: 0 0 $gutter;
+            width: calc(33.3333% - #{$gutter});
+            margin: 0 #{$gutter/2} $gutter;
         }
     }
 }
@@ -99,7 +103,7 @@
 @media (max-width: $tablet){
     .gallery{
         > li{
-            width: calc(50% - #{$gutter/2});
+            width: calc(50% - #{$gutter});
             padding: 0 0 30%;
         }
     }
@@ -107,11 +111,14 @@
 
 @media (max-width: $phone){
     .gallery{
+        width: 100%;
         max-width: 300px;
         margin-left: auto;
         margin-right: auto;
         > li{
             width: 100%;
+            margin-left: 0;
+            margin-right: 0;
             padding: 0 0 65%;
         }
     }
