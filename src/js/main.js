@@ -17,6 +17,7 @@ $(function(){
     var initScrollReveal = require('./initScrollReveal.js');
     var animHeader = require('./header.js');
     var sticky = require('./sticky.js');
+    var brandSlider = require('./brandSlider.js');
 
     var body = $('body');
     var header = $('#header');
@@ -66,6 +67,9 @@ $(function(){
     $.featherlight.defaults.beforeOpen = function(){
         if( windowWidth <= 580 ) return false;
     };
+
+    // Single brand slider
+    brandSlider( $('#sliderBrand') );
     
 
     // Since script is loaded asynchronously, load event isn't always fired !!!

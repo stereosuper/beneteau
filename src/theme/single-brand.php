@@ -6,18 +6,17 @@
 
             <aside class='sidebar-brands'>
                 <?php
-                    // Markup compatible flexslider
                     $images = super_get_field('gallery');
-                    if( $images ):
+                    if( $images ): $count = 0;
                 ?>
-                    <div id="carousel" class="flexslider">
-                        <ul class="slides">
-                            <?php foreach( $images as $image ): ?>
-                                <li>
-                                    <img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
-                                </li>
-                            <?php endforeach; ?>
-                        </ul>
+                    <div id="sliderBrand" class="brand-slider">
+                        <?php foreach( $images as $image ): ?>
+                            <?php if($count === 0){
+                                echo wp_get_attachment_image( $image['id'], 'full', '', array('class' => 'on') );
+                            }else{
+                                echo wp_get_attachment_image( $image['id'], 'full' );
+                            } ?>
+                        <?php $count ++; endforeach; ?>
                     </div>
                 <?php endif; ?>
             </aside>
