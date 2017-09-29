@@ -566,6 +566,19 @@ a{
     }
 }
 
+
+@media (max-width: $desktop){
+    .baseline{
+        padding: 0 60px;
+        &:before{
+            left: 0;
+        }
+        &:after{
+            right: 0;
+        }
+    }
+}
+
 @media (max-width: $desktopSmall){
     .push-wrapper{
         .push-banner{
