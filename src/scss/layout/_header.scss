@@ -12,6 +12,8 @@
     font-family: $roboto;
     background: $white;
     transition: transform $transition;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
     &:before, &:after{
         content: '';
         position: absolute;
@@ -60,6 +62,7 @@
         position: relative;
         justify-content: space-between;
         transition: transform $transition;
+        transform: translateZ(1px);
     }
 }
 
@@ -163,6 +166,7 @@
     margin: 0 $gutter*2 0 0;
     transform-origin: 0 50%;
     transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
 }
 
 .nav{

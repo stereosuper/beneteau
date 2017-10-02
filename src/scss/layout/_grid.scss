@@ -4,6 +4,8 @@
     min-height: calc(100vh - 270px);
     padding: 150px 0 125px;
     overflow: hidden;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
 }
 
 .container{
