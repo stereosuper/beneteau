@@ -28,7 +28,6 @@
     }
     &:after{
         height: 76px;
-        margin: 1px 0 0;
         z-index: -1;
         background: $white;
         transform: translate3d(0, -100%, 0);
@@ -38,20 +37,28 @@
         &.off{
             transform: translate3d(0, -100%, 0);
         }
+        &:after{
+            margin-top: -24px;
+        }
+        &.hover{
+            &:before{
+                transform: translate3d(0, 52px, 0);
+            }
+        }
         > .container{
             transform: translate3d(0, 25px, 0);
         }
         .logo{
             transform: scale(0.8) translate3d(0, 0, 0);
         }
-        &:after{
-            margin-top: -24px;
-        }
         .sub-menu{
             margin-top: -39px;
         }
     }
     &.hover{
+        &:before{
+            transform: translate3d(0, 76px, 0);
+        }
         &:after{
             transform: translate3d(0, 0, 0);
         }
@@ -126,12 +133,12 @@
         z-index: -1;
         opacity: 0;
         transform: translate3d(0, -100%, 0);
-        transition: opacity 0.1s ease-in-out, transform $transition, 0s z-index 0.3s;
+        transition: opacity 0.1s ease-in-out, 0s transform 0.2s, 0s z-index 0.2s;
         &.on{
             z-index: 1;
             opacity: 1;
             transform: translate3d(0, 0, 0);
-            transition: opacity $transition, transform $transition;
+            transition: 0.2s opacity $transition;
         }
         > ul{
             display: inline-flex;
