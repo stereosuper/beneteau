@@ -565,7 +565,6 @@ a{
                 max-height: 300px;
                 transform: translate3d(0, 0, 0) skewY(17deg) rotate(0.000001deg);
                 transition: $transition;
-                transform-style: preserve-3d;
             }
             > .bg{
                 background: $text url(../layoutImg/pattern.svg);
