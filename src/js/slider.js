@@ -6,6 +6,8 @@ var TweenLite = require('gsap/TweenLite');
 window.requestAnimFrame = require('./requestAnimFrame.js');
 var throttle = require('./throttle.js');
 
+var checkIfInView = require('./checkIfInView.js');
+
 
 module.exports = function( slider, windowWidth ){
     if( !slider.length ) return;
@@ -69,7 +71,11 @@ module.exports = function( slider, windowWidth ){
     }
 
     function setSliderTimeout(){
-        TweenLite.delayedCall( 8, slide );
+        TweenLite.killDelayedCallsTo( slide );
+        
+        if( checkIfInView.check(slider) ){
+            TweenLite.delayedCall( 8, slide );
+        }
     }
 
 
@@ -80,6 +86,7 @@ module.exports = function( slider, windowWidth ){
 
     windowWidth > 780 ? slider.attr('style', '') : slider.height(activeSlideTxt.height());
 
+    checkIfInView.init(slider);
     setSliderTimeout();
 
 
@@ -97,6 +104,11 @@ module.exports = function( slider, windowWidth ){
         requestAnimFrame( function(){
             windowWidth = window.outerWidth;
             windowWidth > 780 ? slider.attr('style', '') : slider.height(activeSlideTxt.height());
+            setSliderTimeout();
         } );
     }, 60));
+
+    $(document).on('scroll', throttle(function(){
+        requestAnimFrame(setSliderTimeout);
+    }, 10));
 }
