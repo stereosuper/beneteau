@@ -17,8 +17,6 @@
 }
 
 .list-brands{
-    display: flex;
-    flex-wrap: wrap;
     margin: 0 0 10em;
     &:hover{
         a{
@@ -26,6 +24,7 @@
         }
     }
     > li{
+        display: inline-block;
         width: 50%;
         height: 0;
         padding: 0 0 35%;
@@ -132,6 +131,7 @@
 
 @media (max-width: $phone){
     .list-brands{
+        margin: 0 $gutter*-1;
         > li{
             width: 50%;
             padding: 0 0 40%;
