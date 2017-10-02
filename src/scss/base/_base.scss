@@ -24,6 +24,7 @@ body{
     -moz-osx-font-smoothing: grayscale;
     &.menu-open{
         overflow: hidden;
+        height: 100%;
     }
 }
 
