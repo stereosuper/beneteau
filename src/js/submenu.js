@@ -18,7 +18,7 @@ module.exports = function( submenu, windowHeight ){
     var brandsImg = $('#brandsImg');
 
     function detectSectionsTop(){
-        if( $(this).attr('href').lastIndexOf('#', 0) !== 0 ) return;
+        if( $(this).attr('href').lastIndexOf('#', 0) !== 0 && $(this).attr('href').length > 1 ) return;
 
         thisSection = $($(this).attr('href'));
         if( !thisSection.length ) return;
@@ -27,7 +27,7 @@ module.exports = function( submenu, windowHeight ){
     }
 
     submenu.on('click', 'a', function(e){
-        if( $(this).attr('href').lastIndexOf('#', 0) === 0 ){
+        if( $(this).attr('href').lastIndexOf('#', 0) === 0 && $(this).attr('href').length > 1 ){
             thisSection = $($(this).attr('href'));
             if( thisSection.length ){
                 e.preventDefault();
@@ -41,7 +41,7 @@ module.exports = function( submenu, windowHeight ){
         scrollTop = $(document).scrollTop();
 
         submenu.find('a').each(function(){
-            if( $(this).attr('href').lastIndexOf('#', 0) === 0 ){
+            if( $(this).attr('href').lastIndexOf('#', 0) === 0 && $(this).attr('href').length > 1 ){
                 thisSection = $($(this).attr('href'));
                 if( !thisSection.length ) return;
 
