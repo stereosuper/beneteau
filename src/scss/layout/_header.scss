@@ -360,10 +360,10 @@
         display: block;
         width: 90%;
         max-width: 300px;
+        height: 100vh;
         position: fixed;
         top: 0;
         right: 0;
-        bottom: 0;
         overflow-y: auto;
         background: $text url(../layoutImg/logo-menu.svg) no-repeat -10px 50px / 200%;
         transform: translate3d(100%, 0, 0);

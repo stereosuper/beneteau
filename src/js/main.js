@@ -20,6 +20,7 @@ $(function(){
     var brandSlider = require('./brandSlider.js');
     var brandsHome = require('./brandsHome.js');
 
+    var htmlAze = $('html');
     var body = $('body');
     var header = $('#header');
     var sidebar = $('#sidebar');
@@ -46,7 +47,7 @@ $(function(){
 
     function loadHandler(){
         // Header
-        animHeader( body, header, windowWidth );
+        animHeader( htmlAze, body, header, windowWidth );
 
         // Slider home
         slider( $('#sliderHome'), windowWidth );
