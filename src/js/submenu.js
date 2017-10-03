@@ -21,13 +21,19 @@ module.exports = function( submenu, windowHeight ){
         if( $(this).attr('href').lastIndexOf('#', 0) !== 0 ) return;
 
         thisSection = $($(this).attr('href'));
+        if( !thisSection.length ) return;
+
         thisSection.data('top', thisSection.offset().top);
     }
 
     submenu.on('click', 'a', function(e){
         if( $(this).attr('href').lastIndexOf('#', 0) === 0 ){
-            e.preventDefault();
-            TweenLite.to(window, 0.5, {scrollTo: $($(this).attr('href')).data('top') - 100});
+            thisSection = $($(this).attr('href'));
+            if( thisSection.length ){
+                e.preventDefault();
+                TweenLite.to(window, 0.5, {scrollTo: thisSection.data('top') - 100});
+            }
+            
         }
     }).find('a').each(detectSectionsTop);
 
@@ -36,9 +42,12 @@ module.exports = function( submenu, windowHeight ){
 
         submenu.find('a').each(function(){
             if( $(this).attr('href').lastIndexOf('#', 0) === 0 ){
+                thisSection = $($(this).attr('href'));
+                if( !thisSection.length ) return;
+
                 thisLi = $(this).parent();
 
-                scrollTop >= $($(this).attr('href')).data('top') - windowHeight/3 ? thisLi.addClass('active').siblings().removeClass('active') : thisLi.removeClass('active');
+                scrollTop >= thisSection.data('top') - windowHeight/3 ? thisLi.addClass('active').siblings().removeClass('active') : thisLi.removeClass('active');
 
                 if( brandsImg.length && thisLi.hasClass('active') ){
                     brandsImg.find('img').eq(thisLi.index()).addClass('on').siblings().removeClass('on');
