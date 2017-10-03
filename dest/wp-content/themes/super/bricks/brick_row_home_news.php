@@ -5,6 +5,8 @@ $anchor = get_sub_field('anchor');
 $title = get_sub_field('title');
 $title_align = get_sub_field('title_align');
 $content = get_sub_field('content');
+$link = get_sub_field('link');
+$btn = get_sub_field('btn');
 
 
 ?>
@@ -63,6 +65,8 @@ $content = get_sub_field('content');
 
     <div class='text isAnimated'>
         <p><?php echo $content; ?></p>
-        <a href='<?php echo (get_option('page_for_posts')?get_permalink(get_option('page_for_posts')):get_site_url()); ?>' class='link'><?php _e('Toutes les actualités', 'beneteau'); ?></a>
+        <?php if( $link && $btn ) : ?>
+            <a href='<?php echo $link; ?>' class='link'><?php echo $btn; ?></a>
+        <?php endif; ?>
     </div>
 </div>
