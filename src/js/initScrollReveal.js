@@ -11,6 +11,7 @@ module.exports = function(){
     sr.reveal('.content-brand .baseline', { duration: 1500, origin: 'right', scale: 1, distance: '60px' });
     sr.reveal('.exergue', { easing: 'ease-in-out', duration: 500, origin: 'left', scale: 0.9, distance: '60px' });
     sr.reveal('.intro', { easing: 'ease-in-out', duration: 500, origin: 'left', scale: 0.9, distance: '60px' });
+    sr.reveal('blockquote', { easing: 'ease-in-out', duration: 500, origin: 'bottom', scale: 0.9, distance: '60px' });
     sr.reveal('.highlighted .title', { easing: 'ease-in-out', duration: 500, origin: 'left', scale: 0.9, distance: '60px' });
     sr.reveal('.highlighted strong', { easing: 'ease-in-out', duration: 500, origin: 'right', scale: 0.9, distance: '60px' });
     sr.reveal('.list-brands >li:nth-child(2n+0)', { easing: 'ease-in-out', duration: 600, origin: 'left', scale: 0.5, distance: '30px' });
