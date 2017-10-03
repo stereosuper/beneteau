@@ -18,7 +18,7 @@ module.exports = function( submenu, windowHeight ){
     var brandsImg = $('#brandsImg');
 
     function detectSectionsTop(){
-        if( $(this).attr('href').lastIndexOf('#', 0) !== 0 && $(this).attr('href').length < 2 ) return;
+        if( $(this).attr('href').lastIndexOf('#', 0) !== 0 || $(this).attr('href').length < 2 ) return;
 
         console.log($(this).attr('href').lastIndexOf('#', 0));
         console.log($(this).attr('href'));
