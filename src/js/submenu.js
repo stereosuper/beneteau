@@ -20,6 +20,9 @@ module.exports = function( submenu, windowHeight ){
     function detectSectionsTop(){
         if( $(this).attr('href').lastIndexOf('#', 0) !== 0 && $(this).attr('href').length < 2 ) return;
 
+        console.log($(this).attr('href'));
+        console.log($(this).attr('href').length);
+
         thisSection = $($(this).attr('href'));
         if( !thisSection.length ) return;
 
@@ -27,7 +30,7 @@ module.exports = function( submenu, windowHeight ){
     }
 
     submenu.on('click', 'a', function(e){
-        if( $(this).attr('href').lastIndexOf('#', 0) === 0 && $(this).attr('href').length < 2 ){
+        if( $(this).attr('href').lastIndexOf('#', 0) === 0 && $(this).attr('href').length > 1 ){
             thisSection = $($(this).attr('href'));
             if( thisSection.length ){
                 e.preventDefault();
@@ -41,7 +44,7 @@ module.exports = function( submenu, windowHeight ){
         scrollTop = $(document).scrollTop();
 
         submenu.find('a').each(function(){
-            if( $(this).attr('href').lastIndexOf('#', 0) === 0 && $(this).attr('href').length < 2 ){
+            if( $(this).attr('href').lastIndexOf('#', 0) === 0 && $(this).attr('href').length > 1 ){
                 thisSection = $($(this).attr('href'));
                 if( !thisSection.length ) return;
 
