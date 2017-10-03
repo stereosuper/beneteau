@@ -239,7 +239,15 @@ namespace Eolia {
 				'paged'          => get_query_var( 'paged' ) ?: 1,
 				'posts_per_page' => - 1,
 				'orderby'        => 'meta_value',
-				'order'          => $this->options['res_order'],
+				'order'          => strtoupper( $this->options['res_order'] ),
+				'meta_key'       => $this->options['res_orderby'],
+				'meta_query'     => array(
+					'relation' => 'AND',
+					array(
+						'key'   => 'lang',
+						'value' => get_locale(),
+					),
+				),
 			);
 
 			if ( isset( $_REQUEST['ids'] ) ) {
@@ -735,6 +743,7 @@ namespace Eolia {
 			$args = array(
 				'post_type' => 'job',
 				'showposts' => - 1,
+				'lang' => '',
 			);
 
 			$query = new WP_Query( $args );
@@ -748,8 +757,6 @@ namespace Eolia {
 				$posts[ $lang ][ get_post_meta( $post->ID, 'job_id', true ) ] = $post;
 			}
 			wp_reset_query();
-
-			$terms = array();
 
 			foreach ( $jobs as $lang => $values ) {
 				if ( ! isset( $posts[ $lang ] ) ) {
@@ -987,6 +994,7 @@ namespace Eolia {
 				$args = array(
 					'post_type'  => 'job',
 					'showposts'  => 1,
+					'lang' => '',
 					'meta_query' => array(
 						array(
 							'key'     => 'job_id',
@@ -1006,8 +1014,6 @@ namespace Eolia {
 				// todo[rpozzi]: check if category have changed, then update it.
 				if ( ! is_wp_error( $query ) && $query->have_posts() ) {
 					$job->set_postId( $query->post->ID );
-				} elseif ( null !== $forced ) {
-					$job->save();
 				}
 
 				wp_reset_query();
@@ -1047,6 +1053,11 @@ namespace Eolia {
 						pll_set_term_language( $term['term_id'], $lang );
 					}
 				}
+				$terms_localized[$lang] = is_a($term, 'WP_Term')  ? $term->term_id : $term['term_id'] ;
+			}
+
+			if (function_exists('pll_save_term_translations')) {
+				pll_save_term_translations($terms_localized);
 			}
 
 			// Parse jobs to get all terms

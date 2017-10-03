@@ -1,0 +1,100 @@
+.history{
+    display: block;
+    position: relative;
+    margin-top: 90px;
+    &:before{
+        content: '';
+        width: 1px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        background: #A8D3F3;
+    }
+    > li{
+        display: block;
+        position: relative;
+        width: calc(50% - #{$gutter});
+        margin: 0 0 100px;
+        &:before{
+            content: none;
+        }
+        &:nth-child(odd){
+            margin-left: calc(50% + #{$gutter});
+            time{
+                left: calc(-100% - #{2*$gutter});
+                text-align: right;
+                &:before{
+                    right: -$gutter;
+                }
+            }
+        }
+        &:nth-child(even){
+            time{
+                right: calc(-100% - #{2*$gutter});
+                &:before{
+                    left: -$gutter;
+                }
+            }
+        }
+        &:last-child{
+            margin-bottom: 0;
+        }
+    }
+    time{
+        display: block;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        font-family: $playfairBold;
+        font-size: 3.2rem;
+        &:before{
+            content: '';
+            width: 60px;
+            height: 1px;
+            background: #A8D3F3;
+            position: absolute;
+            bottom: -10px;
+        }
+    }
+    p{
+        margin-bottom: 0;
+    }
+    .link{
+        margin-top: 30px;
+    }
+}
+
+@media(max-width: $tablet){
+    .history{
+        padding-left: $gutter;
+        &:before{
+            left: 0;
+        }
+        > li{
+            width: 100%;
+            margin-bottom: 50px;
+            &:nth-child(odd){
+                margin-left: 0;
+                time{
+                    left: auto;
+                    text-align: left;
+                    &:before{
+                        right: auto;
+                        left: -$gutter;
+                    }
+                }
+            }
+            &:nth-child(even){
+                time{
+                    right: auto;
+                }
+            }
+        }
+        time{
+            position: relative;
+            top: auto;
+            margin-bottom: 30px;
+        }
+    }
+}
