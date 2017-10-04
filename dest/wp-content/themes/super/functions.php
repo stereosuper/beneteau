@@ -174,8 +174,8 @@ function beneteau_gallery($output, $attr=array()){
         'orderby'    => 'menu_order ID',
         'id'         => $post->ID,
         'itemtag'    => '',
-        'icontag'    => '',
-        'captiontag' => '',
+        'icontag'    => 'figure',
+        'captiontag' => 'figcaption',
         'columns'    => 3,
         'size'       => 'medium',
         'include'    => '',
@@ -205,10 +205,16 @@ function beneteau_gallery($output, $attr=array()){
     $selector = "gallery-{$instance}";
     $output = "<ul class='gallery' id='$selector' data-featherlight-gallery
     data-featherlight-filter='a'>";
+    $count = 0;
 
     foreach( $attachments as $id => $attachment ){
-        //$output .= '<li><a href="' . wp_get_attachment_image_url($id, 'full') . '" data-featherlight="image">' . wp_get_attachment_image($id, $size) . '</a></li>';
-        $output .= '<li><a href="' . wp_get_attachment_image_url($id, 'full') . '">' . wp_get_attachment_image($id, $size) . '</a></li>';
+        $count ++;
+        $output .= '<li>';
+        $output .= '<a href="#image' . $count . '" data-url="' . wp_get_attachment_image_url($id, 'full') . '">' . wp_get_attachment_image($id, $size) . '</a>';
+        $output .= '<div id="image' . $count . '">' . wp_get_attachment_image($id, 'full');
+        $output .= trim($attachment->post_excerpt) ? '<p>' . wptexturize($attachment->post_excerpt) . '</p>' : '';
+        $output .= '</div>';
+        $output .= '</li>';
     }
 
     $output .= "</ul>";

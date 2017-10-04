@@ -13,6 +13,9 @@
         &:before{
             content: none;
         }
+        > div{
+            display: none;
+        }
     }
     a{
         border: 0;
@@ -85,6 +88,20 @@
         left: 20px;
         background: url(../layoutImg/left.svg) no-repeat 50% 50%;
         transform: translate3d(10px, 0, 0);
+    }
+}
+.featherlight-inner{
+    position: relative;
+    p{
+        padding: 15px 10px 5px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: 0;
+        font-size: 1.4rem;
+        color: $white;
+        background: linear-gradient(to bottom, transparent 0%, rgba($black, 0.5) 100%);
     }
 }
 
