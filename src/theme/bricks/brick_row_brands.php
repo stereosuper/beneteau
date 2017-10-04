@@ -29,8 +29,7 @@ $title_align = get_sub_field('title_align');
                 ?>
 
                     <div class='col-3'>
-                        <div class='img'><?php if (!empty($image_url)) : ?><img src='<?php echo $image_url; ?>' alt='<?php echo $title; ?>'><?php endif; ?></div>
-                        <h2 class='visually-hidden'><?php echo $title; ?></h2>
+                        <h3><?php echo $title; ?></h3>
                         <?php if (!empty($content)) : ?><?php echo $content; ?><?php endif; ?>
                         <a href='<?php echo $link; ?>' class='btn-invert-block'><?php _e('Contacter', 'beneteau'); ?></a>
                     </div>
