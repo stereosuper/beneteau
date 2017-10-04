@@ -41,7 +41,6 @@ module.exports = function(htmlAze, body, header, windowWidth){
         }
 
     }).on('mouseleave', '#nav', function(){
-
         if( $(this).find('.sub-menu').length ){
             $(this).find('.sub-menu').removeClass('on');
             header.removeClass('hover');
