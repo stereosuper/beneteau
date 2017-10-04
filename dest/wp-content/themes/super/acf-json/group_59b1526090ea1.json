@@ -481,6 +481,178 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "59d4ce6bede7f": {
+                    "key": "59d4ce6bede7f",
+                    "name": "brick_row_timeline",
+                    "label": "Historique",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_59d4ce6bede80",
+                            "label": "Ancre",
+                            "name": "anchor",
+                            "type": "text",
+                            "instructions": "Ancre permettant de créer un lien sur une section de la page. Ne doit contenir que des caractères non-accentués non-spéciaux et pas d'espaces.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_59d4ce6bede81",
+                            "label": "Titre",
+                            "name": "title",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_59d4ce6bede82",
+                            "label": "Alignement du titre",
+                            "name": "title_align",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "left": "Gauche",
+                                "center": "Centre",
+                                "right": "Droite"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "save_other_choice": 0,
+                            "default_value": "",
+                            "layout": "horizontal",
+                            "return_format": "value"
+                        },
+                        {
+                            "key": "field_59d4ce6bede83",
+                            "label": "Dates",
+                            "name": "dates",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 1,
+                            "max": 0,
+                            "layout": "block",
+                            "button_label": "Ajouter une date",
+                            "sub_fields": [
+                                {
+                                    "key": "field_59d4ce6bede84",
+                                    "label": "Date",
+                                    "name": "date",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 1,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_59d4ce6bede85",
+                                    "label": "Image",
+                                    "name": "img",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "preview_size": "thumbnail",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_59d4ced5ede88",
+                                    "label": "Texte",
+                                    "name": "text",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": "",
+                                    "rows": 2,
+                                    "new_lines": "br"
+                                },
+                                {
+                                    "key": "field_59d4ce6bede86",
+                                    "label": "Lien",
+                                    "name": "link",
+                                    "type": "url",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Ajouter un élément",
@@ -517,5 +689,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1506524629
+    "modified": 1507118964
 }
