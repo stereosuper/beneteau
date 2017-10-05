@@ -19,6 +19,10 @@ input, textarea, select, button{
 }
 
 input, textarea{
+    width: 42%;
+    padding: 10px 15px 12px;
+    border: 1px solid rgba($grey, 0.5);
+    border-radius: 5px;
   	&:-webkit-autofill{
       	box-shadow: 0 0 0 1000px #fff inset;
   	}
@@ -42,4 +46,19 @@ select{
     &::-ms-expand{
         display: none;
     }
+}
+
+label{
+    display: inline-block;
+    width: 28%;
+    margin: 0 $gutter 0 0;
+    text-align: right;
+}
+
+.eolia_form-group{
+    display: flex;
+}
+
+.eolia_input--button{
+    margin: 0 0 0 calc(28% + #{$gutter});
 }
