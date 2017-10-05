@@ -21,9 +21,7 @@
 get_header();
 ?>
 	<div class='container'>
-		<div class="page-header">
-			<h1 class="page-title"><?php post_type_archive_title() ?></h1>
-		</div>
+		<h1 class='isAnimated'><?php post_type_archive_title() ?></h1>
 		<?php
 		if ( ! locate_template( 'single-results.php', true ) ) {
 			require_once dirname( __DIR__ ) . '/partials/single-results.php';

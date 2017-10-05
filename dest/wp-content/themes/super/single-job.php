@@ -10,6 +10,7 @@ get_header();
 ?>
 <!-- single-job.php -->
 <div class='container'>
+	<?php if( function_exists('yoast_breadcrumb') ){ yoast_breadcrumb('<div class="breadcrumbs">','</div>'); } ?>
 	<?php echo do_shortcode( '[eolia_sharelink position="top" /]' ); ?>
 	<?php do_action( 'eolia_action_before_view', $job ) ?>
 	<?php the_content() ?>

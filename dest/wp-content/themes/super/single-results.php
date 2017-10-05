@@ -24,6 +24,8 @@ $app     = \Eolia\EoliaWordpress::get_instance();
 	<div class='container'>
 		<!--		todo: if only 1 category, show directly the results-->
 		<?php foreach ( (array) $results as $category => $items ) : ?>
+			<?php if( function_exists('yoast_breadcrumb') ){ yoast_breadcrumb('<div class="breadcrumbs">','</div>'); } ?>
+
 			<div class="eolia_results_category" id="<?php echo sanitize_title( $category ) ?>"
 			     data-category="<?php echo sanitize_title( $category ) ?>" data-count="<?php echo count( $items ); ?>">
 				<h2 class="eolia_results_category_title">
