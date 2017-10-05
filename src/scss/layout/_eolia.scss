@@ -2,10 +2,12 @@
     a{
         border: 0;
         font-family: inherit;
+        color: inherit;
     }
 }
 
 .eolia_results_category_table{
+    table-layout: auto;
     a{
         border: 0;
         font-family: $montserratLight;
@@ -32,7 +34,7 @@
         padding: 24px 20px;
         border: 0;
         &:first-child{
-            width: 50%;
+            width: 50% !important;
             font-size: 1.6rem;
         }
     }
