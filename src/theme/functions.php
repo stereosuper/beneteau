@@ -271,7 +271,17 @@ function super_register_sidebars(){
 		'before_title' => '<h2>',
 		'after_title' => '</h2>',
 		'empty_title'=> ''
-	));
+    ));
+    register_sidebar(array(
+        'id' => 'job-menu',
+        'name' => 'Menu Emploi',
+        'description' => "Apparait sur les pages Emploi",
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '',
+        'after_title' => '',
+        'empty_title'=> ''
+    ));
 }
 add_action( 'widgets_init', 'super_register_sidebars' );
 
@@ -289,7 +299,6 @@ function super_unregister_default_widgets(){
     unregister_widget('WP_Widget_Recent_Comments');
     unregister_widget('WP_Widget_RSS');
     unregister_widget('WP_Widget_Tag_Cloud');
-    unregister_widget('WP_Nav_Menu_Widget');
 }
 add_action( 'widgets_init', 'super_unregister_default_widgets' );
 
