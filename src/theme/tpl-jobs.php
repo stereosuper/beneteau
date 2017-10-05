@@ -1,16 +1,7 @@
 <?php
-/**
- * Copyright (c) 2017 Eolia Consulting
- *
- * @author     Ronan Pozzi <r.pozzi@eolia-consulting.com>
- * @date       2017
- * @copyright  Eolia Software (http://www.eolia-consulting.com)
- * @licence    GNU
- *
- * @file       archive-job.php
- * @package    eolia-app
- * @version    1.0.0
- */
+/*
+Template Name: Emploi liste
+*/
 
 /**
  * The template for displaying single job.
@@ -49,10 +40,9 @@ get_header();
 
 		<h1 class='isAnimated'><?php post_type_archive_title() ?></h1>
 
-		<?php
-		if ( ! locate_template( 'single-results.php', true ) ) {
-			require_once dirname( __DIR__ ) . '/partials/single-results.php';
-		} ?>
+		<?php echo do_shortcode( '[eolia_search/]' ); ?>
+
+		<?php get_template_part( 'single-results' ); ?>
 	</div>
 
 </div>
