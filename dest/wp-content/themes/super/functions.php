@@ -229,7 +229,8 @@ add_filter( 'post_gallery', 'beneteau_gallery' );
 register_nav_menus( array(
 		'primary' => 'Menu Principal',
 		'legals' => 'Menu des mentions légales',
-		'footer' => 'Menu de pied de page',
+        'footer' => 'Menu de pied de page',
+        'job' => 'Menu emploi',
 ) );
 
 // Cleanup WP Menu html
@@ -262,16 +263,16 @@ add_filter('previous_post_link', 'beneteau_prev_class');
 /* Sidebar & Widgets
 /*-----------------------------------------------------------------------------------*/
 function super_register_sidebars(){
-	register_sidebar(array(
-		'id' => 'job',
-		'name' => 'Emploi',
-		'description' => "Apparait sur la page d'accueil Emploi",
-		'before_widget' => '',
-		'after_widget' => '<a href="' . get_field('jobs_link', 'options') . '" class="btn">' . __('Toutes nos offres', 'beneteau') . '</a>',
-		'before_title' => '<h2>',
-		'after_title' => '</h2>',
-		'empty_title'=> ''
-    ));
+	// register_sidebar(array(
+	// 	'id' => 'job',
+	// 	'name' => 'Emploi',
+	// 	'description' => "Apparait sur la page d'accueil Emploi",
+	// 	'before_widget' => '',
+	// 	'after_widget' => '<a href="' . get_field('jobs_link', 'options') . '" class="btn">' . __('Toutes nos offres', 'beneteau') . '</a>',
+	// 	'before_title' => '<h2>',
+	// 	'after_title' => '</h2>',
+	// 	'empty_title'=> ''
+    // ));
     register_sidebar(array(
         'id' => 'job-menu',
         'name' => 'Menu Emploi',
