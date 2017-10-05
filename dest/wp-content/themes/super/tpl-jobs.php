@@ -40,6 +40,8 @@ get_header();
 
 		<h1 class='isAnimated'><?php the_title() ?></h1>
 
+        <?php the_content(); ?>
+        
 		<?php echo do_shortcode( '[eolia_search/]' ); ?>
 
 		<?php get_template_part( 'single-results' ); ?>

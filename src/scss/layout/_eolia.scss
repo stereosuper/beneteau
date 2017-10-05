@@ -14,8 +14,12 @@
     }
     tbody{
         tr{
+            transition: $transition;
             &:nth-of-type(odd){
                 background: #f5f7fa;
+            }
+            &:hover{
+                background: rgba($blue, 0.4);
             }
         }
     }
