@@ -263,9 +263,9 @@ add_filter('previous_post_link', 'beneteau_prev_class');
 /*-----------------------------------------------------------------------------------*/
 function super_register_sidebars(){
 	register_sidebar(array(
-		'id' => 'sidebar',
-		'name' => 'Sidebar',
-		'description' => 'Take it on the side...',
+		'id' => 'emploi',
+		'name' => 'Emploi',
+		'description' => "Apparait sur la page d'accueil Emploi",
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '',
