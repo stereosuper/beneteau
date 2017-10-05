@@ -3,6 +3,8 @@ var $ = require('jquery');
 require('gsap/CSSPlugin');
 var TweenLite = require('gsap/TweenLite');
 
+var Hammer = require('hammerjs');
+
 window.requestAnimFrame = require('./requestAnimFrame.js');
 var throttle = require('./throttle.js');
 
@@ -23,6 +25,8 @@ module.exports = function( slider, windowWidth ){
     var sliderNav = slider.find('.slider-nav');
 
     var done = true;
+
+    var slides, indexActive, nbSlides, nextIndex;
 
 
     function slide(index, button){
@@ -78,6 +82,27 @@ module.exports = function( slider, windowWidth ){
         }
     }
 
+    function callSwipe(direction){
+        slides = slider.find('.slider-img li');
+        nbSlides = slides.length;
+        if( !slider.hasClass('on') && done ){
+            TweenLite.killDelayedCallsTo( slide );
+            indexActive = slider.find('li.on').index();
+            if(direction === 'left'){
+                nextIndex = indexActive+1;
+                if(nextIndex > (nbSlides - 1)){
+                    nextIndex = 0;
+                }
+            }else{
+                nextIndex = indexActive-1;
+                if(nextIndex < 0){
+                    nextIndex = nbSlides-1;
+                }
+            }
+            slide(nextIndex);
+        }
+    }
+
 
     activeSlideImg.removeClass('first-on').addClass('on').css('opacity', 1);
 
@@ -107,6 +132,13 @@ module.exports = function( slider, windowWidth ){
             setSliderTimeout();
         } );
     }, 60));
+
+    var hammertime = new Hammer(slider.get(0));
+    hammertime.on('swipeleft', function(){
+        callSwipe('left');
+    }).on('swiperight', function(){
+        callSwipe('right');
+    });
 
     $(document).on('scroll', throttle(function(){
         requestAnimFrame(setSliderTimeout);

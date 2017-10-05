@@ -20,10 +20,6 @@ module.exports = function( submenu, windowHeight ){
     function detectSectionsTop(){
         if( $(this).attr('href').lastIndexOf('#', 0) !== 0 || $(this).attr('href').length < 2 ) return;
 
-        console.log($(this).attr('href').lastIndexOf('#', 0));
-        console.log($(this).attr('href'));
-        console.log($(this).attr('href').length);
-
         thisSection = $($(this).attr('href'));
         if( !thisSection.length ) return;
 
