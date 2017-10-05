@@ -22,6 +22,27 @@
             "allow_null": 0,
             "allow_archives": 0,
             "multiple": 0
+        },
+        {
+            "key": "field_59d6412ff4fe8",
+            "label": "Lien vers la page des offres",
+            "name": "jobs_link",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page"
+            ],
+            "taxonomy": [],
+            "allow_null": 0,
+            "allow_archives": 1,
+            "multiple": 0
         }
     ],
     "location": [
@@ -41,5 +62,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1505295986
+    "modified": 1507213648
 }
