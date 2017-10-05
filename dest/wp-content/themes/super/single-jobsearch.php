@@ -20,8 +20,6 @@ $results = $app->archive_query();
 
 ?>
 <div class='container'>
-	<?php if( function_exists('yoast_breadcrumb') ){ yoast_breadcrumb('<div class="breadcrumbs">','</div>'); } ?>
-
 	<?php if ( ! $selected_fields = json_decode( $options['search_criteria'] ) ): ?>
 		<div class="alert alert-warning"><?php _e( 'Missing search criteria in Eolia App admin.', 'eolia-app' ); ?></div>
 		<?php return ?>

@@ -21,6 +21,8 @@
 get_header();
 ?>
 	<div class='container'>
+		<?php if( function_exists('yoast_breadcrumb') ){ yoast_breadcrumb('<div class="breadcrumbs">','</div>'); } ?>
+
 		<h1 class='isAnimated'><?php post_type_archive_title() ?></h1>
 		<?php
 		if ( ! locate_template( 'single-results.php', true ) ) {
