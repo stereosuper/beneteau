@@ -26,7 +26,7 @@ module.exports = function( slider, windowWidth ){
 
     var done = true;
 
-    var slides, indexActive, nbSlides, nextIndex;
+    var hammertime = new Hammer(slider.get(0)), swipeBtn;
 
 
     function slide(index, button){
@@ -35,7 +35,6 @@ module.exports = function( slider, windowWidth ){
         if( index > -1 ){
             newActiveSlideImg = slidesImg.eq(index);
             newActiveSlideTxt = slidesTxt.eq(index);
-            
         }else{
             newActiveSlideImg = activeSlideImg.next('.slide-img').length ? activeSlideImg.next('.slide-img') : slidesImg.eq(0);
             newActiveSlideTxt = activeSlideTxt.next('.slide-txt').length ? activeSlideTxt.next('.slide-txt') : slidesTxt.eq(0);
@@ -77,30 +76,16 @@ module.exports = function( slider, windowWidth ){
     function setSliderTimeout(){
         TweenLite.killDelayedCallsTo( slide );
         
-        if( checkIfInView.check(slider) ){
-            TweenLite.delayedCall( 8, slide );
-        }
+        if( !checkIfInView.check(slider) ) return;
+        
+        TweenLite.delayedCall( 8, slide );
     }
 
-    function callSwipe(direction){
-        slides = slider.find('.slider-img li');
-        nbSlides = slides.length;
-        if( !slider.hasClass('on') && done ){
-            TweenLite.killDelayedCallsTo( slide );
-            indexActive = slider.find('li.on').index();
-            if(direction === 'left'){
-                nextIndex = indexActive+1;
-                if(nextIndex > (nbSlides - 1)){
-                    nextIndex = 0;
-                }
-            }else{
-                nextIndex = indexActive-1;
-                if(nextIndex < 0){
-                    nextIndex = nbSlides-1;
-                }
-            }
-            slide(nextIndex);
-        }
+    function handleAction(btn){
+        if( !done ) return
+        
+        TweenLite.killDelayedCallsTo( slide );
+        slide(btn.parent().index(), btn);
     }
 
 
@@ -117,28 +102,37 @@ module.exports = function( slider, windowWidth ){
 
     slider.on('click', 'button', function(e){
         e.preventDefault();
-        if( !$(this).hasClass('on') && done ){
-            TweenLite.killDelayedCallsTo( slide );
-            slide($(this).parent().index(), $(this));
+        if( !$(this).hasClass('on') ){
+            handleAction($(this));
         }
     });
 
+    hammertime.on('swipeleft', function(){
+
+        swipeBtn = sliderNav.find('.on').parent().next().length ? sliderNav.find('.on').parent().next().find('button') : sliderNav.find('li').eq(0).find('button');
+        handleAction(swipeBtn);
+
+    }).on('swiperight', function(){
+        
+        swipeBtn = sliderNav.find('.on').parent().prev().length ? sliderNav.find('.on').parent().prev().find('button') : sliderNav.find('li').last().find('button');
+        handleAction(swipeBtn);
+
+    });
+
     $(window).on('focusout', function(){
+
         TweenLite.killDelayedCallsTo( slide );
+
     }).on('focusin', setSliderTimeout).on('resize', throttle(function(){
         requestAnimFrame( function(){
+
             windowWidth = window.outerWidth;
             windowWidth > 780 ? slider.attr('style', '') : slider.height(activeSlideTxt.height());
             setSliderTimeout();
+
         } );
     }, 60));
 
-    var hammertime = new Hammer(slider.get(0));
-    hammertime.on('swipeleft', function(){
-        callSwipe('left');
-    }).on('swiperight', function(){
-        callSwipe('right');
-    });
 
     $(document).on('scroll', throttle(function(){
         requestAnimFrame(setSliderTimeout);
