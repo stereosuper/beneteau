@@ -263,26 +263,26 @@ add_filter('previous_post_link', 'beneteau_prev_class');
 /* Sidebar & Widgets
 /*-----------------------------------------------------------------------------------*/
 function super_register_sidebars(){
-	// register_sidebar(array(
-	// 	'id' => 'job',
-	// 	'name' => 'Emploi',
-	// 	'description' => "Apparait sur la page d'accueil Emploi",
-	// 	'before_widget' => '',
-	// 	'after_widget' => '<a href="' . get_field('jobs_link', 'options') . '" class="btn">' . __('Toutes nos offres', 'beneteau') . '</a>',
-	// 	'before_title' => '<h2>',
-	// 	'after_title' => '</h2>',
-	// 	'empty_title'=> ''
-    // ));
-    register_sidebar(array(
-        'id' => 'job-menu',
-        'name' => 'Menu Emploi',
-        'description' => "Apparait sur les pages Emploi",
-        'before_widget' => '',
-        'after_widget' => '',
-        'before_title' => '',
-        'after_title' => '',
-        'empty_title'=> ''
+	register_sidebar(array(
+		'id' => 'job',
+		'name' => 'Emploi',
+		'description' => "Apparait sur la page d'accueil Emploi",
+		'before_widget' => '',
+		'after_widget' => '<a href="' . get_field('jobs_link', 'options') . '" class="btn">' . __('Toutes nos offres', 'beneteau') . '</a>',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
+		'empty_title'=> ''
     ));
+    // register_sidebar(array(
+    //     'id' => 'job-menu',
+    //     'name' => 'Menu Emploi',
+    //     'description' => "Apparait sur les pages Emploi",
+    //     'before_widget' => '',
+    //     'after_widget' => '',
+    //     'before_title' => '',
+    //     'after_title' => '',
+    //     'empty_title'=> ''
+    // ));
 }
 add_action( 'widgets_init', 'super_register_sidebars' );
 
