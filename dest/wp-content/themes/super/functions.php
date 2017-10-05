@@ -268,8 +268,8 @@ function super_register_sidebars(){
 		'description' => "Apparait sur la page d'accueil Emploi",
 		'before_widget' => '',
 		'after_widget' => '',
-		'before_title' => '',
-		'after_title' => '',
+		'before_title' => '<h2>',
+		'after_title' => '</h2>',
 		'empty_title'=> ''
 	));
 }
