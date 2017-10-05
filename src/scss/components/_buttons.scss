@@ -127,7 +127,7 @@
     }
 }
 
-.btn, .btn-invert, .btn-invert-block{
+.btn, .btn-invert, .btn-invert-block, .eolia_input--button{
     display: inline-block;
     border: 1px solid transparent;
     position: relative;
@@ -148,7 +148,7 @@
     }
 }
 
-.btn{
+.btn, .eolia_input--button{
     background: $grey;
     color: $white;
     &:before, &:after{
@@ -183,6 +183,12 @@
     width: 100%;
     max-width: 300px;
     padding: 20px;
+}
+
+.eolia_input--button{
+    width: auto;
+    padding: 20px 60px;
+    border-radius: 0;
 }
 
 

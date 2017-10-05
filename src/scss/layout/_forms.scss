@@ -30,6 +30,9 @@ input, textarea{
         // FF red borders
         box-shadow: none;
     }
+    &:focus{
+        border-color: $text;
+    }
 }
 
 input{
@@ -49,18 +52,44 @@ select{
 }
 
 label{
-    display: inline-block;
-    width: 28%;
+    display: block;
+    width: 24.5%;
     margin: 0 $gutter 0 0;
     text-align: right;
 }
 
 .eolia_form-group{
     display: flex;
+    align-items: center;
 }
 
 .eolia_input--button{
-    margin: 0 0 0 calc(28% + #{$gutter});
+    margin: 0 0 0 calc(24.5% + #{$gutter});
+}
+
+.eolia_input--keywords{
+    width: 64.5%;
+}
+
+.select2-selection{
+    padding: 5px 15px 7px;
+    ul{
+        padding: 0;
+        > li{
+            &:before{
+                content: none;
+            }
+        }
+    }
+}
+.select2-results{
+    ul{
+        > li{
+            &:before{
+                content: none;
+            }
+        }
+    }
 }
 
 .eolia_form .eolia_input, .eolia_search .eolia_input{
