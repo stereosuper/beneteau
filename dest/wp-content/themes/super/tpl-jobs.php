@@ -38,7 +38,7 @@ get_header();
 	<div class='content'>
 		<?php if( function_exists('yoast_breadcrumb') ){ yoast_breadcrumb('<div class="breadcrumbs">','</div>'); } ?>
 
-		<h1 class='isAnimated'><?php post_type_archive_title() ?></h1>
+		<h1 class='isAnimated'><?php the_title() ?></h1>
 
 		<?php echo do_shortcode( '[eolia_search/]' ); ?>
 
