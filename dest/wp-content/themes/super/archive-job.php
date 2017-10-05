@@ -49,10 +49,7 @@ get_header();
 
 		<h1 class='isAnimated'><?php post_type_archive_title() ?></h1>
 
-		<?php
-		if ( ! locate_template( 'single-results.php', true ) ) {
-			require_once dirname( __DIR__ ) . '/partials/single-results.php';
-		} ?>
+		<?php get_template_part( 'single-results' ); ?>
 	</div>
 
 </div>
