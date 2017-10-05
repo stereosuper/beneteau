@@ -1,0 +1,42 @@
+.eolia_results_category_title{
+    a{
+        border: 0;
+        font-family: inherit;
+    }
+}
+
+.eolia_results_category_table{
+    a{
+        border: 0;
+        font-family: $montserratLight;
+    }
+    tbody{
+        tr{
+            &:nth-of-type(odd){
+                background: #f5f7fa;
+            }
+        }
+    }
+    thead{
+        th{
+            font-family: $montserratSemiBold;
+            font-size: 1.3rem;
+            text-align: left;
+            border-color: $text;
+        }
+    }
+    th{
+        padding: 2px 20px;
+    }
+    td{
+        padding: 24px 20px;
+        border: 0;
+        &:first-child{
+            width: 50%;
+            font-size: 1.6rem;
+        }
+    }
+    tr{
+        font-size: 1.4rem;
+    }
+}
