@@ -183,11 +183,12 @@ label, .eolia_field_label{
     width: auto;
     padding: 20px 60px;
     border: 1px solid transparent;
-    font-size: 1.6rem;
+    font-size: 1.1rem;
     border-radius: 0;
     background: $grey;
     color: $white;
     &:hover, &:focus{
+        border-color: #667B8E;
         background: #667B8E;
         outline: none;
     }
