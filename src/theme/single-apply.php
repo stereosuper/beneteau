@@ -13,12 +13,10 @@ get_header();
 
 <?php $sidebar_menu = wp_nav_menu( array(
 	'echo' => false,
-	'theme_location' => 'primary',
+	'theme_location' => 'job',
 	'container' => false,
 	'menu_class' => 'sidebar-menu',
 	'menu_id' => 'submenu',
-	'depth' => 0,
-	'walker' => new CustomWalkerNavSubMenu()
 	) );
 ?>
 
