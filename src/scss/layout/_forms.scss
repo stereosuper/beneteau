@@ -90,8 +90,12 @@ label, .eolia_field_label{
         }
     }
 }
-.eolia_form .select2-container .select2-selection, .eolia_search .select2-container .select2-selection{
+.eolia_search .select2-container .select2-selection{
     padding: 6px 15px;
+    height: auto;
+}
+.eolia_form .select2-container .select2-selection{
+    padding: 10px 15px 12px;
     height: auto;
 }
 .select2-results{
@@ -167,4 +171,7 @@ label, .eolia_field_label{
     position: static !important;
     width: 14px !important;
     margin: 8px 0 0 !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered{
+    padding-right: 20px !important;
 }
