@@ -157,3 +157,12 @@ label, .eolia_field_label{
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove{
     color: $text !important;
 }
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+    top: 1px !important;
+    right: 1px !important;
+    width: 20px !important;
+}
+.select2-container--default .select2-selection--single .select2-selection__clear{
+    position: static !important;
+    width: 14px !important;
+}
