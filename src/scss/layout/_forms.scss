@@ -133,14 +133,17 @@ label, .eolia_field_label{
     }
 }
 
-.eolia_form .eolia_input, .eolia_search .eolia_input{
-    width: 42%;
-    height: auto;
-    padding: 10px 15px 12px;
-    border: 1px solid rgba($grey, 0.5);
-    border-radius: 5px;
-    color: $text;
-    background: none;
+.eolia_form, .eolia_search{
+    .eolia_input{
+        width: 42%;
+        height: auto;
+        padding: 10px 15px 12px;
+        border: 1px solid rgba($grey, 0.5);
+        line-height: 1.5;
+        border-radius: 5px;
+        color: $text;
+        background: none;
+    }
 }
 
 .select2-selection__clear{
@@ -174,4 +177,12 @@ label, .eolia_field_label{
 }
 .select2-container--default .select2-selection--single .select2-selection__rendered{
     padding-right: 20px !important;
+}
+
+.eolia_form .eolia_input--button, .eolia_job .eolia_input--button, .eolia_results .eolia_input--button, .eolia_search .eolia_input--button{
+    width: auto;
+    padding: 20px 60px;
+    border: 1px solid transparent;
+    border-radius: 0;
+    background: #54616C;
 }
