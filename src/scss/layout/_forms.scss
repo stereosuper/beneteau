@@ -116,7 +116,7 @@ label, .eolia_field_label{
 }
 .select2-container--default{
     .select2-selection--single .select2-selection__arrow{
-        height: 17px !important;
+        height: 21px !important;
         bottom: 1px;
         margin: auto;
         background: url(../layoutImg/down.svg) no-repeat;
@@ -137,4 +137,11 @@ label, .eolia_field_label{
     border-radius: 5px;
     color: $text;
     background: none;
+}
+
+.select2-selection__clear{
+    width: 15px;
+    height: 15px;
+    text-indent: -99em;
+    background: url(../layoutImg/close.svg) no-repeat;
 }

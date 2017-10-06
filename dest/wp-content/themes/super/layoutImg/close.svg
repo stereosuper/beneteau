@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="13px" viewBox="0 0 15 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.2 (44496) - http://www.bohemiancoding.com/sketch -->
+    <title>form/input/placeholder/clear</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
+        <g id="form/input/dropdown" transform="translate(-485.000000, -18.000000)" stroke="#2D3A45">
+            <g id="form/input/placeholder/clear" transform="translate(486.000000, 18.000000)">
+                <g id="clear">
+                    <path d="M0,0 L12.5,12.5" id="Line"></path>
+                    <path d="M0,0 L12.5,12.5" id="Line" transform="translate(6.500000, 6.500000) scale(-1, 1) translate(-6.500000, -6.500000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
