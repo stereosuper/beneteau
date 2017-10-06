@@ -51,12 +51,18 @@ select{
     }
 }
 
-label{
+label, .eolia_field_label{
     display: block;
     width: 24.5%;
     min-width: 24.5%;
     margin: 0 $gutter 0 0;
     text-align: right;
+}
+.eolia_field_label{
+    padding: 0;
+}
+.eolia_form-group .eolia_field_label, .eolia_search-group .eolia_field_label{
+    margin: 0 $gutter 0 0;
 }
 
 .eolia_form-group{
@@ -73,6 +79,7 @@ label{
 }
 
 .select2-selection{
+    width: 100%;
     padding: 6px 15px;
     ul{
         padding: 0;
@@ -82,6 +89,10 @@ label{
             }
         }
     }
+}
+.eolia_form .select2-container .select2-selection, .eolia_search .select2-container .select2-selection{
+    padding: 6px 15px;
+    height: auto;
 }
 .select2-results{
     ul{
@@ -111,6 +122,13 @@ label{
     .select2-selection--multiple .select2-selection__rendered{
         padding-left: 0 !important;
     }
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow b{
+    top: 1px;
+    bottom: 1px;
+    left: auto;
+    right: 1px;
+    margin: auto;
 }
 
 .eolia_form .eolia_input, .eolia_search .eolia_input{
