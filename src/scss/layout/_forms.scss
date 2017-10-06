@@ -116,19 +116,17 @@ label, .eolia_field_label{
 }
 .select2-container--default{
     .select2-selection--single .select2-selection__arrow{
+        height: 17px !important;
         bottom: 1px;
         margin: auto;
+        background: url(../layoutImg/down.svg) no-repeat;
+    }
+    b{
+        display: none;
     }
     .select2-selection--multiple .select2-selection__rendered{
         padding-left: 0 !important;
     }
-}
-.select2-container--default .select2-selection--single .select2-selection__arrow b{
-    top: 1px;
-    bottom: 1px;
-    left: auto;
-    right: 1px;
-    margin: auto;
 }
 
 .eolia_form .eolia_input, .eolia_search .eolia_input{
