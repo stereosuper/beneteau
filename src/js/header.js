@@ -40,12 +40,13 @@ module.exports = function(htmlAze, body, header, windowWidth){
             if( !htmlAze.hasClass('menu-open') ) menuBg.addClass('on');
         }
 
-    }).on('mouseleave', '#nav', function(){
+    }).on('mouseleave', function(){
+        
         if( $(this).find('.sub-menu').length ){
             $(this).find('.sub-menu').removeClass('on');
             header.removeClass('hover');
             if( !htmlAze.hasClass('menu-open') ) menuBg.removeClass('on');
-            TweenLite.set($(this).siblings('.sub-menu').children('ul'), {x: 0, delay: 0.3});
+            //TweenLite.set($(this).siblings('.sub-menu').children('ul'), {x: 0, delay: 0.3});
         }
 
     }).find('a').each(function(){
