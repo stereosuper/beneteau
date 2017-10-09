@@ -46,3 +46,19 @@
         font-size: 1.4rem;
     }
 }
+
+.eolia_results_category_title_inner{
+    vertical-align: middle;
+}
+.badge{
+    display: inline-block;
+    width: 20px;
+    margin: 2px 0 0 5px;
+    vertical-align: middle;
+    font-size: 1.6rem;
+    line-height: 22px;
+    text-align: center;
+    border-radius: 50%;
+    background: $text;
+    color: #fff;
+}
