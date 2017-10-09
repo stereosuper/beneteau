@@ -98,20 +98,42 @@
     }
     .cell{
         display: block;
+        padding: 0 $gutter 0 0;
         font-family: $montserratLight;
         font-size: 1.4rem;
         &:first-child{
-            width: 65%;
+            width: 60%;
             font-size: 1.6rem;
         }
         &:nth-child(2){
             width: 30%;
-            padding: 0 $gutter 0 0;
+        }
+        &:last-child{
+            padding: 0;
         }
         span{
             display: inline-block;
             padding: 0 35px 0 0;
             background: url(../layoutImg/right-primary.svg) no-repeat 100% 50%/25px auto;
+        }
+    }
+}
+
+
+@media (max-width: 600px){
+    .eolia_results_category_table tr td:first-child{
+        width: 100% !important;
+        background: none;
+        font-weight: 400;
+        font-size: 1.6rem;
+    }
+
+    .joblist{
+        flex-wrap: wrap;
+        text-align: center;
+        .cell{
+            width: 100% !important;
+            padding: 24px 20px !important;
         }
     }
 }
