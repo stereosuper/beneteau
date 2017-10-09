@@ -74,3 +74,33 @@
         margin: 0;
     }
 }
+
+.joblist{
+    margin-top: 0;
+    > li{
+        &:before{
+            content: none;
+        }
+    }
+    a{
+        display: flex;
+        padding: 24px 20px;
+        border: 0;
+        color: $text;
+        &:nth-of-type(odd){
+            background: #f5f7fa;
+        }
+    }
+    span{
+        display: block;
+        &:first-child{
+            width: 50%;
+            padding: 0 35px 0 0;
+            background: url(../layoutImg/right-primary.svg) no-repeat 100% 50%/25px auto;
+        }
+        &:nth-child(2){
+            width: 35%;
+            padding: 0 35px 0 0;
+        }
+    }
+}
