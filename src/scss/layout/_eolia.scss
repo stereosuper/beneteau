@@ -92,17 +92,20 @@
         padding: 24px 20px;
         border: 0;
         color: $text;
+        &:hover, &:focus{
+            background: rgba($blue, 0.4);
+        }
     }
     .cell{
         display: block;
         font-family: $montserratLight;
         font-size: 1.4rem;
         &:first-child{
-            width: 50%;
+            width: 65%;
             font-size: 1.6rem;
         }
         &:nth-child(2){
-            width: 35%;
+            width: 30%;
             padding: 0 $gutter 0 0;
         }
         span{
