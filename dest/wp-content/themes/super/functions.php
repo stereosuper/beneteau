@@ -520,6 +520,12 @@ function beneteau_register_required_plugins() {
             'required'    => true,
             'force_activation' => false
         ),
+        array(
+            'name'        => 'SecuPress',
+            'slug'        => 'secupress',
+            'required'    => false,
+            'force_activation' => false
+        ),
 	);
 
 	$config = array(
