@@ -197,3 +197,18 @@ label, .eolia_field_label{
         transition: none;
     }
 }
+
+.eolia_form-group .eolia_input-group, .eolia_search-group .eolia_input-group{
+    display: block;
+}
+.eolia_form-group .eolia_input-group--file .eolia_input--button, .eolia_search-group .eolia_input-group--file .eolia_input--button{
+    display: inline-block;
+    min-width: 0;
+    padding: 0;
+    border: 0;
+    border-bottom: 1px solid;
+    margin: 0 10px 0 0;
+    text-align: left;
+    background: none;
+    color: $grey;
+}
