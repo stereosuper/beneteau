@@ -81,26 +81,34 @@
         &:before{
             content: none;
         }
+        &:nth-of-type(odd){
+            a{
+                background: #f5f7fa;
+            }
+        }
     }
     a{
         display: flex;
         padding: 24px 20px;
         border: 0;
         color: $text;
-        &:nth-of-type(odd){
-            background: #f5f7fa;
-        }
     }
-    span{
+    .cell{
         display: block;
+        font-family: $montserratLight;
+        font-size: 1.4rem;
         &:first-child{
             width: 50%;
-            padding: 0 35px 0 0;
-            background: url(../layoutImg/right-primary.svg) no-repeat 100% 50%/25px auto;
+            font-size: 1.6rem;
         }
         &:nth-child(2){
             width: 35%;
+            padding: 0 $gutter 0 0;
+        }
+        span{
+            display: inline-block;
             padding: 0 35px 0 0;
+            background: url(../layoutImg/right-primary.svg) no-repeat 100% 50%/25px auto;
         }
     }
 }
