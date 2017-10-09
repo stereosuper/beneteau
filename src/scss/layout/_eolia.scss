@@ -62,3 +62,10 @@
     background: $text;
     color: #fff;
 }
+
+.eolia_field--navigation{
+    display: block;
+    > .eolia_input--button{
+        margin: 0;
+    }
+}
