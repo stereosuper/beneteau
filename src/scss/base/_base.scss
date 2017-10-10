@@ -467,6 +467,9 @@ a{
                 .inner{
                     > img, >.bg{
                         transform: translate3d(0, 0, 0) skewY(17deg) rotate(0.000001deg);
+                        .ie11 &{
+                            transform: translate3d(-50%, -50%, 0) skewY(17deg) rotate(0.000001deg);
+                        }
                     }
                 }
             }
@@ -482,6 +485,9 @@ a{
                 .inner{
                     > img, >.bg{
                         transform: translate3d(0, -10px, 0) skewY(17deg) rotate(0.000001deg);
+                        .ie11 &{
+                            transform: translate3d(-50%, -50%, 0) skewY(17deg) rotate(0.000001deg);
+                        }
                     }
                 }
             }
@@ -559,6 +565,15 @@ a{
             right: 0;
             bottom: 0;
             left: 0;
+            .ie11 &{
+                display: block;
+                > img, .bg{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate3d(-50%, -50%, 0) skewY(17deg) rotate(0.000001deg);
+                }
+            }
             > img, .bg{
                 flex-shrink: 0;
                 width: auto;

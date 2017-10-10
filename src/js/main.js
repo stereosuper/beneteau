@@ -83,6 +83,8 @@ $(function(){
     // Since script is loaded asynchronously, load event isn't always fired !!!
     document.readyState === 'complete' ? loadHandler() : $(window).on('load', loadHandler);
 
+    if(!(window.ActiveXObject) && "ActiveXObject" in window) body.addClass('ie11');
+
     $(window).on('resize', throttle(function(){
         requestAnimFrame(resizeHandler);
     }, 60));
