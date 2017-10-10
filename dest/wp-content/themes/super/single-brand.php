@@ -68,8 +68,8 @@
                     <?php endif; ?>
 
                     <div class='clearfix isAnimated'>
-                        <?php previous_post_link( '%link' ); ?>
-                        <?php next_post_link( '%link' ); ?>
+                        <?php previous_post_link( '%link', '%title', true, ' ', 'branch' ); ?>
+                        <?php next_post_link( '%link', '%title', true, ' ', 'branch' ); ?>
                     </div>
                 </div>
             </article>
