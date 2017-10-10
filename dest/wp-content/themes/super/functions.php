@@ -502,6 +502,13 @@ function beneteau_register_required_plugins() {
             'required'    => true,
             'force_activation' => false
         ),
+        array(
+            'name'        => 'WP Rocket',
+            'slug'        => 'wp-rocket',
+            'source'     => get_template_directory_uri() . '/plugins/wp-rocket_2.10.9.zip',
+            'required'    => false,
+            'force_activation' => false
+        ),
 		array(
 			'name'        => 'WordPress SEO by Yoast',
 			'slug'        => 'wordpress-seo',
