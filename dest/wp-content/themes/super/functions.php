@@ -521,7 +521,7 @@ function beneteau_register_required_plugins() {
             'force_activation' => false
         ),
         array(
-            'name'        => 'SecuPress',
+            'name'        => 'SecuPress Free — WordPress Security',
             'slug'        => 'secupress',
             'required'    => false,
             'force_activation' => false
