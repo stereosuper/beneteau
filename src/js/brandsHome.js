@@ -43,7 +43,7 @@ module.exports = function( container ){
             // we go back to the beginning
             indexSrc = indexSrc + 1 === imgsSrc.length ? 0 : indexSrc + 1;
 
-            if( index === 0 ) shuffle(indexArray);
+            //if( index === 0 ) shuffle(indexArray);
             
             // we call back the function so it keeps running
             setUpdateTimeout(0.6);
