@@ -3,10 +3,10 @@ var $ = require('jquery');
 require('gsap/CSSPlugin');
 var TweenLite = require('gsap/TweenLite');
 
-window.requestAnimFrame = require('./requestAnimFrame.js');
-var throttle = require('./throttle.js');
+// window.requestAnimFrame = require('./requestAnimFrame.js');
+// var throttle = require('./throttle.js');
 
-var checkIfInView = require('./checkIfInView.js');
+// var checkIfInView = require('./checkIfInView.js');
 
 
 module.exports = function( container ){
@@ -40,37 +40,38 @@ module.exports = function( container ){
         }});
     }
 
-    function setUpdateTimeout(delay){
+    function setUpdateTimeout( delay ){
         TweenLite.killDelayedCallsTo( updateImg );
 
-        if( checkIfInView.check(container) ){
-            TweenLite.delayedCall( delay, updateImg );
-        }
+        // if( checkIfInView.check(container) ){
+        //     TweenLite.delayedCall( delay, updateImg );
+        // }
+        TweenLite.delayedCall( delay, updateImg );
     }
 
 
-    imgs.each(function(i){
+    imgs.each(function( i ){
         imgsSrc[i] = $(this).attr('src');
         if( !$(this).parent().hasClass('hidden') ) indexArray[i] = i;
     });
 
-    checkIfInView.init(container);
+    //checkIfInView.init(container);
 
     shuffle(indexArray);
     updateImg();
 
 
-    $(window).on('focusout', function(){
-        TweenLite.killDelayedCallsTo( updateImg );
-    }).on('focusin', updateImg).on('resize', throttle(function(){
-        requestAnimFrame(function(){
-            setUpdateTimeout(0);
-        });
-    }, 60));
+    // $(window).on('focusout', function(){
+    //     TweenLite.killDelayedCallsTo( updateImg );
+    // }).on('focusin', updateImg).on('resize', throttle(function(){
+    //     requestAnimFrame(function(){
+    //         setUpdateTimeout(0);
+    //     });
+    // }, 60));
 
-    $(document).on('scroll', throttle(function(){
-        requestAnimFrame(function(){
-            setUpdateTimeout(0);
-        });
-    }, 10));
+    // $(document).on('scroll', throttle(function(){
+    //     requestAnimFrame(function(){
+    //         setUpdateTimeout(0);
+    //     });
+    // }, 10));
 }
