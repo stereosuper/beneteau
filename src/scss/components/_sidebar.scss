@@ -44,7 +44,8 @@
     }
     &:after{
         height: 115px;
-        bottom: -90px;
+        bottom: -89px;
+        margin: 0 0 0 -1px;
         background-image: url(../layoutImg/bottom-bg-sidebar.svg);
     }
     .bg-sidebar{
