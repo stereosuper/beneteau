@@ -25,12 +25,10 @@ $app     = \Eolia\EoliaWordpress::get_instance();
 		<!--		todo: if only 1 category, show directly the results-->
 		<?php foreach ( (array) $results as $category => $items ) : ?>
 			<div class="eolia_results_category" id="<?php echo sanitize_title( $category ) ?>"
-			     data-category="<?php echo sanitize_title( $category ) ?>" data-count="<?php echo count( $items ); ?>" data-collapse="false">
-				<?php if ( is_post_type_archive( 'job' ) ): ?>
-				<h2 class="eolia_results_category_title">
-					<?php else : ?>
-					<h1 class="eolia_results_category_title">
-						<?php endif ?>
+			     data-category="<?php echo sanitize_title( $category ) ?>" data-count="<?php echo count( $items ); ?>"
+			     data-collapse="false">
+				<?php if ( is_post_type_archive( 'job' ) ) : ?>
+					<h2 class="eolia_results_category_title">
 						<span class="eolia_results_category_title_inner">
 							<?php if ( ! empty( $category ) ): ?>
 								<?php $term = get_term_by( 'name', $category, 'job_category' ); ?>
@@ -46,12 +44,9 @@ $app     = \Eolia\EoliaWordpress::get_instance();
 								<?php _ex( 'Uncategorized', 'search-results', 'eolia-app' ) ?>
 							<?php endif; ?>
 					</span>
-						<?php if ( is_post_type_archive( 'job' ) ) : ?>
-						<span class="badge"><?php echo count( $items ); ?></span><span class="fa fa-caret-down pull-right"></span>
-				</h2>
-				<?php else : ?>
-				<span class="badge"><?php echo count( $items ); ?></span>
-				</h1>
+						<span class="badge"><?php echo count( $items ); ?></span>
+						<span class="fa fa-caret-down pull-right"></span>
+					</h2>
 				<?php endif ?>
 				<table class="eolia_results_category_table">
 					<thead>
