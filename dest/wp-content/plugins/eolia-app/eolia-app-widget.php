@@ -93,7 +93,7 @@ class wp_eolia_app_widget_lastoffers extends WP_Widget {
 		if ( ! $jobs || ! isset( $jobs[ get_locale() ] ) ) {
 			return;
 		}
-		$jobs = array_slice( $jobs[get_locale()], 0, $nb );
+		$jobs = array_reverse(array_slice($jobs[get_locale()], $nb * -1));
 		echo $before_widget;
 		echo '<div>';
 		if ( $title ) {

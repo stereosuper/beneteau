@@ -251,7 +251,7 @@ class Wp_Eolia_App_Admin {
 			$options['description_field'] = $input['description_field'];
 		}
 		if ( isset( $input['accordion_limit'] ) ) {
-			$options['accordion_limit'] = ( (int) $input['accordion_limit'] > 50 ) ? (int) $input['accordion_limit'] : 50;
+			$options['accordion_limit'] = (int)$input['accordion_limit'];
 		}
 
 		/* OFFERS LAYOUT PARAMS */

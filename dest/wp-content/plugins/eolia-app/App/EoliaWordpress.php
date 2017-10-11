@@ -19,7 +19,8 @@
  * Time: 23:53
  */
 
-namespace Eolia {
+namespace Eolia
+{
 
 	if ( ! defined( 'ABSPATH' ) ) {
 		exit; // don't access directly
@@ -76,11 +77,11 @@ namespace Eolia {
 		/**
 		 * @var string
 		 */
-		private $plugin_url;
+		private static $plugin_url;
 		/**
 		 * @var string
 		 */
-		private $plugin_path;
+		private static $plugin_path;
 		/**
 		 * @var string
 		 */
@@ -96,8 +97,6 @@ namespace Eolia {
 		private function __construct() {
 			$this->version     = '2.0.0';
 			$this->plugin_name = basename( plugin_basename( __DIR__ ) );
-			$this->plugin_path = plugin_dir_path( __DIR__ );
-			$this->plugin_url  = plugin_dir_url( __DIR__ );
 			$this->options     = get_option( 'eolia-app' );
 			$this->lang        = get_locale();
 
@@ -112,8 +111,8 @@ namespace Eolia {
 				}
 			);
 
-			add_action( 'init', array( $this, 'job_post_type' ) );
 			add_action( 'init', array( $this, 'job_post_taxonomy' ) );
+			add_action( 'init', array( $this, 'job_post_type' ) );
 
 			add_action( 'generate_rewrite_rules', array( $this, 'generate_taxonomy_rewrite_rules' ) );
 
@@ -276,8 +275,8 @@ namespace Eolia {
 				);
 				$results[ $category ][ $post->ID ] = $post;
 			}
-			ksort( $results );
 			wp_reset_query();
+			ksort( $results );
 
 			return $results;
 		}
@@ -446,11 +445,12 @@ namespace Eolia {
 		 * @return \WP_Query
 		 */
 		public function get_job_query( $query ) {
-			if ( ! $query->is_main_query() || ! get_query_var( 'job' ) ) {
+			if ( is_admin() || ! $query->is_main_query() || ! get_query_var( 'job' ) ) {
 				return $query;
 			}
 
 			// For feed override
+
 			if ( get_query_var( 'job' ) === 'feed' ) {
 				$query->is_single   = false;
 				$query->is_singular = false;
@@ -477,7 +477,6 @@ namespace Eolia {
 
 				return $query;
 			}
-
 			if ( ! is_numeric( get_query_var( 'job' ) ) ) {
 				return $query;
 			}
@@ -491,8 +490,8 @@ namespace Eolia {
 		}
 
 		/**
-		 * @param string   $permalink The permalink.
-		 * @param \WP_Post $post      The post ID.
+		 * @param string $permalink The permalink.
+		 * @param \WP_Post $post    The post ID.
 		 *
 		 * @return mixed
 		 */
@@ -500,10 +499,10 @@ namespace Eolia {
 			if ( 'job' !== $post->post_type || ! is_object( $post ) ) {
 				return $permalink;
 			}
-			if ( $category = get_the_terms( $post->ID, 'job_category' ) ) {
-				$permalink = str_replace( '%job_category%', current( $category )->slug, $permalink );
+			if ( $categories = wp_get_object_terms( $post->ID, 'job_category' ) ) {
+				$permalink = str_replace( '%job_category%', $categories[0]->slug, $permalink );
 			} else {
-				$permalink = str_replace( '%job_category%/', '', $permalink );
+				$permalink = str_replace( '%job_category%', '', $permalink );
 			}
 
 			return $permalink;
@@ -519,7 +518,7 @@ namespace Eolia {
 
 			foreach ( $post_types as $post_type ) {
 				$post_type_name = $post_type->name; // 'job'
-				$post_type_slug = $post_type->rewrite['slug']; // 'job'
+				$post_type_slug = $post_type->rewrite['slug']; // 'jobs'
 
 				foreach ( $taxonomies as $taxonomy ) {
 					if ( $taxonomy->object_type[0] == $post_type_name ) {
@@ -561,32 +560,41 @@ namespace Eolia {
 		 * @todo Add search engine/results template
 		 */
 		public function template_include( $template ) {
-			$job_templates     = array(
+			$job_templates        = array(
 				'single-job.php',
 			);
-			$apply_templates   = array(
+			$apply_templates      = array(
 				'single-apply.php',
 			);
-			$archive_templates = array(
+			$archive_templates    = array(
 				'archive-job.php',
 			);
+			$taxonomies_templates = array(
+				'taxonomy-job.php',
+			);
+
+			if ( $job_id = get_post_meta( get_the_ID(), 'job_id', true ) ) {
+				array_unshift( $job_templates, 'single-job-' . $job_id . '.php' );
+				array_unshift( $apply_templates, 'single-apply-' . $job_id . '.php' );
+			} elseif ( is_tax( 'job_category' ) ) {
+				$term_id  = get_queried_object_id();
+				$taxonomy = get_term( $term_id );
+				array_unshift( $taxonomies_templates, 'taxonomy-job-' . $taxonomy->slug . '.php' );
+				array_unshift( $taxonomies_templates, 'taxonomy-' . $taxonomy->slug . '.php' );
+			}
 
 			$apply_suffix = _x( 'apply', 'slug', 'eolia-app' );
 
-			if ( is_singular() ) {
+			if ( is_tax( 'job_category' ) ) {
+				$template = locate_template( $taxonomies_templates ) ?: self::getPluginPath() . 'App/Views/Templates/taxonomy-job.php';
+			} elseif ( is_post_type_archive( 'job' ) ) {
+				$template = locate_template( $archive_templates ) ?: self::getPluginPath() . 'App/Views/Templates/archive-job.php';
+			} elseif ( is_singular() ) {
 				if ( get_query_var( $apply_suffix ) ) {
-					$template = locate_template( $apply_templates ) ?: plugin_dir_path(
-						                                                   __DIR__
-					                                                   ) . '/public/partials/single-apply.php';
-				} elseif ( 'job' === get_query_var( 'post_type' ) ) {
-					$template = locate_template( $job_templates ) ?: plugin_dir_path(
-						                                                 __DIR__
-					                                                 ) . '/public/partials/single-job.php';
+					$template = locate_template( $apply_templates ) ?: self::getPluginPath() . 'App/Views/Templates/single-apply.php';
+				} elseif ( is_singular( 'job' ) ) {
+					$template = locate_template( $job_templates ) ?: self::getPluginPath() . 'App/Views/Templates/single-job.php';
 				}
-			} elseif ( is_archive() && ( 'job' === get_query_var( 'post_type' ) || get_query_var( 'job_category' ) ) ) {
-				$template = locate_template( $archive_templates ) ?: plugin_dir_path(
-					                                                     __DIR__
-				                                                     ) . '/public/partials/archive-job.php';
 			}
 
 			return $template;
@@ -640,16 +648,16 @@ namespace Eolia {
 				'show_in_admin_bar'     => true,
 				'show_in_nav_menus'     => true,
 				'can_export'            => true,
-				'has_archive'           => 'job',
+				'has_archive'           => 'jobs',
 				'exclude_from_search'   => false,
 				'publicly_queryable'    => true,
 				'capability_type'       => 'post',
 				'taxonomies'            => array( 'job' ),
 				'show_in_rest'          => true,
 				'rest_base'             => 'job',
-				'rest_controller_class' => 'Eolia\ApiController',
+				'rest_controller_class' => ApiController::class,
 				'rewrite'               => array(
-					'slug'       => 'job/%job_category%',
+					'slug'       => _x( 'jobs', 'slug', 'eolia-app' ) . '/%job_category%',
 					'with_front' => false,
 				),
 			);
@@ -698,7 +706,7 @@ namespace Eolia {
 				'show_in_nav_menus' => true,
 				'show_tagcloud'     => true,
 				'show_in_rest'      => true,
-				'rewrite'           => array( 'slug' => 'job' ),
+				'rewrite'           => array( 'slug' => _x( 'jobs', 'slug', 'eolia-app' ), 'with_front' => false ),
 			);
 			register_taxonomy( 'job_category', array( 'job' ), $args );
 
@@ -743,7 +751,7 @@ namespace Eolia {
 			$args = array(
 				'post_type' => 'job',
 				'showposts' => - 1,
-				'lang' => '',
+				'lang'      => '',
 			);
 
 			$query = new WP_Query( $args );
@@ -879,9 +887,9 @@ namespace Eolia {
 		}
 
 		/**
-		 * @param bool|null   $forced To force job update.
+		 * @param bool|null $forced To force job update.
 		 *
-		 * @param null|string $lang   The current language.
+		 * @param null|string $lang The current language.
 		 *
 		 * @return array|bool
 		 * @throws \ErrorException
@@ -994,7 +1002,7 @@ namespace Eolia {
 				$args = array(
 					'post_type'  => 'job',
 					'showposts'  => 1,
-					'lang' => '',
+					'lang'       => '',
 					'meta_query' => array(
 						array(
 							'key'     => 'job_id',
@@ -1053,11 +1061,11 @@ namespace Eolia {
 						pll_set_term_language( $term['term_id'], $lang );
 					}
 				}
-				$terms_localized[$lang] = is_a($term, 'WP_Term')  ? $term->term_id : $term['term_id'] ;
+				$terms_localized[ $lang ] = is_a( $term, 'WP_Term' ) ? $term->term_id : $term['term_id'];
 			}
 
-			if (function_exists('pll_save_term_translations')) {
-				pll_save_term_translations($terms_localized);
+			if ( function_exists( 'pll_save_term_translations' ) ) {
+				pll_save_term_translations( $terms_localized );
 			}
 
 			// Parse jobs to get all terms
@@ -1369,10 +1377,25 @@ namespace Eolia {
 
 			return $this->fields[ $type ] = $fields;
 		}
+
+		/**
+		 * @return string
+		 */
+		public static function getPluginPath() {
+			return self::$plugin_path = plugin_dir_path( __DIR__ );
+		}
+
+		/**
+		 * @return string
+		 */
+		public static function getPluginUrl() {
+			return self::$plugin_url = plugin_dir_url( __DIR__ );
+		}
 	}
 }
 
-namespace {
+namespace
+{
 
 	use Eolia\Controllers\JobController;
 	use Eolia\EoliaWordpress;

@@ -4,6 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 use Eolia\Controllers\JobController;
+use Eolia\EoliaWordpress;
 
 /**
  * Copyright (c) 2017 Eolia Consulting
@@ -445,7 +446,7 @@ class Wp_Eolia_App_Public {
 					/* GOOGLE */
 					if ( ! empty( $json->service ) && 'google' === $json->service && ! empty( $json->token ) && ! empty( $json->file ) && ! empty( $json->title ) && in_array(
 							str_replace( '.', '', $json->ext ),
-							\Eolia\EoliaWordpress::$file_extensions,
+							EoliaWordpress::$file_extensions,
 							true
 						)
 					) {
@@ -551,7 +552,7 @@ class Wp_Eolia_App_Public {
 			foreach ( $_FILES as $k => $file ) {
 				if ( ! empty( $file['name'] ) ) {
 					$extension = str_replace( '.', '', strtolower( strrchr( $file['name'], '.' ) ) );
-					if ( ! in_array( $extension, \Eolia\EoliaWordpress::$file_extensions, true ) ) {
+					if ( ! in_array( $extension, EoliaWordpress::$file_extensions, true ) ) {
 						wp_die(
 							sprintf(
 								_x(
@@ -559,7 +560,7 @@ class Wp_Eolia_App_Public {
 									'alert',
 									'eolia-app'
 								),
-								implode( ', ', \Eolia\EoliaWordpress::$file_extensions ),
+								implode( ', ', EoliaWordpress::$file_extensions ),
 								$extension
 							)
 						);
@@ -1154,10 +1155,9 @@ HTML;
 		global $results;
 		wp_enqueue_style( 'eolia-app' );
 		wp_enqueue_script( 'eolia-app' );
-
 		ob_start();
 		if ( ! locate_template( 'single-jobsearch.php', true ) ) {
-			require_once dirname( __DIR__ ) . '/public/partials/single-jobsearch.php';
+			require_once EoliaWordpress::getPluginPath() . 'App/Views/Templates/single-jobsearch.php';
 		}
 		$content = ob_get_contents();
 		ob_end_clean();
@@ -1231,7 +1231,7 @@ HTML;
 		wp_reset_query();
 
 		if ( ! locate_template( 'single-results.php', true ) ) {
-			require_once dirname( __DIR__ ) . '/public/partials/single-results.php';
+			require_once EoliaWordpress::getPluginPath() . '/public/partials/single-results.php';
 		}
 
 		die();
@@ -1259,9 +1259,6 @@ HTML;
 		}
 
 		ob_start();
-		echo '<div class="page-header">';
-		echo '<h1 class="page-title">' . get_the_title() . '</h1>';
-		echo '</div>';
 		$job = new JobController( $job );
 		do_action( 'eolia_action_before_form', $job );
 		echo $job->render_form();

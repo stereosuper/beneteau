@@ -7,7 +7,7 @@
  * @copyright  Eolia Software (http://www.eolia-consulting.com)
  * @licence    GNU
  *
- * @file       archive-job.php
+ * @file       taxonomy-job.php
  * @package    demo
  * @version    1.0.0
  */
