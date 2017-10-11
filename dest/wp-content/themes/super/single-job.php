@@ -33,9 +33,9 @@ get_header();
 	<div class='content'>
 		<?php if( function_exists('yoast_breadcrumb') ){ yoast_breadcrumb('<div class="breadcrumbs">','</div>'); } ?>
 		<?php echo do_shortcode( '[eolia_sharelink position="top" /]' ); ?>
-		<?php do_action( 'eolia_action_before_view', $job ) ?>
+		<?php do_action( 'eolia_action_before_jobview', $job ) ?>
 		<?php the_content() ?>
-		<?php do_action( 'eolia_action_after_view', $job ) ?>
+		<?php do_action( 'eolia_action_after_jobview', $job ) ?>
 		<?php echo do_shortcode( '[eolia_sharelink position="bottom" /]' ); ?>
 	</div>
 

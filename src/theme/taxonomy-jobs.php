@@ -1,11 +1,23 @@
 <?php
 /**
+ * Copyright (c) 2017 Eolia Consulting
+ *
+ * @author     Ronan Pozzi <r.pozzi@eolia-consulting.com>
+ * @date       2017
+ * @copyright  Eolia Software (http://www.eolia-consulting.com)
+ * @licence    GNU
+ *
+ * @file       taxonomy-job.php
+ * @package    demo
+ * @version    1.0.0
+ */
+
+/**
  * The template for displaying single job.
  *
  * $this = eolia plugin public
  *
  */
-$job = eolia_get_job();
 get_header();
 ?>
 
@@ -32,11 +44,10 @@ get_header();
 
 	<div class='content'>
 		<?php if( function_exists('yoast_breadcrumb') ){ yoast_breadcrumb('<div class="breadcrumbs">','</div>'); } ?>
-		<?php echo do_shortcode( '[eolia_sharelink position="top" /]' ); ?>
-		<?php do_action( 'eolia_action_before_jobview', $job ) ?>
-		<?php the_content() ?>
-		<?php do_action( 'eolia_action_after_jobview', $job ) ?>
-		<?php echo do_shortcode( '[eolia_sharelink position="bottom" /]' ); ?>
+
+		<h1 class='isAnimated'><?php post_type_archive_title() ?></h1>
+
+		<?php get_template_part( 'single-results' ); ?>
 	</div>
 
 </div>
