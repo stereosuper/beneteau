@@ -35,3 +35,4 @@ dest/license.txt
 /dest/wp-content/plugins/wordpress-seo
 /dest/wp-content/plugins/wp-api-menus
 /dest/wp-content/plugins/secupress
+/dest/.htaccess
