@@ -212,3 +212,24 @@ label, .eolia_field_label{
     background: none;
     color: $grey;
 }
+
+.eolia_input--filelabel{
+    margin: 10px 0;
+}
+
+
+@media (max-width: $tablet){
+    .eolia_form .eolia_input, .eolia_search .eolia_input{
+        width: 70%;
+    }
+}
+
+@media (max-width: $phone){
+    .eolia_form .select2-container, .eolia_search .select2-container{
+        min-width: 66%;
+    }
+
+    .eolia_form .eolia_input--filelabel{
+        width: 100%;
+    }
+}
