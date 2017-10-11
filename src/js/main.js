@@ -20,6 +20,7 @@ $(function(){
     var sticky = require('./sticky.js');
     var brandSlider = require('./brandSlider.js');
     var brandsHome = require('./brandsHome.js');
+    var accordion = require('./accordion.js');
 
     var htmlAze = $('html');
     var body = $('body');
@@ -86,6 +87,9 @@ $(function(){
         Cookies.set('beneteau-cookies', true, { expires: 30, path: '/' });
         $(this).parents('#cookies').addClass('off');
     });
+
+    // Accordion
+    accordion( $('.eolia_results') );
     
 
     // Since script is loaded asynchronously, load event isn't always fired !!!
