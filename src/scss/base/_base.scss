@@ -592,6 +592,44 @@ a{
         
     }
 }
+.cookies{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    background: $white;
+    border-top: 1px solid #d8d8d8;
+    text-align: left;
+    transition: $transition;
+    &.off{
+        transform: translate3d(0, 100%, 0);
+    }
+    .container{
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    p{
+        flex-grow: 1;
+        flex-shrink: 1;
+        margin: 0;
+        color: $text;
+    }
+    button{
+        flex-grow: 0;
+        flex-shrink: 0;
+        display: block;
+        width: 14px;
+        height: 14px;
+        margin: 0 0 0 20px;
+        text-indent: -99em;
+        background: url(../layoutImg/close.svg) no-repeat;
+        background-size: 100% 100%;
+        border: 0;
+        overflow: hidden;
+    }
+}
 
 
 @media (max-width: $desktop){

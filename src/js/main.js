@@ -2,6 +2,7 @@
 
 var $ = require('jquery');
 global.jQuery = $;
+var Cookies = require('js-cookie');
 
 require('featherlight/release/featherlight.min.js');
 require('featherlight/release/featherlight.gallery.min.js');
@@ -78,6 +79,13 @@ $(function(){
 
     // Brands home
     brandsHome( $('#brandsHome') );
+
+    // Cookies
+    body.on('click', '#btnCookies', function(e){
+        e.preventDefault();
+        Cookies.set('beneteau-cookies', true, { expires: 30, path: '/' });
+        $(this).parents('#cookies').addClass('off');
+    });
     
 
     // Since script is loaded asynchronously, load event isn't always fired !!!
