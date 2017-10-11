@@ -3,14 +3,16 @@
 		<?php $cookie = isset($_COOKIE['beneteau-cookies']) ? true : false; ?>
 
 		<footer role='contentinfo' class='footer'>
-			<?php if(!$cookie){ ?>
+			
+		<?php if(!$cookie){ ?>
 				<div class='cookies' id='cookies'>
 					<div class='container'>
-						<p>En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies. Pour en savoir plus consultez notre politique vis-à-vis des cookies</p>
+						<p>En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies. Pour en savoir plus consultez <a href='http://localhost:3000/mentions-legales/'>notre politique vis-à-vis des cookies</a></p>
 						<button type='button' id='btnCookies'>Close</button>
 					</div>
 				</div>
 			<?php } ?>
+
 			<div class='container'>
 				<p>
 					<?php _e( sprintf('Copyright Groupe Beneteau %1$s &copy;', date('Y') ), 'beneteau'); ?>
