@@ -7,8 +7,8 @@
  * @copyright  Eolia Software (http://www.eolia-consulting.com)
  * @licence    GNU
  *
- * @file       archive-job.php
- * @package    eolia-app
+ * @file       taxonomy-job.php
+ * @package    demo
  * @version    1.0.0
  */
 
@@ -47,9 +47,7 @@ get_header();
 
 		<h1 class='isAnimated'><?php post_type_archive_title() ?></h1>
 
-		<?php echo do_shortcode( '[eolia_search/]' ); ?>
-
-		<?php if ( !isset( $_REQUEST['eolia_search'] ) ) { get_template_part( 'single-results' ); } ?>
+		<?php get_template_part( 'single-results' ); ?>
 	</div>
 
 </div>

@@ -120,6 +120,14 @@
     }
 }
 
+.eolia_search .eolia_row > div{
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+.eolia_search_map{
+    display: none;
+}
+
 
 @media (max-width: 600px){
     .eolia_results_category_table tr td:first-child{

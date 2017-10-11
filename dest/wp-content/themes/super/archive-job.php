@@ -47,7 +47,9 @@ get_header();
 
 		<h1 class='isAnimated'><?php post_type_archive_title() ?></h1>
 
-		<?php get_template_part( 'single-results' ); ?>
+		<?php echo do_shortcode( '[eolia_search/]' ); ?>
+
+		<?php if ( !isset( $_REQUEST['eolia_search'] ) ) { get_template_part( 'single-results' ); } ?>
 	</div>
 
 </div>
