@@ -609,6 +609,9 @@ a{
         display: flex;
         align-items: center;
         width: 100%;
+        a{
+            color: $blue;
+        }
     }
     p{
         flex-grow: 1;
