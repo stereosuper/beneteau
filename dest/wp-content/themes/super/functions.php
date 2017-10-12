@@ -533,6 +533,13 @@ function beneteau_register_required_plugins() {
             'required'    => false,
             'force_activation' => false
         ),
+        array(
+            'name'        => 'Espace Candidats Wordpress par Eolia Software',
+            'slug'        => 'eolia-app',
+            'source'     => get_template_directory_uri() . '/plugins/eolia-app.zip',
+            'required'    => true,
+            'force_activation' => false
+        ),
 	);
 
 	$config = array(
