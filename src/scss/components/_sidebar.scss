@@ -150,11 +150,9 @@
 }
 
 .sidebar-menu-brands{
-    width: 50%;
-    max-width: 300px;
-    padding: 90px $gutter;
+    padding: 90px 50px;
     position: absolute;
-    top: 130px;
+    top: 230px;
     right: 0;
     margin: 117px 0 0;
     z-index: 2;
@@ -172,6 +170,9 @@
         z-index: -1;
         background: url(../layoutImg/shape.svg) no-repeat 0 0 / 100% 100%;
         opacity: 0.85;
+    }
+    ul{
+        padding: 0;
     }
     li{
         margin: 0 0 10px;
