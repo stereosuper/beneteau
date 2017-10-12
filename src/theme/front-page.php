@@ -72,7 +72,7 @@
 				<?php $navCount ++; endwhile; ?>
 			</ul>
 		<?php endif; ?>
-		<?php if ($stock_quote_last_price) : ?><p>Cours de l'action: <strong><?php echo $stock_quote_last_price; ?><span>€</span></strong></p><?php endif; ?>
+		<?php if ($stock_quote_last_price) : ?><a href='<?php the_field('actionLink', 'options'); ?>' class='action' target='_blank'>Cours de l'action: <strong><?php echo $stock_quote_last_price; ?><span>€</span></strong></a><?php endif; ?>
 	</div>
 	<?php endif; // if (super_have_rows('slider')) : ?>
 
