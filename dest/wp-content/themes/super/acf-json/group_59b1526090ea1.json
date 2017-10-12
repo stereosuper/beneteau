@@ -677,6 +677,13 @@
                 "operator": "!=",
                 "value": "front_page"
             }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "tpl-job-home.php"
+            }
         ]
     ],
     "menu_order": 0,
@@ -689,5 +696,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1507118964
+    "modified": 1507212114
 }
