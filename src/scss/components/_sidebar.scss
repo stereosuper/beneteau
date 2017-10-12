@@ -139,6 +139,7 @@
     overflow: hidden;
     background: $text url(../layoutImg/pattern.svg);
     backface-visibility: hidden;
+    transform: translate3d(0, 0, 0);
     > ul{
         margin: 0;
     }
