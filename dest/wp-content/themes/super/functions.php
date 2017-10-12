@@ -102,9 +102,11 @@ function beneteau_right_now_custom_post() {
         $cpt_name = $post_type->name;
         if($cpt_name !== 'acf-field-group' && $cpt_name !== 'acf-field'){
             $num_posts = wp_count_posts($post_type->name);
-            $num = number_format_i18n($num_posts->publish);
-            $text = _n($post_type->labels->name, $post_type->labels->name , intval($num_posts->publish));
-            echo '<li class="'. $cpt_name .'-count"><tr><a class="'.$cpt_name.'" href="edit.php?post_type='.$cpt_name.'"><td></td>' . $num . ' <td>' . $text . '</td></a></tr></li>';
+            if( isset($num_posts->publish) ){
+                $num = number_format_i18n($num_posts->publish);
+                $text = _n($post_type->labels->name, $post_type->labels->name , intval($num_posts->publish));
+                echo '<li class="'. $cpt_name .'-count"><tr><a class="'.$cpt_name.'" href="edit.php?post_type='.$cpt_name.'"><td></td>' . $num . ' <td>' . $text . '</td></a></tr></li>';
+            }
         }
     }
 }
