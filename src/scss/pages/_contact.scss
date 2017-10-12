@@ -1,11 +1,3 @@
-.grid-brands, .grid-contact{
-    .col-3{
-        margin: 0 0 5em;
-    }
-    .btn-invert-block{
-        margin: 3.7em 0 0;
-    }
-}
 .grid-contact{
     .img{
         height: 0;
@@ -29,11 +21,11 @@
         margin: 1.2em 0 0;
         color: $text;
     }
-}
-
-.grid-brands{
-    h3{
-        margin-top: 0;
+    .col-3{
+        margin: 0 0 5em;
+    }
+    .btn-invert-block{
+        margin: 3.7em 0 0;
     }
 }
 
@@ -75,6 +67,9 @@
         .col-3{
             width: calc(50% - #{$gutter});
         }
+        .brand{
+            padding: 0 0 35%;
+        }
     }
 
     .contact-address{
@@ -91,14 +86,20 @@
     }
 
     .grid-brands{
-        display: block;
         .col-3{
-            width: 100%;
-        }
-        .btn-invert-block{
-            margin: 3.7em auto 0;
+            width: 50%;
         }
     }
+
+    // .grid-brands{
+    //     display: block;
+    //     .col-3{
+    //         width: 100%;
+    //     }
+    //     .btn-invert-block{
+    //         margin: 3.7em auto 0;
+    //     }
+    // }
 
     .contact-address{
         .address{

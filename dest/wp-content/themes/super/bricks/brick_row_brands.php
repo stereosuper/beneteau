@@ -19,19 +19,15 @@ $title_align = get_sub_field('title_align');
                     the_row();
 
                     $title = get_sub_field('title');
-                    $image = get_sub_field('image');
-                    $image_url = '';
-                    if(is_array($image) && isset($image['ID'])) {
-                        list($image_url, $w, $h) = wp_get_attachment_image_src($image['ID'], 'medium');
-                    }
+                    $image = get_sub_field('img');
                     $link = get_sub_field('link');
-                    $content = get_sub_field('content');
                 ?>
 
-                    <div class='col-3'>
-                        <h3><?php echo $title; ?></h3>
-                        <?php if (!empty($content)) : ?><?php echo $content; ?><?php endif; ?>
-                        <a href='<?php echo $link; ?>' class='btn-invert-block'><?php _e('Contacter', 'beneteau'); ?></a>
+                    <div class='col-3 brand'>
+                        <a href='<?php echo $link; ?>'>
+                            <div class='img'><?php echo wp_get_attachment_image( $image, 'full' ); ?></div>
+                            <h3><?php echo $title; ?></h3>
+                        </a>
                     </div>
                 <?php endwhile ?>
             </div>
