@@ -445,6 +445,30 @@
                                     "maxlength": ""
                                 },
                                 {
+                                    "key": "field_59df9ccb1d0ed",
+                                    "label": "Image",
+                                    "name": "img",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "preview_size": "thumbnail",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
                                     "key": "field_59c3b5c7cd2bc",
                                     "label": "Contenu",
                                     "name": "content",
@@ -941,5 +965,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1507108532
+    "modified": 1507826916
 }
