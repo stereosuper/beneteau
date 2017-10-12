@@ -3,6 +3,7 @@
 .footer{
     padding: 120px 0 50px;
     position: relative;
+    z-index: 2;
     font-size: 1.4rem;
     text-align: center;
     background: $text url(../layoutImg/logo-small.svg) no-repeat 50% 50px / 30px;
