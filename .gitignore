@@ -31,9 +31,9 @@ dest/license.txt
 /dest/readme.html
 /dest/wp-content/advanced-cache.php
 /dest/wp-content/cache/
-/dest/wp-content/languages/plugins/
-/dest/wp-content/mu-plugins/_secupress_cookiehash_59dbab37e7bf9.php
-/dest/wp-content/mu-plugins/_secupress_salt_keys_59dbab3822728.php
+/dest/wp-content/languages/*
+/dest/wp-content/mu-plugins/*
+!/dest/wp-content/mu-plugins/class-tgm-plugin-activation.php
 /dest/wp-content/plugins/wp-rocket/
 /dest/wp-content/wp-rocket-config/
 /dest/wp-content/uploads
