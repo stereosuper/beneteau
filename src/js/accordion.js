@@ -20,7 +20,7 @@ module.exports = function( accordion ){
 
         $(this).toggleClass('on').siblings().fadeToggle(300).parents('.eolia_results_category').siblings().find('.eolia_results_category_table').fadeOut(300).siblings('.eolia_results_category_title').removeClass('on');
 
-    }).on('click', '.eolia_results_category_title a', function(e){
+    }).on('click', 'a', function(e){
 
         e.preventDefault();
 
