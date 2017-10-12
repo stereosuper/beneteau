@@ -10,6 +10,8 @@
 		<?php wp_head(); ?>
 
 		<script>document.getElementsByTagName('html')[0].className = 'js';</script>
+
+		<script async src='https://www.googletagmanager.com/gtag/js?id=UA-11897367-1'></script> <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-11897367-1'); </script>
 	</head>
 
 	<body <?php body_class(); ?>>
