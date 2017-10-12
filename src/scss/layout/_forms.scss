@@ -64,6 +64,9 @@ label, .eolia_field_label{
 .eolia_form-group .eolia_field_label, .eolia_search-group .eolia_field_label{
     margin: 0 $gutter 0 0;
 }
+.eolia_field_label--required{
+    font-family: $montserratSemiBold;
+}
 
 .eolia_form-group{
     display: flex;
