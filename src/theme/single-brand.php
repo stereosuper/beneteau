@@ -53,9 +53,8 @@
                     <?php
                         $website = super_get_field('website');
                         if (!empty($website)) :
-                            $parsed_website = parse_url($website);
                     ?>
-                    <a href="<?php echo $website; ?>" target="_blank" class="btn isAnimated"><?php _e('Visitez ', 'beneteau'); echo (isset($parsed_website['host']))?$parsed_website['host']:$website; ?></a>
+                    <a href="<?php echo $website; ?>" target="_blank" class="btn isAnimated"><?php _e('Visitez ', 'beneteau'); echo (super_get_field('websiteDisplay'))?super_get_field('websiteDisplay'):$website; ?></a>
                     <?php
                         endif;
                     ?>

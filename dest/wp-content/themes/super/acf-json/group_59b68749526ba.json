@@ -57,6 +57,25 @@
             "placeholder": ""
         },
         {
+            "key": "field_59df7368af868",
+            "label": "Intitulé du lien",
+            "name": "websiteDisplay",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_59b68aea4f12e",
             "label": "Galerie d'image",
             "name": "gallery",
@@ -99,5 +118,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1505977791
+    "modified": 1507816319
 }
