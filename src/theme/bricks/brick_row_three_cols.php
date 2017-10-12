@@ -33,7 +33,9 @@ $title_align = get_sub_field('title_align');
                     <div class='img'><?php if (!empty($image_url)) : ?><img src='<?php echo $image_url; ?>' alt='<?php echo $title; ?>'><?php endif; ?></div>
                     <h2><?php echo $title; ?></h2>
                     <?php if (!empty($content)) : ?><?php echo $content; ?><?php endif; ?>
-                    <a href='<?php echo $link; ?>' class='btn-invert-block'><?php echo $link_label; ?></a>
+                    <?php if( !empty($link) && !empty($link_label) ){ ?>
+                        <a href='<?php echo $link; ?>' class='btn-invert-block'><?php echo $link_label; ?></a>
+                    <?php } ?>
                 </div>
             <?php endwhile ?>
         </div>
