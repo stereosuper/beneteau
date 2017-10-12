@@ -26,8 +26,9 @@ class WiztopicSync extends SGBaseImporter
             $this->token = $result['token'];
         }
 
-        // Synchronise les news
+        // Synchronise les news et les cours de bourse
         $this->treatNews();
+        $this->treatStockQuote();
 
         $this->logImporterEnded();
     }
@@ -56,6 +57,21 @@ class WiztopicSync extends SGBaseImporter
         }
     }
 
+    public static function getStockQuote($oauth_token)
+    {
+        $url = 'https://www.withtopic.com/get-investor-data?key=59df60b56e8bf';
+        $args = array();
+        $request = wp_remote_get($url, $args);
+
+        if(is_wp_error($request)) {
+            return false;
+        }
+
+        $body = wp_remote_retrieve_body($request);
+        $data = json_decode( $body );
+
+        return $data;
+    }
 
     public static function getOauthToken()
     {
@@ -129,7 +145,6 @@ class WiztopicSync extends SGBaseImporter
     {
         $news_list = $this->getLastNews($this->token);
         foreach($news_list as $news) {
-            var_dump($news);
             $importId = $news->id;
             $postType = 'post';
             $title = $news->title;
@@ -147,6 +162,21 @@ class WiztopicSync extends SGBaseImporter
 
             $this->wpAddPostMeta('wztp_uri_slug', $slug, $post_id, 'post');
             $this->wpAddPostMeta('wztp_cover_media_id', $cover_image_id, $post_id, 'post');
+        }
+    }
+
+    protected function treatStockQuote()
+    {
+        $option_name = 'wiztopic_stockquote' ;
+        $stock_quote = $this->getStockQuote($this->token);
+        $new_value = json_encode($stock_quote);
+
+        if (get_option($option_name) !== false) {
+            update_option($option_name, $new_value, 'yes');
+        } else {
+            $deprecated = null;
+            $autoload = 'yes';
+            add_option($option_name, $new_value, $deprecated, $autoload);
         }
     }
 }

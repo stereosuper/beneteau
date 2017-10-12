@@ -1,5 +1,16 @@
-<?php get_header(); ?>
+<?php
+	get_header();
 
+	// Récupère le cours de l'action
+	$stock_quote_last_price = false;
+	$stock_quote = get_option('wiztopic_stockquote');
+	if ($stock_quote!==false) {
+		$quote_object = json_decode($stock_quote);
+		if (isset($quote_object) && isset($quote_object->last) && isset($quote_object->last->last_price)) {
+			$stock_quote_last_price = $quote_object->last->last_price;
+		}
+	}
+?>
 <?php if ( have_posts() ) : the_post(); ?>
 
 	<?php if (super_have_rows('slider')) : ?>
@@ -61,7 +72,7 @@
 				<?php $navCount ++; endwhile; ?>
 			</ul>
 		<?php endif; ?>
-		<p>Cours de l'action: <strong>14,515<span>€</span></strong></p>
+		<?php if ($stock_quote_last_price) : ?><p>Cours de l'action: <strong><?php echo $stock_quote_last_price; ?><span>€</span></strong></p><?php endif; ?>
 	</div>
 	<?php endif; // if (super_have_rows('slider')) : ?>
 
