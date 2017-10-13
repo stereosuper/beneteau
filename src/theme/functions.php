@@ -488,7 +488,21 @@ function beneteau_mlp_navigation()
     return $before . $currentLangItem . join( '', $otherLangItems ) . $after;
 }
 
-// TGMPA
+
+/*-----------------------------------------------------------------------------------*/
+/* WP Rocket
+/*-----------------------------------------------------------------------------------*/
+
+function beneteau_cookies($cookies){
+    $cookies[] = 'beneteau-cookies';
+    return $cookies;
+}
+add_filter( 'rocket_cache_dynamic_cookies', 'beneteau_cookies' );
+
+
+/*-----------------------------------------------------------------------------------*/
+/* TGMPA
+/*-----------------------------------------------------------------------------------*/
 
 function beneteau_register_required_plugins() {
 	/*
