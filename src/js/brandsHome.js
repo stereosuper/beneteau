@@ -74,7 +74,7 @@ module.exports = function( container ){
     //checkIfInView.init(container);
 
     // we shuffle the array of visible imgs index so order is random
-    shuffle(indexArray);
+    //shuffle(indexArray);
 
     // let's start the animation
     updateImg();
