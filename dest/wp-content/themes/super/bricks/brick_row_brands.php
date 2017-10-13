@@ -14,7 +14,7 @@ $title_align = get_sub_field('title_align');
         <?php } ?>
 
         <?php if (have_rows('blocks')) : ?>
-            <div class='grid grid-brands'>
+            <div class='grid grid-brands js-brands'>
                 <?php while (have_rows('blocks')) :
                     the_row();
 
