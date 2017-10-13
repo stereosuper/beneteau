@@ -7,7 +7,7 @@
 			<?php if(!$cookie){ ?>
 				<div class='cookies' id='cookies'>
 					<div class='container'>
-						<p>En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies. Pour en savoir plus consultez <a href='<?php the_field('cookieLink', 'options'); ?>'>notre politique vis-à-vis des cookies</a></p>
+						<?php the_field('cookie', 'options'); ?>
 						<button type='button' id='btnCookies'>Close</button>
 					</div>
 				</div>
