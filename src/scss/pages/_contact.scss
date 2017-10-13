@@ -1,31 +1,45 @@
-.grid-contact{
-    .img{
-        height: 0;
-        padding: 0 0 70%;
-        position: relative;
-        overflow: hidden;
-        background: #b0d2f0 url(../layoutImg/logo-small.svg) no-repeat 50% 50% / 40px;
-    }
-    img{
-        width: auto;
-        height: auto;
-        min-width: 100%;
-        min-height: 100%;
-        max-width: none;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate3d(-50%, -50%, 0);
-    }
-    h2{
-        margin: 1.2em 0 0;
-        color: $text;
-    }
+.grid-brands, .grid-contact{
     .col-3{
         margin: 0 0 5em;
     }
     .btn-invert-block{
         margin: 3.7em 0 0;
+    }
+    .img{
+        height: 0;
+        padding: 0 0 70%;
+        position: relative;
+    }
+    img{
+        width: auto;
+        height: auto;
+        max-width: 60%;
+        max-height: 60%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0);
+    }
+}
+.grid-contact{
+    .img{
+        overflow: hidden;
+        background: #b0d2f0 url(../layoutImg/logo-small.svg) no-repeat 50% 50% / 40px;
+    }
+    img{
+        min-width: 100%;
+        min-height: 100%;
+        max-width: none;
+    }
+    h2{
+        margin: 1.2em 0 0;
+        color: $text;
+    }
+}
+
+.grid-brands{
+    h3{
+        margin-top: 0;
     }
 }
 
@@ -67,9 +81,6 @@
         .col-3{
             width: calc(50% - #{$gutter});
         }
-        .brand{
-            padding: 0 0 35%;
-        }
     }
 
     .contact-address{
@@ -86,20 +97,15 @@
     }
 
     .grid-brands{
+        display: block;
+        text-align: center;
         .col-3{
-            width: 50%;
+            width: 100%;
+        }
+        .btn-invert-block{
+            margin: 3.7em auto 0;
         }
     }
-
-    // .grid-brands{
-    //     display: block;
-    //     .col-3{
-    //         width: 100%;
-    //     }
-    //     .btn-invert-block{
-    //         margin: 3.7em auto 0;
-    //     }
-    // }
 
     .contact-address{
         .address{

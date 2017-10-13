@@ -104,7 +104,7 @@ get_header(); ?>
                                 $brand_per_branch_query->the_post();
 
                                 $logo = super_get_field('logo');
-                        ?><li class='brand'>
+                        ?><li>
                                 <a href="<?php the_permalink(); ?>">
                                     <?php if (!empty($logo)) : ?><div class='img'><img src="<?php echo $logo; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" /></div><?php endif; ?>
                                     <h3><?php the_title(); ?></h3>

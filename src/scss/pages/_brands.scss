@@ -26,19 +26,13 @@
     > li{
         display: inline-block;
         width: 50%;
+        height: 0;
+        padding: 0 0 35%;
+        position: relative;
         &:before{
             content: none;
         }
     }
-    .brand{
-        padding: 0 0 35%;
-    }
-}
-
-.brand{
-    height: 0;
-    padding: 0 0 22.5%;
-    position: relative;
     a{
         display: flex;
         padding: $gutter;
@@ -64,7 +58,6 @@
         }
     }
     .img{
-        width: 100%;
         max-width: 70%;
         transition: $transition;
     }
@@ -141,8 +134,6 @@
         margin: 0 $gutter*-1;
         > li{
             width: 50%;
-        }
-        .brand{
             padding: 0 0 40%;
         }
     }
