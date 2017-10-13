@@ -3,10 +3,10 @@ var $ = require('jquery');
 require('gsap/CSSPlugin');
 var TweenLite = require('gsap/TweenLite');
 
-window.requestAnimFrame = require('./requestAnimFrame.js');
-var throttle = require('./throttle.js');
+// window.requestAnimFrame = require('./requestAnimFrame.js');
+// var throttle = require('./throttle.js');
 
-var checkIfInView = require('./checkIfInView.js');
+// var checkIfInView = require('./checkIfInView.js');
 
 
 module.exports = function( container ){
@@ -46,17 +46,18 @@ module.exports = function( container ){
             //if( index === 0 ) shuffle(indexArray);
             
             // we call back the function so it keeps running
-            setUpdateTimeout(0.6);
+            //setUpdateTimeout(0.6);
+            TweenLite.delayedCall( 0.6, updateImg );
         }});
     }
 
-    function setUpdateTimeout( delay ){
-        TweenLite.killDelayedCallsTo( updateImg );
+    // function setUpdateTimeout( delay ){
+    //     TweenLite.killDelayedCallsTo( updateImg );
 
-        if( checkIfInView.check(container) ){
-            TweenLite.delayedCall( delay, updateImg );
-        }
-    }
+    //     if( checkIfInView.check(container) ){
+    //         TweenLite.delayedCall( delay, updateImg );
+    //     }
+    // }
 
 
     imgs.each(function( i ){
@@ -70,7 +71,7 @@ module.exports = function( container ){
     // we set the value indexSrc (which will be used to choose the new url) to start by selecting the first non visible img
     indexSrc = indexArray.length;
 
-    checkIfInView.init(container);
+    //checkIfInView.init(container);
 
     // we shuffle the array of visible imgs index so order is random
     shuffle(indexArray);
