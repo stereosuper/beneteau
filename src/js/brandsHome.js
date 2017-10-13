@@ -19,12 +19,12 @@ module.exports = function( container ){
     var imgsSrc = [], index = 0, indexSrc = 0, indexArray = [];
 
 
-    function shuffle( a ){
-        for( let i = a.length; i; i-- ){
-            let j = Math.floor( Math.random() * i );
-            [a[i - 1], a[j]] = [a[j], a[i - 1]];
-        }
-    }
+    // function shuffle( a ){
+    //     for( let i = a.length; i; i-- ){
+    //         let j = Math.floor( Math.random() * i );
+    //         [a[i - 1], a[j]] = [a[j], a[i - 1]];
+    //     }
+    // }
 
     function updateImg(){
         // we make disappear the image corresponding to "index"
@@ -74,7 +74,7 @@ module.exports = function( container ){
     //checkIfInView.init(container);
 
     // we shuffle the array of visible imgs index so order is random
-    //shuffle(indexArray);
+    // shuffle(indexArray);
 
     // let's start the animation
     updateImg();
