@@ -79,17 +79,17 @@ module.exports = function( container ){
     updateImg();
 
 
-    $(window).on('focusout', function(){
-        TweenLite.killDelayedCallsTo( updateImg );
-    }).on('focusin', updateImg).on('resize', throttle(function(){
-        requestAnimFrame(function(){
-            setUpdateTimeout(0);
-        });
-    }, 60));
+    // $(window).on('focusout', function(){
+    //     TweenLite.killDelayedCallsTo( updateImg );
+    // }).on('focusin', updateImg).on('resize', throttle(function(){
+    //     requestAnimFrame(function(){
+    //         setUpdateTimeout(0);
+    //     });
+    // }, 60));
 
-    $(document).on('scroll', throttle(function(){
-        requestAnimFrame(function(){
-            setUpdateTimeout(0);
-        });
-    }, 10));
+    // $(document).on('scroll', throttle(function(){
+    //     requestAnimFrame(function(){
+    //         setUpdateTimeout(0);
+    //     });
+    // }, 10));
 }
