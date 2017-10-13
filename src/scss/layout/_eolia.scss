@@ -119,7 +119,7 @@
         border: 0;
         color: $text;
         &:hover, &:focus{
-            background: rgba($blue, 0.4);
+            background: rgba($blue, 0.4) !important;
         }
     }
     .cell{
