@@ -105,7 +105,7 @@
                             "rows": ""
                         },
                         {
-                            "key": "field_59d36c6f287ad",
+                            "key": "field_59d36d0314fcc",
                             "label": "Lien",
                             "name": "link",
                             "type": "url",
@@ -121,7 +121,7 @@
                             "placeholder": ""
                         },
                         {
-                            "key": "field_59d36c81287ae",
+                            "key": "field_59d36d0f14fcd",
                             "label": "Bouton",
                             "name": "btn",
                             "type": "text",
@@ -354,7 +354,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "array"
+                            "return_format": "url"
                         },
                         {
                             "key": "field_59c3cad912d46",
@@ -856,5 +856,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1507028110
+    "modified": 1507907906
 }
