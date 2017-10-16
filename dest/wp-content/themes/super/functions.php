@@ -2,10 +2,16 @@
 
 define( 'BENETEAU_VERSION', 1.0 );
 
-
 /*-----------------------------------------------------------------------------------*/
 /* General
 /*-----------------------------------------------------------------------------------*/
+
+add_action( 'after_setup_theme', 'beneteau_theme_setup' );
+function beneteau_theme_setup() {
+    load_theme_textdomain('beneteau', get_template_directory() .'/languages');
+    load_theme_textdomain('beneteau', get_stylesheet_directory() .'/languages');
+}
+
 // Plugins updates
 add_filter( 'auto_update_plugin', '__return_true' );
 
@@ -348,6 +354,12 @@ function beneteau_post_type(){
         'public' => true,
         'menu_icon' => 'dashicons-store',
         'supports' => array('title', 'editor', 'excerpt', 'revisions'),
+        'rewrite' => array(
+            'slug' => __('brand', 'beneteau'), // string Customize the permastruct slug. Defaults to the $post_type value. Should be translatable.
+            //'with_front' => false, // bool Should the permastruct be prepended with the front base. (example: if your permalink structure is /blog/, then your links will be: false->/news/, true->/blog/news/). Defaults to true
+            'pages' => true, // bool Should the permastruct provide for pagination. Defaults to true
+            'feeds' => true, // bool Should a feed permastruct be built for this post type. Defaults to has_archive value.
+        ),
     ) );
 }
 add_action( 'init', 'beneteau_post_type' );

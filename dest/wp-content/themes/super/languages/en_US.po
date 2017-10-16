@@ -1,0 +1,85 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Beneteau\n"
+"POT-Creation-Date: 2017-10-16 11:22+0200\n"
+"PO-Revision-Date: 2017-10-16 11:26+0200\n"
+"Last-Translator: Alain Diart <alain@vupar.fr>\n"
+"Language-Team: Stéréosuper\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:5
+msgid "We're sorry, the page you're looking for doesn't exist."
+msgstr ""
+
+#: 404.php:6
+msgid "Go back to home"
+msgstr ""
+
+#: bricks/brick_row_brands.php:31
+msgid "Contacter"
+msgstr ""
+
+#: bricks/brick_row_home_news.php:56
+msgid "d/m/Y"
+msgstr ""
+
+#: bricks/brick_row_timeline.php:34
+msgid "En savoir plus"
+msgstr ""
+
+#: functions.php:273
+msgid "Toutes nos offres"
+msgstr ""
+
+#: functions.php:352
+msgid "brand"
+msgstr ""
+
+#: header.php:22
+msgid "Groupe Bénéteau"
+msgstr ""
+
+#: header.php:24
+msgid "Menu"
+msgstr ""
+
+#: single-brand.php:57
+msgid "Visitez "
+msgstr ""
+
+#: single-brand.php:66
+msgid "Fermer"
+msgstr ""
+
+#: single-jobsearch.php:22
+msgid "Missing search criteria in Eolia App admin."
+msgstr ""
+
+#: single-jobsearch.php:73
+msgid "Search"
+msgstr ""
+
+#: single-jobsearch.php:105 single-jobsearch.php:113
+msgid "Close"
+msgstr ""
+
+#: single-jobsearch.php:108
+msgid "All our offers"
+msgstr ""
+
+#: sitemap.php:16 sitemap.php:27
+msgid "Pages"
+msgstr ""
+
+#: sitemap.php:43
+msgid "News"
+msgstr ""
