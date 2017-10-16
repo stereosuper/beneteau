@@ -25,7 +25,7 @@
 
 				<nav role='navigation' class='nav' id='nav'>
 					<div>
-						<?php //echo beneteau_mlp_navigation(); ?>
+						<?php echo beneteau_mlp_navigation(); ?>
 
 						<?php
 							$contact_page_url = super_get_field('contact_page_url', 'option');
