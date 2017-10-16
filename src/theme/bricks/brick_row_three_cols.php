@@ -14,7 +14,7 @@ $title_align = get_sub_field('title_align');
    <?php } ?>
 
     <?php if (super_have_rows('blocks')) : ?>
-        <div class='grid grid-contact isAnimated'>
+        <div class='grid grid-contact'>
             <?php while (super_have_rows('blocks')) :
                 the_row();
 
@@ -29,7 +29,7 @@ $title_align = get_sub_field('title_align');
                 $content = get_sub_field('content');
             ?>
 
-                <div class='col-3'>
+                <div class='col-3 isAnimated'>
                     <div class='img'><?php if (!empty($image_url)) : ?><img src='<?php echo $image_url; ?>' alt='<?php echo $title; ?>'><?php endif; ?></div>
                     <h2><?php echo $title; ?></h2>
                     <?php if (!empty($content)) : ?><?php echo $content; ?><?php endif; ?>
