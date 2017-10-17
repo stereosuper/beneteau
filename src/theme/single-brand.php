@@ -54,7 +54,7 @@
                         $website = super_get_field('website');
                         if (!empty($website)) :
                     ?>
-                    <a href="<?php echo $website; ?>" target="_blank" class="btn isAnimated"><?php _e('Visitez ', 'beneteau'); echo (super_get_field('websiteDisplay'))?super_get_field('websiteDisplay'):$website; ?></a>
+                    <a href="<?php echo $website; ?>" target="_blank" class="btn isAnimated"><?php _e('Visit ', 'beneteau'); echo (super_get_field('websiteDisplay'))?super_get_field('websiteDisplay'):$website; ?></a>
                     <?php
                         endif;
                     ?>
@@ -63,7 +63,7 @@
                         $back_url = goliath_get_page_url_by_template('tpl-brands.php');
                         if (!empty($back_url)) :
                     ?>
-                        <a href="<?php echo $back_url; ?>" class="btn-close"><?php _e('Fermer', 'beneteau'); ?></a>
+                        <a href="<?php echo $back_url; ?>" class="btn-close"><?php _e('Close', 'beneteau'); ?></a>
                     <?php endif; ?>
 
                     <div class='clearfix isAnimated'>
