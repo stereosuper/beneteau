@@ -59,7 +59,7 @@ class WiztopicSync extends SGBaseImporter
 
     public static function getStockQuote($oauth_token)
     {
-        $url = 'https://www.withtopic.com/get-investor-data?key=59df60b56e8bf';
+        $url = 'https://www.wiztopic.com/get-investor-data?key=59e10cfa2a5d6';
         $args = array();
         $request = wp_remote_get($url, $args);
 
