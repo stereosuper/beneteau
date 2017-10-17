@@ -603,6 +603,7 @@ a{
     border-top: 1px solid #d8d8d8;
     text-align: left;
     transition: $transition;
+    z-index: 1;
     &.off{
         transform: translate3d(0, 100%, 0);
     }
@@ -624,12 +625,13 @@ a{
         flex-grow: 0;
         flex-shrink: 0;
         display: block;
-        width: 14px;
-        height: 14px;
+        width: 24px;
+        height: 24px;
         margin: 0 0 0 20px;
+        padding: 10px;
         text-indent: -99em;
-        background: url(../layoutImg/close.svg) no-repeat;
-        background-size: 100% 100%;
+        background: url(../layoutImg/close.svg) no-repeat 50% 50%;
+        background-size: 14px 14px;
         border: 0;
         overflow: hidden;
     }
