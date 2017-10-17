@@ -73,7 +73,7 @@
 				<?php $navCount ++; endwhile; ?>
 			</ul>
 		<?php endif; ?>
-		<?php if ($stock_quote_last_price) : ?><a href='<?php the_field('actionLink', 'options'); ?>' class='action' target='_blank'><?php _e("Cours de l'action", 'beneteau'); ?>: <strong><?php echo $stock_quote_symbol, ' ', $stock_quote_last_price; ?><span>€</span></strong></a><?php endif; ?>
+		<?php if ($stock_quote_last_price) : ?><a href='<?php the_field('actionLink', 'options'); ?>' class='action' target='_blank'><?php _e("Cours de l'action", 'beneteau'); ?>: <strong><span>(<?php echo $stock_quote_symbol; ?>)</span> <?php echo $stock_quote_last_price; ?><span>&nbsp;€</span></strong></a><?php endif; ?>
 	</div>
 	<?php endif; // if (super_have_rows('slider')) : ?>
 

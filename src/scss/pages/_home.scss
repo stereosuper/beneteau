@@ -102,9 +102,9 @@
         opacity: 0.85;
     }
     .action{
-        width: 130px;
+        width: 170px;
         height: 120px;
-        padding: 55px 15px 20px 35px;
+        padding: 55px 25px 20px 35px;
         border: 0;
         position: absolute;
         right: 0;
@@ -117,7 +117,12 @@
         text-transform: uppercase;
         text-align: right;
         background: url(../layoutImg/small-shape.svg) no-repeat 0 0 / 100% 100%;
+        color: #19456B;
+        &:hover{
+            opacity: 0.9;
+        }
         strong{
+            display: block;
             font-family: $robotoBold;
             font-size: 2.2rem;
             color: $white;
