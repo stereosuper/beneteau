@@ -24,7 +24,13 @@
     text-transform: uppercase;
     > li{
         display: inline-block;
+        position: static;
+        padding-left: 0;
         &:before{
+            display: inline-block;
+            position: relative;
+            top: auto;
+            left: auto;
             width: 30px;
             height: 1px;
             margin: -2px 35px 0 75px;

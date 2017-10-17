@@ -69,6 +69,7 @@
     font-size: 1.2rem;
     line-height: 1.2;
     > li{
+        position: static;
         padding: 0 0 0 35px;
         &:before{
             content: none;
@@ -132,6 +133,10 @@
             display: inline-flex;
             padding: 15px 0;
             margin: 0 auto;
+            > li{
+                position: static;
+                padding-left: 0;
+            }
         }
         li{
             &:before{

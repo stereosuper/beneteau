@@ -75,6 +75,9 @@
         li{
             font-family: $montserrat;
             font-size: 1.2rem;
+            &:before{
+                top: 8px;
+            }
             &.active{
                 > a{
                     color: $text;
@@ -177,6 +180,7 @@
     }
     li{
         margin: 0 0 10px;
+        padding-left: 0;
         &.active{
             > a{
                 opacity: 1;
