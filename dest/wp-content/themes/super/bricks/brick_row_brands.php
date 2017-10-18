@@ -22,13 +22,14 @@ $title_align = get_sub_field('title_align');
                     $image = get_sub_field('img');
                     $link = get_sub_field('link');
                     $content = get_sub_field('content');
+                    $brand_slug = str_replace(' ', '-', strtolower($title));
                 ?>
 
                     <div class='col-3 isAnimated'>
                         <div class='img'><?php echo wp_get_attachment_image( $image, 'full' ); ?></div>
                         <h3><?php echo $title; ?></h3>
                         <?php if (!empty($content)) : ?><?php echo $content; ?><?php endif; ?>
-                        <a href='<?php echo $link; ?>' class='btn-invert-block'><?php _e('Contact', 'beneteau'); ?></a>
+                        <a href='<?php echo $link; ?>' class='btn-invert-block' onclick="ga('send', 'event', 'lien-sortant', 'mail-marque', 'clic-LS-MB-<?php echo $brand_slug; ?>')"><?php _e('Contact', 'beneteau'); ?></a>
                     </div>
                 <?php endwhile ?>
             </div>

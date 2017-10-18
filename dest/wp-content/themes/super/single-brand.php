@@ -40,7 +40,7 @@
                             endif;
                         ?>
                     </h1>
-                    
+
                     <?php
                         $baseline = super_get_field('baseline');
                         if( $baseline ) :
@@ -53,8 +53,9 @@
                     <?php
                         $website = super_get_field('website');
                         if (!empty($website)) :
+                            $brand_slug = str_replace(' ', '-', strtolower(get_the_title()));
                     ?>
-                    <a href="<?php echo $website; ?>" target="_blank" class="btn isAnimated"><?php _e('Visit ', 'beneteau'); echo (super_get_field('websiteDisplay'))?super_get_field('websiteDisplay'):$website; ?></a>
+                    <a href="<?php echo $website; ?>" target="_blank" class="btn isAnimated" onclick="ga('send', 'event', 'lien-sortant', 'LS-site-marque', 'clic-LS-MB-<?php echo $brand_slug; ?>')"><?php _e('Visit ', 'beneteau'); echo (super_get_field('websiteDisplay'))?super_get_field('websiteDisplay'):$website; ?></a>
                     <?php
                         endif;
                     ?>
