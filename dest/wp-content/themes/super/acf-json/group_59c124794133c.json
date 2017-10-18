@@ -203,6 +203,25 @@
                                     "prepend": "",
                                     "append": "",
                                     "maxlength": ""
+                                },
+                                {
+                                    "key": "field_59e71822d139a",
+                                    "label": "Evenement GA",
+                                    "name": "ga_event",
+                                    "type": "text",
+                                    "instructions": "Insérez ici le code de l'évènement Analytics à déclencher au click",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
                                 }
                             ]
                         }
@@ -949,5 +968,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1507828647
+    "modified": 1508317768
 }

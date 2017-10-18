@@ -26,6 +26,7 @@ $title_align = get_sub_field('title_align');
                 }
                 $link = get_sub_field('link');
                 $link_label = get_sub_field('link_label');
+                $link_ga_event = get_sub_field('ga_event');
                 $content = get_sub_field('content');
             ?>
 
@@ -34,7 +35,7 @@ $title_align = get_sub_field('title_align');
                     <h2><?php echo $title; ?></h2>
                     <?php if (!empty($content)) : ?><?php echo $content; ?><?php endif; ?>
                     <?php if( !empty($link) && !empty($link_label) ){ ?>
-                        <a href='<?php echo $link; ?>' class='btn-invert-block'><?php echo $link_label; ?></a>
+                        <a href='<?php echo $link; ?>' class='btn-invert-block'<?php if (!empty($link_ga_event)) echo ' onClick="if (ga) { '.$link_ga_event.' }"'; ?>><?php echo $link_label; ?></a>
                     <?php } ?>
                 </div>
             <?php endwhile ?>
