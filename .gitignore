@@ -44,3 +44,4 @@ dest/license.txt
 /dest/wp-content/plugins/secupress
 /dest/wp-content/plugins/eolia-app
 /dest/.htaccess
+/dest/robots.txt
