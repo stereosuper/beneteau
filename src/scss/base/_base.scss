@@ -776,4 +776,43 @@ a{
             font-size: 1.8rem;
         }
     }
+    .push-container{
+        a{
+            &.isDeployed{
+                .img{
+                    .inner{
+                        > img, >.bg{
+                            .ie11 &{
+                                transform: translate3d(-50%, -60%, 0) skewY(17deg) rotate(0.000001deg);
+                            }
+                        }
+                    }
+                }
+            }
+            &:hover, &:focus{
+                .img{
+                    .inner{
+                        > img, >.bg{
+                            .ie11 &{
+                                transform: translate3d(-50%, -60%, 0) skewY(17deg) rotate(0.000001deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .img{
+            .inner{
+                > img, .bg{
+                    height: 126%;
+                }
+                .ie11 &{
+                    > img, .bg{
+                        transform: translate3d(-50%, -60%, 0) skewY(17deg) rotate(0.000001deg);
+                    }
+                }
+            }
+        }
+    }
+    
 }
