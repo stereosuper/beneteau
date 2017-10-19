@@ -12,7 +12,7 @@ $(function(){
 
     window.requestAnimFrame = require('./requestAnimFrame.js');
     var throttle = require('./throttle.js');
-    
+
     var slider = require('./slider.js');
     var submenu = require('./submenu.js');
     var initScrollReveal = require('./initScrollReveal.js');
@@ -40,6 +40,33 @@ $(function(){
             scrollDir = 0;
         }
         lastScrollTop = scrollTop;
+    }
+
+    // Exécute les actions lorsqu'on scrolle la page qui masquent le menu
+    function DoScroll(scrollDir) {
+        scrollTop > 50 ? header.addClass('small') : header.removeClass('small');
+
+        if( !body.hasClass('page-template-tpl-brands') && !body.hasClass('single-brand') ){
+            if( scrollTop > 200 ){
+                if( scrollDir < 1 ){
+                    header.addClass('off');
+                    if( sidebar.length ) sidebar.addClass('js-show-logo');
+                }else{
+                    header.removeClass('off');
+                    if( sidebar.length ) sidebar.removeClass('js-show-logo');
+                }
+            }else{
+                header.removeClass('off');
+                if( sidebar.length ) sidebar.removeClass('js-show-logo');
+            }
+        }
+    }
+
+    // Au chargement de la page on fait comme si on venait de scroller
+    function InitScroll() {
+        scrollTop = $(document).scrollTop();
+        scrollDir = -1;
+        DoScroll(scrollDir);
     }
 
     function resizeHandler(){
@@ -90,7 +117,7 @@ $(function(){
 
     // Accordion
     accordion( $('.eolia_results') );
-    
+
 
     // Since script is loaded asynchronously, load event isn't always fired !!!
     document.readyState === 'complete' ? loadHandler() : $(window).on('load', loadHandler);
@@ -103,25 +130,9 @@ $(function(){
 
     $(document).on('scroll', throttle(function(){
         scrollTop = $(document).scrollTop();
-        
         detectScrollDir();
-
-        scrollTop > 50 ? header.addClass('small') : header.removeClass('small');
-
-        if( !body.hasClass('page-template-tpl-brands') && !body.hasClass('single-brand') ){
-            if( scrollTop > 200 ){
-                if( scrollDir < 1 ){
-                    header.addClass('off');
-                    if( sidebar.length ) sidebar.addClass('js-show-logo');
-                }else{
-                    header.removeClass('off');
-                    if( sidebar.length ) sidebar.removeClass('js-show-logo');
-                }
-            }else{
-                header.removeClass('off');
-                if( sidebar.length ) sidebar.removeClass('js-show-logo');
-            }
-        }
+        DoScroll(scrollDir);
     }, 60));
+    InitScroll();
 
 });
