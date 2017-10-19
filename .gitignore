@@ -34,7 +34,8 @@ dest/license.txt
 /dest/wp-content/languages/*
 /dest/wp-content/mu-plugins/*
 !/dest/wp-content/mu-plugins/class-tgm-plugin-activation.php
-/dest/wp-content/plugins/wp-rocket/
+/dest/wp-content/plugins/*
+!/dest/wp-content/plugins/goliath-*
 /dest/wp-content/wp-rocket-config/
 /dest/wp-content/uploads
 /dest/wp-content/plugins/advanced-custom-fields-pro
