@@ -31,7 +31,7 @@ $title_align = get_sub_field('title_align');
                         <p><?php echo $text; ?></p>
                     <?php endif; ?>
                     <?php if( !empty($link) ) : ?>
-                        <a href='<?php echo $link; ?>' class='link'><?php _e('En savoir plus', 'benteau'); ?></a>
+                        <a href='<?php echo $link; ?>' class='link'><?php the_field('linkText'); ?></a>
                     <?php endif; ?>
                 </li>
             <?php endwhile ?>
