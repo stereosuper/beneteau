@@ -39,6 +39,8 @@ get_header();
 		<?php do_action( 'eolia_action_before_form', $job ) ?>
 		<?php the_content() ?>
 		<?php do_action( 'eolia_action_after_form', $job ) ?>
+
+		<?php the_field('applicationText', 'options'); ?>
 	</div>
 
 </div>
