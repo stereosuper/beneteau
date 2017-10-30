@@ -637,6 +637,14 @@ a{
     }
 }
 
+// scroll reveal
+.isAnimated, .content-brand .baseline, .exergue, .intro, blockquote, .highlighted .title, .highlighted strong, .list-brands > li, .push-wrapper, .gallery > li, .push-banner, .home-news{
+    visibility: hidden;
+    .no-js &{
+        visibility: visible;
+    }
+}
+
 
 @media (max-width: $desktop){
     .baseline{
