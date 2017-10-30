@@ -66,6 +66,11 @@
     font-family: $roboto;
     font-size: 1.4rem;
     > li{
+        &.active{
+            > a{
+                color: $text;
+            }
+        }
         &:before{
             content: none;
         }
