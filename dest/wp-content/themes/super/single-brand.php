@@ -40,7 +40,7 @@
                             endif;
                         ?>
                     </h1>
-
+                    
                     <?php
                         $baseline = super_get_field('baseline');
                         if( $baseline ) :
