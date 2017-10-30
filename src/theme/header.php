@@ -26,6 +26,7 @@
 		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 		ga('create', 'UA-11897367-1', 'auto');
+		ga('require', 'displayfeatures');
 		ga('send', 'pageview');
 		</script>
 		<!-- End Google Analytics -->
