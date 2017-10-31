@@ -256,7 +256,7 @@
                         },
                         {
                             "key": "field_59c12b26bb613",
-                            "label": "Titre",
+                            "label": "Titre première colonne",
                             "name": "title",
                             "type": "text",
                             "instructions": "",
@@ -274,10 +274,10 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_59c12cf498d06",
-                            "label": "Alignement du titre",
-                            "name": "title_align",
-                            "type": "radio",
+                            "key": "field_59f7307d9f52d",
+                            "label": "Titre deuxième colonne",
+                            "name": "title2",
+                            "type": "text",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -286,55 +286,113 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "left": "Gauche",
-                                "center": "Centre",
-                                "right": "Droite"
-                            },
-                            "allow_null": 0,
-                            "other_choice": 0,
-                            "save_other_choice": 0,
-                            "default_value": "",
-                            "layout": "horizontal",
-                            "return_format": "value"
-                        },
-                        {
-                            "key": "field_59c12b3cbb614",
-                            "label": "Adresse",
-                            "name": "address",
-                            "type": "textarea",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "50",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "maxlength": "",
-                            "rows": 4,
-                            "new_lines": "wpautop"
-                        },
-                        {
-                            "key": "field_59c12b5abb615",
-                            "label": "Téléphone",
-                            "name": "phone",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "50",
-                                "class": "",
-                                "id": ""
-                            },
                             "default_value": "",
                             "placeholder": "",
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
+                        },
+                        {
+                            "key": "field_59f730d19f52f",
+                            "label": "Colonnes",
+                            "name": "colonnes",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 3,
+                            "layout": "block",
+                            "button_label": "Ajouter une colonne",
+                            "sub_fields": [
+                                {
+                                    "key": "field_59f730f79f530",
+                                    "label": "Titre",
+                                    "name": "title",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_59f7314e9f531",
+                                    "label": "Image",
+                                    "name": "img",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "preview_size": "thumbnail",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_59c12b3cbb614",
+                                    "label": "Adresse",
+                                    "name": "address",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": "",
+                                    "rows": 4,
+                                    "new_lines": "wpautop"
+                                },
+                                {
+                                    "key": "field_59c12b5abb615",
+                                    "label": "Téléphone",
+                                    "name": "phone",
+                                    "type": "textarea",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "50",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": "",
+                                    "rows": 2,
+                                    "new_lines": "br"
+                                }
+                            ]
                         }
                     ],
                     "min": "",
@@ -968,5 +1026,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1508317768
+    "modified": 1509372699
 }
