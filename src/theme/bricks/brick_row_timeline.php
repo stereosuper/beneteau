@@ -20,16 +20,18 @@ $title_align = get_sub_field('title_align');
                 the_row();
 
                 $date = get_sub_field('date');
+                $cat = get_sub_field('cat');
                 $text = get_sub_field('text');
                 $link = get_sub_field('link');
             ?>
 
                 <li class='isAnimated'>
                     <time datetime='<?php echo $date; ?>'><?php echo $date; ?></time>
-                    <?php echo wp_get_attachment_image( get_sub_field('img'), 'full' ); ?>
-                    <?php if( !empty($text) ) : ?>
-                        <p><?php echo $text; ?></p>
+                    <?php if( !empty($cat) ) : ?>
+                        <span class='cat'><?php echo $cat; ?></span>
                     <?php endif; ?>
+                    <?php echo wp_get_attachment_image( get_sub_field('img'), 'full' ); ?>
+                    <?php if( !empty($text) ) : echo $text; endif; ?>
                     <?php if( !empty($link) ) : ?>
                         <a href='<?php echo $link; ?>' class='link'><?php echo get_sub_field('linkText') ? get_sub_field('linkText') : $link; ?></a>
                     <?php endif; ?>

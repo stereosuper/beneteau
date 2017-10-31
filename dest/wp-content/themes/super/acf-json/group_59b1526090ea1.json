@@ -590,6 +590,25 @@
                                     "maxlength": ""
                                 },
                                 {
+                                    "key": "field_59f85baad5d28",
+                                    "label": "Thématique",
+                                    "name": "cat",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
                                     "key": "field_59d4ce6bede85",
                                     "label": "Image",
                                     "name": "img",
@@ -715,5 +734,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1509115406
+    "modified": 1509448635
 }
