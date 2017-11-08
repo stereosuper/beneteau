@@ -7,7 +7,7 @@ $title_align = get_sub_field('title_align');
 
 ?>
 
-<div class='isAnimated'>
+<div>
     <?php if (!empty($title)){ ?>
         <h2 id='<?php echo $anchor; ?>' class="align<?php echo $title_align; ?>"><?php echo $title; ?></h2>
     <?php }else if(!empty($anchor)){ ?>
