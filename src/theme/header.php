@@ -32,7 +32,9 @@
 		<!-- End Google Analytics -->
 	</head>
 
-	<body <?php body_class(); ?>>
+	<?php $class = get_field('scrollreveal') ? 'no-sr' : ''; ?>
+
+	<body <?php body_class( $class ); ?>>
 
 		<header role='banner' class='header' id='header'>
 			<div class='container'>

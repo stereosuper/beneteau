@@ -83,8 +83,7 @@ $(function(){
     }
 
 
-    // isMobile.any ? body.addClass('is-mobile') : body.addClass('is-desktop');
-    initScrollReveal();
+    initScrollReveal( body );
 
     // Sticky
     sticky($('#blockSticky'), 130, {

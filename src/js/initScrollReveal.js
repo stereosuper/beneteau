@@ -5,7 +5,9 @@ require('gsap/CSSPlugin');
 var TweenLite = require('gsap/TweenLite');
 
 
-module.exports = function(){
+module.exports = function( body ){
+    if( body.hasClass('no-sr') ) return;
+
     window.sr = ScrollReveal({ reset: true });
 
 
