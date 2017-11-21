@@ -4,6 +4,10 @@ var $ = require('jquery');
 global.jQuery = $;
 var Cookies = require('js-cookie');
 
+var imagesLoaded = require('imagesloaded');
+// provide jQuery argument
+imagesLoaded.makeJQueryPlugin( $ );
+
 require('featherlight/release/featherlight.min.js');
 require('featherlight/release/featherlight.gallery.min.js');
 
@@ -86,9 +90,15 @@ $(function(){
     initScrollReveal( body );
 
     // Sticky
-    sticky($('#blockSticky'), 130, {
-        minimumWidth: 960
-    });
+    if($('.content').length){
+        $('.content').imagesLoaded( function() {
+            sticky($('#blockSticky'), 130, {
+                minimumWidth: 960
+            });
+        });
+    }
+    
+    
 
     // Submenu (in pages) Anchors
     submenu( $('#submenu'), windowHeight );

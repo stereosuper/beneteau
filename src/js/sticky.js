@@ -38,7 +38,7 @@ module.exports = function (stickyElt, givenPosition, {
         posTop = stickyElt.data('initialPos') === 'auto' ? 0 : parseFloat(stickyElt.data('initialPos'), 10);
          
         if(scrollTop >= stickyElt.data('offsetTop') - position + posTop){
-            stickyElt.addClass('sticky').css('top', position+'px');
+            stickyElt.addClass('sticky').css('top', position+'px');            
             if(scrollTop + position + stickyElt.data('height') >= stickyElt.data('offsetBottom')){
                 stickyElt.removeClass('sticky').addClass('sticky-stuck').css({'top': 'auto', 'bottom': '0'});
             }else{
