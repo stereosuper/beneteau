@@ -153,6 +153,11 @@ function beneteau_mce_before_init( $styles ){
             'block' => 'p',
             'classes' => 'intro'
         ),
+        array(
+            'title' => 'Catégorie histoire',
+            'block' => 'p',
+            'classes' => 'cat'
+        ),
     );
     $styles['style_formats'] = json_encode( $style_formats );
     // Remove h1 and code
