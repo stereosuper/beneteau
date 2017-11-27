@@ -24,7 +24,9 @@
 .grid-contact{
     .img{
         overflow: hidden;
-        background: #b0d2f0 url(../layoutImg/logo-small.svg) no-repeat 50% 50% / 40px;
+        &:empty{
+            background: #b0d2f0 url(../layoutImg/logo-small.svg) no-repeat 50% 50% / 40px;
+        }
     }
     img{
         min-width: 100%;
