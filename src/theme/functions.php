@@ -281,7 +281,7 @@ function super_register_sidebars(){
 		'name' => 'Emploi',
 		'description' => "Apparait sur la page d'accueil Emploi",
 		'before_widget' => '',
-		'after_widget' => '<a href="' . super_get_field('jobs_link', 'options') . '" class="btn">' . __('All our offers', 'beneteau') . '</a>',
+		'after_widget' => '',
 		'before_title' => '<h2>',
 		'after_title' => '</h2>',
 		'empty_title'=> ''
