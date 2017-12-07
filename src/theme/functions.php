@@ -6,6 +6,12 @@ define( 'BENETEAU_VERSION', 1.0 );
 /* General
 /*-----------------------------------------------------------------------------------*/
 
+// Fix SQL request always called ?
+if( isset($_GET['doing_wp_cron']) ){
+	remove_action('do_pings', 'do_all_pings');
+	wp_clear_scheduled_hook('do_pings');
+}
+
 add_action( 'after_setup_theme', 'beneteau_theme_setup' );
 function beneteau_theme_setup() {
     load_theme_textdomain('beneteau', get_template_directory() .'/languages');
