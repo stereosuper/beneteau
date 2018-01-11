@@ -524,6 +524,34 @@ add_filter( 'rocket_cache_dynamic_cookies', 'beneteau_cookies' );
 
 
 /*-----------------------------------------------------------------------------------*/
+/* Eolia
+/*-----------------------------------------------------------------------------------*/
+add_filter( 'eolia_filter_mail_to',
+function ( $mail, $job ) {
+    /** @var \Eolia\Controllers\JobController $job */
+    $override = filter_var( $job->get_additionnal_field( 'saisie3' ), FILTER_SANITIZE_EMAIL );
+    if ( $override && $override !== '' ) {
+        $mail = 'fr-beneteau2@redirection-eolia.com';
+    }
+
+    return $mail;
+}, 10, 2 );
+
+add_action( 'eolia_action_mail',
+function ( $form_fields, $job, $content, $attachments ) {
+    /** @var \Eolia\Controllers\JobController $job */
+    if($mailTo = filter_var($job->get_additionnal_field('saisie3'), FILTER_SANITIZE_EMAIL)){
+        $mailContent = $content;
+        $mailHeaders = 'Content-Type: text/html; charset=UTF-8';
+        $mailAttachments = $attachments;
+        if( ! wp_mail( $mailTo, 'Beneteau - Offre '.$job->get_ref(), $mailContent, $mailHeaders, $mailAttachments ) ) {
+            wp_die( __('Une erreur s\'est produite lors de l\'envoi de votre candidature...') );
+        }
+    }
+}, 10, 4 );
+
+
+/*-----------------------------------------------------------------------------------*/
 /* TGMPA
 /*-----------------------------------------------------------------------------------*/
 
