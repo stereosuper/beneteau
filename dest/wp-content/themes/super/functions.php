@@ -542,12 +542,14 @@ function ( $mail, $job ) {
 add_action( 'eolia_action_mail',
 function ( $form_fields, $job, $content, $attachments ) {
     /** @var \Eolia\Controllers\JobController $job */
-    if($mailTo = filter_var($job->get_additionnal_field('saisie3'), FILTER_SANITIZE_EMAIL)){
-        $mailContent = $content;
-        $mailHeaders = 'Content-Type: text/html; charset=UTF-8';
-        $mailAttachments = $attachments;
-        if( ! wp_mail( $mailTo, 'Beneteau - Offre '.$job->get_ref(), $mailContent, $mailHeaders, $mailAttachments ) ) {
-            wp_die( __('Une erreur s\'est produite lors de l\'envoi de votre candidature...') );
+    if( $job ){
+        if($mailTo = filter_var($job->get_additionnal_field('saisie3'), FILTER_SANITIZE_EMAIL)){
+            $mailContent = $content;
+            $mailHeaders = 'Content-Type: text/html; charset=UTF-8';
+            $mailAttachments = $attachments;
+            if( ! wp_mail( $mailTo, 'Beneteau - Offre '.$job->get_ref(), $mailContent, $mailHeaders, $mailAttachments ) ) {
+                wp_die( __('Une erreur s\'est produite lors de l\'envoi de votre candidature...') );
+            }
         }
     }
 }, 10, 4 );
