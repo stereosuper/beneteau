@@ -529,9 +529,11 @@ add_filter( 'rocket_cache_dynamic_cookies', 'beneteau_cookies' );
 add_filter( 'eolia_filter_mail_to',
 function ( $mail, $job ) {
     /** @var \Eolia\Controllers\JobController $job */
-    $override = filter_var( $job->get_additionnal_field( 'saisie3' ), FILTER_SANITIZE_EMAIL );
-    if ( $override && $override !== '' ) {
-        $mail = 'fr-beneteau2@redirection-eolia.com';
+    if( $job ){
+        $override = filter_var( $job->get_additionnal_field( 'saisie3' ), FILTER_SANITIZE_EMAIL );
+        if ( $override && $override !== '' ) {
+            $mail = 'fr-beneteau2@redirection-eolia.com';
+        }
     }
 
     return $mail;
