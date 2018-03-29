@@ -33,7 +33,7 @@ class WiztopicSync extends SGBaseImporter
         $this->logImporterEnded();
     }
 
-    public static function getLastNews($oauth_token)
+    public function getLastNews($oauth_token)
     {
         if ($oauth_token != false) {
 
@@ -47,6 +47,7 @@ class WiztopicSync extends SGBaseImporter
             $request = wp_remote_get($url, $args);
 
             if(is_wp_error($request)) {
+                $this->logWpError('Erreur API', $request, SG_LOG_INFO);
                 return false;
             }
 
