@@ -87,6 +87,11 @@ function gwztp_plugin_options()
 
    <input class='button button-primary' type='submit' value='<?php _e('Update and Authorize', 'gwztp'); ?>' />
 
+   <h3><?php _e('Sync logs', 'gwztp'); ?></h3>
+    <pre><code><?php
+        $sync = new WiztopicSync();
+        $sync->start();
+    ?></code></pre>
 </form>
 
 <?php

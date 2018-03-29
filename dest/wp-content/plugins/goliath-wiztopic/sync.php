@@ -144,24 +144,26 @@ class WiztopicSync extends SGBaseImporter
     protected function treatNews()
     {
         $news_list = $this->getLastNews($this->token);
-        foreach($news_list as $news) {
-            $importId = $news->id;
-            $postType = 'post';
-            $title = $news->title;
-            $status = 'publish';
-            $args = array(
-                'post_content' => $news->highlights,
-            );
-            $slug = $news->uri->slug;
-            $cover_image_id = false;
-            if (isset($news->cover_image) && isset($news->cover_image->id)) {
-                $cover_image_id = $news->cover_image->id;
+        if (is_array($news_list)) {
+            foreach($news_list as $news) {
+                $importId = $news->id;
+                $postType = 'post';
+                $title = $news->title;
+                $status = 'publish';
+                $args = array(
+                    'post_content' => $news->highlights,
+                );
+                $slug = $news->uri->slug;
+                $cover_image_id = false;
+                if (isset($news->cover_image) && isset($news->cover_image->id)) {
+                    $cover_image_id = $news->cover_image->id;
+                }
+
+                $post_id = $this->wpSavePost($importId, $postType, $title, $status, $args);
+
+                $this->wpAddPostMeta('wztp_uri_slug', $slug, $post_id, 'post');
+                $this->wpAddPostMeta('wztp_cover_media_id', $cover_image_id, $post_id, 'post');
             }
-
-            $post_id = $this->wpSavePost($importId, $postType, $title, $status, $args);
-
-            $this->wpAddPostMeta('wztp_uri_slug', $slug, $post_id, 'post');
-            $this->wpAddPostMeta('wztp_cover_media_id', $cover_image_id, $post_id, 'post');
         }
     }
 
