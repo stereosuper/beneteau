@@ -27,6 +27,7 @@
 
 		ga('create', 'UA-11897367-1', 'auto');
 		ga('require', 'displayfeatures');
+		ga('set', 'anonymizeIp', true);
 		ga('send', 'pageview');
 		</script>
 		<!-- End Google Analytics -->
