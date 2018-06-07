@@ -220,6 +220,42 @@ label, .eolia_field_label{
     margin: 10px 0;
 }
 
+.eolia_form-row-check{
+    label, .eolia_field_label{
+        display: flex;
+        align-items: baseline;
+        width: 100%;
+        padding: 0;
+        text-align: left;
+    }
+    .eolia_form-group{
+        label{
+            float: none;
+            padding: 0;
+        }
+        .error{
+            order: 3;
+            margin-left: 5px;
+        }
+    }
+    .eolia_form-group{
+        .eolia_input{
+            order: 0;
+            flex: 0 0 auto;
+            width: auto;
+            float: left;
+            margin-left: 24.5%;
+            margin-right: 15px;
+            transform: translateX(-100%);
+        }
+    }
+    .eolia_field_label--required{
+        &:after{
+            margin-left: 3px;
+        }
+    }
+}
+
 
 @media (max-width: $tablet){
     .eolia_form .eolia_input, .eolia_search .eolia_input{
