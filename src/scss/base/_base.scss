@@ -638,6 +638,17 @@ a{
     }
 }
 
+.small-txt{
+    font-size: 1.2rem;
+    ul{
+        li{
+            &:before{
+                top: 8px;
+            }
+        }
+    }
+}
+
 // scroll reveal
 .isAnimated, .content-brand .baseline, .exergue, .intro, blockquote, .highlighted .title, .highlighted strong, .list-brands > li, .push-wrapper, .gallery > li, .push-banner, .home-news{
     visibility: hidden;
