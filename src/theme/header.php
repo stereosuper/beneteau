@@ -18,6 +18,20 @@
 
 		<script>document.getElementsByTagName('html')[0].className = 'js';</script>
 
+		<?php
+		$use_ga = false;
+		if (isset($_COOKIE['goliath-rgpd-prefs'])) {
+			$cookie = json_decode(stripslashes($_COOKIE['goliath-rgpd-prefs']));
+			if (isset($cookie->ga) && $cookie->ga == 'accept') {
+				$use_ga = true;
+			}
+		} else {
+			if (isset($_COOKIE['beneteau-cookies']) && $_COOKIE['beneteau-cookies'] == 'true') {
+				$use_ga = true;
+			}
+		}
+		if($use_ga) :
+		?>
 		<!-- Google Analytics -->
 		<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -31,6 +45,9 @@
 		ga('send', 'pageview');
 		</script>
 		<!-- End Google Analytics -->
+		<?php
+		endif;
+		?>
 	</head>
 
 	<?php $class = get_field('scrollreveal') ? 'no-sr' : ''; ?>
