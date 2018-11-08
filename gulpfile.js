@@ -142,4 +142,3 @@ gulp.task('watch', function () {
 
 
 gulp.task('start', ['styles', 'theme', 'fonts', 'img', 'layoutImg', 'js', 'root', 'sitemap']);
-
