@@ -69,7 +69,10 @@ function beneteau_remove_comment_author_class( $classes ){
 add_filter( 'comment_class' , 'beneteau_remove_comment_author_class' );
 
 // remove login errors
-add_filter( 'login_errors', create_function('$a', "return null;") );
+function mpe_rmove_login_errors( $a ){
+    return null;
+}
+add_filter( 'login_errors', 'mpe_rmove_login_errors' );
 
 
 /*-----------------------------------------------------------------------------------*/
