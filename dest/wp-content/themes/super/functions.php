@@ -375,6 +375,19 @@ function beneteau_post_type(){
             'feeds' => true, // bool Should a feed permastruct be built for this post type. Defaults to has_archive value.
         ),
     ) );
+    register_post_type( 'work', array(
+        'label' => 'Métiers',
+        'singular_label' => 'Métier',
+        'public' => true,
+        'menu_icon' => 'dashicons-store',
+        'supports' => array('title', 'editor', 'revisions'),
+        // 'rewrite' => array(
+        //     'slug' => __('job', 'beneteau'), // string Customize the permastruct slug. Defaults to the $post_type value. Should be translatable.
+        //     //'with_front' => false, // bool Should the permastruct be prepended with the front base. (example: if your permalink structure is /blog/, then your links will be: false->/news/, true->/blog/news/). Defaults to true
+        //     'pages' => true, // bool Should the permastruct provide for pagination. Defaults to true
+        //     'feeds' => true, // bool Should a feed permastruct be built for this post type. Defaults to has_archive value.
+        // ),
+    ) );
 }
 add_action( 'init', 'beneteau_post_type' );
 
