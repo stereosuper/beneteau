@@ -682,7 +682,7 @@
                         {
                             "key": "field_5bf534540e22d",
                             "label": "Image de titre",
-                            "name": "tittle_img",
+                            "name": "tittle_main_img",
                             "type": "image",
                             "instructions": "",
                             "required": 0,
@@ -692,7 +692,7 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "url",
+                            "return_format": "id",
                             "preview_size": "thumbnail",
                             "library": "all",
                             "min_width": "",
@@ -908,5 +908,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1542807619
+    "modified": 1542893578
 }
