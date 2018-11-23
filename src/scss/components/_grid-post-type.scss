@@ -8,6 +8,9 @@
     overflow: hidden;
     background: #000;
     color: #fff;
+    .content{
+        width: 100%;
+    }
     a, h2, h3{
         color: inherit;
     }
@@ -141,11 +144,12 @@
         width: 100%;
         margin: 0;
         align-self: flex-end;
+        text-align: center;
     }
 }
 
 
-@media (max-width: $tablet){
+@media (max-width: $desktop){
     .grid-post-type{
         grid-template-columns: repeat(2, 1fr);
     }

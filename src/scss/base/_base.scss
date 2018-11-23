@@ -660,6 +660,68 @@ a{
     }
 }
 
+.video{
+    height: 0;
+    padding: 0 0 60%;
+    position: relative;
+    margin: 0 0 2.3em;
+    font-family: $roboto;
+    color: #fff;
+    text-transform: uppercase;
+    > .overlay, > iframe{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    > .overlay{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 44, 77, 0.8);
+        > div{
+            padding: 9em 40px 0;
+        }
+    }
+    .subtitle{
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+    .name{
+        font-family: $robotoBold;
+        font-size: 2.2rem;
+    }
+    .icon{
+        width: 36px;
+        height: 36px;
+        margin: 0 16px 0 0;
+    }  
+    h3{
+        margin: 0;
+        overflow: hidden;
+        &.no-text{
+            text-indent: -99em;
+            > img{
+                display: block;
+                float: left;
+                text-indent: 0;
+            }
+        }
+    }
+}
+
+.nav-next-prev{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .link-next{
+        margin: 0 0 0 auto;
+    }
+}
+
 
 @media (max-width: $desktop){
     .baseline{
