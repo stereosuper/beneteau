@@ -78,6 +78,7 @@
 
 .grid-post-type-item{
     border: 0;
+    overflow: hidden;
     font-family: $roboto;
     transition: none;
     &:hover, &:focus{
@@ -116,13 +117,14 @@
         }        
     }
     > img{
+        width: auto;
         min-width: 100%;
         min-height: 100%;
         max-width: none;
         position: absolute;
         top: 0;
         left: 50%;
-        margin: 0 0 0 -50%;
+        transform: translate3d(-50%, 0, 0);   
     }
     h3{
         width: 100%;
