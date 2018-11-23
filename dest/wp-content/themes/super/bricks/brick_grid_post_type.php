@@ -29,9 +29,18 @@ $postType = get_sub_field('post_type');
     <?php
     $queryPosts = new WP_Query( array('post_type' => $postType) );
 
-    if( $queryPosts->have_posts() ) : $count = 0; ?>
+    if( $queryPosts->have_posts() ) : ?>
 
-    <?php while( $queryPosts->have_posts() ) : $count ++; ?>
+        <div class='grid-post-type-cta'>
+            <p>
+                <?php echo $job1; ?>
+                <span><?php echo $job2; ?></span>
+                <?php echo $job3; ?>
+            </p>
+            <a href='<?php echo $btnLink; ?>' class='btn-invert'><?php echo $btn; ?></a>
+        </div>
+
+        <?php while( $queryPosts->have_posts() ) : ?>
             <?php $queryPosts->the_post(); $subtitleImg = get_field('title_img'); ?>
 
             <a href='<?php the_permalink(); ?>' class='grid-post-type-item'>
@@ -67,15 +76,6 @@ $postType = get_sub_field('post_type');
                 </div>
                 <?php echo wp_get_attachment_image( get_field('video_img'), 'medium' ); ?>
             </a>
-
-            <div class='grid-post-type-cta'>
-                <p>
-                    <?php echo $job1; ?>
-                    <span><?php echo $job2; ?></span>
-                    <?php echo $job3; ?>
-                </p>
-                <a href='<?php echo $btnLink; ?>' class='btn-invert'><?php echo $btn; ?></a>
-            </div>
 
             <a href='<?php the_permalink(); ?>' class='grid-post-type-item'>
                 <div class='content'>
