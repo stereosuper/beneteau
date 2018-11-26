@@ -96,9 +96,27 @@
     font-family: $roboto;
     transition: none;
     &:hover, &:focus{
-        .content{
+        .content, .subtitle, h3{
             opacity: 1;
         }
+        .subtitle, .icon{
+            transition-delay: 0.15s;
+        }
+        h3{
+            transition-delay: 0.2s;
+        }
+        .icon{
+            transform: scale(1);
+        }
+    }
+    .content, .subtitle, h3, .icon{
+        transition: $transition;
+    }
+    .content, .subtitle, h3{
+        opacity: 0;
+    }
+    .subtitle, h3{
+        transition-delay: 0s;
     }
     .content{
         display: flex;
@@ -108,8 +126,6 @@
         flex-wrap: wrap;
         justify-content: center;
         background: rgba(0, 44, 77, 0.95);
-        opacity: 0;
-        transition: $transition;
     }
     .name{
         font-family: $robotoLight;
@@ -120,15 +136,16 @@
         display: flex;
         padding: 50px 20px 0;
         align-self: flex-end;
-        align-items: center;
-        > .icon{
-            width: 36px;
-            height: 36px;
-            margin: 0 6px 0 0;
-            + span{
-                max-width: 145px;
-            }
-        }        
+        align-items: center;      
+    }
+    .icon{
+        width: 36px;
+        height: 36px;
+        margin: 0 6px 0 0;
+        transform: scale(0.9);
+        + span{
+            max-width: 145px;
+        }
     }
     > img{
         width: auto;
@@ -142,9 +159,11 @@
     }
     h3{
         width: 100%;
-        margin: 0;
         align-self: flex-end;
         text-align: center;
+        &.no-text{
+            margin: 0;
+        }
     }
     span{
         line-height: 1.4;
