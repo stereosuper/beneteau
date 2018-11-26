@@ -32,8 +32,26 @@
 
             <h1 class='isAnimated'><?php the_title(); ?></h1>
 
+            <?php if( get_field('video') ): ?>
+                <div class='video js-video' data-id='<?php the_field('video'); ?>'>
+                    <div class='iframe'></div>
+                    <div class='overlay' style='background-image: url(<?php the_field('video_img'); ?>)'>
+                        <div>
+                            <div class='subtitle'>
+                                <svg class='icon icon-video'><use xlink:href='#icon-video'></use></svg>
+                                <span><span class='name'><?php the_field('name'); ?>,</span> <?php the_field('job'); ?></span>
+                            </div>
+                            <h3 <?php $subtitleImg = get_field('title_img'); if( $subtitleImg ){ ?> class='no-text' <?php } ?>>
+                                <?php the_field('title'); ?>
+                                <?php echo wp_get_attachment_image( $subtitleImg, 'full' ); ?>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+
             <?php if( get_field('video') ){ ?>
-                <div class='video'>
+                <!--<div class='video'>
                     <iframe id='videoWork' width='640' height='360' src='<?php the_field('video'); ?>?enablejsapi=1' frameborder='0'></iframe>
                     <div class='overlay'>
                         <div>
@@ -47,7 +65,7 @@
                             </h3>
                         </div>
                     </div>
-                </div>
+                </div>-->
             <?php } ?>
 
             <div class='clearfix isAnimated nav-next-prev'>

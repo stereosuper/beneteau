@@ -25,6 +25,7 @@ $(function(){
     var brandSlider = require('./brandSlider.js');
     var brandsHome = require('./brandsHome.js');
     var accordion = require('./accordion.js');
+    var initVideo = require('./initVideo.js');
 
     var htmlAze = $('html');
     var body = $('body');
@@ -126,6 +127,9 @@ $(function(){
 
     // Accordion
     accordion( $('.eolia_results') );
+
+    // Videos
+    initVideo( $('.js-video') );
 
 
     // Since script is loaded asynchronously, load event isn't always fired !!!
