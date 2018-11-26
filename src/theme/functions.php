@@ -375,7 +375,7 @@ function beneteau_post_type(){
             'feeds' => true, // bool Should a feed permastruct be built for this post type. Defaults to has_archive value.
         ),
     ) );
-    register_post_type( 'work', array(
+    register_post_type( 'career', array(
         'label' => 'Métiers',
         'singular_label' => 'Métier',
         'public' => true,

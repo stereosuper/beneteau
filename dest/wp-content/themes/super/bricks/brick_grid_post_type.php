@@ -19,11 +19,11 @@ $postType = get_sub_field('post_type');
         <div class='content'>
             <h2 <?php if( $titleImg ){ ?> class='no-text' <?php } ?>>
                 <?php echo $title; ?>
-                <?php echo wp_get_attachment_image( $titleImg, 'full' ); ?>
+                <?php echo wp_get_attachment_image( $titleImg, 'large' ); ?>
             </h2>
             <p><?php echo $text; ?></p>
         </div>
-        <?php echo wp_get_attachment_image( $img, 'full' ); ?>
+        <?php echo wp_get_attachment_image( $img, 'large' ); ?>
     </div>
 
     <?php
@@ -54,10 +54,10 @@ $postType = get_sub_field('post_type');
                     </div>
                     <h3 <?php if( $subtitleImg ){ ?> class='no-text' <?php } ?>>
                         <?php the_field('title'); ?>
-                        <?php echo wp_get_attachment_image( $subtitleImg, 'full' ); ?>
+                        <?php echo wp_get_attachment_image( $subtitleImg, 'large' ); ?>
                     </h3>
                 </div>
-                <?php echo wp_get_attachment_image( get_field('video_img'), 'medium' ); ?>
+                <?php echo wp_get_attachment_image( get_field('video_img'), 'large' ); ?>
             </a>
 
         <?php endwhile; wp_reset_postdata(); ?>
