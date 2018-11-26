@@ -35,7 +35,7 @@
             <?php if( get_field('video') ): ?>
                 <div class='video js-video' data-id='<?php the_field('video'); ?>'>
                     <div class='iframe'></div>
-                    <div class='overlay' style='background-image: url(<?php the_field('video_img'); ?>)'>
+                    <div class='overlay' style='background-image: url(<?php echo wp_get_attachment_url( get_field('video_img'), 'full'); ?>)'>
                         <div>
                             <div class='subtitle'>
                                 <svg class='icon icon-video'><use xlink:href='#icon-video'></use></svg>
