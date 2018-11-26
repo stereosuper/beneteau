@@ -789,6 +789,14 @@ a{
             }
         }
     }
+
+    .video{
+        > .overlay{
+            > div{
+                padding-top: 7em;
+            }
+        }
+    }
 }
 
 @media (max-width: $phone){
@@ -912,4 +920,25 @@ a{
         }
     }
     
+    .video{
+        > .overlay{
+            > div{
+                padding-top: 4em;
+            }
+        }
+        .name{
+            font-size: 1.6rem;
+        }
+    }
+}
+
+
+@media (max-width: $phoneSmall){
+    .video{
+        > .overlay{
+            > div{
+                padding-top: 2em;
+            }
+        }
+    }
 }

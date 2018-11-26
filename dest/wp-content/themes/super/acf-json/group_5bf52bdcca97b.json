@@ -109,7 +109,7 @@
         },
         {
             "key": "field_5bf532d20fd37",
-            "label": "Vidéo",
+            "label": "Id de la vidéo",
             "name": "video",
             "type": "text",
             "instructions": "",
@@ -144,5 +144,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1543236172
+    "modified": 1543236964
 }
