@@ -96,6 +96,7 @@
     }
 }
 .link-prev{
+    padding-right: 10px;
     &:hover, &:focus{
         transform: translate3d(-10px, 0, 0);
         > .icon{
@@ -109,7 +110,8 @@
     }
 }
 .link-next{
-    padding: 0 60px 0 0;
+    padding: 0 60px 0 10px;
+    text-align: right;
     > .icon{
         left: auto;
         right: 0;
@@ -222,5 +224,20 @@
     }
     &:active{
         color: $grey;
+    }
+}
+
+
+@media (max-width: $phone){
+    .link-prev, .link-next{
+        font-size: 0.85rem;
+    }
+
+    .link-prev{
+        padding-left: 40px;
+    }
+
+    .link-next{
+        padding-right: 40px;
     }
 }

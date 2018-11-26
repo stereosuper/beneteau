@@ -67,7 +67,7 @@
                         <a href="<?php echo $back_url; ?>" class="btn-close"><?php _e('Close', 'beneteau'); ?></a>
                     <?php endif; ?>
 
-                    <div class='clearfix isAnimated'>
+                    <div class='clearfix isAnimated nav-next-prev'>
                         <?php previous_post_link( '%link', '%title', true, ' ', 'branch' ); ?>
                         <?php next_post_link( '%link', '%title', true, ' ', 'branch' ); ?>
                     </div>
