@@ -128,7 +128,7 @@
         background: rgba(0, 44, 77, 0.95);
     }
     .name{
-        font-family: $robotoLight;
+        font-family: $robotoBold;
         font-size: 2.2rem;
         line-height: 1.1;
     }
@@ -136,13 +136,13 @@
         display: flex;
         padding: 50px 20px 0;
         align-self: flex-end;
-        align-items: center;      
+        align-items: center;
     }
     .icon{
         width: 36px;
         height: 36px;
         margin: 0 6px 0 0;
-        transform: scale(0.9);
+        transform: scale(0.85);
         + span{
             max-width: 145px;
         }
@@ -191,7 +191,12 @@
         border-top: 1px solid #fff;
         .content{
             background: rgba(0, 44, 77, 0.6);
+        }
+        .content, .subtitle, h3{
             opacity: 1;
+        }
+        .icon{
+            transform: none;
         }
         .subtitle{
             padding-top: 30px;
