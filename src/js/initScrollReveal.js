@@ -44,4 +44,6 @@ module.exports = function( body ){
     sr.reveal('.push-banner', { easing: 'ease-in-out', duration: 500, rotate: { x: 0, y: 0, z: 0 }, scale:1, opacity:0, distance: '80px', beforeReveal: function (domEl) {aze()} });
     
     sr.reveal('.home-news', { beforeReveal: aze});
+
+    sr.reveal('.grid-post-type-title .no-text', { easing: 'ease-in-out', duration: 500, scale: 1, distance: '0px' });
 }

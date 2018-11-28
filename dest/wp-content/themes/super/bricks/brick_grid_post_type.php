@@ -19,7 +19,7 @@ $postType = get_sub_field('post_type');
         <div class='content'>
             <h2 <?php if( $titleImg ){ ?> class='no-text' <?php } ?>>
                 <?php echo $title; ?>
-                <?php echo wp_get_attachment_image( $titleImg, 'large' ); ?>
+                <?php echo wp_get_attachment_image( $titleImg, 'full' ); ?>
             </h2>
             <p><?php echo $text; ?></p>
         </div>
@@ -27,7 +27,7 @@ $postType = get_sub_field('post_type');
     </div>
 
     <?php
-    $queryPosts = new WP_Query( array('post_type' => $postType) );
+    $queryPosts = new WP_Query( array('post_type' => $postType, 'posts_per_page' => -1) );
 
     if( $queryPosts->have_posts() ) : ?>
 
