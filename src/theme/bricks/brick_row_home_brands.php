@@ -36,7 +36,7 @@ $link_label = get_sub_field('link_label');
                         $brands_query->the_post();
                         $logo = super_get_field('logo');
                         if (!empty($logo)) :
-            ?><li <?php if( $count > 8 ){ echo 'class="hidden"'; } ?>><img src="<?php echo $logo; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" /></li><?php 
+            ?><li <?php if( $count > 8 ){ echo 'class="hidden"'; } ?>><a href='<?php the_permalink(); ?>'><img src="<?php echo $logo; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" /></a></li><?php 
                         endif; // if (!empty($logo)) :
                     $count ++; endwhile; // while ($brands_query->have_posts())
                     wp_reset_query();
