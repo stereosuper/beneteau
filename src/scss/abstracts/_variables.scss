@@ -4,43 +4,40 @@
 $white: #fff;
 $black: #000;
 
-$primary: #B1780D;
-$secondary: #F7CF84;
-$blue: #5A93C4;
-$text: #2D3A45;
-$grey: #54616C;
-$greyText: #888F95;
-$bg: #F1F8FF;
-
+$primary: #b1780d;
+$secondary: #f7cf84;
+$blue: #5a93c4;
+// NOTE: default text color change
+$text: #35424d;
+$grey: #54616c;
+$greyText: #888f95;
+$bg: #f1f8ff;
 
 // Transitions
 $transition: 0.2s ease-in-out;
 
-
 // Fonts
-$montserrat: 'Montserrat', sans-serif;
-$montserratLight: 'Montserrat Light', sans-serif;
-$montserratLightIt: 'Montserrat Light Italic', sans-serif;
-$montserratBold: 'Montserrat Bold', sans-serif;
-$montserratSemiBold: 'Montserrat SemiBold', sans-serif;
+$montserrat: "Montserrat", sans-serif;
+$montserratLight: "Montserrat Light", sans-serif;
+$montserratLightIt: "Montserrat Light Italic", sans-serif;
+$montserratBold: "Montserrat Bold", sans-serif;
+$montserratSemiBold: "Montserrat SemiBold", sans-serif;
 
-$roboto: 'RobotoCondensed', sans-serif;
-$robotoBold: 'RobotoCondensed Bold', sans-serif;
-$robotoLight: 'RobotoCondensed Light', sans-serif;
+$roboto: "RobotoCondensed", sans-serif;
+$robotoBold: "RobotoCondensed Bold", sans-serif;
+$robotoLight: "RobotoCondensed Light", sans-serif;
 
-$playfairBold: 'PlayfairDisplay Bold', sans-serif;
-
+$playfairBold: "PlayfairDisplay Bold", sans-serif;
 
 // Mediaqueries
-$retina: 'only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)';
+$retina: "only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)";
 
-$desktop: '1100px';
-$desktopSmall: '960px';
-$tablet: '780px';
-$phone: '580px';
-$phoneSmall: '400px';
-
+$desktop: "1100px";
+$desktopSmall: "960px";
+$tablet: "780px";
+$phone: "580px";
+$phoneSmall: "400px";
 
 // Grid
-$col: 100/8*1%;
+$col: 100/8 * 1%;
 $gutter: 30px;

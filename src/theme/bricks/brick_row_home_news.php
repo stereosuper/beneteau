@@ -11,10 +11,10 @@ $btn = get_sub_field('btn');
 
 ?>
 
-<h2 class='align<?php echo $title_align; ?>'><?php echo $title; ?></h2>
+<h2 class='home-news-title'><?php echo $title; ?></h2>
 
 <div class='home-news'>
-    <div class='push-container'>
+    <div class='home-news-items'>
         <?php
             global $post;
 
@@ -25,7 +25,7 @@ $btn = get_sub_field('btn');
                 // Status Parameters
                 'post_status' => 'publish',
                 // Pagination Parameters
-                'posts_per_page' => 2,
+                'posts_per_page' => 3,
             );
 
             $news_query = new WP_Query($query_args);

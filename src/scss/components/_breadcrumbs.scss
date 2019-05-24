@@ -1,21 +1,22 @@
-.breadcrumbs{
+.breadcrumbs {
     font-family: $montserrat;
     font-size: 1.2rem;
     text-align: left;
-    color: $greyText;
-    a{
+    // NOTE:: changing breadcrumbs color to the darker one
+    // color: $greyText;
+    a {
         border: 0;
         font-family: $montserratBold;
         color: inherit;
-        &:hover, &:focus{
+        &:hover,
+        &:focus {
             color: $primary;
         }
     }
 }
 
-
-@media (max-width: $phone){
-    .breadcrumbs{
+@media (max-width: $phone) {
+    .breadcrumbs {
         display: none;
     }
 }
