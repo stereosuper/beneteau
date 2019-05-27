@@ -30,19 +30,20 @@
 </div>
 <div class="home-professions">
     <?php if ($video_professions_id = get_sub_field('video_professions_id')): ?>
-        <div class="js-video" data-id="<?php echo $video_professions_id ?>">
+        <div class="home-professions-video js-video" data-id="<?php echo $video_professions_id ?>">
             <div class="iframe"></div>
-            <figure class="overlay">
-                <?php if ($video_professions_cover = get_sub_field('video_professions_cover')): ?>
-                <?php echo wp_get_attachment_image($video_professions_cover['ID'], 'full'); ?>
-                <?php endif; ?>
-            </figure>
-            <?php if ($video_professions_url = get_sub_field('video_professions_url')): ?>
-                <div class="video-alt">
-                    <a href="<?php echo $video_professions_url ?>"><?php _e('Accéder à la vidéo avec transcript', 'precogs') ?></a>
-                </div>
+            <?php if ($video_professions_cover = get_sub_field('video_professions_cover')): ?>
+                <figure class="overlay">
+                    <?php echo wp_get_attachment_image($video_professions_cover['ID'], 'full'); ?>
+                    <span class="play-button"></span>
+                </figure>
             <?php endif; ?>
         </div>
+        <?php if ($video_professions_url = get_sub_field('video_professions_url')): ?>
+            <div class="video-alt">
+                <a href="<?php echo $video_professions_url ?>"><?php _e('Accéder à la vidéo avec transcript', 'precogs') ?></a>
+            </div>
+        <?php endif; ?>
     <?php endif; ?>
     <?php if ($title_professions = get_sub_field('title_professions')): ?>
         <h3 class="home-professions-title"><?php echo $title_professions ?></h3>
