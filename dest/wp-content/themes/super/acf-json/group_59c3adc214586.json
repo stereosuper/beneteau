@@ -105,6 +105,21 @@
                             "rows": ""
                         },
                         {
+                            "key": "field_59c3c62d57d48",
+                            "label": "Lien",
+                            "name": "link",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        },
+                        {
                             "key": "field_59d36d0314fcc",
                             "label": "Lien",
                             "name": "link",
@@ -145,29 +160,10 @@
                 },
                 "59c3c56657d42": {
                     "key": "59c3c56657d42",
-                    "name": "brick_row_home_two_cols",
-                    "label": "Image et contenu (spécifique accueil)",
+                    "name": "brick_row_home_group",
+                    "label": "Le groupe Beneteau (spécifique accueil)",
                     "display": "block",
                     "sub_fields": [
-                        {
-                            "key": "field_59c3c59d57d43",
-                            "label": "Ancre",
-                            "name": "anchor",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
                         {
                             "key": "field_59c3c5aa57d44",
                             "label": "Image",
@@ -231,10 +227,10 @@
                             "new_lines": ""
                         },
                         {
-                            "key": "field_59c3c62d57d48",
+                            "key": "field_5ceba42169314",
                             "label": "Lien",
                             "name": "link",
-                            "type": "url",
+                            "type": "link",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -243,13 +239,105 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": ""
+                            "return_format": "array"
                         },
                         {
-                            "key": "field_59c3c64057d49",
-                            "label": "Libellé du lien",
-                            "name": "link_label",
+                            "key": "field_5ceb9dd9194bb",
+                            "label": "Chiffres clés",
+                            "name": "numbers",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 4,
+                            "max": 4,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5ceb9fca40cbd",
+                                    "label": "Chiffre",
+                                    "name": "number",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5ceb9fd840cbe",
+                                    "label": "Texte",
+                                    "name": "text",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "59c3c885620d2": {
+                    "key": "59c3c885620d2",
+                    "name": "brick_row_home_offers",
+                    "label": "Offres (spécifique accueil)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5cebef7a648e1",
+                            "label": "Image",
+                            "name": "image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5cebefae648e3",
+                            "label": "Titre : partie 1",
+                            "name": "title_first_part",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -264,24 +352,87 @@
                             "prepend": "",
                             "append": "",
                             "maxlength": ""
+                        },
+                        {
+                            "key": "field_5cebf081003bd",
+                            "label": "Titre : partie 2",
+                            "name": "title_second_part",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5cebf08c003be",
+                            "label": "Titre : partie 3",
+                            "name": "title_third_part",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5cebef89648e2",
+                            "label": "Contenu",
+                            "name": "content",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 4,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_5cebefc2648e4",
+                            "label": "Lien",
+                            "name": "link",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
                         }
                     ],
                     "min": "",
                     "max": ""
                 },
-                "59c3c885620d2": {
-                    "key": "59c3c885620d2",
-                    "name": "brick_row_home_separator",
-                    "label": "Séparateur (spécifique accueil)",
-                    "display": "block",
-                    "sub_fields": [],
-                    "min": "",
-                    "max": ""
-                },
                 "59c3c9f012d41": {
                     "key": "59c3c9f012d41",
-                    "name": "brick_row_home_brands",
-                    "label": "Marques et services (spécifique accueil)",
+                    "name": "brick_row_home_professions",
+                    "label": "Métiers (spécifique accueil)",
                     "display": "block",
                     "sub_fields": [
                         {
@@ -376,6 +527,15 @@
                             "maxlength": ""
                         }
                     ],
+                    "min": "",
+                    "max": ""
+                },
+                "5ceb9cff110e9": {
+                    "key": "5ceb9cff110e9",
+                    "name": "brick_row_home_brands_services",
+                    "label": "Marques et services (spécifique accueil)",
+                    "display": "block",
+                    "sub_fields": [],
                     "min": "",
                     "max": ""
                 },
@@ -856,5 +1016,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1507907906
+    "modified": 1558966428
 }

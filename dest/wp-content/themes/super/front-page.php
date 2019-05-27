@@ -80,10 +80,8 @@
 		</div>
 	<?php endif; // if (super_have_rows('slider')) : ?>
 
-	<div class='container'>
-
+	<div>
 		<?php echo the_content(); ?>
-
 	</div>
 
 <?php else : ?>
