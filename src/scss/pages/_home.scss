@@ -104,6 +104,9 @@
         line-height: 1.3;
         text-transform: none;
         color: $white;
+        &::after {
+            content: none;
+        }
     }
     .wrapper-txt {
         display: flex;
@@ -283,6 +286,9 @@
 }
 
 .home-group-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     background-size: cover;
     background-repeat: no-repeat;
@@ -303,6 +309,7 @@
 .home-group-link {
     position: relative;
     color: $white;
+    text-align: center;
     z-index: 1;
 }
 
@@ -310,7 +317,6 @@
     padding: 0;
     margin: 0 0 $line-height * 2;
     font-family: $playfairBold;
-    font-weight: 500;
     text-transform: none;
     line-height: 1;
     &::after {
@@ -439,6 +445,7 @@
 }
 
 .home-professions {
+    padding-bottom: $line-height * 2;
     background: $darkGrey;
 }
 
@@ -489,7 +496,85 @@
             transform: translate(-40%, -50%);
         }
     }
-    .video-alt  {
+}
+
+.home-video-alt {
+    display: flex;
+    justify-content: center;
+    > a {
+        color: $white;
+    }
+}
+
+.home-professions-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 $gutter;
+}
+
+.home-professions-title,
+.home-professions-description,
+.home-professions-link {
+    color: $white;
+    text-align: center;
+}
+
+.home-professions-title {
+    margin: $line-height * 2 0;
+    font-family: $playfairBold;
+    font-size: 2.8rem;
+    text-transform: none;
+}
+
+.home-professions-description {
+    margin: 0 0 $line-height * 2;
+}
+
+.home-professions-link {
+    margin-left: auto;
+}
+
+.home-brands-services-title {
+    padding: 0;
+    margin: $line-height * 2 0;
+    font-family: $playfairBold;
+    font-size: 2.8rem;
+    text-transform: none;
+    text-align: center;
+    &::after {
+        content: none;
+    }
+}
+
+.home-brands-services-list {
+    width: calc(100% + #{$gutter * 2});
+    margin: 0 0 0 #{-$gutter};
+    > li {
+        padding: 0;
+        margin-bottom: $line-height * 2;
+        &::before {
+            content: none;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.home-brands-services-link {
+    > figure {
+        width: 100%;
+        height: 250px;
+        > img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    > p {
+        margin: $line-height 0 0;
+        text-align: center;
     }
 }
 

@@ -40,23 +40,25 @@
             <?php endif; ?>
         </div>
         <?php if ($video_professions_url = get_sub_field('video_professions_url')): ?>
-            <div class="video-alt">
+            <div class="home-video-alt">
                 <a href="<?php echo $video_professions_url ?>"><?php _e('Accéder à la vidéo avec transcript', 'precogs') ?></a>
             </div>
         <?php endif; ?>
     <?php endif; ?>
-    <?php if ($title_professions = get_sub_field('title_professions')): ?>
-        <h3 class="home-professions-title"><?php echo $title_professions ?></h3>
-    <?php endif; ?>
-    <?php if ($content_professions = get_sub_field('content_professions')): ?>
-        <p class="home-professions-description"><?php echo $content_professions ?></p>
-    <?php endif; ?>
-    <?php if ($link_professions = get_sub_field('link_professions')): ?>
-        <p>
-            <a class="home-professions-link" href="<?php echo $link_professions['url']; ?>" title="<?php echo htmlspecialchars(strip_tags($link_professions['title']), ENT_QUOTES); ?>" target="<?php echo $link_professions['target']; ?>" <?php echo $link_professions['target'] === '_blank' ? 'rel="noopener noreferrer"' : ''; ?>>
-            <?php echo $link_professions['title'] ?>
-            </a>
-        </p>
-    <?php endif; ?>
+    <div class="home-professions-content">
+        <?php if ($title_professions = get_sub_field('title_professions')): ?>
+            <h3 class="home-professions-title"><?php echo $title_professions ?></h3>
+        <?php endif; ?>
+        <?php if ($content_professions = get_sub_field('content_professions')): ?>
+            <p class="home-professions-description"><?php echo $content_professions ?></p>
+        <?php endif; ?>
+        <?php if ($link_professions = get_sub_field('link_professions')): ?>
+            <p>
+                <a class="home-professions-link" href="<?php echo $link_professions['url']; ?>" title="<?php echo htmlspecialchars(strip_tags($link_professions['title']), ENT_QUOTES); ?>" target="<?php echo $link_professions['target']; ?>" <?php echo $link_professions['target'] === '_blank' ? 'rel="noopener noreferrer"' : ''; ?>>
+                <?php echo $link_professions['title'] ?>
+                </a>
+            </p>
+        <?php endif; ?>
+    </div>
 </div>
 

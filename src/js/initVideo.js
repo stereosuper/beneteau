@@ -23,8 +23,6 @@ module.exports = function initVideo(wrapperVideos) {
 
     global.onYouTubeIframeAPIReady = function() {
         wrapperVideos.each(function(i) {
-            console.log($(this).data('id'));
-
             players[i] = new YT.Player(
                 $(this)
                     .find('.iframe')

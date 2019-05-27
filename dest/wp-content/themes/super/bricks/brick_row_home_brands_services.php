@@ -4,16 +4,18 @@
         <h2 class="home-brands-services-title"><?php echo $title ?></h2>
     <?php endif; ?>
     <?php if( have_rows('brands_and_services') ): ?>
-    <ul>
+    <ul class="home-brands-services-list">
         <?php while ( have_rows('brands_and_services') ) : the_row(); ?>
         <li>
             <?php if ($link = get_sub_field('link')): ?>
                 <a class="home-brands-services-link" href="<?php echo $link['url']; ?>" title="<?php echo htmlspecialchars(strip_tags($link['title']), ENT_QUOTES); ?>" target="<?php echo $link['target']; ?>" <?php echo $link['target'] === '_blank' ? 'rel="noopener noreferrer"' : ''; ?>>
-                    <?php 
-                    if ($image = get_sub_field('image')) {
-                        echo wp_get_attachment_image($image['ID'], 'full');
-                    }
-                    ?>
+                    <figure>
+                        <?php 
+                        if ($image = get_sub_field('image')) {
+                            echo wp_get_attachment_image($image['ID'], 'full');
+                        }
+                        ?>
+                    </figure>
                     <p><?php echo $link['title'] ?></p>
                 </a>
             <?php endif; ?>
