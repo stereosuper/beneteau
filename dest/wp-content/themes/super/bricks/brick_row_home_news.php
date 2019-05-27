@@ -28,8 +28,9 @@ $btn = get_sub_field('btn');
         );
 
         $news_query = new WP_Query($query_args);
-        if ($news_query->have_posts()) :
-            while ($news_query->have_posts()) :
+        if ($news_query->have_posts()) : ?>
+        <ul>
+            <?php while ($news_query->have_posts()) :
                 $news_query->the_post();
                 $img_uri = false;
                 $wztp_uri = false;
@@ -37,22 +38,22 @@ $btn = get_sub_field('btn');
                     $wztp_uri =  WiztopicSync::getPermalink($post->ID);
                     $img_uri = WiztopicSync::getMediaPermalink($post->ID, 'medium');
                 }
-    ?>
-    <a class="home-news-item" href='<?php echo ($wztp_uri)?$wztp_uri:'#';  ?>'>
-        <div class="content-wrapper">
-            <figure class='img-wrapper'>
+        ?>
+            <li class="home-news-item">
+                <a class="content-wrapper" href='<?php echo ($wztp_uri)?$wztp_uri:'#';  ?>'>
+                    <span class="time"><?php the_time(__('d/m/Y', 'beneteau')); ?></span>
+                    <span class="title"><?php the_title(); ?></span>
+                </a>
+                <figure class='img-wrapper'>
                     <img src="<?php echo $img_uri; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
-            </figure>
-            <time class="time"><?php the_time(__('d/m/Y', 'beneteau')); ?></time>
-            <h3 class="title"><?php the_title(); ?></h3>
-        </div>
-    </a>
-    <?php
+                </figure>
+            </li>
+        <?php
             endwhile;
             wp_reset_query();
-        endif;
-    ?>
-
+        ?>
+        </ul>
+    <?php endif; ?>
     <div class='home-news-link isAnimated'>
         <?php if( $link && $btn ) : ?>
             <a href='<?php echo $link; ?>' class='link'><?php echo $btn; ?></a>

@@ -312,8 +312,8 @@
                     "sub_fields": [
                         {
                             "key": "field_5cebef7a648e1",
-                            "label": "Image",
-                            "name": "image",
+                            "label": "Image offres",
+                            "name": "image_offers",
                             "type": "image",
                             "instructions": "",
                             "required": 0,
@@ -336,8 +336,8 @@
                         },
                         {
                             "key": "field_5cebefae648e3",
-                            "label": "Titre : partie 1",
-                            "name": "title_first_part",
+                            "label": "Titre offres : partie 1",
+                            "name": "title_offers_first_part",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -355,8 +355,8 @@
                         },
                         {
                             "key": "field_5cebf081003bd",
-                            "label": "Titre : partie 2",
-                            "name": "title_second_part",
+                            "label": "Titre offres : partie 2",
+                            "name": "title_offers_second_part",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -374,8 +374,8 @@
                         },
                         {
                             "key": "field_5cebf08c003be",
-                            "label": "Titre : partie 3",
-                            "name": "title_third_part",
+                            "label": "Titre offres : partie 3",
+                            "name": "title_offers_third_part",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -393,8 +393,8 @@
                         },
                         {
                             "key": "field_5cebef89648e2",
-                            "label": "Contenu",
-                            "name": "content",
+                            "label": "Contenu offres",
+                            "name": "content_offers",
                             "type": "textarea",
                             "instructions": "",
                             "required": 0,
@@ -412,8 +412,8 @@
                         },
                         {
                             "key": "field_5cebefc2648e4",
-                            "label": "Lien",
-                            "name": "link",
+                            "label": "Lien offres",
+                            "name": "link_offers",
                             "type": "link",
                             "instructions": "",
                             "required": 0,
@@ -424,21 +424,11 @@
                                 "id": ""
                             },
                             "return_format": "array"
-                        }
-                    ],
-                    "min": "",
-                    "max": ""
-                },
-                "59c3c9f012d41": {
-                    "key": "59c3c9f012d41",
-                    "name": "brick_row_home_professions",
-                    "label": "Métiers (spécifique accueil)",
-                    "display": "block",
-                    "sub_fields": [
+                        },
                         {
-                            "key": "field_59c3ca3312d42",
-                            "label": "Ancre",
-                            "name": "anchor",
+                            "key": "field_5cec0eca14f58",
+                            "label": "Vidéo id",
+                            "name": "video_professions_id",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -455,7 +445,113 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_5cec0ff71dd5f",
+                            "label": "Vidéo url",
+                            "name": "video_professions_url",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5cec0f27f2466",
+                            "label": "Image cover vidéo",
+                            "name": "video_professions_cover",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "all",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
                             "key": "field_59c3ca4412d43",
+                            "label": "Titre métiers",
+                            "name": "title_professions",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5cebfed8576b5",
+                            "label": "Contenu",
+                            "name": "content_professions",
+                            "type": "textarea",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "maxlength": "",
+                            "rows": 4,
+                            "new_lines": ""
+                        },
+                        {
+                            "key": "field_59c3cabf12d45",
+                            "label": "Lien métiers",
+                            "name": "link_professions",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5ceb9cff110e9": {
+                    "key": "5ceb9cff110e9",
+                    "name": "brick_row_home_brands_services",
+                    "label": "Marques et services (spécifique accueil)",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5cec117c38b7c",
                             "label": "Titre",
                             "name": "title",
                             "type": "text",
@@ -474,10 +570,10 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_59c3caa512d44",
-                            "label": "Contenu",
-                            "name": "content",
-                            "type": "textarea",
+                            "key": "field_5cec120e38b7d",
+                            "label": "Marques et services",
+                            "name": "brands_and_services",
+                            "type": "repeater",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -486,56 +582,54 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "default_value": "",
-                            "placeholder": "",
-                            "maxlength": "",
-                            "rows": "",
-                            "new_lines": ""
-                        },
-                        {
-                            "key": "field_59c3cabf12d45",
-                            "label": "Lien",
-                            "name": "link",
-                            "type": "link",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "return_format": "url"
-                        },
-                        {
-                            "key": "field_59c3cad912d46",
-                            "label": "Libellé du lien",
-                            "name": "link_label",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
+                            "collapsed": "",
+                            "min": 3,
+                            "max": 3,
+                            "layout": "table",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5cec122f38b7e",
+                                    "label": "Image",
+                                    "name": "image",
+                                    "type": "image",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array",
+                                    "preview_size": "thumbnail",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_5cec123938b7f",
+                                    "label": "Lien",
+                                    "name": "link",
+                                    "type": "link",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "array"
+                                }
+                            ]
                         }
                     ],
-                    "min": "",
-                    "max": ""
-                },
-                "5ceb9cff110e9": {
-                    "key": "5ceb9cff110e9",
-                    "name": "brick_row_home_brands_services",
-                    "label": "Marques et services (spécifique accueil)",
-                    "display": "block",
-                    "sub_fields": [],
                     "min": "",
                     "max": ""
                 },
@@ -1016,5 +1110,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1558966428
+    "modified": 1558976002
 }
