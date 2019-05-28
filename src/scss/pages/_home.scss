@@ -596,9 +596,13 @@
     margin-left: auto;
 }
 
+.home-brands-services {
+    margin-top: $line-height * 2;
+}
+
 .home-brands-services-title {
     padding: 0;
-    margin: $line-height * 2 0;
+    margin: 0 0 $line-height * 2;
     font-family: $playfairBold;
     font-size: 2.8rem;
     text-transform: none;
@@ -681,6 +685,14 @@
     .home-group-number {
         margin: 0 $gutter $gutter 0;
     }
+    .home-brands-services-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        > li {
+            max-width: 340px;
+        }
+    }
 }
 
 @media (min-width: $tablet) {
@@ -725,6 +737,9 @@
         left: 0;
         bottom: 0;
         background: $text;
+    }
+    .home-brands-services {
+        margin-top: $line-height * 4;
     }
 }
 
@@ -807,9 +822,25 @@
     .home-professions-content {
         padding: 0 12.5%;
     }
+    .home-brands-services-title {
+        margin-bottom: $line-height * 4;
+    }
+    .home-brands-services-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        > li {
+            margin: 0 $gutter / 2;
+        }
+    }
 }
 
 @media (min-width: $desktop) {
+    .home {
+        .main {
+            padding-bottom: $line-height * 9;
+        }
+    }
     .home-news-list {
         justify-content: space-between;
         width: 100%;
@@ -817,6 +848,9 @@
     }
     .home-news-item {
         width: 33.33%;
+    }
+    .home-group-content {
+        padding: $line-height * 3;
     }
     .home-group-numbers {
         > ul {
@@ -862,305 +896,3 @@
         margin: 0;
     }
 }
-
-// .home-news {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     flex-wrap: wrap;
-//     margin: 6.5em 0 12em;
-//     .push-container {
-//         width: 50%;
-//         padding: 0 $gutter 0 0;
-//         a {
-//             width: calc(50% - #{$gutter});
-//         }
-//         .img {
-//             padding: 0 0 77%;
-//             > img,
-//             .bg {
-//                 min-height: 140%;
-//             }
-//         }
-//         time,
-//         h3 {
-//             position: relative;
-//             z-index: 1;
-//         }
-//         time {
-//             display: block;
-//             margin: -20px 0 25px;
-//             font-family: $roboto;
-//             font-size: 1.4rem;
-//             letter-spacing: -0.02em;
-//             color: $greyText;
-//         }
-//         h3 {
-//             padding: 0 0 0 15px;
-//             margin: 0;
-//             font-family: $playfairBold;
-//             font-size: 2.4rem;
-//             letter-spacing: -0.015em;
-//             line-height: 1;
-//             text-transform: none;
-//         }
-//     }
-//     .text {
-//         width: calc(#{$col * 3} - #{$gutter});
-//     }
-// }
-
-// .home-talent {
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: flex-start;
-//     margin: 0 0 8em;
-//     img {
-//         display: block;
-//         width: calc(50% - #{$gutter});
-//     }
-//     .text {
-//         width: calc(#{$col * 3} - #{$gutter});
-//     }
-//     h2 {
-//         margin-top: -10px;
-//     }
-//     + hr {
-//         width: 100%;
-//         margin: 0 0 8em;
-//     }
-// }
-
-// .home-brands {
-//     display: flex;
-//     justify-content: space-between;
-//     .text {
-//         width: calc(#{$col * 3} - #{$gutter});
-//         flex-shrink: 0;
-//     }
-//     h2 {
-//         margin-top: -10px;
-//     }
-// }
-
-// .home-carousel {
-//     width: 100%;
-//     margin: -50px 0 0 $gutter * 2;
-//     ul {
-//         margin: 0 $gutter/2 * -1;
-//     }
-//     li {
-//         display: inline-block;
-//         width: calc(33.3333% - #{$gutter});
-//         height: 0;
-//         padding: 0 $gutter 20%;
-//         margin: 0 $gutter/2;
-//         position: relative;
-//         &:before {
-//             content: none;
-//         }
-//     }
-//     img {
-//         max-width: 60%;
-//         max-height: 60%;
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//         right: 0;
-//         bottom: 0;
-//         margin: auto;
-//     }
-// }
-
-// @media (max-height: 720px) {
-//     .slider-home {
-//         .wrapper-txt {
-//             padding-bottom: 100px;
-//         }
-//     }
-// }
-
-// @media (max-height: 630px) {
-//     .slider-home {
-//         .wrapper-txt {
-//             align-items: flex-start;
-//         }
-//     }
-// }
-
-// @media (max-width: $desktop) {
-//     .home-news {
-//         .push-container {
-//             width: $col * 6;
-//             padding: 0;
-//             margin: 0 auto 50px;
-//         }
-//         .text {
-//             width: $col * 6;
-//             margin: 0 auto;
-//         }
-//     }
-
-//     .home-talent {
-//         .text {
-//             width: calc(#{$col * 4} - #{$gutter});
-//         }
-//     }
-// }
-
-// @media (max-width: $desktopSmall) {
-//     .home {
-//         .main {
-//             padding-top: 97px;
-//         }
-//     }
-
-//     .slider-home {
-//         .wrapper-txt {
-//             width: 75%;
-//             padding-right: 0;
-//         }
-//         .bg-txt {
-//             width: 75vw;
-//         }
-//     }
-
-//     .home-talent {
-//         display: block;
-//         img {
-//             width: $col * 6;
-//             margin: 0 auto 50px;
-//         }
-//         .text {
-//             width: $col * 6;
-//             margin: 0 auto;
-//         }
-//     }
-
-//     .home-brands {
-//         flex-wrap: wrap;
-//         .text {
-//             width: $col * 6;
-//             margin: 0 auto 50px;
-//         }
-//     }
-//     .home-carousel {
-//         width: $col * 6;
-//         margin: 0 auto;
-//     }
-// }
-
-// @media (max-width: $tablet) {
-//     .slider-home {
-//         height: auto;
-//         min-height: 0;
-//         max-height: none;
-//         margin: 0 0 9em;
-//         .action {
-//             display: none;
-//         }
-//         .slide-txt {
-//             height: auto;
-//             &.first-on {
-//                 position: relative;
-//             }
-//         }
-//         .slide-img {
-//             height: 55vw;
-//         }
-//         .wrapper-txt {
-//             display: block;
-//             width: 100%;
-//             height: auto;
-//             float: none;
-//             padding: 55vw 0 0;
-//             p {
-//                 max-width: none;
-//                 color: $text;
-//             }
-//         }
-//         .title {
-//             margin-top: 40px;
-//             color: $text;
-//         }
-//         .slider-nav {
-//             top: calc(55vw - 25px);
-//             left: 25px;
-//             transform: scale(1.2);
-//         }
-//         .bg-txt {
-//             display: none;
-//         }
-//     }
-
-//     .home-news {
-//         .push-container,
-//         .text {
-//             width: 100%;
-//         }
-//     }
-
-//     .home-talent {
-//         img,
-//         .text {
-//             width: 100%;
-//         }
-//     }
-
-//     .home-brands {
-//         .text {
-//             width: 100%;
-//         }
-//     }
-//     .home-carousel {
-//         width: calc(100% + #{2 * $gutter});
-//         margin-left: -$gutter;
-//         margin-right: -$gutter;
-//     }
-// }
-
-// @media (max-width: $phone) {
-//     .home-news {
-//         .push-container {
-//             max-width: 400px;
-//             flex-wrap: wrap;
-//             a {
-//                 width: 100%;
-//                 margin: 0;
-//                 &:nth-child(2) {
-//                     margin-top: 5em;
-//                 }
-//             }
-//             .img-wrapper {
-//                 max-width: 50%;
-//                 min-width: 140px;
-//             }
-//             .img {
-//                 > img,
-//                 > .bg {
-//                     max-height: 215px;
-//                 }
-//             }
-//             h3 {
-//                 display: inline-block;
-//                 max-width: 270px;
-//                 padding: 0 0 0 $gutter * 2;
-//                 font-size: 1.8rem;
-//                 line-height: 1.2;
-//             }
-//             time {
-//                 margin: -40px 0 5px;
-//             }
-//         }
-//     }
-
-//     .home-carousel {
-//         li {
-//             width: calc(50% - 30px);
-//             padding-bottom: 30%;
-//             &:nth-child(8) {
-//                 display: none;
-//             }
-//         }
-//     }
-// }
