@@ -12,7 +12,26 @@ $btn = get_sub_field('btn');
 
 
 <div class="home-news container">
-    <h2 class="home-news-title"><?php echo $title; ?></h2>
+    <header>
+        <?php if ($title): ?>
+            <h2 class="home-news-title"><?php echo $title; ?></h2>
+        <?php endif; ?>
+        <?php if ($title_social_networks = get_sub_field('title_social_networks')): ?>
+            <h3 class="home-news-title-social"><?php echo $title_social_networks ?></h3>
+        <?php endif; ?>
+        <div class="home-news-social">
+            <?php if ($twitter_link = get_sub_field('twitter_link')): ?>
+                <a href="<?php echo $twitter_link ?>">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-twitter" /></svg>
+                </a>
+            <?php endif; ?>
+            <?php if ($linkedin_link = get_sub_field('linkedin_link')): ?>
+                <a href="<?php echo $linkedin_link ?>">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin" /></svg>
+                </a>
+            <?php endif; ?>
+        </div>
+    </header>
     <?php
         global $post;
 

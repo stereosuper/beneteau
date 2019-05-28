@@ -61,10 +61,10 @@
                             "maxlength": ""
                         },
                         {
-                            "key": "field_59c3bcbffdd42",
-                            "label": "Alignement du titre",
-                            "name": "title_align",
-                            "type": "radio",
+                            "key": "field_5ced062a7c9be",
+                            "label": "Titre réseaux sociaux",
+                            "name": "title_social_networks",
+                            "type": "text",
                             "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
@@ -73,17 +73,49 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "choices": {
-                                "left": "Gauche",
-                                "center": "Centre",
-                                "right": "Droite"
-                            },
-                            "allow_null": 0,
-                            "other_choice": 0,
-                            "save_other_choice": 0,
                             "default_value": "",
-                            "layout": "horizontal",
-                            "return_format": "value"
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5ced06bb74063",
+                            "label": "Lien twitter",
+                            "name": "twitter_link",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5ced06d374064",
+                            "label": "Lien linkedin",
+                            "name": "linkedin_link",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         },
                         {
                             "key": "field_59c3bcf5fdd43",
@@ -1110,5 +1142,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1558976002
+    "modified": 1559038528
 }
