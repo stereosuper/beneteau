@@ -8,7 +8,6 @@ $content = get_sub_field('content');
 $link = get_sub_field('link');
 $btn = get_sub_field('btn');
 
-
 ?>
 
 
@@ -56,7 +55,7 @@ $btn = get_sub_field('btn');
     <?php endif; ?>
     <div class='home-news-link isAnimated'>
         <?php if( $link && $btn ) : ?>
-            <a href='<?php echo $link; ?>' class='link'><?php echo $btn; ?></a>
+            <a href='<?php echo $link['url'] ?>' class='a-btn'><?php echo $btn; ?></a>
         <?php endif; ?>
     </div>
 </div>

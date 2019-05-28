@@ -11,7 +11,7 @@ $image = get_sub_field('image');
         <?php endif; ?>
         <?php if ($link = get_sub_field('link')): ?>
             <p>
-                <a class="home-group-link" href="<?php echo $link['url']; ?>" title="<?php echo htmlspecialchars(strip_tags($link['title']), ENT_QUOTES); ?>" target="<?php echo $link['target']; ?>" <?php echo $link['target'] === '_blank' ? 'rel="noopener noreferrer"' : ''; ?>>
+                <a class="a-btn a-btn-light home-group-link" href="<?php echo $link['url']; ?>" title="<?php echo htmlspecialchars(strip_tags($link['title']), ENT_QUOTES); ?>" target="<?php echo $link['target']; ?>" <?php echo $link['target'] === '_blank' ? 'rel="noopener noreferrer"' : ''; ?>>
                 <?php echo $link['title'] ?>
                 </a>
             </p>

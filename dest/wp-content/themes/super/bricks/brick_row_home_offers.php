@@ -22,7 +22,7 @@
     <?php endif; ?>
     <?php if ($link_offers = get_sub_field('link_offers')): ?>
         <p>
-            <a class="home-offers-link" href="<?php echo $link_offers['url']; ?>" title="<?php echo htmlspecialchars(strip_tags($link_offers['title']), ENT_QUOTES); ?>" target="<?php echo $link_offers['target']; ?>" <?php echo $link_offers['target'] === '_blank' ? 'rel="noopener noreferrer"' : ''; ?>>
+            <a class="a-btn a-btn-light home-offers-link" href="<?php echo $link_offers['url']; ?>" title="<?php echo htmlspecialchars(strip_tags($link_offers['title']), ENT_QUOTES); ?>" target="<?php echo $link_offers['target']; ?>" <?php echo $link_offers['target'] === '_blank' ? 'rel="noopener noreferrer"' : ''; ?>>
             <?php echo $link_offers['title'] ?>
             </a>
         </p>
@@ -54,7 +54,7 @@
         <?php endif; ?>
         <?php if ($link_professions = get_sub_field('link_professions')): ?>
             <p>
-                <a class="home-professions-link" href="<?php echo $link_professions['url']; ?>" title="<?php echo htmlspecialchars(strip_tags($link_professions['title']), ENT_QUOTES); ?>" target="<?php echo $link_professions['target']; ?>" <?php echo $link_professions['target'] === '_blank' ? 'rel="noopener noreferrer"' : ''; ?>>
+                <a class="a-btn a-btn-light home-professions-link" href="<?php echo $link_professions['url']; ?>" title="<?php echo htmlspecialchars(strip_tags($link_professions['title']), ENT_QUOTES); ?>" target="<?php echo $link_professions['target']; ?>" <?php echo $link_professions['target'] === '_blank' ? 'rel="noopener noreferrer"' : ''; ?>>
                 <?php echo $link_professions['title'] ?>
                 </a>
             </p>

@@ -16,7 +16,7 @@
                         }
                         ?>
                     </figure>
-                    <p><?php echo $link['title'] ?></p>
+                    <p class="a-btn"><?php echo $link['title'] ?></p>
                 </a>
             <?php endif; ?>
         </li>

@@ -1,6 +1,9 @@
 /* Buttons */
 
-.link, .link-doc, .link-prev, .link-next{
+.link,
+.link-doc,
+.link-prev,
+.link-next {
     display: inline-block;
     padding: 0 0 0 60px;
     border: 0;
@@ -10,81 +13,92 @@
     letter-spacing: 0.22em;
     text-transform: uppercase;
     text-decoration: underline;
-    color: $grey;
-    &:hover, &:focus{
-        color: $text;
+    color: $text;
+    &:hover,
+    &:focus {
+        color: $grey;
     }
-    &:active{
+    &:active {
         color: $grey;
     }
 }
 
-.link, .link-doc, .btn, .btn-invert{
-    &:before, &:after{
-        content: '';
+.link,
+.link-doc,
+.btn,
+.btn-invert {
+    &:before,
+    &:after {
+        content: "";
         position: absolute;
         top: 0;
         bottom: 0;
         margin: auto;
         transform: $transition;
     }
-    &:before{
+    &:before {
         left: 0;
     }
-    &:after{
+    &:after {
         right: 0;
     }
 }
 
-.link, .btn, .btn-invert{
-    &:before, &:after{
+.link,
+.btn,
+.btn-invert {
+    &:before,
+    &:after {
         width: 25px;
         height: 1px;
         background: $secondary;
         transition: $transition;
         transform-origin: 0 0;
     }
-    &:after{
+    &:after {
         background: $primary;
         transform: scaleX(0);
     }
-    &:hover, &:focus{
-        &:before{
+    &:hover,
+    &:focus {
+        &:before {
             background: $primary;
             transform: scaleX(1);
         }
     }
-    &:active{
-        &:before{
+    &:active {
+        &:before {
             opacity: 0;
         }
-        &:after{
+        &:after {
             transform: scaleX(1);
         }
     }
 }
 
-.link{
+.link {
     padding-right: 60px;
 }
 
-.link-doc{
-    &:before{
+.link-doc {
+    &:before {
         width: 23px;
         height: 25px;
         top: 3px;
         background: url(../layoutImg/doc.svg) no-repeat;
         transition: $transition;
     }
-    &:hover, &:focus{
-        &:before{
+    &:hover,
+    &:focus {
+        &:before {
             transform: translate3d(15px, 0, 0);
         }
     }
 }
 
-.link-next, .link-prev{
-    > .icon{
+.link-next,
+.link-prev {
+    > .icon {
         position: absolute;
         top: 0;
         left: 0;
@@ -95,41 +109,46 @@
         transition: $transition;
     }
 }
-.link-prev{
+.link-prev {
     padding-right: 10px;
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
         transform: translate3d(-10px, 0, 0);
-        > .icon{
+        > .icon {
             transform: translate3d(5px, 0, 0);
         }
     }
-    &:active{
-        > .icon{
+    &:active {
+        > .icon {
             transform: translate3d(-5px, 0, 0);
         }
     }
 }
-.link-next{
+.link-next {
     padding: 0 60px 0 10px;
     text-align: right;
-    > .icon{
+    > .icon {
         left: auto;
         right: 0;
     }
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
         transform: translate3d(10px, 0, 0);
-        > .icon{
+        > .icon {
             transform: translate3d(-5px, 0, 0);
         }
     }
-    &:active{
-        > .icon{
+    &:active {
+        > .icon {
             transform: translate3d(5px, 0, 0);
         }
     }
 }
 
-.btn, .btn-invert, .btn-invert-block, .eolia_input--button{
+.btn,
+.btn-invert,
+.btn-invert-block,
+.eolia_input--button {
     display: inline-block;
     border: 1px solid transparent;
     position: relative;
@@ -139,105 +158,125 @@
     text-transform: uppercase;
     text-align: center;
 }
-.btn, .btn-invert{
+.btn,
+.btn-invert {
     padding: 20px 60px;
-    &:before{
+    &:before {
         left: 10px;
         transform: scaleX(0);
     }
-    &:after{
+    &:after {
         right: 10px;
     }
 }
 
-.btn, .eolia_input--button{
+.btn,
+.eolia_input--button {
     background: $grey;
     color: $white;
-    &:before, &:after{
+    &:before,
+    &:after {
         background: $secondary !important;
     }
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
         color: $white;
-        background: #667B8E;
+        background: #667b8e;
     }
-    &:active{
+    &:active {
         background: $grey;
         transition: none;
     }
 }
 
-.btn-invert, .btn-invert-block{
+.btn-invert,
+.btn-invert-block {
     border-color: $grey;
     background: $white;
     color: $grey;
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
         color: $text;
         border-color: $text;
     }
-    &:active{
+    &:active {
         border-color: $grey;
         color: $grey;
     }
 }
 
-.btn-invert-block{
+.btn-invert-block {
     display: block;
     width: 100%;
     max-width: 300px;
     padding: 20px;
 }
 
-.eolia_input--button{
+.eolia_input--button {
     width: auto;
     padding: 20px 60px;
     border-radius: 0;
 }
 
-
-.btn-close{
+.btn-close {
     width: 24px;
     height: 25px;
     border: 0;
     position: relative;
     text-indent: -99em;
     overflow: hidden;
-    &:before, &:after{
-        content: '';
+    &:before,
+    &:after {
+        content: "";
         width: 30px;
         height: 2px;
         position: absolute;
         top: 0;
         background: $text;
     }
-    &:before{
+    &:before {
         left: 0;
         transform-origin: 0 0;
         transform: rotate(45deg) translate3d(3px, 0, 0);
     }
-    &:after{
+    &:after {
         right: 0;
         transform-origin: 100% 0;
         transform: rotate(-45deg) translate3d(-3px, 0, 0);
     }
-    &:hover, &:focus{
+    &:hover,
+    &:focus {
         transform: rotate(90deg);
     }
-    &:active{
+    &:active {
         color: $grey;
     }
 }
 
+.a-btn {
+    border-bottom: 1px solid currentColor;
+    font-family: $montserratBold;
+    font-size: 1.1rem;
+    letter-spacing: 0.22rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: $text;
+    &.a-btn-light {
+        color: $white;
+    }
+}
 
-@media (max-width: $phone){
-    .link-prev, .link-next{
+@media (max-width: $phone) {
+    .link-prev,
+    .link-next {
         font-size: 0.85rem;
     }
 
-    .link-prev{
+    .link-prev {
         padding-left: 40px;
     }
 
-    .link-next{
+    .link-next {
         padding-right: 40px;
     }
 }

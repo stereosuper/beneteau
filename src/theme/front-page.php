@@ -54,7 +54,7 @@
 							<div>
 								<h2  class='title'><?php echo $title; ?></h2>
 								<p class='txt'><?php echo $excerpt; ?></p>
-								<?php if (!empty($link)) : ?><div class='button'><a href='<?php echo $link; ?>' class='btn-invert'><?php echo $link_label; ?></a></div><?php endif; ?>
+								<?php if (!empty($link)) : ?><div class='button'><a href='<?php echo $link; ?>' class='a-btn a-btn-light'><?php echo $link_label; ?></a></div><?php endif; ?>
 							</div>
 						</div>
 					</div>
