@@ -367,6 +367,7 @@
     padding: 0;
     margin: 0 0 $line-height * 2;
     font-family: $playfairBold;
+    font-size: 2.8rem;
     text-transform: none;
     line-height: 1;
     &::after {
@@ -841,6 +842,15 @@
             padding-bottom: $line-height * 9;
         }
     }
+    .home-news {
+        margin-bottom: $line-height * 9;
+        > header {
+            margin-top: $line-height * 3;
+        }
+    }
+    .home-news-title {
+        font-size: 3.4rem;
+    }
     .home-news-list {
         justify-content: space-between;
         width: 100%;
@@ -849,10 +859,14 @@
     .home-news-item {
         width: 33.33%;
     }
+    .home-group-title {
+        font-size: 4.8rem;
+    }
     .home-group-content {
         padding: $line-height * 3;
     }
     .home-group-numbers {
+        padding-bottom: $line-height * 2;
         > ul {
             width: 100%;
             max-width: none;
@@ -862,9 +876,25 @@
     }
     .home-group-number {
         max-width: 240px;
+        .number {
+            font-size: 6rem;
+        }
     }
     .home-group-background {
         width: 100vw;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -12%;
+            width: 1138px;
+            height: 557px;
+            background-image: url("../layoutImg/map.png");
+            background-size: 100% auto;
+            transform: translateX(-50%);
+            opacity: 0.6;
+            z-index: 0;
+        }
     }
     .home-offers {
         padding-top: $line-height * 4;
@@ -888,6 +918,7 @@
         margin: 0;
         font-family: $robotoLight;
         font-size: 3.8rem;
+        text-align: left;
         > span {
             font-size: 8.9rem;
         }
