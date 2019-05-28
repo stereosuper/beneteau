@@ -47,7 +47,7 @@ $btn = get_sub_field('btn');
 
         $news_query = new WP_Query($query_args);
         if ($news_query->have_posts()) : ?>
-        <ul>
+        <ul class="home-news-list">
             <?php while ($news_query->have_posts()) :
                 $news_query->the_post();
                 $img_uri = false;
