@@ -1,8 +1,8 @@
 <?php 
 $image = get_sub_field('image');
 ?>
-<div class="home-group container">
-    <div class="home-group-content" style="background-image: url('<?php echo $image['url'] ?>')">
+<div class="home-group">
+    <div class="home-group-content container">
         <?php if ($title = get_sub_field('title')): ?>
             <h2 class="home-group-title"><?php echo $title ?></h2>
         <?php endif; ?>
@@ -16,9 +16,10 @@ $image = get_sub_field('image');
                 </a>
             </p>
         <?php endif; ?>
+        <div class="home-group-content-background" style="background-image: url('<?php echo $image['url'] ?>')"></div>
     </div>
     <?php if(have_rows('numbers')):?>
-    <div class="home-group-numbers">
+    <div class="home-group-numbers container">
         <ul>
             <?php while ( have_rows('numbers') ) : the_row(); ?>
             <li class="home-group-number">
@@ -36,4 +37,5 @@ $image = get_sub_field('image');
         <div class="home-group-numbers-background" style="background-image: url('<?php echo $image['url'] ?>')"></div>
     </div>
     <?php endif; ?>
+    <div class="home-group-background" style="background-image: url('<?php echo $image['url'] ?>')"></div>
 </div>
