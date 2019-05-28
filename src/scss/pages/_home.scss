@@ -451,12 +451,16 @@
 }
 
 .home-offers {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding-top: $line-height * 2;
     padding-bottom: $line-height * 2;
     background: linear-gradient(267.18deg, $blue 0%, #2e5c84 100%);
+    .last-part-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 320px;
+        margin: 0 auto;
+    }
 }
 
 .home-offers-image {
@@ -488,7 +492,8 @@
 }
 
 .home-offers-description {
-    margin: 0;
+    max-width: #{$phone};
+    margin: 0 auto;
     font-size: 1.6rem;
     text-align: center;
 }
@@ -664,6 +669,9 @@
         font-size: 1.6rem;
         text-transform: none;
     }
+    .home-group-description {
+        max-width: #{$phone};
+    }
     .home-group-numbers {
         > ul {
             max-width: #{240px * 2 + $gutter};
@@ -671,7 +679,52 @@
         }
     }
     .home-group-number {
-        margin: 0 $gutter/2 $gutter 0;
+        margin: 0 $gutter $gutter 0;
+    }
+}
+
+@media (min-width: $tablet) {
+    .home-professions {
+        display: flex;
+        padding: 0;
+        position: relative;
+    }
+    .home-professions-video,
+    .home-professions-content {
+        width: 50%;
+    }
+    .home-professions-video {
+        &::before {
+            padding-bottom: 100%;
+        }
+    }
+    .home-professions-content {
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0 7.5%;
+        > p {
+            margin: 0;
+        }
+        .home-professions-description {
+            margin-bottom: $line-height;
+        }
+    }
+    .home-professions-title,
+    .home-professions-description {
+        text-align: left;
+    }
+    .home-professions-title {
+        margin: 0 0 $line-height;
+    }
+    .home-professions-description {
+        max-width: 380px;
+    }
+    .home-video-alt {
+        padding: 2px 10px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: $text;
     }
 }
 
@@ -746,6 +799,14 @@
             justify-content: space-between;
         }
     }
+    .home-professions-video {
+        &::before {
+            padding-bottom: 65%;
+        }
+    }
+    .home-professions-content {
+        padding: 0 12.5%;
+    }
 }
 
 @media (min-width: $desktop) {
@@ -770,6 +831,35 @@
     }
     .home-group-background {
         width: 100vw;
+    }
+    .home-offers {
+        padding-top: $line-height * 4;
+        padding-bottom: $line-height * 4;
+        > .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    .home-offers-image {
+        max-width: 330px;
+    }
+    .home-offers-description {
+        max-width: 240px;
+        text-align: left;
+    }
+    .home-offers-title {
+        max-width: 320px;
+        margin: 0;
+        font-family: $robotoLight;
+        font-size: 3.8rem;
+        > span {
+            font-size: 8.9rem;
+        }
+    }
+    .last-part-wrapper {
+        margin: 0;
     }
 }
 
