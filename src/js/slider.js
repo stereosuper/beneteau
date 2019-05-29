@@ -38,6 +38,16 @@ module.exports = function homeSlider(slider, windowWidth) {
         playing: true,
     };
 
+    const visibilityHidden = array => {
+        array.each((index, el) => {
+            if (!$(el).hasClass('on')) {
+                TweenLite.set(el, {
+                    visibility: 'hidden',
+                });
+            }
+        });
+    };
+
     function slide(index, button) {
         done = false;
 
@@ -85,20 +95,42 @@ module.exports = function homeSlider(slider, windowWidth) {
             activeSlideTxt.find('.button'),
             0.5,
             { opacity: 1, x: 0 },
-            { opacity: 0, x: '50px', delay: 0.2, overwrite: true }
+            {
+                opacity: 0,
+                x: '50px',
+                delay: 0.2,
+                overwrite: true,
+                onComplete: () => {
+                    const slideText = slider.find('.js-slide-txt');
+                    visibilityHidden(slideText);
+                },
+            }
         );
 
         TweenLite.fromTo(
             activeSlideImg,
             0.7,
             { opacity: 1 },
-            { opacity: 0, delay: 0.5, overwrite: true }
+            {
+                opacity: 0,
+                delay: 0.5,
+                overwrite: true,
+                onComplete: () => {
+                    const slideImages = slider.find('.js-slide-img');
+                    visibilityHidden(slideImages);
+                },
+            }
         );
 
         activeSlideImg.removeClass('on');
         activeSlideTxt.removeClass('on');
 
         newActiveSlideImg.addClass('on');
+
+        TweenLite.set([newActiveSlideImg, newActiveSlideTxt], {
+            visibility: 'visible',
+        });
+
         TweenLite.fromTo(
             newActiveSlideImg,
             0.7,
@@ -158,7 +190,7 @@ module.exports = function homeSlider(slider, windowWidth) {
 
         if (!checkIfInView.check(slider)) return;
 
-        TweenLite.delayedCall(2, slide);
+        TweenLite.delayedCall(8, slide);
     }
 
     function handleAction(btn) {
