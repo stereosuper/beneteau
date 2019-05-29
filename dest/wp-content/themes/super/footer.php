@@ -8,7 +8,10 @@
 				<div class='cookies' id='cookies'>
 					<div class='container'>
 						<?php the_field('cookie', 'options'); ?>
-						<button type='button' id='btnCookies'>Close</button>
+						<button type='button' id='btnCookies'>
+							<span class='visually-hidden'>Close</span>
+							<svg class='icon icon-cross'><use xlink:href='#icon-cross'></use></svg>
+						</button>
 					</div>
 				</div>
 			<?php } ?>
@@ -41,6 +44,12 @@
 				<clipPath id='clipImg' clipPathUnits='objectBoundingBox'>
 					<path d='M0.1744899,0.1969967C0.0224832,0.2373544,0.0005927,0.2689686,0,0.4032062L0.00419,1 c0.0111598-0.0764089,0.0497083-0.1031455,0.1698911-0.1350859L1,0.6678032V0L0.1744899,0.1969967z'/>
 				</clipPath>
+
+				<symbol id='icon-cross' viewBox='0 0 39 32'>
+					<title>Close</title>
+					<path d='M37.525 0l1.125 0.943-36.911 30.917-1.125-0.943z'></path>
+					<path d='M38.651 30.917l-1.125 0.943-36.909-30.917 1.125-0.943z'></path>
+				</symbol>
 
 				<symbol id='icon-email' viewBox='0 0 43 32'>
 					<title>Contact</title>

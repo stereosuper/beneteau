@@ -22,21 +22,31 @@ $darkGrey: #2d3a45;
 $transition: 0.2s ease-in-out;
 
 // Fonts
-$montserrat: "Montserrat", sans-serif;
-$montserratLight: "Montserrat Light", sans-serif;
-$montserratLightIt: "Montserrat Light Italic", sans-serif;
-$montserratBold: "Montserrat Bold", sans-serif;
-$montserratSemiBold: "Montserrat SemiBold", sans-serif;
+$montserrat: "Montserrat",
+sans-serif;
+$montserratLight: "Montserrat Light",
+sans-serif;
+$montserratLightIt: "Montserrat Light Italic",
+sans-serif;
+$montserratBold: "Montserrat Bold",
+sans-serif;
+$montserratSemiBold: "Montserrat SemiBold",
+sans-serif;
 
-$roboto: "RobotoCondensed", sans-serif;
-$robotoBold: "RobotoCondensed Bold", sans-serif;
-$robotoLight: "RobotoCondensed Light", sans-serif;
+$roboto: "RobotoCondensed",
+sans-serif;
+$robotoBold: "RobotoCondensed Bold",
+sans-serif;
+$robotoLight: "RobotoCondensed Light",
+sans-serif;
 
-$playfairBold: "PlayfairDisplay Bold", sans-serif;
+$playfairBold: "PlayfairDisplay Bold",
+sans-serif;
 
 // Mediaqueries
 $retina: "only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)";
 
+$desktopLarge: "1400px";
 $desktop: "1100px";
 $desktopSmall: "960px";
 $tablet: "780px";
