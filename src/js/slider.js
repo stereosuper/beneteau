@@ -10,7 +10,7 @@ const throttle = require('./throttle.js');
 
 const checkIfInView = require('./checkIfInView.js');
 
-module.exports = function(slider, windowWidth) {
+module.exports = function homeSlider(slider, windowWidth) {
     if (!slider.length) return;
 
     const slidesImg = slider.find('.js-slide-img');
@@ -18,17 +18,25 @@ module.exports = function(slider, windowWidth) {
 
     if (slidesImg.length < 2) return;
 
-    let activeSlideImg = slider.find('.js-slide-img.first-on'),
-        newActiveSlideImg;
-    let activeSlideTxt = slider.find('.js-slide-txt.first-on'),
-        newActiveSlideTxt;
+    let activeSlideImg = slider.find('.js-slide-img.first-on');
+    let newActiveSlideImg;
+    let activeSlideTxt = slider.find('.js-slide-txt.first-on');
+    let newActiveSlideTxt;
 
     const sliderNav = slider.find('.js-slider-nav');
+    const buttonControl = slider.find('.js-slider-control');
 
     let done = true;
 
-    let hammertime = new Hammer(slider.get(0)),
-        swipeBtn;
+    const hammertime = new Hammer(slider.get(0));
+    let swipeBtn;
+
+    const state = {
+        focus: false,
+        mouseover: false,
+        playback: true,
+        playing: true,
+    };
 
     function slide(index, button) {
         done = false;
@@ -135,10 +143,12 @@ module.exports = function(slider, windowWidth) {
 
         button
             .addClass('on')
+            .attr('aria-current', 'true')
             .parent()
             .siblings()
             .find('button')
-            .removeClass('on');
+            .removeClass('on')
+            .attr('aria-current', 'false');
 
         setSliderTimeout();
     }
@@ -148,7 +158,7 @@ module.exports = function(slider, windowWidth) {
 
         if (!checkIfInView.check(slider)) return;
 
-        TweenLite.delayedCall(8, slide);
+        TweenLite.delayedCall(2, slide);
     }
 
     function handleAction(btn) {
@@ -183,7 +193,57 @@ module.exports = function(slider, windowWidth) {
     checkIfInView.init(slider);
     setSliderTimeout();
 
-    slider.on('click', 'button', function(e) {
+    const playbackHandler = () => {
+        if (state.playback && !state.focus && !state.mouseover) {
+            if (!state.playing) {
+                state.playing = true;
+
+                buttonControl.text(buttonControl.data('pause'));
+                setSliderTimeout();
+            }
+        } else {
+            state.playing = false;
+            buttonControl.text(buttonControl.data('play'));
+            TweenLite.killDelayedCallsTo(slide);
+        }
+    };
+
+    slider.on('focusin', () => {
+        state.focus = true;
+        playbackHandler();
+    });
+
+    slider.on('onblur', () => {
+        state.focus = false;
+        playbackHandler();
+    });
+
+    slider.on('mouseover', () => {
+        state.mouseover = true;
+        playbackHandler();
+    });
+
+    slider.on('mouseleave', () => {
+        state.mouseover = false;
+        playbackHandler();
+    });
+
+    buttonControl.on('click', function autoPlayHandler(e) {
+        e.preventDefault();
+        const btn = $(this);
+
+        btn.toggleClass('pause');
+
+        if (btn.hasClass('pause')) {
+            state.playback = false;
+            playbackHandler();
+        } else {
+            state.playback = true;
+            playbackHandler();
+        }
+    });
+
+    sliderNav.on('click', 'button', function navButtonClickHandler(e) {
         e.preventDefault();
         if (!$(this).hasClass('on')) {
             handleAction($(this));
