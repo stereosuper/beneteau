@@ -139,7 +139,8 @@
         text-transform: uppercase;
         text-align: right;
         color: $white;
-        &:hover, &:focus{
+        &:hover,
+        &:focus {
             opacity: 0.7;
         }
     }
@@ -253,7 +254,8 @@
         &:last-child {
             margin-right: 0;
         }
-        &:hover, &:focus{
+        &:hover,
+        &:focus {
             opacity: 0.7;
         }
     }
@@ -286,17 +288,25 @@
     }
     .content-wrapper {
         display: flex;
-        flex-direction: column;
         width: 100%;
         min-height: 180px;
         padding: 20px $gutter 20px 50px;
         border-bottom: 0;
-        &:hover, &:focus{
-            + .img-wrapper{
-                &:after{
+        margin: 0;
+        &:hover,
+        &:focus {
+            + .img-wrapper {
+                &:after {
                     opacity: 0;
                 }
             }
+        }
+        > a {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px $gutter 20px 50px;
+            border-bottom: 0;
         }
     }
     .time,
@@ -309,6 +319,11 @@
     }
     .title {
         margin: $line-height 0 $line-height / 2;
+        font-family: $roboto;
+        text-transform: uppercase;
+    }
+    .read {
+        display: none;
     }
     .img-wrapper {
         position: absolute;
@@ -533,8 +548,9 @@
         display: block;
         padding-bottom: 100% / 16 * 9;
     }
-    &:hover, &:focus{
-        .play-button{
+    &:hover,
+    &:focus {
+        .play-button {
             background: $blue;
         }
     }
@@ -925,6 +941,23 @@
         }
         .content-wrapper {
             justify-content: space-between;
+            > a {
+                align-items: flex-start;
+            }
+        }
+        .title {
+            margin-top: auto;
+            font-size: 2.4rem;
+            line-height: 1;
+        }
+        .read {
+            display: inline;
+            border-bottom: 1px solid $white;
+            color: $white;
+            font-family: $montserratBold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.22rem;
         }
     }
     .home-professions-video {

@@ -58,10 +58,13 @@ $btn = get_sub_field('btn');
                 }
         ?>
             <li class="home-news-item">
-                <a class="content-wrapper" href='<?php echo ($wztp_uri)?$wztp_uri:'#';  ?>'>
-                    <span class="time"><?php the_time(__('d/m/Y', 'beneteau')); ?></span>
-                    <span class="title"><?php the_title(); ?></span>
-                </a>
+                <p class="content-wrapper">
+                    <a href='<?php echo ($wztp_uri)?$wztp_uri:'#';  ?>'>
+                        <span class="time"><?php the_time(__('d/m/Y', 'beneteau')); ?></span>
+                        <span class="title"><?php the_title(); ?></span>
+                        <span class="read"><?php echo _e('Lire', 'beneteau') ?></span>
+                    </a>
+                </p>
                 <figure class='img-wrapper'>
                     <img src="<?php echo $img_uri; ?>" alt="<?php echo htmlspecialchars(esc_attr(get_the_title()), ENT_QUOTES); ?>" />
                 </figure>
