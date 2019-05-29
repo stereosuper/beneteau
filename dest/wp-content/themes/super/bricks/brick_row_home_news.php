@@ -63,7 +63,7 @@ $btn = get_sub_field('btn');
                     <span class="title"><?php the_title(); ?></span>
                 </a>
                 <figure class='img-wrapper'>
-                    <img src="<?php echo $img_uri; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" />
+                    <img src="<?php echo $img_uri; ?>" alt="<?php echo htmlspecialchars(esc_attr(get_the_title()), ENT_QUOTES); ?>" />
                 </figure>
             </li>
         <?php
