@@ -15,7 +15,7 @@
 <?php if ( have_posts() ) : the_post(); ?>
 	<?php if (super_have_rows('slider')) : ?>
 		<div class='slider-home' id='sliderHome'>
-			<button class="slider-control" type="button">Pause</button>
+			<button class="slider-control js-slider-control" type="button" data-play="lecture" data-pause="pause">Pause</button>
 			<ul class='slider-img'>
 				<?php
 					$first_class = 'first-on';
@@ -56,7 +56,7 @@
 					<p class='txt'><?php echo $excerpt; ?></p>
 					<?php if (!empty($link)) : ?>
 					<p class='button'>
-						<a href='<?php echo $link; ?>' class='a-btn a-btn-light'>
+						<a href='<?php echo $link; ?>' class='a-btn a-btn-light' title="<?php echo __('En savoir plus sur ', 'beneteau') . $title ?>">
 							<?php echo $link_label; ?>
 						</a>
 					</p>
@@ -73,7 +73,7 @@
 					<?php while( $navCount < $count ) : ?>
 						<li>
 
-							<button class="slider-nav-button <?php echo $navCount === 0 ? 'on': '' ?>" type='button'>
+							<button class="slider-nav-button <?php echo $navCount === 0 ? 'on': '' ?>" aria-current="<?php echo $navCount === 0 ? 'true': 'false' ?>" type='button'>
 								<span class="slider-nav-title"><?php echo $titles_list[$navCount] ?></span>
 								<span class="slider-nav-line"></span>
 							</button>
