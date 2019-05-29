@@ -71,6 +71,7 @@ h1 {
         // NOTE: default page template titles font changes
         font-family: $playfairBold;
         font-weight: 500;
+        text-transform: none;
 
         &::after {
             content: none;
