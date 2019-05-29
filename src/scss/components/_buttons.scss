@@ -85,7 +85,7 @@
         width: 23px;
         height: 25px;
         top: 3px;
-        background: url(../layoutImg/doc.svg) no-repeat;
+        background: url(../layoutImg/doc.svg) no-repeat !important;
         transition: $transition;
     }
     &:hover,
@@ -196,8 +196,8 @@
     color: $grey;
     &:hover,
     &:focus {
-        color: $text;
-        border-color: $text;
+        color: $orange;
+        border-color: $orange;
     }
     &:active {
         border-color: $grey;

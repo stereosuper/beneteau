@@ -31,7 +31,7 @@ $title_align = get_sub_field('title_align');
             ?>
 
                 <div class='col-3 isAnimated'>
-                    <div class='img'><?php if (!empty($image_url)) : ?><img src='<?php echo $image_url; ?>' alt='<?php echo $title; ?>'><?php endif; ?></div>
+                    <div class='img'><?php if (!empty($image_url)) : ?><img src='<?php echo $image_url; ?>' alt=''><?php endif; ?></div>
                     <h2><?php echo $title; ?></h2>
                     <?php if (!empty($content)) : ?><?php echo $content; ?><?php endif; ?>
                     <?php if( !empty($link) && !empty($link_label) ){ ?>

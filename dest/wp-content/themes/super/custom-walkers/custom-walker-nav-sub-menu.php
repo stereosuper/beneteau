@@ -29,7 +29,7 @@ class CustomWalkerNavSubMenu extends Walker_Nav_Menu
     // Don't start the top level
     function start_lvl(&$output, $depth=0, $args=array())
     {
-        if( 0 == $depth )
+        if( 0 == $depth || !$this->is_in_current_path )
             return;
 
         parent::start_lvl($output, $depth, $args);
@@ -38,7 +38,7 @@ class CustomWalkerNavSubMenu extends Walker_Nav_Menu
     // Don't end the top level
     function end_lvl(&$output, $depth=0, $args=array())
     {
-        if( 0 == $depth )
+        if( 0 == $depth|| !$this->is_in_current_path )
             return;
 
         parent::end_lvl($output, $depth, $args);
