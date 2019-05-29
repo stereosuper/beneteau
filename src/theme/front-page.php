@@ -29,7 +29,7 @@
 						}
 						$count ++;
 				?>
-				<li class='slide slide-img <?php echo $first_class; ?>'>
+				<li class='slide slide-img js-slide-img <?php echo $first_class; ?>'>
 					<div class='img' style='background-image:url(<?php echo $image_url; ?>)'></div>
 				</li>
 				<?php
@@ -41,23 +41,26 @@
 				<?php
 					$first_class = 'first-on';
 					$title_level = 'h1';
+					$titles_list = [];
 					while (super_have_rows('slider')) :
 						the_row();
 						$title = get_sub_field('homeslider_title');
 						$excerpt = get_sub_field('homeslider_excerpt');
 						$link = get_sub_field('homeslider_link');
 						$link_label = get_sub_field('homeslider_link_label');
+
+						$titles_list[] = $title;
 				?>
-				<li class='slide slide-txt <?php echo $first_class; ?>'>
-					<div class='container clearfix'>
-						<div class='wrapper-txt'>
-							<div>
-								<h2  class='title'><?php echo $title; ?></h2>
-								<p class='txt'><?php echo $excerpt; ?></p>
-								<?php if (!empty($link)) : ?><div class='button'><a href='<?php echo $link; ?>' class='a-btn a-btn-light'><?php echo $link_label; ?></a></div><?php endif; ?>
-							</div>
-						</div>
-					</div>
+				<li class='slide slide-txt js-slide-txt <?php echo $first_class; ?>'>
+					<h2  class='title'><?php echo $title; ?></h2>
+					<p class='txt'><?php echo $excerpt; ?></p>
+					<?php if (!empty($link)) : ?>
+					<p class='button'>
+						<a href='<?php echo $link; ?>' class='a-btn a-btn-light'>
+							<?php echo $link_label; ?>
+						</a>
+					</p>
+					<?php endif; ?>
 				</li>
 				<?php
 						$title_level = 'h2';
@@ -66,9 +69,15 @@
 				?>
 			</ul>
 			<?php if( $count > 1 ) : $navCount = 0; ?>
-				<ul class='slider-nav'>
+				<ul class='slider-nav js-slider-nav'>
 					<?php while( $navCount < $count ) : ?>
-						<li><button type='button' <?php if( $navCount === 0 ) echo "class='on'"; ?>><?php echo $navCount+1; ?></button></li>
+						<li>
+
+							<button class="slider-nav-button <?php echo $navCount === 0 ? 'on': '' ?>" type='button'>
+								<span class="slider-nav-title"><?php echo $titles_list[$navCount] ?></span>
+								<span class="slider-nav-line"></span>
+							</button>
+						</li>
 					<?php $navCount ++; endwhile; ?>
 				</ul>
 			<?php endif; ?>
