@@ -37,7 +37,7 @@ $title_align = get_sub_field('title_align');
                                 <?php if (empty($image_url)) { ?>
                                     <div class='bg'></div>
                                 <?php }else{ ?>
-                                    <img src='<?php echo $image_url; ?>' alt='<?php echo $title; ?>'
+                                    <img src='<?php echo $image_url; ?>' alt=''
                                 ><?php } ?>
                             </div>
                         </div>
