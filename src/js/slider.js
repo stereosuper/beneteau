@@ -124,8 +124,10 @@ module.exports = function homeSlider(slider, windowWidth) {
 
         activeSlideImg.removeClass('on');
         activeSlideTxt.removeClass('on');
+        activeSlideTxt.find('.title').attr('tabindex', '-1');
 
         newActiveSlideImg.addClass('on');
+        newActiveSlideTxt.find('.title').attr('tabindex', '0');
 
         TweenLite.set([newActiveSlideImg, newActiveSlideTxt], {
             visibility: 'visible',
@@ -279,6 +281,7 @@ module.exports = function homeSlider(slider, windowWidth) {
         e.preventDefault();
         if (!$(this).hasClass('on')) {
             handleAction($(this));
+            newActiveSlideTxt.find('.title').focus();
         }
     });
 
