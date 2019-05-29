@@ -106,7 +106,7 @@ get_header(); ?>
                                 $logo = super_get_field('logo');
                         ?><li>
                                 <a href="<?php the_permalink(); ?>">
-                                    <?php if (!empty($logo)) : ?><div class='img'><img src="<?php echo $logo; ?>" alt="" /></div><?php endif; ?>
+                                    <?php if (!empty($logo)) : ?><div class='img'><img src="<?php echo $logo; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" /></div><?php endif; ?>
                                     <h3><?php the_title(); ?></h3>
                                 </a>
                         </li><?php

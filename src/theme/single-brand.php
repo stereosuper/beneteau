@@ -30,7 +30,7 @@
                         <?php
                             $logo = super_get_field('logo');
                             if (!empty($logo)) :
-                        ?><img src="<?php echo $logo; ?>" alt=""><?php endif; ?>
+                        ?><img src="<?php echo $logo; ?>" alt="<?php echo esc_attr(get_the_title()); ?>" /><?php endif; ?>
                         <span class="visually-hidden"><?php the_title(); ?></span>
                         <?php
                             if (empty($logo)) :
@@ -64,7 +64,7 @@
                         $back_url = goliath_get_page_url_by_template('tpl-brands.php');
                         if (!empty($back_url)) :
                     ?>
-                        <a href="<?php echo $back_url; ?>" class="btn-close"><?php _e('Back to brands and Beneteau services', 'beneteau'); ?></a>
+                        <a href="<?php echo $back_url; ?>" class="btn-close"><?php _e('Close', 'beneteau'); ?></a>
                     <?php endif; ?>
 
                     <div class='clearfix isAnimated nav-next-prev'>
