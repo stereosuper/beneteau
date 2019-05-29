@@ -1,14 +1,16 @@
-.sidebar{
+.sidebar {
     width: calc(25% - 15px);
     max-width: 180px;
     margin: 8em 0 0;
     z-index: 2;
-    &.js-show-logo{
-        .logo-reduced{
+
+    &.js-show-logo {
+        .logo-reduced {
             opacity: 1;
         }
     }
-    .logo-reduced{
+
+    .logo-reduced {
         display: block;
         width: 24px;
         height: 34px;
@@ -21,13 +23,16 @@
         opacity: 0;
     }
 }
-.content-sidebar{
+
+.content-sidebar {
     display: inline-block;
     max-width: 180px;
     position: relative;
     min-height: 82px;
     z-index: 1;
-    &:before, &:after{
+
+    &:before,
+    &:after {
         content: '';
         display: block;
         width: 226px;
@@ -37,18 +42,21 @@
         background-position: 50% 50%;
         z-index: -1;
     }
-    &:before{
+
+    &:before {
         height: 147px;
         top: -90px;
         background-image: url(../layoutImg/top-bg-sidebar.svg);
     }
-    &:after{
+
+    &:after {
         height: 115px;
         bottom: -89px;
         margin: 0 0 0 -1px;
         background-image: url(../layoutImg/bottom-bg-sidebar.svg);
     }
-    .bg-sidebar{
+
+    .bg-sidebar {
         display: block;
         width: 226px;
         position: absolute;
@@ -60,56 +68,68 @@
     }
 }
 
-.sidebar-menu{
+.sidebar-menu {
     padding: 0 $gutter*2 0 0;
     margin: 0;
     font-family: $roboto;
     font-size: 1.4rem;
-    > li{
-        &.active{
-            > a{
+
+    >li {
+        &.active {
+            >a {
                 color: $text;
             }
         }
-        &:before{
+
+        &:before {
             content: none;
         }
-        > a{
+
+        >a {
             text-transform: uppercase;
         }
-        li{
+
+        li {
             font-family: $montserrat;
             font-size: 1.2rem;
-            &:before{
+
+            &:before {
                 top: 8px;
             }
-            &.active{
-                > a{
+
+            &.active {
+                >a {
                     color: $text;
                 }
-                &:before{
+
+                &:before {
                     background: $secondary;
                 }
             }
         }
-        ul{
+
+        ul {
             padding: 0 0 0 5px;
             margin: 5px 0;
         }
     }
-    li{
+
+    li {
         margin: 0 0 5px;
-        &:before{
+
+        &:before {
             background: $greyText;
             opacity: 0.5;
         }
     }
-    a{
+
+    a {
         border: 0;
         font-family: inherit;
         position: relative;
         color: $greyText;
-        &:after{
+
+        &:after {
             width: 20px;
             height: 1px;
             position: absolute;
@@ -117,27 +137,33 @@
             left: -10px;
             background: $secondary;
         }
-        &:hover, &:focus{
+
+        &:hover,
+        &:focus {
             color: $text;
         }
     }
-    .current-menu-item{
-        > a{
+
+    .current-menu-item {
+        >a {
             color: $text;
-            &:after{
+
+            &:after {
                 content: '';
             }
         }
-        .sub-menu{
+
+        .sub-menu {
             display: block;
         }
     }
-    .sub-menu{
+
+    .sub-menu {
         display: none;
     }
 }
 
-.sidebar-brands{
+.sidebar-brands {
     width: calc(50% - #{$gutter/2});
     padding: 67px 0 0;
     position: fixed;
@@ -145,97 +171,104 @@
     left: 0;
     bottom: 0;
     overflow: hidden;
-    background: $text url(../layoutImg/pattern.svg);
+    background: linear-gradient(74.41deg, #101C26 24.56%, #2D3A45 100.64%);
     backface-visibility: hidden;
     transform: translate3d(0, 0, 0);
-    > ul{
+
+    >ul {
         margin: 0;
     }
-    li{
-        &:before{
+
+    li {
+        &:before {
             content: none;
         }
     }
 }
 
-.sidebar-menu-brands{
-    padding: 90px 50px;
+.sidebar-menu-brands {
+    width: 180px;
+    padding: 110px 20px;
     position: absolute;
-    top: 230px;
-    right: 0;
+    top: 65px;
+    bottom: 0;
+    left: 110px;
     margin: 117px 0 0;
     z-index: 2;
     overflow: hidden;
     font-family: $roboto;
     font-size: 1.4rem;
     line-height: 1.2;
-    &:before{
+
+    &::before {
         content: '';
-        width: 100%;
         position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
+        right: 0;
         z-index: -1;
-        background: url(../layoutImg/shape.svg) no-repeat 0 0 / 100% 100%;
-        opacity: 0.85;
+        background: linear-gradient(135deg, #53606B 0%, rgba(83, 96, 107, 0) 54.85%);
     }
-    ul{
+
+    ul {
         padding: 0;
     }
-    li{
+
+    li {
         margin: 0 0 10px;
         padding-left: 0;
-        &.active{
-            > a{
+
+        &.active {
+            >a {
                 opacity: 1;
-                &:after{
+
+                &:after {
                     content: '';
                 }
             }
         }
     }
-    a{
+
+    a {
         border: 0;
         position: relative;
         font-family: inherit;
         text-transform: uppercase;
         color: $white;
         opacity: 0.6;
-        &:after{
-            width: 20px;
-            height: 1px;
+
+        &:after {
+            width: 4px;
+            height: 4px;
             position: absolute;
-            bottom: -3px;
+            top: 50%;
             left: -10px;
-            background: $secondary;
+            margin-top: -2px;
+            border-radius: 50%;
+            background: $white;
         }
-        &:hover, &:focus{
+
+        &:hover,
+        &:focus {
             opacity: 1;
         }
     }
 }
 
 
-@media (max-width: $desktopSmall){
-    .sidebar{
+@media (max-width: $desktopSmall) {
+    .sidebar {
         display: none;
-    }
-
-    // .sidebar-brands{
-    //     padding-top: 97px;
-    // }
-
-    .sidebar-menu-brands{
-        top: 110px;
     }
 }
 
-@media (max-width: $tablet){
-    .sidebar-brands{
+@media (max-width: $tablet) {
+    .sidebar-brands {
         width: 100%;
         padding-top: 97px;
-        + .container{
+
+        +.container {
             padding-top: 3em;
             position: relative;
             margin-top: 45vw;
@@ -243,19 +276,19 @@
         }
     }
 
-    .sidebar-menu-brands{
+    .sidebar-menu-brands {
         display: none;
     }
 
-    .content-half-right{
+    .content-half-right {
         width: 100%;
         float: none;
     }
 }
 
-@media (max-width: $phone){
-    .sidebar-brands{
-        + .container{
+@media (max-width: $phone) {
+    .sidebar-brands {
+        +.container {
             padding-top: 2em;
         }
     }
