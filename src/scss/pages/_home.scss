@@ -125,9 +125,10 @@
         justify-content: center;
         align-items: center;
         height: 5%;
+        padding: 5px 0;
+        margin: 0;
         position: relative;
         background: rgba($text, 0.5);
-        padding: 5px 0;
         z-index: 2;
     }
     .action {
@@ -138,8 +139,9 @@
         text-transform: uppercase;
         text-align: right;
         color: $white;
-        &:hover {
-            opacity: 0.9;
+        &:hover,
+        &:focus {
+            opacity: 0.7;
         }
     }
     .slider-control,
@@ -252,6 +254,10 @@
         &:last-child {
             margin-right: 0;
         }
+        &:hover,
+        &:focus {
+            opacity: 0.7;
+        }
     }
     .icon {
         width: 50%;
@@ -282,11 +288,26 @@
     }
     .content-wrapper {
         display: flex;
-        flex-direction: column;
         width: 100%;
         min-height: 180px;
-        padding: 20px $gutter 20px 50px;
         border-bottom: 0;
+        margin: 0;
+        &:hover,
+        &:focus {
+            opacity: 0.7;
+            + .img-wrapper {
+                &::after {
+                    opacity: 0.3;
+                }
+            }
+        }
+        > a {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            padding: 20px $gutter 20px 50px;
+            border-bottom: 0;
+        }
     }
     .time,
     .title {
@@ -298,8 +319,13 @@
     }
     .title {
         margin: $line-height 0 $line-height / 2;
+        font-family: $roboto;
+        text-transform: uppercase;
     }
-    figure {
+    .read {
+        display: none;
+    }
+    .img-wrapper {
         position: absolute;
         top: 0;
         left: 0;
@@ -314,6 +340,7 @@
             right: 0;
             bottom: 0;
             background: rgba($orange, 0.9);
+            transition: $transition;
         }
         img {
             width: 100%;
@@ -519,7 +546,13 @@
     &::before {
         content: "";
         display: block;
-        padding-bottom: #{100% / 16 * 9};
+        padding-bottom: 100% / 16 * 9;
+    }
+    &:hover,
+    &:focus {
+        .play-button {
+            background: $blue;
+        }
     }
     .iframe,
     .overlay {
@@ -646,6 +679,7 @@
     color: transparent;
     &:hover,
     &:focus {
+        opacity: 0.7;
         color: transparent;
     }
     > figure {
@@ -907,6 +941,23 @@
         }
         .content-wrapper {
             justify-content: space-between;
+            > a {
+                align-items: flex-start;
+            }
+        }
+        .title {
+            margin-top: auto;
+            font-size: 2.4rem;
+            line-height: 1;
+        }
+        .read {
+            display: inline;
+            border-bottom: 1px solid $white;
+            color: $white;
+            font-family: $montserratBold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.22rem;
         }
     }
     .home-professions-video {

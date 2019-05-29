@@ -666,6 +666,9 @@ a {
         background-size: 14px 14px;
         border: 0;
         overflow: hidden;
+        &:hover, &:focus{
+            opacity: 0.7;
+        }
     }
 }
 

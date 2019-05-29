@@ -82,9 +82,9 @@
 				</ul>
 			<?php endif; ?>
 			<?php if ($stock_quote_last_price) : ?>
-			<div class="action-wrapper">
+			<p class="action-wrapper">
 				<a href='<?php the_field('actionLink', 'options'); ?>' class='action' target='_blank'><?php _e("Cours de l'action", 'beneteau'); ?>: <strong><span>(<?php echo $stock_quote_symbol; ?>)</span> <?php echo $stock_quote_last_price; ?><span>&nbsp;€</span></strong></a>
-			</div>
+			</p>
 			<?php endif; ?>
 		</div>
 	<?php endif; // if (super_have_rows('slider')) : ?>
