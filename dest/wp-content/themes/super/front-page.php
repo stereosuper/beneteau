@@ -42,6 +42,7 @@
 					$first_class = 'first-on';
 					$title_level = 'h1';
 					$titles_list = [];
+					$texts_count = 0;
 					while (super_have_rows('slider')) :
 						the_row();
 						$title = get_sub_field('homeslider_title');
@@ -52,7 +53,7 @@
 						$titles_list[] = $title;
 				?>
 				<li class='slide slide-txt js-slide-txt <?php echo $first_class; ?>'>
-					<h2  class='title'><?php echo $title; ?></h2>
+					<h2  class='title' tabindex="<?php echo $texts_count === 0 ? '0' : '-1' ?>"><?php echo $title; ?></h2>
 					<p class='txt'><?php echo $excerpt; ?></p>
 					<?php if (!empty($link)) : ?>
 					<p class='button'>
@@ -65,6 +66,7 @@
 				<?php
 						$title_level = 'h2';
 						$first_class = '';
+						$texts_count++;
 					endwhile; // while (super_have_rows('slider')) :
 				?>
 			</ul>
