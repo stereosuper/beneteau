@@ -58,6 +58,9 @@
 
 			<header role='banner' class='header' id='header'>
 				<div class='container'>
+					<button type='button' id='contrast' class='contrast' data-on='<?php _e('Contrast version', 'beneteau'); ?>' data-off='<?php _e('Classic version', 'beneteau'); ?>'>
+						<?php _e('Contrast version', 'beneteau'); ?>
+					</button>
 
 					<?php if( is_front_page() ){ ?>
 						<h1 class='logo'>

@@ -14,21 +14,22 @@ require('featherlight/release/featherlight.gallery.min.js');
 
 $(function() {
     window.requestAnimFrame = require('./requestAnimFrame.js');
-    let throttle = require('./throttle.js');
+    const throttle = require('./throttle.js');
 
-    let slider = require('./slider.js');
-    let submenu = require('./submenu.js');
-    let initScrollReveal = require('./initScrollReveal.js');
-    let animHeader = require('./header.js');
-    let sticky = require('./sticky.js');
-    let brandSlider = require('./brandSlider.js');
-    let accordion = require('./accordion.js');
-    let initVideo = require('./initVideo.js');
+    const slider = require('./slider.js');
+    const submenu = require('./submenu.js');
+    const initScrollReveal = require('./initScrollReveal.js');
+    const animHeader = require('./header.js');
+    const sticky = require('./sticky.js');
+    const brandSlider = require('./brandSlider.js');
+    const accordion = require('./accordion.js');
+    const initVideo = require('./initVideo.js');
 
-    let htmlAze = $('html');
-    let body = $('body');
-    let header = $('#header');
-    let sidebar = $('#sidebar');
+    const htmlAze = $('html');
+    const body = $('body');
+    const header = $('#header');
+    const sidebar = $('#sidebar');
+    const contrast = $('#contrast');
     // window.outerWidth returns the window width including the scroll, but it's not working with $(window).outerWidth
     let windowWidth = window.outerWidth,
         windowHeight = $(window).height();
@@ -124,6 +125,11 @@ $(function() {
         $(this)
             .parents('#cookies')
             .addClass('off');
+    });
+
+    contrast.on('click', () => {
+        body.toggleClass('contrasted');
+        body.hasClass('contrasted') ? contrast.html(contrast.data('off')) : contrast.html(contrast.data('on'));
     });
 
     // Accordion

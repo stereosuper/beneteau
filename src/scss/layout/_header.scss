@@ -67,6 +67,19 @@
         justify-content: space-between;
         transition: transform $transition;
     }
+    .contrast{
+        padding: 2px 8px 5px;
+        border: 0;
+        position: absolute;
+        top: -31px;
+        right: 0;
+        z-index: 20;
+        font-family: $montserrat;
+        font-size: 1.2rem;
+        background: #35424D;
+        color: #fff;
+        text-decoration: underline;
+    }
 }
 
 .menu-main {
