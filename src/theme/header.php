@@ -73,28 +73,18 @@
 					<?php }else{ ?>
 						</a>
 					<?php } ?>
-
-					<button class='burger' id='burger'><?php _e('Menu', 'beneteau'); ?> <i></i></button>
-
-					<nav role='navigation' class='nav' id='nav'>
-						<div>
-							<?php echo beneteau_mlp_navigation(); ?>
-
-							<?php
-								$contact_page_url = super_get_field('contact_page_url', 'option');
-								if (!empty($contact_page_url)) :
-							?>
-								<a href='<?php echo $contact_page_url; ?>' class='link-contact'>
-									<svg class='icon'><use xlink:href='#icon-email'></use></svg>
-								</a>
-							<?php endif; ?>
-
-							<?php wp_nav_menu( array(
-								'theme_location' => 'primary',
-								'container' => false,
-								'menu_class' => 'menu-main',
-								'walker' => new Wrap_Submenu()
-							) ); ?>
+					<nav id="nav" class="main-navigation" role="navigation">
+						<button id="burger" class="burger" type="button"><?php _e('Menu', 'beneteau'); ?> <i></i></button>
+						<div class="main-menus">
+							<div class="main-menus-wrapper">
+								<?php echo beneteau_mlp_navigation(); ?>
+								<?php wp_nav_menu( array(
+									'theme_location' => 'primary',
+									'container' => false,
+									'menu_class' => 'menu-main',
+									'walker' => new Wrap_Submenu()
+								) ); ?>
+							</div>
 						</div>
 					</nav>
 
