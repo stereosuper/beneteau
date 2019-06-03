@@ -101,6 +101,21 @@
 @media (max-width: $tablet){
     .footer{
         .menu-main{
+            > li:nth-child(1){
+                .sub-menu{
+                    display: block;
+                    > li{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $phone){
+    .footer{
+        .menu-main{
             > li, > li:nth-child(1){
                 width: 100%;
             }
