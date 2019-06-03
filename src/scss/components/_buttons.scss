@@ -261,6 +261,11 @@
     text-transform: uppercase;
     text-align: center;
     color: $text;
+    transition: color $transition;
+    &:hover, &:focus{
+        border: 0;
+        color: $blue;
+    }
     &.a-btn-light {
         color: $white;
         &:hover, &:focus{
