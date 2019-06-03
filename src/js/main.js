@@ -1,18 +1,16 @@
-
-
-let $ = require('jquery');
+const $ = require('jquery');
 
 global.jQuery = $;
-let Cookies = require('js-cookie');
+const Cookies = require('js-cookie');
 
-let imagesLoaded = require('imagesloaded');
+const imagesLoaded = require('imagesloaded');
 // provide jQuery argument
 imagesLoaded.makeJQueryPlugin($);
 
 require('featherlight/release/featherlight.min.js');
 require('featherlight/release/featherlight.gallery.min.js');
 
-$(function() {
+$(() => {
     window.requestAnimFrame = require('./requestAnimFrame.js');
     const throttle = require('./throttle.js');
 
@@ -23,6 +21,7 @@ $(function() {
     const sticky = require('./sticky.js');
     const brandSlider = require('./brandSlider.js');
     const accordion = require('./accordion.js');
+    const menuAccordion = require('./menuAccordion.js');
     const initVideo = require('./initVideo.js');
 
     const htmlAze = $('html');
@@ -95,7 +94,7 @@ $(function() {
     if ($('.content').length) {
         $('.content').imagesLoaded(() => {
             sticky($('#blockSticky'), 130, {
-                minimumWidth: 960
+                minimumWidth: 960,
             });
         });
     }
@@ -129,11 +128,16 @@ $(function() {
 
     contrast.on('click', () => {
         body.toggleClass('contrasted');
-        body.hasClass('contrasted') ? contrast.html(contrast.data('off')) : contrast.html(contrast.data('on'));
+        body.hasClass('contrasted')
+            ? contrast.html(contrast.data('off'))
+            : contrast.html(contrast.data('on'));
     });
 
     // Accordion
     accordion($('.eolia_results'));
+
+    // Menu accordion
+    menuAccordion();
 
     // Videos
     initVideo($('.js-video'));
@@ -148,14 +152,14 @@ $(function() {
 
     $(window).on(
         'resize',
-        throttle(function() {
+        throttle(() => {
             requestAnimFrame(resizeHandler);
         }, 60)
     );
 
     $(document).on(
         'scroll',
-        throttle(function() {
+        throttle(() => {
             scrollTop = $(document).scrollTop();
             detectScrollDir();
             DoScroll(scrollDir);

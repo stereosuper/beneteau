@@ -106,7 +106,7 @@ $header-height: 97px;
             color: $lightBlue;
             border: 0;
         }
-        > .sub-menu-wrapper {
+        > .sub-menu {
             border-top: 1px solid $lightBlue;
         }
     }
@@ -117,6 +117,16 @@ $header-height: 97px;
             text-transform: uppercase;
             color: $lightBlue;
             opacity: 0.8;
+            cursor: pointer;
+        }
+        > .sub-menu-wrapper {
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+            > .sub-menu {
+                margin: 0;
+                padding: $line-height 0 0;
+            }
         }
     }
 }

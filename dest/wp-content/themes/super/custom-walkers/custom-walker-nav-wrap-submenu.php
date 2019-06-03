@@ -3,7 +3,7 @@
 class Wrap_Submenu extends Walker_Nav_Menu{
     function start_lvl(&$output, $depth=0, $args=array()){
         if ($depth === 1) {
-            $output .= "<div class='sub-menu-wrapper'><ul class='sub-menu'>";
+            $output .= "<div class='sub-menu-wrapper js-sub-menu-wrapper'><ul class='sub-menu js-sub-menu'>";
         } else {
             $output .= "<ul class='sub-menu'>";
         }
@@ -40,7 +40,7 @@ class Wrap_Submenu extends Walker_Nav_Menu{
             if ($depth === 0) {
                 $output .= "<button type='button' aria-expanded='false'>". $item->title .'</button>';
             } else {
-                $output .= "<span role='button' aria-expanded='false' tab-index='0'>". $item->title .'</span>';
+                $output .= "<span class='js-accordion-button' role='button' aria-expanded='false' tab-index='0'>". $item->title .'</span>';
             }
         } else {
             $url = $item->url;
