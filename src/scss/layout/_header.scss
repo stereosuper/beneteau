@@ -97,27 +97,62 @@ $header-height: 97px;
         }
     }
     .first-level {
-        margin-bottom: $line-height;
-        > button {
+        margin-bottom: $line-height * 1.5;
+        > button,
+        > a {
             margin-left: $gutter;
+            margin-bottom: $line-height;
+            border: 0;
             position: relative;
             font-family: $playfairBold;
             font-size: 2.4rem;
             color: $lightBlue;
-            border: 0;
         }
-        > .sub-menu {
-            border-top: 1px solid $lightBlue;
+        > a {
+            display: block;
+        }
+        > hr {
+            width: 100%;
+            height: 1px;
+            margin: 0;
+            background: $lightBlue;
+            &::after {
+                content: none;
+            }
+        }
+        .sub-menu {
+            padding: 0 $gutter;
         }
     }
     .second-level {
         > span {
+            display: block;
+            margin-bottom: 0.5em;
+            position: relative;
             font-family: $roboto;
             font-size: 1.8rem;
             text-transform: uppercase;
             color: $lightBlue;
             opacity: 0.8;
             cursor: pointer;
+            &::before {
+                content: "";
+                position: absolute;
+                width: 15px;
+                height: 15px;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%) rotateZ(45deg);
+                border-bottom: 1px solid $lightBlue;
+                border-right: 1px solid $lightBlue;
+            }
+        }
+        &.activated {
+            > span {
+                &::before {
+                    transform: translateY(-50%) rotateZ(-135deg);
+                }
+            }
         }
         > .sub-menu-wrapper {
             max-height: 0;
@@ -125,8 +160,18 @@ $header-height: 97px;
             overflow: hidden;
             > .sub-menu {
                 margin: 0;
-                padding: $line-height 0 0;
+                padding: $line-height 0;
             }
+        }
+    }
+    .second-level,
+    .third-level {
+        margin-bottom: 0.5em;
+        > a {
+            border: 0;
+            font-family: $montserrat;
+            color: $white;
+            opacity: 0.75;
         }
     }
 }

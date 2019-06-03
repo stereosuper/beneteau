@@ -39,16 +39,18 @@ class Wrap_Submenu extends Walker_Nav_Menu{
         if ($is_button) {
             if ($depth === 0) {
                 $output .= "<button type='button' aria-expanded='false'>". $item->title .'</button>';
+                $output .= '<hr>';
             } else {
                 $output .= "<span class='js-accordion-button' role='button' aria-expanded='false' tab-index='0'>". $item->title .'</span>';
             }
         } else {
             $url = $item->url;
-
+            
             $attributes = '';
             $attributes .= $item->current ? 'aria-current="true"' : '';
-
+            
             $output .= "<a href='$url' $attributes>". $item->title .'</a>';
+            $output .= $depth === 0 ? '<hr>' : '';
         }
     }
     function end_el(&$output, $item, $depth=0, $args=array()){
