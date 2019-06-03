@@ -9,50 +9,100 @@
     background: $text url(../layoutImg/logo-small.svg) no-repeat 50% 50px / 30px;
     color: $white;
     a{
+        font-family: inherit;
         color: $white;
         &:hover, &:focus{
             color: $secondary;
         }
     }
-}
-
-.menu-footer{
-    margin: 50px 0 0;
-    font-family: $montserratBold;
-    font-size: 1.1rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    > li{
-        display: inline-block;
-        position: static;
-        padding-left: 0;
-        &:before{
-            display: inline-block;
-            position: relative;
-            top: auto;
-            left: auto;
-            width: 30px;
-            height: 1px;
-            margin: -2px 35px 0 75px;
-            background: $secondary;
+    .menu-main{
+        display: flex;
+        flex-wrap: wrap;
+        margin: 5.5em 0 0;
+        text-align: left;
+        .sub-menu{
+            display: block;
+            padding: 0;
+            position: static;
+            margin: 0;
+            z-index: 0;
+            text-align: left;
+            opacity: 1;
+            transform: none;
+            a, li{
+                padding: 0;
+            }
+            li{
+                &:before{
+                    content: none;
+                }
+            }
         }
-        &:first-child{
-            &:before{
-                margin-left: 0;
+        > li{
+            width: 21%;
+            padding: 0;
+            margin: 0 0 30px;
+            &:nth-child(1){
+                width: 48%;
+                > .sub-menu{
+                    display: flex;
+                    flex-wrap: wrap;
+                    align-items: flex-start;
+                    > li{
+                        width: 50%;
+                    }
+                }
+            }
+            &.current-menu-item, &.current_page_parent{
+                > a{
+                    text-decoration: none;
+                }
+            }
+            > a{
+                display: block;
+                padding: 0 0 15px;
+                border-bottom: 1px solid rgba(#B1D2EF, 0.2);
+                margin: 0 0 30px;
+                font-family: $playfairBold;
+                font-size: 3.4rem;
+                color: $lightBlue;
+                text-transform: none;
+            }
+            > .sub-menu{
+                > li{
+                    margin: 0 0 40px;
+                    > a{
+                        margin: 0 0 15px;
+                        font-family: $roboto;
+                        font-size: 1.8rem;
+                        text-transform: uppercase;
+                        color: $lightBlue;
+                    }
+                    li{
+                        margin: 0 0 5px;
+                    }
+                }
             }
         }
     }
 }
 
 
-@media (max-width: $desktopSmall){
-    .menu-footer{
-        li{
-            display: block;
-            margin: 0 0 10px;
-            &:before{
-                width: 20px;
-                margin: -2px 20px 0 0;
+@media (max-width: $desktop){
+    .footer{
+        .menu-main{
+            > li{
+                width: 48%;
+            }
+        }
+    }
+}
+
+@media (max-width: $tablet){
+    .footer{
+        .menu-main{
+            > li, > li:nth-child(1){
+                width: 100%;
             }
         }
     }

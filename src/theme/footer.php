@@ -26,10 +26,9 @@
 				</p>
 
 				<?php wp_nav_menu( array(
-					'theme_location' => 'footer',
+					'theme_location' => 'primary',
 					'container' => false,
-					'menu_class' => 'menu-footer',
-					'fallback_cb' => 'none'
+					'menu_class' => 'menu-main'
 				) ); ?>
 			</div>
 		</footer>
