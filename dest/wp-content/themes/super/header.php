@@ -53,8 +53,9 @@
 	<?php $class = get_field('scrollreveal') ? 'no-sr' : ''; ?>
 
 	<body <?php body_class( $class ); ?>>
-		
 		<div class='wrapper'>
+			<p class='access-to-main'><a href='#main' class='sr-only sr-only-focusable'><?php _e('Access main content', 'beneteau'); ?></a></p>
+
 			<header role='banner' class='header' id='header'>
 				<div class='container'>
 
@@ -89,4 +90,4 @@
 				</div>
 			</header>
 
-			<main role='main' class='main'>
+			<main role='main' class='main' id='main'>

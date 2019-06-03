@@ -912,6 +912,13 @@ blockquote,
     }
 }
 
+.access-to-main{
+    position: relative;
+    margin: 0;
+    z-index: 20;
+}
+
+
 @media (max-width: $desktopLarge) {
     .cookies {
         button {
