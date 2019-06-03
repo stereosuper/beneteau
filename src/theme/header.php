@@ -59,9 +59,17 @@
 			<header role='banner' class='header' id='header'>
 				<div class='container'>
 
-					<a href='<?php echo home_url('/'); ?>' title='<?php _e('Groupe Bénéteau', 'beneteau'); ?>' rel='home' class='logo'>
+					<?php if( is_front_page() ){ ?>
+						<h1 class='logo'>
+					<?php }else{ ?>
+						<a href='<?php echo home_url('/'); ?>' title='<?php _e('Groupe Bénéteau', 'beneteau'); ?>' rel='home' class='logo'>
+					<?php } ?>
 						<div><img src='<?php echo get_template_directory_uri(); ?>/layoutImg/logo-beneteau.svg' alt='<?php _e('Groupe Bénéteau', 'beneteau'); ?>'></div>
-					</a>
+					<?php if( is_front_page() ){ ?>
+						</h1>
+					<?php }else{ ?>
+						</a>
+					<?php } ?>
 
 					<button class='burger' id='burger'><?php _e('Menu', 'beneteau'); ?> <i></i></button>
 
