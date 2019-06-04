@@ -21,6 +21,7 @@
     .menu-main{
         display: flex;
         flex-wrap: wrap;
+        justify-content: space-between;
         margin: 5.5em 0 0;
         text-align: left;
         a{
