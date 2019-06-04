@@ -13,6 +13,12 @@
 		) );
 	?>
 
+	<?php if( has_post_thumbnail() ) : ?>
+		<div class='post-thumbnail' style='background-image:url(<?php echo get_the_post_thumbnail_url($post, "full"); ?>)'>
+			<div class='container'><h1 class='isAnimated'><?php the_title(); ?></h1></div>
+		</div>
+	<?php endif; ?>
+
 	<div class='container<?php echo (strpos($sidebar_menu, '<li')!==FALSE)?' container-sidebar':''; ?>'>
 
 		<?php if (strpos($sidebar_menu, '<li')!==FALSE) : ?>
@@ -24,11 +30,14 @@
 				</div>
 			</nav>
 		<?php endif; ?>
-
+		
 		<div class='content'>
 			<?php if( function_exists('yoast_breadcrumb') ){ yoast_breadcrumb('<div class="breadcrumbs">','</div>'); } ?>
 
-			<h1 class='isAnimated'><?php the_title(); ?></h1>
+			<?php if( !has_post_thumbnail() ) : ?>
+				<h1 class='isAnimated'><?php the_title(); ?></h1>
+			<?php endif; ?>
+			
 			<?php the_content(); ?>
 		</div>
 

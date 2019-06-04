@@ -98,4 +98,4 @@
 				</div>
 			</header>
 
-			<main role='main' class='main' id='main'>
+			<main role='main' class='main <?php if( has_post_thumbnail() ) echo "has-thumbnail"; ?>' id='main'>
