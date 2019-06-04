@@ -53,7 +53,7 @@
 						$titles_list[] = $title;
 				?>
 				<li class='slide slide-txt js-slide-txt <?php echo $first_class; ?>'>
-					<h2  class='title' tabindex="<?php echo $texts_count === 0 ? '0' : '-1' ?>"><?php echo $title; ?></h2>
+					<h2 class='title' tabindex="<?php echo $texts_count === 0 ? '0' : '-1' ?>"><?php echo $title; ?></h2>
 					<p class='txt'><?php echo $excerpt; ?></p>
 					<?php if (!empty($link)) : ?>
 					<p class='button'>

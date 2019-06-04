@@ -16,7 +16,7 @@ $title_align = get_sub_field('title_align');
     <?php } ?>
 
     <?php if (super_have_rows('blocks')) : ?>
-        <div class='push-container'>
+        <ul class="push-links-list">
             <?php while (super_have_rows('blocks')) :
                 the_row();
 
@@ -29,32 +29,19 @@ $title_align = get_sub_field('title_align');
                 $link = get_sub_field('link');
                 $link_label = get_sub_field('link_label');
             ?>
-
-                <a href='<?php echo $link; ?>'>
-                    <div class='img-wrapper'>
-                        <div class='img'>
-                            <div class='inner'>
-                                <?php if (empty($image_url)) { ?>
-                                    <div class='bg'></div>
-                                <?php }else{ ?>
-                                    <img src='<?php echo $image_url; ?>' alt=''
-                                ><?php } ?>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink">
-                        <defs>
-                            <clipPath id='clipImg' clipPathUnits="objectBoundingBox">
-                                <path d='M0.1744899,0.1969967C0.0224832,0.2373544,0.0005927,0.2689686,0,0.4032062L0.00419,1 c0.0111598-0.0764089,0.0497083-0.1031455,0.1698911-0.1350859L1,0.6678032V0L0.1744899,0.1969967z'/>
-                            </clipPath>
-                        </defs>
-                        <image xlink:href="<?php echo $image_url; ?>" clip-path="url(#clipImg)"/>
-                    </svg>-->
-                    <strong><?php echo $title; ?></strong>
-                    <span class='link'><?php echo $link_label; ?></span>
-                </a>
+            <li class="push-links-item">
+                <p class="content-wrapper">
+                    <a href='<?php echo $link; ?>'>
+                        <!--<span class="time"><?php //the_time(__('d/m/Y', 'beneteau')); ?></span>-->
+                        <span class="title"><?php echo $title; ?></span>
+                        <span class="read"><?php echo $link_label; ?></span>
+                    </a>
+                </p>
+                <figure class='img-wrapper'>
+                    <img src="<?php echo $image_url; ?>" alt="" />
+                </figure>
+            </li>
             <?php endwhile ?>
-        </div>
+        </ul>
     <?php endif; ?>
 </div>
