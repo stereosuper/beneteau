@@ -470,8 +470,12 @@ a {
 
     &:before {
         content: "";
-        background: #19456b;
+        background: #2D3A45;
         opacity: 0.7;
+        .contrasted &{
+            mix-blend-mode: multiply;
+            opacity: 0.97;
+        }
     }
 
     &:after {
