@@ -51,6 +51,27 @@ $header-height: 97px;
     }
 }
 
+.burger {
+    display: flex;
+    align-items: center;
+    border: 0;
+    position: relative;
+    right: 50%;
+    top: 50%;
+    color: $white;
+    z-index: 10;
+    > span {
+        margin-right: 5px;
+        font-family: $roboto;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+    }
+    .icon {
+        width: 21px;
+        height: 14px;
+    }
+}
+
 .main-menus {
     position: fixed;
     top: 0;
@@ -59,7 +80,7 @@ $header-height: 97px;
     bottom: 0;
     padding-left: $gutter;
     // HACK: Simulate navigation activation
-    //transform: translate3d(-100%, 0, 0);
+    // transform: translate3d(-100%, 0, 0);
     z-index: 11;
 }
 
@@ -67,6 +88,24 @@ $header-height: 97px;
     height: 100%;
     background: linear-gradient(88.07deg, #101c26 24.56%, $darkGrey 100.64%);
     overflow-y: auto;
+}
+
+.main-navigation-cross {
+    border: 0;
+    position: absolute;
+    top: 37px;
+    right: $gutter;
+    color: $white;
+    font-family: $roboto;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    > span {
+        margin-right: 5px;
+    }
+    > .icon {
+        width: 22px;
+        height: 23px;
+    }
 }
 
 .lang {
