@@ -59,7 +59,7 @@ $header-height: 97px;
     bottom: 0;
     padding-left: $gutter;
     // HACK: Simulate navigation activation
-    transform: translate3d(-100%, 0, 0);
+    //transform: translate3d(-100%, 0, 0);
     z-index: 11;
 }
 

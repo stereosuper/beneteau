@@ -18,6 +18,8 @@ const menuAccordionHandler = () => {
         const parent = accordionContent.parentElement;
         const [title] = parent.getElementsByClassName('js-accordion-button');
 
+        if(!title) return;
+
         title.addEventListener(
             'click',
             () => {

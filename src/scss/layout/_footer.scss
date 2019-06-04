@@ -8,6 +8,9 @@
     text-align: center;
     background: $text url(../layoutImg/logo-small.svg) no-repeat 50% 50px / 30px;
     color: $white;
+    .contrasted &{
+        background-color: #2D3A45;
+    }
     a{
         font-family: inherit;
         color: $white;
@@ -20,6 +23,12 @@
         flex-wrap: wrap;
         margin: 5.5em 0 0;
         text-align: left;
+        a{
+            border: 0;
+            &:hover, &:focus{
+                border-bottom: 1px solid;
+            }
+        }
         .sub-menu{
             display: block;
             padding: 0;

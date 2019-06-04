@@ -55,7 +55,7 @@ module.exports = function(htmlAze, body, header, windowWidth){
 
         if( !submenu.length && $(this).siblings('.sub-menu').length ){
             submenuList = $(this).siblings('.sub-menu').children('ul');
-            submenuLeft = submenuList.offset().left;
+            submenuLeft = submenuList.offset() ? submenuList.offset().left : 0;
             submenuWidth = submenuList.width();
             linkCenter = $(this).offset().left + $(this).width()/2;
 

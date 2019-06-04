@@ -2,7 +2,13 @@
 
 .home {
     .main {
-        padding-top: 0px;
+        padding-top: 0;
+    }
+}
+
+.home-group{
+    .contrasted &{
+        background: linear-gradient(83deg, #101C26 25%, #2D3A45 100%);
     }
 }
 
@@ -47,6 +53,9 @@
             background: linear-gradient(180deg, rgba(45, 58, 69, 0.34) 43.65%, #2d3a45 100%);
             mix-blend-mode: multiply;
             z-index: 1;
+            .contrasted &{
+                background: #2d3a45;
+            }
         }
     }
     .slide-img {
@@ -112,6 +121,9 @@
         color: $white;
         &::after {
             content: none;
+        }
+        &:focus {
+            outline: 1px dotted #fff;
         }
     }
     .txt {
@@ -191,11 +203,10 @@
         border: 0;
         overflow: hidden;
         opacity: 0.5;
-        &.on {
-            opacity: 1;
-        }
+        &.on,
         &:focus,
-        &:hover {
+        &:hover,
+        .contrasted &{
             opacity: 1;
         }
     }
@@ -341,6 +352,9 @@
             bottom: 0;
             background: rgba($orange, 0.9);
             transition: $transition;
+            .contrasted &{
+                background: #B56C00;
+            }
         }
         img {
             width: 100%;
@@ -492,6 +506,9 @@
     padding-top: $line-height * 2;
     padding-bottom: $line-height * 2;
     background: linear-gradient(267.18deg, $blue 0%, #2e5c84 100%);
+    .contrasted &{
+        background: #26547B;
+    }
     .last-part-wrapper {
         display: flex;
         flex-direction: column;
@@ -784,12 +801,13 @@
             margin-bottom: $line-height;
         }
     }
-    .home-professions-title,
     .home-professions-description {
         text-align: left;
     }
     .home-professions-title {
         margin: 0 0 $line-height;
+        font-size: 3.4rem;
+        text-align: left;
     }
     .home-professions-description {
         max-width: 380px;
@@ -803,6 +821,9 @@
     }
     .home-brands-services {
         margin-top: $line-height * 4;
+    }
+    .home-brands-services-title{
+        font-size: 3.4rem;
     }
 }
 
@@ -893,6 +914,9 @@
             mix-blend-mode: multiply;
             z-index: 1;
         }
+        .contrasted &{
+            display: none;
+        }
     }
     .home-group-content-background,
     .home-group-numbers-background {
@@ -929,6 +953,9 @@
             figure {
                 &::after {
                     background: rgba($blue, 0.9);
+                    .contrasted &{
+                        background: #3B83C0;
+                    }
                 }
             }
         }
@@ -936,6 +963,9 @@
             figure {
                 &::after {
                     background: rgba($corail, 0.9);
+                    .contrasted &{
+                        background: #E55E49;
+                    }
                 }
             }
         }
@@ -958,6 +988,9 @@
             font-size: 1.1rem;
             text-transform: uppercase;
             letter-spacing: 0.22rem;
+            .contrasted &{
+                font-size: 1.8rem;
+            }
         }
     }
     .home-professions-video {
