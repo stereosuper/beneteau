@@ -809,9 +809,14 @@ a {
         bottom: 0;
         background: linear-gradient(180deg, rgba(45, 58, 69, 0.34) 43.65%, #2D3A45 100%);
         mix-blend-mode: multiply;
+        .contrasted &{
+            background: #2D3A45;
+        }
     }
     h1{
         max-width: 840px;
+        position: relative;
+        z-index: 10;
         margin-left: auto;
         margin-right: auto;
         color: #fff;

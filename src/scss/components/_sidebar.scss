@@ -30,38 +30,12 @@
     position: relative;
     min-height: 82px;
     z-index: 1;
-
-    &:before,
-    &:after {
-        content: '';
-        display: block;
-        width: 226px;
-        position: absolute;
-        left: -$gutter;
-        background-repeat: no-repeat;
-        background-position: 50% 50%;
-        z-index: -1;
-    }
-
-    &:before {
-        height: 147px;
-        top: -90px;
-        background-image: url(../layoutImg/top-bg-sidebar.svg);
-    }
-
-    &:after {
-        height: 115px;
-        bottom: -89px;
-        margin: 0 0 0 -1px;
-        background-image: url(../layoutImg/bottom-bg-sidebar.svg);
-    }
-
     .bg-sidebar {
         display: block;
         width: 226px;
         position: absolute;
-        top: 57px;
-        bottom: 25px;
+        top: -55px;
+        bottom: -15px;
         left: -$gutter;
         background: rgba($white, 0.9);
         z-index: -1;
