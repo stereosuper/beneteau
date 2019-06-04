@@ -80,7 +80,7 @@
 				<path d="M1 13h19M1 7h19M1 1h19" stroke="currentColor" stroke-width="2" stroke-linecap="square"/>
 			</symbol>
 
-			<symbol id="icon-cross" width="0 0 23 22" fill="none">
+			<symbol id="icon-cross" viewBox="0 0 23 22" fill="none">
 				<path fill="currentColor" d="M20.815.92l1.414 1.413-19.52 19.52-1.415-1.413z"/>
 				<path fill="currentColor" d="M21.41 20.44l-1.414 1.414L.476 2.334 1.888.918z"/>
 			</symbol>
