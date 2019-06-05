@@ -54,7 +54,7 @@
 
 	<body <?php body_class( $class ); ?>>
 		<div class='wrapper'>
-			<p class='visually-hidden access-to-main'><a href='#main' class='sr-only sr-only-focusable'><?php _e('Access main content', 'beneteau'); ?></a></p>
+			<p class='access-to-main'><a href='#main' class='sr-only sr-only-focusable'><?php _e('Access main content', 'beneteau'); ?></a></p>
 
 			<header role='banner' class='header' id='header'>
 				<div class='container'>

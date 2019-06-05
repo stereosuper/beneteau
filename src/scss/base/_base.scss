@@ -369,15 +369,29 @@ a {
     display: none !important;
 }
 
-.visually-hidden {
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    border: 0;
-    clip: rect(0 0 0 0);
-    position: absolute;
-    margin: -1px;
-    overflow: hidden;
+.sr-only, .visually-hidden {
+    border: 0 !important;
+    clip: rect(1px, 1px, 1px, 1px) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    height: 1px !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    position: absolute !important;
+    width: 1px !important;
+    white-space: nowrap !important;
+}
+.sr-only-focusable:focus,
+.sr-only-focusable:active {
+    clip: auto !important;
+    -webkit-clip-path: none !important;
+    clip-path: none !important;
+    height: auto !important;
+    margin: auto !important;
+    overflow: visible !important;
+    width: auto !important;
+    white-space: normal !important;
 }
 
 .clearfix {
@@ -1130,7 +1144,7 @@ blockquote,
 .access-to-main{
     position: relative;
     margin: 0;
-    //z-index: 20;
+    z-index: 20;
 }
 
 

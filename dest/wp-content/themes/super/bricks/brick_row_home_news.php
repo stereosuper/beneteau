@@ -47,7 +47,7 @@ $btn = get_sub_field('btn');
 
         $news_query = new WP_Query($query_args);
         if ($news_query->have_posts()) : ?>
-        <ul class="push-links-list">
+        <ul class="home-news-list">
             <?php while ($news_query->have_posts()) :
                 $news_query->the_post();
                 $img_uri = false;
@@ -57,7 +57,7 @@ $btn = get_sub_field('btn');
                     $img_uri = WiztopicSync::getMediaPermalink($post->ID, 'medium');
                 }
         ?>
-            <li class="push-links-item">
+            <li class="home-news-item">
                 <p class="content-wrapper">
                     <a href='<?php echo ($wztp_uri)?$wztp_uri:'#';  ?>'>
                         <span class="time"><?php the_time(__('d/m/Y', 'beneteau')); ?></span>
