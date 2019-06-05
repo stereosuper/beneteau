@@ -11,21 +11,33 @@ $header-height: 97px;
     > .container {
         display: flex;
         width: 100%;
+        height: 100%;
         position: relative;
         justify-content: space-between;
+        align-items: center;
         transition: transform $transition;
+    }
+    .contrast{
+        padding: 2px 8px 5px;
+        border: 0;
+        position: absolute;
+        top: 0;
+        right: 30px;
+        z-index: 20;
+        font-family: $montserrat;
+        font-size: 1.2rem;
+        background: #35424D;
+        color: #fff;
+        text-decoration: underline;
     }
 }
 
 .logo {
     width: 100%;
-    max-width: 340px;
+    max-width: 240px;
     padding: 0;
     border: 0;
     margin: 0 $gutter * 2 0 0;
-    transform-origin: 0 50%;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
     &:hover,
     &:focus {
         opacity: 0.7;
@@ -55,9 +67,6 @@ $header-height: 97px;
     display: flex;
     align-items: center;
     border: 0;
-    position: relative;
-    right: 50%;
-    top: 50%;
     color: $white;
     z-index: 10;
     > span {
@@ -212,5 +221,48 @@ $header-height: 97px;
             color: $white;
             opacity: 0.75;
         }
+    }
+}
+
+
+@media (min-width: $desktop){
+    .main-menus{
+        padding: 0;
+        position: static;
+        hr{
+            display: none;
+        }
+        .menu-main{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .first-level{
+                margin: 0 0 0 24px;
+                > a{
+                    margin: 0;
+                    font-family: $roboto;
+                    font-size: 1.4rem;
+                    text-transform: uppercase;
+                    color: #fff;
+                }
+            }
+        }
+        .sub-menu{
+            display: none;
+        }
+    }
+
+    .main-menus-wrapper{
+        display: flex;
+        background: none;
+    }
+
+    .main-navigation-cross, .burger{
+        display: none;
+    }
+
+    .lang{
+        padding: 0;
+        font-size: 1.4rem;
     }
 }
