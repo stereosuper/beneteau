@@ -35954,6 +35954,11 @@ $(function () {
         body.hasClass('contrasted') ? contrast.html(contrast.data('off')) : contrast.html(contrast.data('on'));
     });
 
+    $('#access-to-main').on('click', function (e) {
+        e.preventDefault();
+        $('#main').attr('tabindex', '-1').focus();
+    });
+
     // Accordion
     accordion($('.eolia_results'));
 

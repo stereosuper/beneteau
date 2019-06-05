@@ -238,7 +238,7 @@ $header-height: 97px;
             justify-content: space-between;
             .first-level{
                 margin: 0 0 0 24px;
-                > a{
+                > a, > button{
                     margin: 0;
                     font-family: $roboto;
                     font-size: 1.4rem;
