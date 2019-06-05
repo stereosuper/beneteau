@@ -126,9 +126,10 @@
 @media (max-width: $phone){
     .footer{
         .menu-main{
-            > li, > li:nth-child(1){
-                width: 100%;
-            }
+            display: none;
+            // > li, > li:nth-child(1){
+            //     width: 100%;
+            // }
         }
     }
 }
