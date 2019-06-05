@@ -121,9 +121,8 @@ $(() => {
     body.on('click', '#btnCookies', function(e) {
         e.preventDefault();
         Cookies.set('beneteau-cookies', true, { expires: 30, path: '/' });
-        $(this)
-            .parents('#cookies')
-            .addClass('off');
+        $(this).parents('#cookies').addClass('off');
+        $('#footer').focus();
     });
 
     contrast.on('click', () => {
@@ -146,27 +145,18 @@ $(() => {
     initVideo($('.js-video'));
 
     // Since script is loaded asynchronously, load event isn't always fired !!!
-    document.readyState === 'complete'
-        ? loadHandler()
-        : $(window).on('load', loadHandler);
+    document.readyState === 'complete' ? loadHandler() : $(window).on('load', loadHandler);
 
-    if (!window.ActiveXObject && 'ActiveXObject' in window)
-        body.addClass('ie11');
+    if (!window.ActiveXObject && 'ActiveXObject' in window) body.addClass('ie11');
 
-    $(window).on(
-        'resize',
-        throttle(() => {
-            requestAnimFrame(resizeHandler);
-        }, 60)
-    );
+    $(window).on( 'resize', throttle(() => {
+        requestAnimFrame(resizeHandler);
+    }, 60) );
 
-    $(document).on(
-        'scroll',
-        throttle(() => {
-            scrollTop = $(document).scrollTop();
-            detectScrollDir();
-            DoScroll(scrollDir);
-        }, 60)
-    );
+    $(document).on( 'scroll', throttle(() => {
+        scrollTop = $(document).scrollTop();
+        detectScrollDir();
+        DoScroll(scrollDir);
+    }, 60) );
     InitScroll();
 });

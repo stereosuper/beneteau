@@ -35947,6 +35947,7 @@ $(function () {
         e.preventDefault();
         Cookies.set('beneteau-cookies', true, { expires: 30, path: '/' });
         $(this).parents('#cookies').addClass('off');
+        $('#footer').focus();
     });
 
     contrast.on('click', function () {
