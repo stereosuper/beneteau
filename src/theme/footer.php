@@ -4,14 +4,14 @@
 
 		<footer role='contentinfo' class='footer' id='footer'>
 			
-			<?php //if(!$cookie){ ?>
+			<?php if(!$cookie){ ?>
 				<div class='cookies' id='cookies'>
 					<div class='container'>
 						<?php the_field('cookie', 'options'); ?>
 						<button type='button' id='btnCookies'><?php _e('Close the cookie warning', 'beneteau'); ?></button>
 					</div>
 				</div>
-			<?php //} ?>
+			<?php } ?>
 
 			<div class='container'>
 				<p>

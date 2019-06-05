@@ -105,11 +105,7 @@ $(() => {
 
     // Prevent popins from opening on mobile
     $.featherlight.defaults.beforeOpen = function(e) {
-        if (
-            windowWidth <= 580 &&
-            $(e.currentTarget).length &&
-            $(e.currentTarget).data('url')
-        ) {
+        if ( windowWidth <= 580 && $(e.currentTarget).length && $(e.currentTarget).data('url') ) {
             window.location = $(e.currentTarget).data('url');
         }
     };

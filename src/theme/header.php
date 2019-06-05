@@ -64,15 +64,14 @@
 
 					<?php if( is_front_page() ){ ?>
 						<h1 class='logo'>
-					<?php }else{ ?>
-						<a href='<?php echo home_url('/'); ?>' title='<?php _e('Groupe Bénéteau', 'beneteau'); ?>' rel='home' class='logo'>
-					<?php } ?>
-						<div><img src='<?php echo get_template_directory_uri(); ?>/layoutImg/logo-beneteau.svg' alt='<?php _e('Groupe Bénéteau', 'beneteau'); ?>'></div>
-					<?php if( is_front_page() ){ ?>
+							<div><img src='<?php echo get_template_directory_uri(); ?>/layoutImg/logo-beneteau-home.svg' alt='<?php _e('Beneteau Group', 'beneteau'); ?>'></div>
 						</h1>
 					<?php }else{ ?>
+						<a href='<?php echo home_url('/'); ?>' title='<?php _e('Back to home - Beneteau Group', 'beneteau'); ?>' rel='home' class='logo'>
+							<div><img src='<?php echo get_template_directory_uri(); ?>/layoutImg/logo-beneteau.svg' alt='<?php _e('Beneteau Group', 'beneteau'); ?>'></div>
 						</a>
 					<?php } ?>
+
 					<nav id="nav" class="main-navigation" role="navigation">
 						<button id="burger" class="burger" type="button">
 							<span><?php _e('Menu', 'beneteau'); ?></span>

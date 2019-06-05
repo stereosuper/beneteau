@@ -1,20 +1,9 @@
 /* Forms */
 
-::-webkit-input-placeholder{
-}
-::-moz-placeholder{
-}
-:-ms-input-placeholder{
-}
-
-fieldset{
-
-}
-
 input, textarea, select, button{
   	transition: $transition;
   	&:focus{
-      	outline: 0;
+        outline: 1px dotted #35424D;
   	}
 }
 
