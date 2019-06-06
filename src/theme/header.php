@@ -62,13 +62,15 @@
 						<?php _e('Contrast version', 'beneteau'); ?>
 					</button>
 
+					<?php $logo = is_front_page() || has_post_thumbnail() ? get_template_directory_uri() . '/layoutImg/logo-beneteau-home.svg' : get_template_directory_uri() . '/layoutImg/logo-beneteau.svg'; ?>
+
 					<?php if( is_front_page() ){ ?>
 						<h1 class='logo'>
-							<div><img src='<?php echo get_template_directory_uri(); ?>/layoutImg/logo-beneteau-home.svg' alt='<?php _e('Beneteau Group', 'beneteau'); ?>'></div>
+							<div><img src='<?php echo $logo; ?>' alt='<?php _e('Beneteau Group', 'beneteau'); ?>'></div>
 						</h1>
 					<?php }else{ ?>
-						<a href='<?php echo home_url('/'); ?>' title='<?php _e('Back to home - Beneteau Group', 'beneteau'); ?>' rel='home' class='logo'>
-							<div><img src='<?php echo get_template_directory_uri(); ?>/layoutImg/logo-beneteau.svg' alt='<?php _e('Beneteau Group', 'beneteau'); ?>'></div>
+						<a href='<?php echo home_url('/'); ?>' rel='home' class='logo'>
+							<div><img src='<?php echo $logo; ?>' alt='<?php _e('Back to home - Beneteau Group', 'beneteau'); ?>'></div>
 						</a>
 					<?php } ?>
 
