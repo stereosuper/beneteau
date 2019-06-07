@@ -12,7 +12,7 @@ $header-height: 97px;
     .logo-img{
         display: none;
     }
-    &.on{
+    &.on, &.scrolled{
         background: #fff;
         .menu-main{
             .first-level{
@@ -29,6 +29,9 @@ $header-height: 97px;
         }
         .logo-img-white{
             display: none;
+        }
+        .burger{
+            color: $text;
         }
     }
     > .container {
@@ -283,6 +286,13 @@ $header-height: 97px;
             transform: translateY(-50%) rotateZ(45deg);
             border-bottom: 1px solid $lightBlue;
             border-right: 1px solid $lightBlue;
+        }
+    }
+    .activated{
+        .accordion-button{
+            &:before{
+                transform: translateY(-50%) rotateZ(225deg);
+            }
         }
     }
     .sub-menu-wrapper {

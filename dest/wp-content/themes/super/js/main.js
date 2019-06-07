@@ -35838,7 +35838,7 @@ $(function () {
 
     // Exécute les actions lorsqu'on scrolle la page qui masquent le menu
     function DoScroll(scrollDir) {
-        scrollTop > 50 ? header.addClass('on') : header.removeClass('on');
+        scrollTop > 50 ? header.addClass('scrolled') : header.removeClass('scrolled');
 
         if (!body.hasClass('page-template-tpl-brands') && !body.hasClass('single-brand')) {
             if (scrollTop > 200) {
