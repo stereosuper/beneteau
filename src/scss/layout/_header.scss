@@ -9,6 +9,28 @@ $header-height: 97px;
     left: 0;
     right: 0;
     z-index: 10;
+    .logo-img{
+        display: none;
+    }
+    &.on{
+        background: #fff;
+        .menu-main{
+            .first-level{
+                > a, > button{
+                    color: $text;
+                }
+            }
+        }
+        .lang{
+            color: $text;
+        }
+        .logo-img{
+            display: block;
+        }
+        .logo-img-white{
+            display: none;
+        }
+    }
     > .container {
         display: flex;
         width: 100%;
@@ -31,6 +53,59 @@ $header-height: 97px;
         background: #35424D;
         color: #fff;
         text-decoration: underline;
+    }
+    .text{
+        display: none;
+        font-family: $playfairBold;
+    }
+    .menu-img-link{
+        display: none;
+        max-width: 235px;
+        padding: 15px 25px;
+        position: relative;
+        z-index: 1;
+        background-size: cover;
+        background-position: 50% 50%;
+        &:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+            background: #35424D;
+            opacity: 0.8;
+        }
+        img{
+            display: block;
+            margin: 0 auto 25px;
+        }
+        div{
+            padding: 0 0 0 40px;
+            position: relative;
+            margin: 0 5px 20px;
+        }
+        a{
+            font-family: $montserratBold;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            letter-spacing: 0.2em;
+            color: #fff;
+            &:hover, &:focus{
+                opacity: 0.7
+            }
+        }
+        .icon{
+            position: absolute;
+            top: 6px;
+            left: 0;
+            font-size: 2rem;
+        }
+        .icon-video{
+            font-size: 1.8rem;
+            left: 5px;
+        }
     }
 }
 
@@ -170,48 +245,52 @@ $header-height: 97px;
                 content: none;
             }
         }
-        .sub-menu {
-            padding: 0 $gutter;
+        .sub-menu{
+            padding: 0;
+            margin: 0;
         }
     }
-    .second-level {
-        > span {
-            display: block;
-            margin-bottom: 0.5em;
-            position: relative;
-            font-family: $roboto;
-            font-size: 1.8rem;
-            text-transform: uppercase;
-            color: $lightBlue;
-            opacity: 0.8;
-            cursor: pointer;
-            &::before {
-                content: "";
-                position: absolute;
-                width: 15px;
-                height: 15px;
-                top: 50%;
-                right: 0;
-                transform: translateY(-50%) rotateZ(45deg);
-                border-bottom: 1px solid $lightBlue;
-                border-right: 1px solid $lightBlue;
-            }
+    .menu-content{
+        padding: 20px $gutter 0;
+    }
+    // .second-level {
+        // &.activated {
+        //     > span {
+        //         &::before {
+        //             transform: translateY(-50%) rotateZ(-135deg);
+        //         }
+        //     }
+        // }
+    // }
+    .accordion-button {
+        display: block;
+        margin-bottom: 0.5em;
+        position: relative;
+        font-family: $roboto;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        color: $lightBlue;
+        opacity: 0.8;
+        cursor: pointer;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%) rotateZ(45deg);
+            border-bottom: 1px solid $lightBlue;
+            border-right: 1px solid $lightBlue;
         }
-        &.activated {
-            > span {
-                &::before {
-                    transform: translateY(-50%) rotateZ(-135deg);
-                }
-            }
-        }
-        > .sub-menu-wrapper {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-            > .sub-menu {
-                margin: 0;
-                padding: $line-height 0;
-            }
+    }
+    .sub-menu-wrapper {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        > .sub-menu {
+            margin: 0;
+            padding: 10px 0 20px;
         }
     }
     .second-level,
@@ -231,6 +310,9 @@ $header-height: 97px;
     .main-menus{
         padding: 0;
         position: static;
+        .text{
+            display: block;
+        }
         hr{
             display: none;
         }
@@ -246,28 +328,57 @@ $header-height: 97px;
                     font-size: 1.4rem;
                     text-transform: uppercase;
                     color: #fff;
+                    &.on{
+                        color: $blue;
+                    }
                 }
             }
         }
-        .sub-menu{
+        .menu-container{
+            display: flex;
+            max-width: 1200px;
+            margin: 0 auto;
+            justify-content: space-between;
+            > div{
+                width: 23%;
+            }
+        }
+        .menu-content{
             display: none;
+            padding-bottom: 60px;
             position: fixed;
+            top: 95px;
             left: 0;
             right: 0;
             background: #fff;
             &.on{
                 display: block;
             }
-            .second-level{
-                > span{
-                    color: $text;
+            .accordion-button{
+                margin: 0;
+                color: $text;
+                &:before{
+                    content: none;
                 }
             }
-            .third-level, .second-level{
-                > a{
-                    color: $text;
-                }
+        }
+        .third-level, .second-level{
+            > a{
+                color: $text;
             }
+        }
+        .third-level{
+            margin: 0;
+            a{
+                font-size: 1.3rem;
+            }
+        }
+        .sub-menu-wrapper{
+            max-height: 100%;
+            opacity: 1;
+        }
+        .menu-img-link{
+            display: block;
         }
     }
 

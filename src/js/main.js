@@ -47,7 +47,7 @@ $(() => {
 
     // Exécute les actions lorsqu'on scrolle la page qui masquent le menu
     function DoScroll(scrollDir) {
-        scrollTop > 50 ? header.addClass('small') : header.removeClass('small');
+        scrollTop > 50 ? header.addClass('on') : header.removeClass('on');
 
         if (
             !body.hasClass('page-template-tpl-brands') &&
@@ -55,14 +55,14 @@ $(() => {
         ) {
             if (scrollTop > 200) {
                 if (scrollDir < 1) {
-                    header.addClass('off');
+                    //header.addClass('off');
                     if (sidebar.length) sidebar.addClass('js-show-logo');
                 } else {
-                    header.removeClass('off');
+                    //header.removeClass('off');
                     if (sidebar.length) sidebar.removeClass('js-show-logo');
                 }
             } else {
-                header.removeClass('off');
+                //header.removeClass('off');
                 if (sidebar.length) sidebar.removeClass('js-show-logo');
             }
         }
@@ -82,7 +82,7 @@ $(() => {
 
     function loadHandler() {
         // Header
-        animHeader(htmlAze, body, header, windowWidth);
+        animHeader(htmlAze, header);
 
         // Slider home
         slider($('#sliderHome'), windowWidth);

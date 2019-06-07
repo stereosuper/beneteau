@@ -1,17 +1,11 @@
 const $ = require('jquery');
 
 require('gsap/CSSPlugin');
-const TweenLite = require('gsap/TweenLite');
 
-window.requestAnimFrame = require('./requestAnimFrame.js');
-const throttle = require('./throttle.js');
-
-module.exports = function(htmlAze, body, header, windowWidth) {
+module.exports = function(htmlAze, header) {
     if (!header.length) return;
 
     const nav = $('#nav');
-    let menuX;
-    let submenu, submenuList, submenuLeft, submenuWidth, linkCenter;
     const menuBg = $('#menuBg');
 
     header
@@ -21,54 +15,9 @@ module.exports = function(htmlAze, body, header, windowWidth) {
             htmlAze.addClass('menu-open');
             menuBg.addClass('on');
         })
-        .on('mouseenter', 'a', function() {
-            if ($(this).parents('.sub-menu').length) return;
-
-            if (header.find('.sub-menu').length) {
-                header.find('.sub-menu').removeClass('on');
-                header.removeClass('hover');
-                if (!htmlAze.hasClass('menu-open')) menuBg.removeClass('on');
-            }
-
-            if ($(this).siblings('.sub-menu').length) {
-                $(this)
-                    .siblings('.sub-menu')
-                    .addClass('on');
-                header.addClass('hover');
-                if (!htmlAze.hasClass('menu-open')) menuBg.addClass('on');
-            }
-        })
-        .on('mouseleave', function() {
-            if ($(this).find('.sub-menu').length) {
-                $(this)
-                    .find('.sub-menu')
-                    .removeClass('on');
-                header.removeClass('hover');
-                if (!htmlAze.hasClass('menu-open')) menuBg.removeClass('on');
-                // TweenLite.set($(this).siblings('.sub-menu').children('ul'), {x: 0, delay: 0.3});
-            }
-        })
-        .find('a')
-        .each(function() {
-            submenu = $(this).parents('.sub-menu');
-
-            if (!submenu.length && $(this).siblings('.sub-menu').length) {
-                submenuList = $(this)
-                    .siblings('.sub-menu')
-                    .children('ul');
-                submenuLeft = submenuList.offset()
-                    ? submenuList.offset().left
-                    : 0;
-                submenuWidth = submenuList.width();
-                linkCenter = $(this).offset().left + $(this).width() / 2;
-
-                menuX =
-                    linkCenter + submenuWidth / 2 > windowWidth - 15
-                        ? windowWidth - submenuLeft - submenuWidth - 15
-                        : linkCenter - submenuLeft - submenuWidth / 2;
-
-                TweenLite.set(submenuList, { x: menuX });
-            }
+        .on('click', '.js-menu-btn', function() {
+            $(this).toggleClass('on').parent().find('.menu-content').toggleClass('on').parent().siblings().find('.menu-content').removeClass('on').parent().find('.js-menu-btn').removeClass('on');
+            $(this).hasClass('on') ? header.addClass('on') : header.removeClass('on');
         });
 
     header.on('click', '#main-navigation-cross', e => {
@@ -77,15 +26,4 @@ module.exports = function(htmlAze, body, header, windowWidth) {
         htmlAze.removeClass('menu-open');
         menuBg.removeClass('on');
     });
-
-    $(window).on(
-        'resize',
-        throttle(() => {
-            requestAnimFrame(() => {
-                TweenLite.set(header.find('.sub-menu').children('ul'), {
-                    x: 0,
-                });
-            });
-        }, 60)
-    );
 };

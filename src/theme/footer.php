@@ -43,6 +43,18 @@
 				<path d='M0.1744899,0.1969967C0.0224832,0.2373544,0.0005927,0.2689686,0,0.4032062L0.00419,1 c0.0111598-0.0764089,0.0497083-0.1031455,0.1698911-0.1350859L1,0.6678032V0L0.1744899,0.1969967z'/>
 			</clipPath>
 
+			<symbol id="icon-doc" viewBox="0 0 29 32">
+				<path fill="none" stroke="#fff" stroke-linejoin="miter" stroke-linecap="square" stroke-miterlimit="4" stroke-width="1.28" d="M0.64 16h8.96"></path>
+				<path fill="none" stroke="#fff" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="1.28" d="M14.72 5.12h12.16c0.707 0 1.28 0.573 1.28 1.28v16.11c0 0.339-0.135 0.665-0.375 0.905l-1.81 1.81c-0.24 0.24-0.566 0.375-0.905 0.375h-10.35c-0.707 0-1.28-0.573-1.28-1.28v-6.4l2.56-1.92-2.56-1.92v-7.68c0-0.707 0.573-1.28 1.28-1.28z"></path>
+				<path fill="#fff" d="M24.32 21.76h3.84l-1.28 2.56-2.56 1.28z"></path>
+				<path fill="#fff" d="M6.827 12.8l4.267 3.2-4.267 3.2z"></path>
+			</symbol>
+
+			<symbol id="icon-video2" viewBox="0 0 32 32">
+				<path fill="none" stroke="#fff" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="1.5238" d="M30.476 16c0 7.995-6.481 14.476-14.476 14.476s-14.476-6.481-14.476-14.476c0-7.995 6.481-14.476 14.476-14.476s14.476 6.481 14.476 14.476z"></path>
+				<path fill="none" stroke="#fff" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.5238" d="M22.857 16l-10.286 5.938v-11.877l10.286 5.938z"></path>
+			</symbol>
+
 			<symbol id='icon-email' viewBox='0 0 43 32'>
 				<title>Contact</title>
 				<path d='M38.667 0h-34.667c-2.133 0-4 1.867-4 4v24c0 2.133 1.867 4 4 4h34.667c2.133 0 4-1.867 4-4v-24c0-2.133-1.867-4-4-4zM4 2.667h34.667c0.8 0 1.333 0.533 1.333 1.333v1.6c-14.933 10.133-18.133 11.733-18.667 11.733s-3.733-1.6-18.667-11.733v-1.6c0-0.8 0.533-1.333 1.333-1.333zM38.667 29.333h-34.667c-0.8 0-1.333-0.533-1.333-1.333v-19.2c16.533 11.2 17.867 11.2 18.667 11.2s2.133 0 18.667-11.2v19.2c0 0.8-0.533 1.333-1.333 1.333z'/>

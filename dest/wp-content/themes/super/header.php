@@ -56,22 +56,26 @@
 		<div class='wrapper'>
 			<p class='access-to-main'><a href='#main' class='sr-only sr-only-focusable' id='access-to-main'><?php _e('Access main content', 'beneteau'); ?></a></p>
 
-			<header role='banner' class='header' id='header'>
+			<header role='banner' class='header <?php if( !is_front_page() && !has_post_thumbnail() ) echo "on"; ?>' id='header'>
 				<div class='container'>
 					<button type='button' id='contrast' class='contrast' data-on='<?php _e('Contrast version', 'beneteau'); ?>' data-off='<?php _e('Classic version', 'beneteau'); ?>'>
 						<?php _e('Contrast version', 'beneteau'); ?>
 					</button>
 
-					<?php $logo = is_front_page() || has_post_thumbnail() ? get_template_directory_uri() . '/layoutImg/logo-beneteau-home.svg' : get_template_directory_uri() . '/layoutImg/logo-beneteau.svg'; ?>
-
 					<?php if( is_front_page() ){ ?>
 						<h1 class='logo'>
-							<div><img src='<?php echo $logo; ?>' alt='<?php _e('Beneteau Group', 'beneteau'); ?>'></div>
+							<div><img src='<?php echo get_template_directory_uri() . '/layoutImg/logo-beneteau-white.svg'; ?>' alt='<?php _e('Beneteau Group', 'beneteau'); ?>' class='logo-img-white'><img src='<?php echo get_template_directory_uri() . '/layoutImg/logo-beneteau.svg'; ?>' alt='<?php _e('Beneteau Group', 'beneteau'); ?>' class='logo-img'></div>
 						</h1>
 					<?php }else{ ?>
-						<a href='<?php echo home_url('/'); ?>' rel='home' class='logo'>
-							<div><img src='<?php echo $logo; ?>' alt='<?php _e('Back to home - Beneteau Group', 'beneteau'); ?>'></div>
-						</a>
+						<?php if( has_post_thumbnail() ){ ?>
+							<a href='<?php echo home_url('/'); ?>' rel='home' class='logo'>
+								<div><img src='<?php echo get_template_directory_uri() . '/layoutImg/logo-beneteau-white.svg'; ?>' alt='<?php _e('Back to home - Beneteau Group', 'beneteau'); ?>' class='logo-img-white'><img src='<?php echo get_template_directory_uri() . '/layoutImg/logo-beneteau.svg'; ?>' alt='<?php _e('Back to home - Beneteau Group', 'beneteau'); ?>' class='logo-img'></div>
+							</a>
+						<?php }else{ ?>
+							<a href='<?php echo home_url('/'); ?>' rel='home' class='logo'>
+								<div><img src='<?php echo get_template_directory_uri() . '/layoutImg/logo-beneteau.svg'; ?>' alt='<?php _e('Back to home - Beneteau Group', 'beneteau'); ?>'></div>
+							</a>
+						<?php } ?>
 					<?php } ?>
 
 					<nav id="nav" class="main-navigation" role="navigation">
@@ -86,12 +90,14 @@
 									<svg class="icon"><use href="#icon-cross"/></svg>
 								</button>
 								<?php echo beneteau_mlp_navigation(); ?>
-								<?php wp_nav_menu( array(
+								<?php /*wp_nav_menu( array(
 									'theme_location' => 'primary',
 									'container' => false,
 									'menu_class' => 'menu-main',
 									'walker' => new Wrap_Submenu()
-								) ); ?>
+								) ); */?>
+
+								<?php get_template_part('bricks/menu'); ?>
 							</div>
 						</div>
 					</nav>
