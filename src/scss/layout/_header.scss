@@ -33,6 +33,10 @@ $header-height: 97px;
         .burger{
             color: $text;
         }
+        .contrast{
+            background: none;
+            color: $text;
+        }
     }
     > .container {
         display: flex;
@@ -117,7 +121,7 @@ $header-height: 97px;
     max-width: 240px;
     padding: 0;
     border: 0;
-    margin: 0 $gutter * 2 0 0;
+    margin: 0 40px 0 0;
     &:hover,
     &:focus {
         opacity: 0.7;
@@ -202,18 +206,20 @@ $header-height: 97px;
     display: flex;
     align-items: center;
     height: $header-height;
-    padding-left: $gutter;
+    padding: 0 0 0 $gutter;
+    font-family: $roboto;
+    line-height: 1;
     color: $white;
-    .current,
-    a {
-        margin-right: $gutter * 0.5;
+    .current, a {
+        margin: 0 $gutter * 0.5 0 0;
     }
     .current {
-        border-bottom: 1px solid currentColor;
+        border-bottom: 1px solid;
     }
     a {
-        color: currentColor;
         border-bottom: 0;
+        font-family: inherit;
+        color: inherit;
     }
 }
 
@@ -227,18 +233,14 @@ $header-height: 97px;
     }
     .first-level {
         margin-bottom: $line-height * 1.5;
-        > button,
-        > a {
-            margin-left: $gutter;
-            margin-bottom: $line-height;
+        > button, > a {
+            display: block;
+            margin: 0 0 $line-height $gutter;
             border: 0;
             position: relative;
             font-family: $playfairBold;
             font-size: 2.4rem;
             color: $lightBlue;
-        }
-        > a {
-            display: block;
         }
         > hr {
             width: 100%;
@@ -297,7 +299,7 @@ $header-height: 97px;
     }
     .sub-menu-wrapper {
         max-height: 0;
-        opacity: 0;
+        opacity: 0; 
         overflow: hidden;
         > .sub-menu {
             margin: 0;
@@ -368,8 +370,14 @@ $header-height: 97px;
             .accordion-button{
                 margin: 0;
                 color: $text;
+                cursor: auto;
                 &:before{
                     content: none;
+                }
+            }
+            a{
+                &:hover, &:focus{
+                    color: $blue;
                 }
             }
         }
@@ -393,6 +401,10 @@ $header-height: 97px;
         }
     }
 
+    .logo{
+        margin-right: 60px;
+    }
+
     .header{
         &.on{
             .main-navigation-cross{
@@ -403,11 +415,16 @@ $header-height: 97px;
 
     .main-menus-wrapper{
         display: flex;
+        justify-content: space-between;
         background: none;
     }
 
     .burger{
         display: none;
+    }
+
+    .main-navigation{
+        width: 100%;
     }
 
     .main-navigation-cross{
@@ -421,7 +438,20 @@ $header-height: 97px;
     }
 
     .lang{
-        padding: 0;
+        padding-left: 0;
         font-size: 1.4rem;
+        .current{
+            position: relative;
+            margin-right: 9px;
+            &:after{
+                content: '';
+                width: 1px;
+                position: absolute;
+                top: 2px;
+                bottom: -1px;
+                right: -5px;
+                background: currentColor;
+            }
+        }
     }
 }
