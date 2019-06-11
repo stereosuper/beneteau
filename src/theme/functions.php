@@ -620,6 +620,12 @@ function beneteau_register_required_plugins() {
             'force_activation' => false
         ),
         array(
+            'name'        => 'Loco Translate',
+            'slug'        => 'loco-translate',
+            'required'    => false,
+            'force_activation' => false
+        ),
+        array(
             'name'        => 'SecuPress Free — Sécurité WordPress 1.3.3',
             'slug'        => 'secupress',
             'required'    => false,

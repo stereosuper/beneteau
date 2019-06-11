@@ -3,21 +3,23 @@
 <?php endif; ?>
 
 <?php if( get_row_layout() == 'menu_with_submenu' ) : ?>
-    <span class="js-accordion-button accordion-button" role="button" aria-expanded="false" tab-index="0"><?php the_sub_field('title', 'options'); ?></span>
-    <?php if( have_rows('links', 'options') ) : ?>
-        <div class="sub-menu-wrapper js-sub-menu-wrapper">
-            <ul class="sub-menu js-sub-menu">
-                <?php while( have_rows('links', 'options') ) : the_row(); ?>
-                    <?php $link = get_sub_field('link', 'options'); ?>
-                    <li class="third-level">
-                        <a href="<?php echo $link['url']; ?>">
-                            <?php echo $link['title']; ?>
-                        </a>
-                    </li>
-                <?php endwhile; ?>
-            </ul>
-        </div>
-    <?php endif; ?>
+    <div>
+        <span class="js-accordion-button accordion-button" role="button" aria-expanded="false" tabindex="0"><?php the_sub_field('title', 'options'); ?></span>
+        <?php if( have_rows('links', 'options') ) : ?>
+            <div class="sub-menu-wrapper js-sub-menu-wrapper">
+                <ul class="sub-menu js-sub-menu">
+                    <?php while( have_rows('links', 'options') ) : the_row(); ?>
+                        <?php $link = get_sub_field('link', 'options'); ?>
+                        <li class="third-level">
+                            <a href="<?php echo $link['url']; ?>">
+                                <?php echo $link['title']; ?>
+                            </a>
+                        </li>
+                    <?php endwhile; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+    </div>
 <?php endif; ?>
 
 <?php if( get_row_layout() == 'menu' ) : ?>

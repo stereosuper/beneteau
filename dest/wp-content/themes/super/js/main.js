@@ -35662,12 +35662,15 @@ module.exports = function (htmlAze, header) {
     var nav = $('#nav');
     //const menuBg = $('#menuBg');
     var close = $('#main-navigation-cross');
+    var mainMenus = $('#main-menus');
 
     header.on('click', '#burger', function (e) {
         e.preventDefault();
         nav.addClass('on');
         htmlAze.addClass('menu-open');
-        //menuBg.addClass('on');
+        close.focus();
+        mainMenus.attr('role', 'dialog').attr('aria-label', 'navigation');
+        $('#access, #main, #footer, #logo').attr('aria-hidden', true);
     }).on('click', '.js-menu-btn', function () {
         $(this).toggleClass('on').parent().find('.menu-content').toggleClass('on').parent().siblings().find('.menu-content').removeClass('on').parent().find('.js-menu-btn').removeClass('on');
         if ($(this).hasClass('on')) {
@@ -35678,6 +35681,11 @@ module.exports = function (htmlAze, header) {
             $(this).attr('aria-expanded', false);
             header.removeClass('on');
         }
+    }).on('focus', '.js-menu-btn', function () {
+        if (header.find('.js-menu-btn.on').length) {
+            header.find('.js-menu-btn').removeClass('on').attr('aria-expanded', false).parent().find('.menu-content').removeClass('on');
+            header.removeClass('on');
+        }
     }).on('click', '#main-navigation-cross', function () {
         header.removeClass('on').find('.js-menu-btn').removeClass('on').parent().find('.menu-content').removeClass('on');
     });
@@ -35686,8 +35694,13 @@ module.exports = function (htmlAze, header) {
         e.preventDefault();
         nav.removeClass('on');
         htmlAze.removeClass('menu-open');
-        //menuBg.removeClass('on');
+        $('#access, #main, #footer, #logo').attr('aria-hidden', false);
+        $('#burger').focus();
     });
+
+    if ($(window).width() > 1100) {
+        $('.js-accordion-button').removeAttr('aria-expanded').removeAttr('tabindex');
+    }
 };
 
 },{"gsap/CSSPlugin":4,"jquery":11}],18:[function(require,module,exports){
@@ -35952,74 +35965,53 @@ $(function () {
 },{"./accordion.js":14,"./brandSlider.js":15,"./header.js":17,"./initScrollReveal.js":18,"./initVideo.js":19,"./menuAccordion.js":21,"./requestAnimFrame.js":22,"./slider.js":23,"./sticky.js":24,"./submenu.js":25,"./throttle.js":26,"featherlight/release/featherlight.gallery.min.js":2,"featherlight/release/featherlight.min.js":3,"imagesloaded":9,"jquery":11,"js-cookie":12}],21:[function(require,module,exports){
 'use strict';
 
-var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"]) _i["return"](); } finally { if (_d) throw _e; } } return _arr; } return function (arr, i) { if (Array.isArray(arr)) { return arr; } else if (Symbol.iterator in Object(arr)) { return sliceIterator(arr, i); } else { throw new TypeError("Invalid attempt to destructure non-iterable instance"); } }; }();
+var $ = require('jquery');
 
 require('gsap');
 
-var forEach = function forEach(arr, callback) {
-    var i = 0;
-    var length = arr.length;
-
-    while (i < length) {
-        callback(arr[i], i);
-        i += 1;
-    }
-};
-
 var menuAccordionHandler = function menuAccordionHandler() {
-    var accordionsContent = document.querySelectorAll('.js-sub-menu-wrapper');
+    var accordionsContent = $('.js-sub-menu-wrapper');
 
     if (!accordionsContent.length) return;
 
-    forEach(accordionsContent, function (accordionContent) {
-        var parent = accordionContent.parentElement;
-
-        var _parent$getElementsBy = parent.getElementsByClassName('js-accordion-button'),
-            _parent$getElementsBy2 = _slicedToArray(_parent$getElementsBy, 1),
-            title = _parent$getElementsBy2[0];
+    accordionsContent.each(function () {
+        var that = $(this);
+        var parent = that.parent();
+        var title = parent.find('.js-accordion-button');
 
         if (!title) return;
 
-        title.addEventListener('click', function () {
-            var alreadyActivated = parent.classList.contains('activated');
-            var submenu = accordionContent.querySelector('.js-sub-menu');
-            var maxHeight = submenu.getBoundingClientRect().height;
+        title.on('click keyup', function (e) {
+            if (e.keyCode !== undefined && e.keyCode !== 13) return;
+
+            var alreadyActivated = parent.hasClass('activated');
+            var submenu = that.find('.js-sub-menu');
+            var maxHeight = submenu.innerHeight();
 
             if (alreadyActivated) {
-                parent.classList.remove('activated');
-                TweenMax.to(accordionContent, 0.3, {
+                parent.removeClass('activated');
+                TweenMax.to(that, 0.3, {
                     maxHeight: 0,
                     opacity: 0,
                     ease: Power4.easeOut
                 });
-                title.setAttribute('aria-expanded', false);
+                title.attr('aria-expanded', false);
             } else {
-                TweenMax.to(accordionContent, 0.3, {
+                TweenMax.to(that, 0.3, {
                     maxHeight: maxHeight,
                     opacity: 1,
                     ease: Power4.easeOut
                 });
-                parent.classList.add('activated');
-                title.setAttribute('aria-expanded', true);
+                parent.addClass('activated');
+                title.attr('aria-expanded', true);
             }
-
-            // setTimeout(() => {
-            //     const offset = title.getBoundingClientRect().top + window.scrollY;
-            //     TweenMax.to(window, 0.5, {
-            //         scrollTo: {
-            //             y: offset,
-            //             offsetY: globalStyles.lineHeight,
-            //         },
-            //         ease: easing.easeFade,
-            //     });
-            // }, 600);
-        }, false);
+        });
     });
 };
 
 module.exports = menuAccordionHandler;
 
-},{"gsap":7}],22:[function(require,module,exports){
+},{"gsap":7,"jquery":11}],22:[function(require,module,exports){
 "use strict";
 
 module.exports = function () {

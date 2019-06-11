@@ -1,48 +1,126 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Beneteau\n"
-"POT-Creation-Date: 2017-10-17 08:52+0000\n"
-"PO-Revision-Date: 2017-10-17 11:48+0000\n"
+"POT-Creation-Date: 2019-06-11 14:26+0000\n"
+"PO-Revision-Date: 2019-06-11 14:27+0000\n"
 "Last-Translator: adminBeneteau <elisabeth@stereosuper.fr>\n"
-"Language-Team: French (France)\n"
-"Language: fr-FR\n"
+"Language-Team: Français\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Loco - https://localise.biz/\n"
+"X-Generator: Loco https://localise.biz/\n"
 "X-Poedit-Basepath: ..\n"
-"Plural-Forms: nplurals=2; plural=n > 1\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
-"Report-Msgid-Bugs-To: "
+"Report-Msgid-Bugs-To: \n"
+"X-Loco-Version: 2.3.0; wp-4.9.2"
+
+#: functions.php:372
+msgid "brand"
+msgstr "marques-services"
+
+#: single-brand.php:58
+msgid "Visit "
+msgstr "Visitez "
+
+#: single-brand.php:67
+msgid "Back to brands and Beneteau services"
+msgstr "Retour aux marques et services Beneteau"
+
+#: 404.php:5
+msgid "We're sorry, the page you're looking for doesn't exist."
+msgstr "Nous sommes désolé, la page que vous cherchez n’existe pas."
+
+#: 404.php:6
+msgid "Go back to home"
+msgstr "Retour à l’accueil"
 
 #. Name of the template
-msgid "Emploi"
+msgid "Emploi liste"
+msgstr ""
+
+#: front-page-old.php:76 front-page-old.1.php:76 front-page.php:88
+msgid "Cours de l'action"
+msgstr ""
+
+#. Name of the template
+#: bricks/brick_row_brands.php:31
+msgid "Contact"
+msgstr "Contacter"
+
+#. Name of the template
+msgid "Marques"
 msgstr ""
 
 #. Name of the template
 msgid "Candidature"
 msgstr ""
 
-#: header.php:22 header.php:22
-msgid "Groupe Bénéteau"
+#: header.php:57
+msgid "Access main content"
+msgstr "Accéder au contenu principal"
+
+#: header.php:61 header.php:62
+msgid "Contrast version"
+msgstr "Version contrastée"
+
+#: header.php:61
+msgid "Classic version"
+msgstr "Version classique"
+
+#: header.php:67
+msgid "Beneteau Group"
+msgstr "Groupe Bénéteau"
+
+#: header.php:72 header.php:76
+msgid "Back to home - Beneteau Group"
+msgstr "Retour à l'accueil - Groupe Bénéteau"
+
+#: header.php:83
+msgid "Menu"
+msgstr "Menu"
+
+#: header.php:89
+msgid "Fermer"
 msgstr ""
+
+#: footer.php:11
+msgid "Close the cookie warning"
+msgstr "Fermer le bandeau de cookies"
 
 #. Name of the template
 msgid "Sitemap"
 msgstr ""
 
-#. Name of the template
-msgid "Emploi liste"
-msgstr ""
+#: sitemap.php:16 sitemap.php:27
+msgid "Pages"
+msgstr "Pages"
+
+#: sitemap.php:43
+msgid "News"
+msgstr "Actualités"
+
+#: page.php:25
+msgid "Secondary navigation"
+msgstr "Navigation secondaire"
 
 #. Name of the template
-msgid "Marques"
+msgid "Emploi"
 msgstr ""
 
-#: bricks/brick_row_home_news.php:56
+#: front-page.php:60
+msgid "En savoir plus sur "
+msgstr ""
+
+#: bricks/brick_row_home_news.php:63
 msgid "d/m/Y"
+msgstr ""
+
+#: bricks/brick_row_home_news.php:65
+msgid "Lire"
 msgstr ""
 
 #. Name of the theme
@@ -60,44 +138,3 @@ msgstr ""
 #. Author URI of the theme
 msgid "http://stereosuper.fr"
 msgstr ""
-
-#: sitemap.php:43
-msgid "News"
-msgstr "Actualités"
-
-#: single-brand.php:66
-msgid "Close"
-msgstr "Fermer"
-
-#: single-brand.php:57
-msgid "Visit "
-msgstr "Visitez "
-
-#. Name of the template
-#: bricks/brick_row_brands.php:31
-msgid "Contact"
-msgstr "Contacter"
-
-#: 404.php:5
-msgid "We're sorry, the page you're looking for doesn't exist."
-msgstr "Nous sommes désolé, la page que vous cherchez n’existe pas."
-
-#: 404.php:6
-msgid "Go back to home"
-msgstr "Retour à l’accueil"
-
-#: functions.php:279
-msgid "All our offers"
-msgstr "Toutes nos offres"
-
-#: functions.php:358
-msgid "brand"
-msgstr "marques-services"
-
-#: header.php:24
-msgid "Menu"
-msgstr "Menu"
-
-#: sitemap.php:16 sitemap.php:27
-msgid "Pages"
-msgstr "Pages"

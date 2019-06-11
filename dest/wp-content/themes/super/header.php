@@ -54,7 +54,7 @@
 
 	<body <?php body_class( $class ); ?>>
 		<div class='wrapper'>
-			<p class='access-to-main'><a href='#main' class='sr-only sr-only-focusable' id='access-to-main'><?php _e('Access main content', 'beneteau'); ?></a></p>
+			<p class='access-to-main' id='access'><a href='#main' class='sr-only sr-only-focusable' id='access-to-main'><?php _e('Access main content', 'beneteau'); ?></a></p>
 
 			<header role='banner' class='header <?php if( !is_front_page() && !has_post_thumbnail() ) echo "on"; ?>' id='header'>
 				<div class='container'>
@@ -63,16 +63,16 @@
 					</button>
 
 					<?php if( is_front_page() ){ ?>
-						<h1 class='logo'>
+						<h1 class='logo' id='logo'>
 							<div><img src='<?php echo get_template_directory_uri() . '/layoutImg/logo-beneteau-white.svg'; ?>' alt='<?php _e('Beneteau Group', 'beneteau'); ?>' class='logo-img-white'><img src='<?php echo get_template_directory_uri() . '/layoutImg/logo-beneteau.svg'; ?>' alt='<?php _e('Beneteau Group', 'beneteau'); ?>' class='logo-img'></div>
 						</h1>
 					<?php }else{ ?>
 						<?php if( has_post_thumbnail() ){ ?>
-							<a href='<?php echo home_url('/'); ?>' rel='home' class='logo'>
+							<a href='<?php echo home_url('/'); ?>' rel='home' class='logo' id='logo'>
 								<div><img src='<?php echo get_template_directory_uri() . '/layoutImg/logo-beneteau-white.svg'; ?>' alt='<?php _e('Back to home - Beneteau Group', 'beneteau'); ?>' class='logo-img-white'><img src='<?php echo get_template_directory_uri() . '/layoutImg/logo-beneteau.svg'; ?>' alt='<?php _e('Back to home - Beneteau Group', 'beneteau'); ?>' class='logo-img'></div>
 							</a>
 						<?php }else{ ?>
-							<a href='<?php echo home_url('/'); ?>' rel='home' class='logo'>
+							<a href='<?php echo home_url('/'); ?>' rel='home' class='logo' id='logo'>
 								<div><img src='<?php echo get_template_directory_uri() . '/layoutImg/logo-beneteau.svg'; ?>' alt='<?php _e('Back to home - Beneteau Group', 'beneteau'); ?>'></div>
 							</a>
 						<?php } ?>
@@ -84,10 +84,10 @@
 							<svg class="icon" aria-hidden='true' focusable='false'><use xlink:href="#icon-burger"></use></svg>
 						</button>
 						<div class="main-menus">
-							<div class="main-menus-wrapper">
+							<div class="main-menus-wrapper" id='main-menus'>
 								<button id="main-navigation-cross" class="main-navigation-cross" type="button">
 									<span><?php _e('Fermer', 'beneteau'); ?></span>
-									<svg class="icon"><use href="#icon-cross"/></svg>
+									<svg class="icon" aria-hidden='true' focusable='false'><use href="#icon-cross"/></svg>
 								</button>
 								<?php echo beneteau_mlp_navigation(); ?>
 								<?php /*wp_nav_menu( array(

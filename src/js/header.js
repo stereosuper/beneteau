@@ -8,13 +8,16 @@ module.exports = function(htmlAze, header) {
     const nav = $('#nav');
     //const menuBg = $('#menuBg');
     const close = $('#main-navigation-cross');
+    const mainMenus = $('#main-menus');
 
     header
         .on('click', '#burger', (e) => {
             e.preventDefault();
             nav.addClass('on');
             htmlAze.addClass('menu-open');
-            //menuBg.addClass('on');
+            close.focus();
+            mainMenus.attr('role', 'dialog').attr('aria-label', 'navigation');
+            $('#access, #main, #footer, #logo').attr('aria-hidden', true);
         })
         .on('click', '.js-menu-btn', function() {
             $(this).toggleClass('on').parent().find('.menu-content').toggleClass('on').parent().siblings().find('.menu-content').removeClass('on').parent().find('.js-menu-btn').removeClass('on');
@@ -27,6 +30,12 @@ module.exports = function(htmlAze, header) {
                 header.removeClass('on');
             }
         })
+        .on('focus', '.js-menu-btn', function(){
+            if( header.find('.js-menu-btn.on').length ){
+                header.find('.js-menu-btn').removeClass('on').attr('aria-expanded', false).parent().find('.menu-content').removeClass('on');
+                header.removeClass('on');
+            }
+        })
         .on('click', '#main-navigation-cross', function(){
             header.removeClass('on').find('.js-menu-btn').removeClass('on').parent().find('.menu-content').removeClass('on');
         });
@@ -35,6 +44,11 @@ module.exports = function(htmlAze, header) {
         e.preventDefault();
         nav.removeClass('on');
         htmlAze.removeClass('menu-open');
-        //menuBg.removeClass('on');
+        $('#access, #main, #footer, #logo').attr('aria-hidden', false);
+        $('#burger').focus();
     });
+
+    if( $(window).width() > 1100 ){
+        $('.js-accordion-button').removeAttr('aria-expanded').removeAttr('tabindex');
+    }
 };
