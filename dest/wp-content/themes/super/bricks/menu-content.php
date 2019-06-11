@@ -1,5 +1,5 @@
 <?php if( get_row_layout() == 'text' ) : ?>
-    <div class='text'><?php the_sub_field('text', 'options'); ?></div>
+    <p class='text'><?php the_sub_field('text', 'options'); ?></p>
 <?php endif; ?>
 
 <?php if( get_row_layout() == 'menu_with_submenu' ) : ?>
@@ -37,7 +37,7 @@
 
 <?php if( get_row_layout() == 'img_links' ) : ?>
     <div class='menu-img-link' style='background-image:url(<?php echo wp_get_attachment_image_url(get_sub_field('img', 'options'), 'large'); ?>)'>
-        <?php echo wp_get_attachment_image(get_sub_field('title', 'options'), 'medium'); ?>
+        <h2><?php echo wp_get_attachment_image(get_sub_field('title', 'options'), 'medium'); ?></h2>
         <?php $link = get_sub_field('link_pdf', 'options'); if( $link ){ ?>
             <div>
                 <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-doc" /></svg>

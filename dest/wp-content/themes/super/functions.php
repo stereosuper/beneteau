@@ -500,8 +500,8 @@ function beneteau_mlp_navigation()
         );
     }
     ksort( $items );
-    $before = '<div class="lang" id="lang">';
-    $after = '</div>';
+    $before = '<p class="lang" id="lang">';
+    $after = '</p>';
 
     $otherLangItems = array();
 
@@ -511,10 +511,16 @@ function beneteau_mlp_navigation()
         $img = '';
 
         if( get_current_blog_id() === $site_id ){
-            $currentLangItem = '<span class="current">' . esc_html( $text ) . '</span>';
+            $currentLangItem = sprintf(
+                '<a hreflang="%1$s" title="%1$s" lang="%3$s%4$s" href="%2$s" class="current" aria-current="true">%3$s%4$s</a>',
+                esc_attr( $item['http'] ),
+                esc_url( $item[ 'url' ] ),
+                $img,
+                esc_html( $text )
+            );
         }else{
             $otherLangItem = sprintf(
-                '<a rel="alternate" hreflang="%1$s" href="%2$s">%3$s%4$s</a>',
+                '<a rel="alternate" hreflang="%1$s" title="%1$s" lang="%3$s%4$s" href="%2$s">%3$s%4$s</a>',
                 esc_attr( $item['http'] ),
                 esc_url( $item[ 'url' ] ),
                 $img,

@@ -19,9 +19,11 @@ module.exports = function(htmlAze, header) {
         .on('click', '.js-menu-btn', function() {
             $(this).toggleClass('on').parent().find('.menu-content').toggleClass('on').parent().siblings().find('.menu-content').removeClass('on').parent().find('.js-menu-btn').removeClass('on');
             if( $(this).hasClass('on') ){
+                $(this).attr('aria-expanded', true);
                 header.addClass('on');
                 close.css('top', $(this).parent().find('.menu-content').offset().top + $(this).parent().find('.menu-content').outerHeight());
             }else{
+                $(this).attr('aria-expanded', false);
                 header.removeClass('on');
             }
         })

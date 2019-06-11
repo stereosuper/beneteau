@@ -34,6 +34,7 @@ const menuAccordionHandler = () => {
                         opacity: 0,
                         ease: Power4.easeOut,
                     });
+                    title.setAttribute('aria-expanded', false);
                 } else {
                     TweenMax.to(accordionContent, 0.3, {
                         maxHeight,
@@ -41,6 +42,7 @@ const menuAccordionHandler = () => {
                         ease: Power4.easeOut,
                     });
                     parent.classList.add('activated');
+                    title.setAttribute('aria-expanded', true);
                 }
 
                 // setTimeout(() => {

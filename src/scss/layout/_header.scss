@@ -63,6 +63,7 @@ $header-height: 97px;
     }
     .text{
         display: none;
+        margin-top: 0;
         font-family: $playfairBold;
     }
     .menu-img-link{
@@ -83,6 +84,13 @@ $header-height: 97px;
             z-index: -1;
             background: #35424D;
             opacity: 0.8;
+        }
+        h2{
+            padding: 0;
+            margin: 0;
+            &:after{
+                content: none;
+            }
         }
         img{
             display: block;
@@ -207,6 +215,7 @@ $header-height: 97px;
     align-items: center;
     height: $header-height;
     padding: 0 0 0 $gutter;
+    margin: 0;
     font-family: $roboto;
     line-height: 1;
     color: $white;

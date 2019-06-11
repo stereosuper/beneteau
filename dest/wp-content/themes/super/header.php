@@ -81,7 +81,7 @@
 					<nav id="nav" class="main-navigation" role="navigation">
 						<button id="burger" class="burger" type="button">
 							<span><?php _e('Menu', 'beneteau'); ?></span>
-							<svg class="icon"><use xlink:href="#icon-burger"></use></svg>
+							<svg class="icon" aria-hidden='true' focusable='false'><use xlink:href="#icon-burger"></use></svg>
 						</button>
 						<div class="main-menus">
 							<div class="main-menus-wrapper">
