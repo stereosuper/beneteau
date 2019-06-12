@@ -15,13 +15,18 @@
     }
     h2, h3{
         overflow: hidden;
-        &.no-text{
-            text-indent: -99em;
-            > img{
-                display: block;
-                float: left;
-                text-indent: 0;
-            }
+    }
+    h3{
+        margin: 0;
+        font-size: 1.6rem;
+        line-height: 1.4;
+    }
+    .no-text{
+        text-indent: -99em;
+        > img{
+            display: block;
+            float: left;
+            text-indent: 0;
         }
     }
 }
@@ -106,6 +111,9 @@
         font-size: 5rem;
         line-height: 1;
     }
+    p + p{
+        margin: 0;
+    }
 }
 
 .grid-post-type-item{
@@ -117,26 +125,26 @@
     -ms-grid-column-span: 1;
     -ms-grid-row-span: 1;
     &:hover, &:focus{
-        .content, .subtitle, h3{
+        .content, .subtitle, .no-text{
             opacity: 1;
         }
         .subtitle, .icon{
             transition-delay: 0.15s;
         }
-        h3{
+        .no-text{
             transition-delay: 0.2s;
         }
         .icon{
             transform: scale3d(1, 1, 1);
         }
     }
-    .content, .subtitle, h3, .icon{
+    .content, .subtitle, .no-text, .icon{
         transition: $transition;
     }
-    .content, .subtitle, h3{
+    .content, .subtitle, .no-text{
         opacity: 0;
     }
-    .subtitle, h3{
+    .subtitle, .no-text{
         transition-delay: 0s;
     }
     .content{
@@ -177,13 +185,11 @@
         left: 50%;
         transform: translate3d(-50%, 0, 0);   
     }
-    h3{
+    .no-text{
         width: 100%;
+        margin: 0;
         align-self: flex-end;
         text-align: center;
-        &.no-text{
-            margin: 0;
-        }
     }
     span{
         line-height: 1.4;

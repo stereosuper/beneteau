@@ -37,7 +37,7 @@ $postType = get_sub_field('post_type');
                 <span><?php echo $job2; ?></span>
                 <?php echo $job3; ?>
             </p>
-            <a href='<?php echo $btnLink; ?>' class='btn-invert'><?php echo $btn; ?></a>
+            <p><a href='<?php echo $btnLink; ?>' class='btn-invert'><?php echo $btn; ?></a></p>
         </div>
 
         <?php while( $queryPosts->have_posts() ) : ?>
@@ -47,15 +47,15 @@ $postType = get_sub_field('post_type');
                 <div class='content'>
                     <div class='subtitle'>
                         <svg class='icon icon-video'><use xlink:href='#icon-video'></use></svg>
-                        <span>
+                        <h3>
                             <span class='name'><?php the_field('name'); ?></span>
                             <span><?php the_field('job'); ?></span>
-                        </span>
+                        </h3>
                     </div>
-                    <h3 <?php if( $subtitleImg ){ ?> class='no-text' <?php } ?>>
+                    <p <?php if( $subtitleImg ){ ?> class='no-text' <?php } ?>>
                         <?php the_field('title'); ?>
                         <?php echo wp_get_attachment_image( $subtitleImg, 'large' ); ?>
-                    </h3>
+                    </p>
                 </div>
                 <?php echo wp_get_attachment_image( get_field('video_img'), 'large' ); ?>
             </a>
