@@ -15,35 +15,40 @@
                 <?php if( have_rows('content1', 'options') ) : ?>
                     <div class='menu-content'>
                         <div class='menu-container'>
+                            <button class="nav-cross" type="button">
+                                <svg class="icon" aria-hidden='true' focusable='false'><use href="#icon-cross"/></svg><span><?php _e('Fermer', 'beneteau'); ?></span>
+                            </button>
                             <div>
-                                <?php while( have_rows('content1', 'options') ) : the_row();
-                                    get_template_part('bricks/menu-content');
-                                endwhile; ?>
+                                <div>
+                                    <?php while( have_rows('content1', 'options') ) : the_row();
+                                        get_template_part('bricks/menu-content');
+                                    endwhile; ?>
+                                </div>
+
+                                <?php if( have_rows('content2', 'options') ) : ?>
+                                    <div>
+                                        <?php while( have_rows('content2', 'options') ) : the_row();
+                                            get_template_part('bricks/menu-content');
+                                        endwhile; ?>
+                                    </div>
+                                <?php endif; ?>
+
+                                <?php if( have_rows('content3', 'options') ) : ?>
+                                    <div>
+                                        <?php while( have_rows('content3', 'options') ) : the_row();
+                                            get_template_part('bricks/menu-content');
+                                        endwhile; ?>
+                                    </div>
+                                <?php endif; ?>
+
+                                <?php if( have_rows('content4', 'options') ) : ?>
+                                    <div>
+                                        <?php while( have_rows('content4', 'options') ) : the_row();
+                                            get_template_part('bricks/menu-content');
+                                        endwhile; ?>
+                                    </div>
+                                <?php endif; ?>
                             </div>
-
-                            <?php if( have_rows('content2', 'options') ) : ?>
-                                <div>
-                                    <?php while( have_rows('content2', 'options') ) : the_row();
-                                        get_template_part('bricks/menu-content');
-                                    endwhile; ?>
-                                </div>
-                            <?php endif; ?>
-
-                            <?php if( have_rows('content3', 'options') ) : ?>
-                                <div>
-                                    <?php while( have_rows('content3', 'options') ) : the_row();
-                                        get_template_part('bricks/menu-content');
-                                    endwhile; ?>
-                                </div>
-                            <?php endif; ?>
-
-                            <?php if( have_rows('content4', 'options') ) : ?>
-                                <div>
-                                    <?php while( have_rows('content4', 'options') ) : the_row();
-                                        get_template_part('bricks/menu-content');
-                                    endwhile; ?>
-                                </div>
-                            <?php endif; ?>
                         </div>
                     </div>
                 <?php endif; ?>

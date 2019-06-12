@@ -191,11 +191,27 @@ $header-height: 97px;
     overflow-y: auto;
 }
 
-.main-navigation-cross {
+.nav-cross{
+    display: none;
+    align-items: center;
     border: 0;
+    font-size: 1.4rem;
+    text-decoration: underline;
+    &:hover, &:focus{
+        color: $blue;
+        text-decoration: none;
+    }
+    .icon{
+        margin: 0 10px 0 0;
+        font-size: 1.2rem;
+    }
+}
+.main-navigation-cross {
+    display: block;
     position: absolute;
     top: 37px;
     right: $gutter;
+    border: 0;
     color: $white;
     font-family: $roboto;
     font-size: 1.2rem;
@@ -360,21 +376,32 @@ $header-height: 97px;
                     &.on{
                         color: $blue;
                     }
+                    &:hover, &:focus{
+                        color: $text;
+                    }
+                    .scrolled &, .on &{
+                        &:hover, &:focus{
+                            color: $blue;
+                        }
+                    }
                 }
             }
         }
         .menu-container{
-            display: flex;
             max-width: 1200px;
+            position: relative;
             margin: 0 auto;
-            justify-content: space-between;
             > div{
-                width: 23%;
+                display: flex;
+                justify-content: space-between;
+                > div{
+                    width: 23%;
+                }
             }
         }
         .menu-content{
             display: none;
-            padding-bottom: 60px;
+            padding-bottom: 45px;
             position: fixed;
             top: 95px;
             left: 0;
@@ -421,14 +448,6 @@ $header-height: 97px;
         margin-right: 60px;
     }
 
-    .header{
-        &.on{
-            .main-navigation-cross{
-                display: block;
-            }
-        }
-    }
-
     .main-menus-wrapper{
         display: flex;
         justify-content: space-between;
@@ -443,14 +462,15 @@ $header-height: 97px;
         width: 100%;
     }
 
+    .nav-cross{
+        display: flex;
+        position: absolute;
+        left: 0;
+        bottom: -25px;
+        color: $text;
+    }
     .main-navigation-cross{
         display: none;
-        top: 0;
-        right: auto;
-        left: 0;
-        margin: -35px 0 0;
-        z-index: 10;
-        color: $text;
     }
 
     .lang{

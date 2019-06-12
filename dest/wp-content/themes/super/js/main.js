@@ -35661,14 +35661,13 @@ module.exports = function (htmlAze, header) {
 
     var nav = $('#nav');
     //const menuBg = $('#menuBg');
-    var close = $('#main-navigation-cross');
     var mainMenus = $('#main-menus');
 
     header.on('click', '#burger', function (e) {
         e.preventDefault();
         nav.addClass('on');
         htmlAze.addClass('menu-open');
-        close.focus();
+        $('#main-navigation-cross').focus();
         mainMenus.attr('role', 'dialog').attr('aria-label', 'navigation');
         $('#access, #main, #footer, #logo').attr('aria-hidden', true);
     }).on('click', '.js-menu-btn', function () {
@@ -35676,7 +35675,6 @@ module.exports = function (htmlAze, header) {
         if ($(this).hasClass('on')) {
             $(this).attr('aria-expanded', true);
             header.addClass('on');
-            close.css('top', $(this).parent().find('.menu-content').offset().top + $(this).parent().find('.menu-content').outerHeight());
         } else {
             $(this).attr('aria-expanded', false);
             header.removeClass('on');
@@ -35686,11 +35684,9 @@ module.exports = function (htmlAze, header) {
             header.find('.js-menu-btn').removeClass('on').attr('aria-expanded', false).parent().find('.menu-content').removeClass('on');
             header.removeClass('on');
         }
-    }).on('click', '#main-navigation-cross', function () {
-        header.removeClass('on').find('.js-menu-btn').removeClass('on').parent().find('.menu-content').removeClass('on');
-    });
-
-    header.on('click', '#main-navigation-cross', function (e) {
+    }).on('click', '.nav-cross', function () {
+        header.removeClass('on').find('.js-menu-btn.on').focus().removeClass('on').parent().find('.menu-content').removeClass('on');
+    }).on('click', '#main-navigation-cross', function (e) {
         e.preventDefault();
         nav.removeClass('on');
         htmlAze.removeClass('menu-open');
