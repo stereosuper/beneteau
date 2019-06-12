@@ -355,11 +355,17 @@ a {
     }
 
     &:focus {
-        outline: 1px dotted #35424D;;
+        outline: 1px dotted;
     }
 
     &:active {
         border-color: transparent;
+    }
+}
+
+h2, div{
+    &:focus{
+        outline: 1px dotted;
     }
 }
 
@@ -763,9 +769,6 @@ a {
         &:hover,
         &:focus {
             opacity: 0.7;
-        }
-        &:focus{
-            outline: 1px dotted;
         }
 
         .icon {

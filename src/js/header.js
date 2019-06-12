@@ -1,4 +1,5 @@
 const $ = require('jquery');
+const createFocusTrap = require('focus-trap');
 
 require('gsap/CSSPlugin');
 
@@ -8,9 +9,11 @@ module.exports = function(htmlAze, header) {
     const nav = $('#nav');
     //const menuBg = $('#menuBg');
     const mainMenus = $('#main-menus');
+    const focusTrap = createFocusTrap('#main-menus');
 
     header
         .on('click', '#burger', (e) => {
+            focusTrap.activate();
             e.preventDefault();
             nav.addClass('on');
             htmlAze.addClass('menu-open');
@@ -38,6 +41,7 @@ module.exports = function(htmlAze, header) {
             header.removeClass('on').find('.js-menu-btn.on').focus().removeClass('on').parent().find('.menu-content').removeClass('on');
         })
         .on('click', '#main-navigation-cross', e => {
+            focusTrap.deactivate();
             e.preventDefault();
             nav.removeClass('on');
             htmlAze.removeClass('menu-open');

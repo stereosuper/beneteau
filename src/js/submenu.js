@@ -32,6 +32,7 @@ module.exports = function( submenu, windowHeight ){
             if( thisSection.length ){
                 e.preventDefault();
                 TweenLite.to(window, 0.5, {scrollTo: thisSection.data('top') - 100});
+                thisSection.focus();
             }
             
         }

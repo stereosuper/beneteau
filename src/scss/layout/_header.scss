@@ -217,9 +217,6 @@ $header-height: 97px;
     font-size: 1.2rem;
     text-transform: uppercase;
     transition: none;
-    &:focus{
-        outline: 1px dotted;
-    }
     > span {
         margin-right: 5px;
     }
@@ -246,9 +243,6 @@ $header-height: 97px;
         margin: 0 $gutter * 0.5 0 0;
         font-family: inherit;
         color: inherit;
-        &:focus{
-            outline: 1px dotted;
-        }
     }
 }
 

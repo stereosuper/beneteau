@@ -10,9 +10,9 @@ $title_align = get_sub_field('title_align');
 <div class='push-wrapper'>
     <div class='push-banner'></div>
     <?php if (!empty($title)){ ?>
-        <h2 id='<?php echo $anchor; ?>' class="align<?php echo $title_align; ?>"><?php echo $title; ?></h2>
+        <h2 id='<?php echo $anchor; ?>' class="align<?php echo $title_align; ?>" tabindex='0'><?php echo $title; ?></h2>
     <?php }else if(!empty($anchor)){ ?>
-        <div id='<?php echo $anchor; ?>'></div>
+        <div id='<?php echo $anchor; ?>' tabindex='0'></div>
     <?php } ?>
 
     <?php if (super_have_rows('blocks')) : ?>

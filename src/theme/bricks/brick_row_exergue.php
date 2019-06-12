@@ -9,7 +9,7 @@ $image = get_sub_field('image');
 
 ?>
 
-<div class='isAnimated highlighted <?php if (empty($image)) : ?> no-img <?php endif; ?>' id='<?php echo $anchor; ?>'>
+<div class='isAnimated highlighted <?php if (empty($image)) : ?> no-img <?php endif; ?>' id='<?php echo $anchor; ?>' tabindex='0'>
     <?php if (!empty($image)) : ?><span class='bg-img' style='background-image: url(<?php echo $image; ?>);'></span><?php endif; ?>
     <?php if (!empty($title)) : ?><span class='title'><?php echo $title; ?></span><?php endif; ?>
     <?php if (!empty($content)) : ?><strong><?php echo $content; ?></strong><?php endif; ?>

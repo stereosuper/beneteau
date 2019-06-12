@@ -12,9 +12,9 @@ $count = 0;
 <div class='contact-address isAnimated'>
     <div>
         <?php if (!empty($title)){ ?>
-            <h2 id='<?php echo $anchor; ?>'><?php echo $title; ?></h2>
+            <h2 id='<?php echo $anchor; ?>' tabindex='0'><?php echo $title; ?></h2>
         <?php }else if(!empty($anchor)){ ?>
-            <div id='<?php echo $anchor; ?>'></div>
+            <div id='<?php echo $anchor; ?>' tabindex='0'></div>
         <?php } ?>
         
         <?php if( have_rows('colonnes') ): ?>

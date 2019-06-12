@@ -11,9 +11,9 @@ $right_col_content = get_sub_field('right_col_content');
 
 <div class='isAnimated'>
     <?php if (!empty($title)){ ?>
-        <h2 id='<?php echo $anchor; ?>' class="align<?php echo $title_align; ?>"><?php echo $title; ?></h2>
+        <h2 id='<?php echo $anchor; ?>' class="align<?php echo $title_align; ?>" tabindex='0'><?php echo $title; ?></h2>
     <?php }else if(!empty($anchor)){ ?>
-        <div id='<?php echo $anchor; ?>'></div>
+        <div id='<?php echo $anchor; ?>' tabindex='0'></div>
     <?php } ?>
 
     <div class='grid'>
