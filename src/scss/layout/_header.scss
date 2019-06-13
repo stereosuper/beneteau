@@ -14,16 +14,6 @@ $header-height: 97px;
     }
     &.on, &.scrolled{
         background: #fff;
-        .menu-main{
-            .first-level{
-                > a, > button{
-                    color: $text;
-                }
-            }
-        }
-        .lang{
-            color: $text;
-        }
         .logo-img{
             display: block;
         }
@@ -374,6 +364,7 @@ $header-height: 97px;
                         color: $text;
                     }
                     .scrolled &, .on &{
+                        color: $text;
                         &:hover, &:focus{
                             color: $blue;
                         }
@@ -470,6 +461,9 @@ $header-height: 97px;
     .lang{
         padding-left: 0;
         font-size: 1.4rem;
+        .scrolled &, .on &{
+            color: $text;
+        }
         .current{
             position: relative;
             margin-right: 9px;
