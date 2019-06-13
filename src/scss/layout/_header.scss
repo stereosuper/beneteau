@@ -360,8 +360,8 @@ $header-height: 97px;
                     &.on{
                         color: $blue;
                     }
-                    &:hover, &:focus{
-                        color: $text;
+                    &:hover{
+                        opacity: 0.7;
                     }
                     .scrolled &, .on &{
                         color: $text;
