@@ -6,8 +6,19 @@
     z-index: 2;
     font-size: 1.4rem;
     text-align: center;
-    background: $text url(../layoutImg/logo-small.svg) no-repeat 50% 50px / 30px;
+    background: linear-gradient(85.08deg, #101C26 24.56%, #2D3A45 100.64%);
     color: $white;
+    &:before{
+        content: '';
+        width: 30px;
+        height: 42px;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background: url(../layoutImg/logo-small.svg) no-repeat;
+    }
     .contrasted &{
         background-color: #2D3A45;
     }
