@@ -13,35 +13,35 @@ get_header(); ?>
 				<h1><?php the_title(); ?></h1>
 				<?php the_content(); ?>
 
-				<h2><?php _e('Pages', 'beneteau'); ?></h2>
+				<!--<h2><?php //_e('Pages', 'beneteau'); ?></h2>-->
 				<ul>
 					<?php wp_list_pages( array('post_type' => 'page', 'title_li' => '', 'sort_column' => 'post_title') ); ?>
 				</ul>
 
 				<?php
-					function listPosts($postType, $tax){
-						$options = $tax ? array( array('taxonomy' => 'types', 'field' => 'slug', 'terms' => $tax) ) : '';
-						$posts = get_posts( array('post_type' => $postType, 'orderby' => 'title', 'posts_per_page' => -1, 'order' => 'ASC', 'tax_query' => $options) );
+					// function listPosts($postType, $tax){
+					// 	$options = $tax ? array( array('taxonomy' => 'types', 'field' => 'slug', 'terms' => $tax) ) : '';
+					// 	$posts = get_posts( array('post_type' => $postType, 'orderby' => 'title', 'posts_per_page' => -1, 'order' => 'ASC', 'tax_query' => $options) );
 
-						if(!$posts)
-							echo '<p>' . _e('Pages', 'beneteau') . '</p>';
+					// 	if(!$posts)
+					// 		echo '<p>' . _e('Pages', 'beneteau') . '</p>';
 
-						$output = "<ul>";
-						foreach( $posts as $post ){
-							$output .= '<li>';
-							$output .= '<a href="'. get_permalink($post->ID) .'" title="Go to '. get_the_title($post->ID) .'">';
-							$output .= get_the_title($post->ID);
-							$output .= '</a>';
-							$output .= '</li>';
-						}
-						$output .= '</ul>';
+					// 	$output = "<ul>";
+					// 	foreach( $posts as $post ){
+					// 		$output .= '<li>';
+					// 		$output .= '<a href="'. get_permalink($post->ID) .'" title="Go to '. get_the_title($post->ID) .'">';
+					// 		$output .= get_the_title($post->ID);
+					// 		$output .= '</a>';
+					// 		$output .= '</li>';
+					// 	}
+					// 	$output .= '</ul>';
 
-						echo $output;
-					}
+					// 	echo $output;
+					// }
 				?>
 
-				<h2><?php _e('News', 'beneteau'); ?></h2>
-				<?php listPosts('post', ''); ?>
+				<!--<h2><?php //_e('News', 'beneteau'); ?></h2>-->
+				<?php // listPosts('post', ''); ?>
 
 			<?php endwhile; ?>
 
