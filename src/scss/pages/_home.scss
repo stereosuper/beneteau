@@ -608,6 +608,9 @@
     &:focus {
         opacity: 0.7;
         color: transparent;
+        .a-btn{
+            border-color: transparent;
+        }
     }
     > figure {
         width: 100%;
