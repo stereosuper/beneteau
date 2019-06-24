@@ -21,7 +21,6 @@ get_header(); ?>
 		<?php if (strpos($sidebar_menu, '<li')!==FALSE) : ?>
 			<aside class='sidebar wrapper-sticky' id='sidebar'>
 				<div class='content-sidebar' id='blockSticky'>
-					<span class='logo-reduced'></span>
 					<span class='bg-sidebar'></span>
 					<?php echo $sidebar_menu; ?>
 				</div>
