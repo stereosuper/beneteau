@@ -36927,19 +36927,13 @@ module.exports = function homeSlider(slider, windowWidth) {
     slider.on('focusin', function () {
         state.focus = true;
         playbackHandler();
-    });
-
-    slider.on('onblur', function () {
+    }).on('onblur', function () {
         state.focus = false;
         playbackHandler();
-    });
-
-    slider.on('mouseover', function () {
+    }).on('mouseover', function () {
         state.mouseover = true;
         playbackHandler();
-    });
-
-    slider.on('mouseleave', function () {
+    }).on('mouseleave', function () {
         state.mouseover = false;
         playbackHandler();
     });

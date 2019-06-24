@@ -245,19 +245,13 @@ module.exports = function homeSlider(slider, windowWidth) {
     slider.on('focusin', () => {
         state.focus = true;
         playbackHandler();
-    });
-
-    slider.on('onblur', () => {
+    }).on('onblur', () => {
         state.focus = false;
         playbackHandler();
-    });
-
-    slider.on('mouseover', () => {
+    }).on('mouseover', () => {
         state.mouseover = true;
         playbackHandler();
-    });
-
-    slider.on('mouseleave', () => {
+    }).on('mouseleave', () => {
         state.mouseover = false;
         playbackHandler();
     });
