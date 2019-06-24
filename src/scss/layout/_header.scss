@@ -50,6 +50,10 @@ $header-height: 97px;
         background: #35424D;
         color: #fff;
         text-decoration: underline;
+        .menu-open &{
+            background: #35424D;
+            color: #fff;
+        }
     }
     .text{
         display: none;
