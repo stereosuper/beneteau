@@ -90,7 +90,10 @@
                 text-transform: none;
             }
             > .sub-menu{
-                > li{
+                li{
+                    margin: 0 0 5px;
+                }
+                .menu-item-has-children{
                     margin: 0 0 40px;
                     > a{
                         margin: 0 0 15px;
