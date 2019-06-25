@@ -12,7 +12,7 @@ $header-height: 97px;
     .logo-img{
         display: none;
     }
-    &.on, &.scrolled{
+    &.on, &.scrolled, &.submenu-open{
         background: #fff;
         .logo-img{
             display: block;
@@ -380,7 +380,7 @@ $header-height: 97px;
                     &:hover{
                         opacity: 0.7;
                     }
-                    .scrolled &, .on &{
+                    .scrolled &, .on &, .submenu-open &{
                         color: $text;
                         &:hover, &:focus{
                             color: $blue;
@@ -479,7 +479,7 @@ $header-height: 97px;
     .lang{
         padding-left: 0;
         font-size: 1.4rem;
-        .scrolled &, .on &{
+        .scrolled &, .on &, .submenu-open &{
             color: $text;
         }
         a:first-child{

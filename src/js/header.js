@@ -25,10 +25,10 @@ module.exports = function(htmlAze, header) {
             $(this).toggleClass('on').parent().find('.menu-content').toggleClass('on').parent().siblings().find('.menu-content').removeClass('on').parent().find('.js-menu-btn').removeClass('on');
             if( $(this).hasClass('on') ){
                 $(this).attr('aria-expanded', true);
-                header.addClass('on');
+                header.addClass('submenu-open');
             }else{
                 $(this).attr('aria-expanded', false);
-                header.removeClass('on');
+                header.removeClass('submenu-open');
             }
         })
         .on('focus', '.js-menu-btn', function(){
