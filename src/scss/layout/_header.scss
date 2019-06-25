@@ -482,7 +482,7 @@ $header-height: 97px;
         .scrolled &, .on &{
             color: $text;
         }
-        .current{
+        a:first-child{
             position: relative;
             margin-right: 9px;
             &:after{

@@ -499,11 +499,13 @@ function beneteau_mlp_navigation()
             'icon'     => (string) $translation->get_icon_url(),
         );
     }
+
     ksort( $items );
+
     $before = '<p class="lang" id="lang">';
     $after = '</p>';
 
-    $otherLangItems = array();
+    $langItems = array();
 
     foreach( $items as $site_id => $item ){
         $text = $item[ 'name' ];
@@ -511,7 +513,7 @@ function beneteau_mlp_navigation()
         $img = '';
 
         if( get_current_blog_id() === $site_id ){
-            $currentLangItem = sprintf(
+            $langItems[] = sprintf(
                 '<a hreflang="%1$s" title="%1$s" lang="%3$s%4$s" href="%2$s" class="current" aria-current="true">%3$s%4$s</a>',
                 esc_attr( $item['http'] ),
                 esc_url( $item[ 'url' ] ),
@@ -519,18 +521,17 @@ function beneteau_mlp_navigation()
                 esc_html( $text )
             );
         }else{
-            $otherLangItem = sprintf(
+            $langItems[] = sprintf(
                 '<a rel="alternate" hreflang="%1$s" title="%1$s" lang="%3$s%4$s" href="%2$s">%3$s%4$s</a>',
                 esc_attr( $item['http'] ),
                 esc_url( $item[ 'url' ] ),
                 $img,
                 esc_html( $text )
             );
-            array_push($otherLangItems, $otherLangItem);
         }
     }
 
-    return $before . $currentLangItem . join( '', $otherLangItems ) . $after;
+    return $before . join( '', $langItems ) . $after;
 }
 
 
