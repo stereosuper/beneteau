@@ -24,17 +24,19 @@ $darkGrey: #2d3a45;
 $transition: 0.2s ease-in-out;
 
 // Fonts
-$montserrat: "Montserrat", sans-serif;
+//$montserrat: "Montserrat", sans-serif;
 $montserratLight: "Montserrat Light", sans-serif;
+$montserrat: $montserratLight;
 $montserratLightIt: "Montserrat Light Italic", sans-serif;
 $montserratBold: "Montserrat Bold", sans-serif;
-$montserratSemiBold: "Montserrat SemiBold", sans-serif;
+//$montserratSemiBold: "Montserrat SemiBold", sans-serif;
+$montserratSemiBold: $montserratBold;
 
 $roboto: "RobotoCondensed", sans-serif;
 $robotoBold: "RobotoCondensed Bold", sans-serif;
 $robotoLight: "RobotoCondensed Light", sans-serif;
 
-$playfairBold: "PlayfairDisplay Bold", sans-serif;
+$playfairBold: "PlayfairDisplay Black", sans-serif;
 
 // Mediaqueries
 $retina: "only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-resolution: 144dpi)";
