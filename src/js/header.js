@@ -49,6 +49,13 @@ module.exports = function(htmlAze, header) {
             $('#burger').focus();
         });
 
+    $('body').on('click', function(e){
+        if( (!header.find(e.target).length || !e.target.id === 'header') && header.hasClass('submenu-open') ){
+            header.removeClass('submenu-open').find('.js-menu-btn').removeClass('on');
+            header.find('.menu-content').removeClass('on');
+        }
+    });
+
     if( $(window).width() > 1100 ){
         $('.js-accordion-button').removeAttr('aria-expanded').removeAttr('tabindex');
     }
