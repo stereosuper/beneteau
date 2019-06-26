@@ -79,14 +79,14 @@ module.exports = function homeSlider(slider, windowWidth) {
         TweenLite.fromTo(
             activeSlideTxt.find('.title'),
             0.5,
-            { opacity: 1, x: 0 },
-            { opacity: 0, x: '50px', overwrite: true }
+            { opacity: 1 },
+            { opacity: 0, overwrite: true }
         );
         TweenLite.fromTo(
             activeSlideTxt.find('.txt'),
             0.5,
-            { opacity: 1, x: 0 },
-            { opacity: 0, x: '50px', delay: 0.1, overwrite: true }
+            { opacity: 1 },
+            { opacity: 0, overwrite: true }
         );
         TweenLite.fromTo(
             activeSlideTxt.find('.button'),
@@ -94,8 +94,6 @@ module.exports = function homeSlider(slider, windowWidth) {
             { opacity: 1, x: 0 },
             {
                 opacity: 0,
-                x: '50px',
-                delay: 0.2,
                 overwrite: true,
                 onComplete: () => {
                     const slideText = slider.find('.js-slide-txt');
@@ -110,7 +108,6 @@ module.exports = function homeSlider(slider, windowWidth) {
             { opacity: 1 },
             {
                 opacity: 0,
-                delay: 0.5,
                 overwrite: true,
                 onComplete: () => {
                     const slideImages = slider.find('.js-slide-img');
@@ -140,23 +137,21 @@ module.exports = function homeSlider(slider, windowWidth) {
         TweenLite.fromTo(
             newActiveSlideTxt.find('.title'),
             0.5,
-            { opacity: 0, x: '-50px' },
-            { opacity: 1, x: 0, delay: 0.5, overwrite: true }
+            { opacity: 0 },
+            { opacity: 1, overwrite: true }
         );
         TweenLite.fromTo(
             newActiveSlideTxt.find('.txt'),
             0.5,
-            { opacity: 0, x: '-50px' },
-            { opacity: 1, x: 0, delay: 0.6, overwrite: true }
+            { opacity: 0 },
+            { opacity: 1, overwrite: true }
         );
         TweenLite.fromTo(
             newActiveSlideTxt.find('.button'),
             0.5,
-            { opacity: 0, x: '-50px' },
+            { opacity: 0 },
             {
                 opacity: 1,
-                x: 0,
-                delay: 0.7,
                 onComplete: () => {
                     done = true;
                 },

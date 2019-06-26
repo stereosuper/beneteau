@@ -36460,13 +36460,6 @@ module.exports = function (body) {
 
     window.sr = ScrollReveal({ reset: true });
 
-    function aze() {
-        TweenLite.set($('.push-container > a'), { className: '-=isDeployed' });
-        $('.push-container > a').each(function (index) {
-            TweenLite.set($(this), { className: '+=isDeployed', delay: 0.2 + 0.1 * index });
-        });
-    }
-
     sr.reveal('.isAnimated', { viewFactor: 0.1 });
 
     sr.reveal('.content-brand .baseline', { duration: 1500, origin: 'right', scale: 1, distance: '60px' });
@@ -36485,15 +36478,17 @@ module.exports = function (body) {
 
     sr.reveal('.list-brands >li:nth-child(2n+1)', { easing: 'ease-in-out', duration: 600, origin: 'right', scale: 0.5, distance: '30px' });
 
-    sr.reveal('.push-wrapper', { duration: 800, origin: 'bottom', scale: 1, distance: '60px' });
+    sr.reveal('.push-links-item', { duration: 800, origin: 'bottom', scale: 1, distance: '60px' }, 150);
+
+    sr.reveal('.home-group-number', { duration: 800, origin: 'bottom', scale: 1, distance: '60px' }, 150);
+
+    sr.reveal('.home-brands-services-list > li', { duration: 800, origin: 'bottom', scale: 1, distance: '60px' }, 150);
+
+    sr.reveal('.home-offers > .container', { duration: 800, origin: 'bottom', scale: 1, distance: '20px' });
+
+    sr.reveal('.home-professions-video', { duration: 800, origin: 'bottom', scale: 1, distance: '0' });
 
     sr.reveal('.gallery >li', { duration: 500, origin: 'bottom', scale: 1, distance: '60px' }, 150);
-
-    sr.reveal('.push-banner', { easing: 'ease-in-out', duration: 500, rotate: { x: 0, y: 0, z: 0 }, scale: 1, opacity: 0, distance: '80px', beforeReveal: function beforeReveal(domEl) {
-            aze();
-        } });
-
-    sr.reveal('.home-news', { beforeReveal: aze });
 
     sr.reveal('.grid-post-type-title .no-text', { easing: 'ease-in-out', duration: 500, scale: 1, distance: '0px' });
 };
@@ -36829,12 +36824,10 @@ module.exports = function homeSlider(slider, windowWidth) {
             button = sliderNav.find('.on').parent().next().length ? sliderNav.find('.on').parent().next().find('button') : sliderNav.find('li').eq(0).find('button');
         }
 
-        TweenLite.fromTo(activeSlideTxt.find('.title'), 0.5, { opacity: 1, x: 0 }, { opacity: 0, x: '50px', overwrite: true });
-        TweenLite.fromTo(activeSlideTxt.find('.txt'), 0.5, { opacity: 1, x: 0 }, { opacity: 0, x: '50px', delay: 0.1, overwrite: true });
+        TweenLite.fromTo(activeSlideTxt.find('.title'), 0.5, { opacity: 1 }, { opacity: 0, overwrite: true });
+        TweenLite.fromTo(activeSlideTxt.find('.txt'), 0.5, { opacity: 1 }, { opacity: 0, overwrite: true });
         TweenLite.fromTo(activeSlideTxt.find('.button'), 0.5, { opacity: 1, x: 0 }, {
             opacity: 0,
-            x: '50px',
-            delay: 0.2,
             overwrite: true,
             onComplete: function onComplete() {
                 var slideText = slider.find('.js-slide-txt');
@@ -36844,7 +36837,6 @@ module.exports = function homeSlider(slider, windowWidth) {
 
         TweenLite.fromTo(activeSlideImg, 0.7, { opacity: 1 }, {
             opacity: 0,
-            delay: 0.5,
             overwrite: true,
             onComplete: function onComplete() {
                 var slideImages = slider.find('.js-slide-img');
@@ -36865,12 +36857,10 @@ module.exports = function homeSlider(slider, windowWidth) {
         TweenLite.fromTo(newActiveSlideImg, 0.7, { opacity: 0 }, { opacity: 1, overwrite: true });
 
         newActiveSlideTxt.addClass('on');
-        TweenLite.fromTo(newActiveSlideTxt.find('.title'), 0.5, { opacity: 0, x: '-50px' }, { opacity: 1, x: 0, delay: 0.5, overwrite: true });
-        TweenLite.fromTo(newActiveSlideTxt.find('.txt'), 0.5, { opacity: 0, x: '-50px' }, { opacity: 1, x: 0, delay: 0.6, overwrite: true });
-        TweenLite.fromTo(newActiveSlideTxt.find('.button'), 0.5, { opacity: 0, x: '-50px' }, {
+        TweenLite.fromTo(newActiveSlideTxt.find('.title'), 0.5, { opacity: 0 }, { opacity: 1, overwrite: true });
+        TweenLite.fromTo(newActiveSlideTxt.find('.txt'), 0.5, { opacity: 0 }, { opacity: 1, overwrite: true });
+        TweenLite.fromTo(newActiveSlideTxt.find('.button'), 0.5, { opacity: 0 }, {
             opacity: 1,
-            x: 0,
-            delay: 0.7,
             onComplete: function onComplete() {
                 done = true;
             },
