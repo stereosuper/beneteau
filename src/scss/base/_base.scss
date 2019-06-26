@@ -545,7 +545,8 @@ h2, div{
 }
 
 .push-links-item {
-    display: block;
+    display: flex;
+    align-items: stretch;
     width: 100%;
     max-width: 500px;
     padding: 0;
@@ -563,6 +564,7 @@ h2, div{
         min-height: 180px;
         border-bottom: 0;
         margin: 0;
+        justify-content: space-between;
         &:hover,
         &:focus {
             opacity: 0.7;
@@ -576,6 +578,7 @@ h2, div{
             flex-grow: 1;
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
             padding: 20px $gutter 20px 50px;
             border-bottom: 0;
         }
@@ -594,7 +597,16 @@ h2, div{
         text-transform: uppercase;
     }
     .read {
-        display: none;
+        display: inline;
+        border-bottom: 1px solid #fff;
+        color: #fff;
+        font-family: "Montserrat Bold",sans-serif;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.22rem;
+        .contrasted &{
+            font-size: 1.8rem;
+        }
     }
     .img-wrapper {
         position: absolute;
@@ -626,8 +638,6 @@ h2, div{
 
 @media (min-width: $desktopSmall){
     .push-links-item {
-        display: flex;
-        align-items: stretch;
         width: 30%;
         max-width: 340px;
         height: 340px;
@@ -663,28 +673,10 @@ h2, div{
                 }
             }
         }
-        .content-wrapper {
-            justify-content: space-between;
-            > a {
-                align-items: flex-start;
-            }
-        }
         .title {
             margin-top: auto;
             font-size: 2.4rem;
             line-height: 1;
-        }
-        .read {
-            display: inline;
-            border-bottom: 1px solid $white;
-            color: $white;
-            font-family: $montserratBold;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.22rem;
-            .contrasted &{
-                font-size: 1.8rem;
-            }
         }
     }
 }
@@ -997,7 +989,6 @@ blockquote,
     }
 
     .highlighted {
-
         &:before,
         &:after {
             .container-sidebar & {
@@ -1005,13 +996,16 @@ blockquote,
                 left: 50%;
             }
         }
-
         .bg-img {
             .container-sidebar & {
                 width: 100vw;
                 left: 50%;
             }
         }
+    }
+
+    .post-thumbnail{
+        padding: 50px 0;
     }
 }
 
@@ -1032,7 +1026,9 @@ blockquote,
     .push-wrapper {
         a {
             width: calc(50% - #{$gutter});
+        }
 
+        li{
             &:last-child {
                 display: none;
             }
@@ -1122,18 +1118,6 @@ blockquote,
 
             &:nth-child(2) {
                 display: none;
-            }
-        }
-
-        .img-wrapper {
-            max-width: 150px;
-        }
-
-        .img {
-
-            >img,
-            >.bg {
-                max-height: 185px;
             }
         }
 
