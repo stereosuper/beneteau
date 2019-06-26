@@ -29,26 +29,23 @@ module.exports = function homeSlider(slider, windowWidth) {
     let done = true;
 
     const hammertime = new Hammer(slider.get(0));
-    let swipeBtn;
+    let swipeBtn, btn;
 
     const state = {
-        focus: false,
-        mouseover: false,
-        playback: true,
+        pause: false,
+        stop: false,
         playing: true,
     };
 
     const visibilityHidden = array => {
         array.each((index, el) => {
             if (!$(el).hasClass('on')) {
-                TweenLite.set(el, {
-                    visibility: 'hidden',
-                });
+                TweenLite.set(el, { visibility: 'hidden' });
             }
         });
     };
 
-    function slide(index, button) {
+    const slide = (index, button) => {
         done = false;
 
         if (index > -1) {
@@ -123,8 +120,7 @@ module.exports = function homeSlider(slider, windowWidth) {
         );
 
         activeSlideImg.removeClass('on');
-        activeSlideTxt.removeClass('on');
-        activeSlideTxt.find('.title').attr('tabindex', '-1');
+        activeSlideTxt.removeClass('on').find('.title').attr('tabindex', '-1');
 
         newActiveSlideImg.addClass('on');
         newActiveSlideTxt.find('.title').attr('tabindex', '0');
@@ -161,7 +157,7 @@ module.exports = function homeSlider(slider, windowWidth) {
                 opacity: 1,
                 x: 0,
                 delay: 0.7,
-                onComplete() {
+                onComplete: () => {
                     done = true;
                 },
                 overwrite: true,
@@ -187,7 +183,7 @@ module.exports = function homeSlider(slider, windowWidth) {
         setSliderTimeout();
     }
 
-    function setSliderTimeout() {
+    const setSliderTimeout = () => {
         TweenLite.killDelayedCallsTo(slide);
 
         if (!checkIfInView.check(slider)) return;
@@ -195,78 +191,57 @@ module.exports = function homeSlider(slider, windowWidth) {
         TweenLite.delayedCall(8, slide);
     }
 
-    function handleAction(btn) {
+    const handleAction = (btn) => {
         if (!done) return;
 
         TweenLite.killDelayedCallsTo(slide);
         slide(btn.parent().index(), btn);
     }
 
-    activeSlideImg
-        .removeClass('first-on')
-        .addClass('on')
-        .css('opacity', 1);
+    const playbackHandler = () => {
+        if (state.stop || state.pause) {
+            state.playing = false;
+            TweenLite.killDelayedCallsTo(slide);
+        } else if (!state.playing) {
+            state.playing = true;
+            setSliderTimeout();
+        }
+    };
 
-    activeSlideTxt
-        .removeClass('first-on')
-        .addClass('on')
-        .find('.title');
-    TweenLite.set(
-        [
-            activeSlideTxt.find('.title'),
-            activeSlideTxt.find('.txt'),
-            activeSlideTxt.find('.button'),
-        ],
-        { opacity: 1 }
-    );
+    activeSlideImg.removeClass('first-on').addClass('on').css('opacity', 1);
+    activeSlideTxt.removeClass('first-on').addClass('on').find('.title');
 
-    windowWidth > 780
-        ? slider.attr('style', '')
-        : slider.height(activeSlideTxt.height());
+    TweenLite.set([activeSlideTxt.find('.title'), activeSlideTxt.find('.txt'), activeSlideTxt.find('.button')], { opacity: 1 });
+
+    windowWidth > 780 ? slider.attr('style', '') : slider.height(activeSlideTxt.height());
 
     checkIfInView.init(slider);
     setSliderTimeout();
 
-    const playbackHandler = () => {
-        if (state.playback && !state.focus && !state.mouseover) {
-            if (!state.playing) {
-                state.playing = true;
-
-                buttonControl.text(buttonControl.data('pause'));
-                setSliderTimeout();
-            }
-        } else {
-            state.playing = false;
-            buttonControl.text(buttonControl.data('play'));
-            TweenLite.killDelayedCallsTo(slide);
-        }
-    };
-
-    slider.on('focusin', () => {
-        state.focus = true;
+    slider.on('focusin mouseover', () => {
+        if( state.stop ) return;
+        
+        state.pause = true;
         playbackHandler();
-    }).on('onblur', () => {
-        state.focus = false;
-        playbackHandler();
-    }).on('mouseover', () => {
-        state.mouseover = true;
-        playbackHandler();
-    }).on('mouseleave', () => {
-        state.mouseover = false;
+    }).on('onblur mouseleave', () => {
+        if( state.stop ) return;
+        
+        state.pause = false;
         playbackHandler();
     });
 
     buttonControl.on('click', function autoPlayHandler(e) {
         e.preventDefault();
-        const btn = $(this);
-
+        btn = $(this);
         btn.toggleClass('pause');
 
         if (btn.hasClass('pause')) {
-            state.playback = false;
+            state.stop = true;
+            buttonControl.text(buttonControl.data('play'));
             playbackHandler();
         } else {
-            state.playback = true;
+            state.stop = false;
+            buttonControl.text(buttonControl.data('pause'));
             playbackHandler();
         }
     });
@@ -279,62 +254,27 @@ module.exports = function homeSlider(slider, windowWidth) {
         }
     });
 
-    hammertime
-        .on('swipeleft', () => {
-            swipeBtn = sliderNav
-                .find('.on')
-                .parent()
-                .next().length
-                ? sliderNav
-                      .find('.on')
-                      .parent()
-                      .next()
-                      .find('button')
-                : sliderNav
-                      .find('li')
-                      .eq(0)
-                      .find('button');
-            handleAction(swipeBtn);
-        })
-        .on('swiperight', () => {
-            swipeBtn = sliderNav
-                .find('.on')
-                .parent()
-                .prev().length
-                ? sliderNav
-                      .find('.on')
-                      .parent()
-                      .prev()
-                      .find('button')
-                : sliderNav
-                      .find('li')
-                      .last()
-                      .find('button');
-            handleAction(swipeBtn);
+    hammertime.on('swipeleft', () => {
+        swipeBtn = sliderNav.find('.on').parent().next().length ? sliderNav.find('.on').parent().next().find('button') : sliderNav.find('li').eq(0).find('button');
+        handleAction(swipeBtn);
+    }).on('swiperight', () => {
+        swipeBtn = sliderNav.find('.on').parent().prev().length ? sliderNav.find('.on').parent().prev().find('button') : sliderNav.find('li').last().find('button');
+        handleAction(swipeBtn);
+    });
+
+    $(window).on('focusout', () => {
+        TweenLite.killDelayedCallsTo(slide);
+    })
+    .on('focusin', setSliderTimeout)
+    .on('resize', throttle(() => {
+        requestAnimFrame(() => {
+            windowWidth = window.outerWidth;
+            windowWidth > 780 ? slider.attr('style', '') : slider.height(activeSlideTxt.height());
+            setSliderTimeout();
         });
+    }, 60));
 
-    $(window)
-        .on('focusout', () => {
-            TweenLite.killDelayedCallsTo(slide);
-        })
-        .on('focusin', setSliderTimeout)
-        .on(
-            'resize',
-            throttle(() => {
-                requestAnimFrame(() => {
-                    windowWidth = window.outerWidth;
-                    windowWidth > 780
-                        ? slider.attr('style', '')
-                        : slider.height(activeSlideTxt.height());
-                    setSliderTimeout();
-                });
-            }, 60)
-        );
-
-    $(document).on(
-        'scroll',
-        throttle(() => {
-            requestAnimFrame(setSliderTimeout);
-        }, 10)
-    );
+    $(document).on('scroll', throttle(() => {
+        requestAnimFrame(setSliderTimeout);
+    }, 10));
 };

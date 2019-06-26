@@ -36797,26 +36797,24 @@ module.exports = function homeSlider(slider, windowWidth) {
     var done = true;
 
     var hammertime = new Hammer(slider.get(0));
-    var swipeBtn = void 0;
+    var swipeBtn = void 0,
+        btn = void 0;
 
     var state = {
-        focus: false,
-        mouseover: false,
-        playback: true,
+        pause: false,
+        stop: false,
         playing: true
     };
 
     var visibilityHidden = function visibilityHidden(array) {
         array.each(function (index, el) {
             if (!$(el).hasClass('on')) {
-                TweenLite.set(el, {
-                    visibility: 'hidden'
-                });
+                TweenLite.set(el, { visibility: 'hidden' });
             }
         });
     };
 
-    function slide(index, button) {
+    var slide = function slide(index, button) {
         done = false;
 
         if (index > -1) {
@@ -36855,8 +36853,7 @@ module.exports = function homeSlider(slider, windowWidth) {
         });
 
         activeSlideImg.removeClass('on');
-        activeSlideTxt.removeClass('on');
-        activeSlideTxt.find('.title').attr('tabindex', '-1');
+        activeSlideTxt.removeClass('on').find('.title').attr('tabindex', '-1');
 
         newActiveSlideImg.addClass('on');
         newActiveSlideTxt.find('.title').attr('tabindex', '0');
@@ -36877,7 +36874,6 @@ module.exports = function homeSlider(slider, windowWidth) {
             onComplete: function onComplete() {
                 done = true;
             },
-
             overwrite: true
         });
 
@@ -36889,26 +36885,36 @@ module.exports = function homeSlider(slider, windowWidth) {
         button.addClass('on').attr('aria-current', 'true').parent().siblings().find('button').removeClass('on').attr('aria-current', 'false');
 
         setSliderTimeout();
-    }
+    };
 
-    function setSliderTimeout() {
+    var setSliderTimeout = function setSliderTimeout() {
         TweenLite.killDelayedCallsTo(slide);
 
         if (!checkIfInView.check(slider)) return;
 
         TweenLite.delayedCall(8, slide);
-    }
+    };
 
-    function handleAction(btn) {
+    var handleAction = function handleAction(btn) {
         if (!done) return;
 
         TweenLite.killDelayedCallsTo(slide);
         slide(btn.parent().index(), btn);
-    }
+    };
+
+    var playbackHandler = function playbackHandler() {
+        if (state.stop || state.pause) {
+            state.playing = false;
+            TweenLite.killDelayedCallsTo(slide);
+        } else if (!state.playing) {
+            state.playing = true;
+            setSliderTimeout();
+        }
+    };
 
     activeSlideImg.removeClass('first-on').addClass('on').css('opacity', 1);
-
     activeSlideTxt.removeClass('first-on').addClass('on').find('.title');
+
     TweenLite.set([activeSlideTxt.find('.title'), activeSlideTxt.find('.txt'), activeSlideTxt.find('.button')], { opacity: 1 });
 
     windowWidth > 780 ? slider.attr('style', '') : slider.height(activeSlideTxt.height());
@@ -36916,46 +36922,30 @@ module.exports = function homeSlider(slider, windowWidth) {
     checkIfInView.init(slider);
     setSliderTimeout();
 
-    var playbackHandler = function playbackHandler() {
-        if (state.playback && !state.focus && !state.mouseover) {
-            if (!state.playing) {
-                state.playing = true;
+    slider.on('focusin mouseover', function () {
+        if (state.stop) return;
 
-                buttonControl.text(buttonControl.data('pause'));
-                setSliderTimeout();
-            }
-        } else {
-            state.playing = false;
-            buttonControl.text(buttonControl.data('play'));
-            TweenLite.killDelayedCallsTo(slide);
-        }
-    };
+        state.pause = true;
+        playbackHandler();
+    }).on('onblur mouseleave', function () {
+        if (state.stop) return;
 
-    slider.on('focusin', function () {
-        state.focus = true;
-        playbackHandler();
-    }).on('onblur', function () {
-        state.focus = false;
-        playbackHandler();
-    }).on('mouseover', function () {
-        state.mouseover = true;
-        playbackHandler();
-    }).on('mouseleave', function () {
-        state.mouseover = false;
+        state.pause = false;
         playbackHandler();
     });
 
     buttonControl.on('click', function autoPlayHandler(e) {
         e.preventDefault();
-        var btn = $(this);
-
+        btn = $(this);
         btn.toggleClass('pause');
 
         if (btn.hasClass('pause')) {
-            state.playback = false;
+            state.stop = true;
+            buttonControl.text(buttonControl.data('play'));
             playbackHandler();
         } else {
-            state.playback = true;
+            state.stop = false;
+            buttonControl.text(buttonControl.data('pause'));
             playbackHandler();
         }
     });
