@@ -47,7 +47,7 @@ module.exports = function( body ){
 
     sr.reveal('.home-group-number', { duration: 800, origin: 'bottom', scale: 1, distance: '60px' , afterReveal: function(elt){
         $(elt).find('.js-number').each(function(){
-            count($(this));
+            count( $(this) );
         });
     }}, 150);
 

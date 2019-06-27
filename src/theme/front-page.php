@@ -75,9 +75,9 @@
 					<?php while( $navCount < $count ) : ?>
 						<li>
 
-							<button class="slider-nav-button <?php echo $navCount === 0 ? 'on': '' ?>" aria-current="<?php echo $navCount === 0 ? 'true': 'false' ?>" type='button'>
+							<button class="slider-nav-button" aria-current="<?php echo $navCount === 0 ? 'true': 'false' ?>" type='button'>
 								<span class="slider-nav-title"><?php echo $titles_list[$navCount] ?></span>
-								<span class="slider-nav-line"></span>
+								<span class="slider-nav-line"><span class='line'></span></span>
 							</button>
 						</li>
 					<?php $navCount ++; endwhile; ?>

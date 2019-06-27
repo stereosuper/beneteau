@@ -36812,7 +36812,8 @@ module.exports = function homeSlider(slider, windowWidth) {
 
     var hammertime = new Hammer(slider.get(0));
     var swipeBtn = void 0,
-        btn = void 0;
+        btn = void 0,
+        indic = void 0;
 
     var state = {
         pause: false,
@@ -36842,6 +36843,8 @@ module.exports = function homeSlider(slider, windowWidth) {
         if (!button) {
             button = sliderNav.find('.on').parent().next().length ? sliderNav.find('.on').parent().next().find('button') : sliderNav.find('li').eq(0).find('button');
         }
+
+        indic = TweenLite.fromTo(button.find('.line'), 8, { scaleX: 0 }, { scaleX: 1 });
 
         TweenLite.fromTo(activeSlideTxt.find('.title'), 0.5, { opacity: 1 }, { opacity: 0, overwrite: true });
         TweenLite.fromTo(activeSlideTxt.find('.txt'), 0.5, { opacity: 1 }, { opacity: 0, overwrite: true });
@@ -36917,14 +36920,18 @@ module.exports = function homeSlider(slider, windowWidth) {
         if (state.stop || state.pause) {
             state.playing = false;
             TweenLite.killDelayedCallsTo(slide);
+            indic.pause();
         } else if (!state.playing) {
             state.playing = true;
             setSliderTimeout();
+            indic.play();
         }
     };
 
     activeSlideImg.removeClass('first-on').addClass('on').css('opacity', 1);
     activeSlideTxt.removeClass('first-on').addClass('on').find('.title');
+    sliderNav.find('.slider-nav-button').eq(0).addClass('on');
+    indic = TweenLite.to(sliderNav.find('.slider-nav-button').eq(0).find('.line'), 8, { scaleX: 1 });
 
     TweenLite.set([activeSlideTxt.find('.title'), activeSlideTxt.find('.txt'), activeSlideTxt.find('.button')], { opacity: 1 });
     TweenLite.to(activeSlideImg, 4, { scale: 1.05 });
