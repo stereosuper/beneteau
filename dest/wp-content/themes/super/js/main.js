@@ -36845,6 +36845,7 @@ module.exports = function homeSlider(slider, windowWidth) {
         }
 
         indic = TweenLite.fromTo(button.find('.line'), 8, { scaleX: 0 }, { scaleX: 1 });
+        indic.play();
 
         TweenLite.fromTo(activeSlideTxt.find('.title'), 0.5, { opacity: 1 }, { opacity: 0, overwrite: true });
         TweenLite.fromTo(activeSlideTxt.find('.txt'), 0.5, { opacity: 1 }, { opacity: 0, overwrite: true });
@@ -36912,6 +36913,7 @@ module.exports = function homeSlider(slider, windowWidth) {
     var handleAction = function handleAction(btn) {
         if (!done) return;
 
+        indic.pause();
         TweenLite.killDelayedCallsTo(slide);
         slide(btn.parent().index(), btn);
     };
@@ -36919,12 +36921,11 @@ module.exports = function homeSlider(slider, windowWidth) {
     var playbackHandler = function playbackHandler() {
         if (state.stop || state.pause) {
             state.playing = false;
-            TweenLite.killDelayedCallsTo(slide);
             indic.pause();
+            TweenLite.killDelayedCallsTo(slide);
         } else if (!state.playing) {
             state.playing = true;
             setSliderTimeout();
-            indic.play();
         }
     };
 
