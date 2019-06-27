@@ -2,6 +2,7 @@ const $ = require('jquery');
 
 global.jQuery = $;
 const Cookies = require('js-cookie');
+//const CountUp = require('countup.js');
 
 const imagesLoaded = require('imagesloaded');
 // provide jQuery argument

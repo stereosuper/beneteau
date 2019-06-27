@@ -101,13 +101,14 @@ module.exports = function homeSlider(slider, windowWidth) {
                 },
             }
         );
-
+        
         TweenLite.fromTo(
             activeSlideImg,
             0.7,
             { opacity: 1 },
             {
                 opacity: 0,
+                scale: 1,
                 overwrite: true,
                 onComplete: () => {
                     const slideImages = slider.find('.js-slide-img');
@@ -126,11 +127,12 @@ module.exports = function homeSlider(slider, windowWidth) {
             visibility: 'visible',
         });
 
+        TweenLite.fromTo(newActiveSlideImg, 4, {scale: 1}, {scale: 1.05});
         TweenLite.fromTo(
             newActiveSlideImg,
             0.7,
             { opacity: 0 },
-            { opacity: 1, overwrite: true }
+            { opacity: 1 }
         );
 
         newActiveSlideTxt.addClass('on');
@@ -207,6 +209,7 @@ module.exports = function homeSlider(slider, windowWidth) {
     activeSlideTxt.removeClass('first-on').addClass('on').find('.title');
 
     TweenLite.set([activeSlideTxt.find('.title'), activeSlideTxt.find('.txt'), activeSlideTxt.find('.button')], { opacity: 1 });
+    TweenLite.to(activeSlideImg, 4, {scale: 1.05});
 
     windowWidth > 780 ? slider.attr('style', '') : slider.height(activeSlideTxt.height());
 

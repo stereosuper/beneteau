@@ -197,6 +197,25 @@
                     "display": "block",
                     "sub_fields": [
                         {
+                            "key": "field_5d14858a2af6a",
+                            "label": "",
+                            "name": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_59c3c5aa57d44",
                             "label": "Image",
                             "name": "image",
@@ -289,13 +308,70 @@
                             "collapsed": "",
                             "min": 4,
                             "max": 4,
-                            "layout": "table",
+                            "layout": "block",
                             "button_label": "",
                             "sub_fields": [
                                 {
                                     "key": "field_5ceb9fca40cbd",
                                     "label": "Chiffre",
                                     "name": "number",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "33",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5d14859c2af6c",
+                                    "label": "Virgule",
+                                    "name": "comma",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "33",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5d1485b32af6d",
+                                    "label": "Chiffre 2",
+                                    "name": "number2",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "33",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5d14825fd6872",
+                                    "label": "Indicateur",
+                                    "name": "indic",
                                     "type": "text",
                                     "instructions": "",
                                     "required": 0,
@@ -331,6 +407,25 @@
                                     "maxlength": ""
                                 }
                             ]
+                        },
+                        {
+                            "key": "field_5d1485902af6b",
+                            "label": "",
+                            "name": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
                         }
                     ],
                     "min": "",
@@ -1142,5 +1237,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1559038528
+    "modified": 1561626063
 }

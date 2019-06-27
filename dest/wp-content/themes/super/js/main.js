@@ -36460,6 +36460,20 @@ module.exports = function (body) {
 
     window.sr = ScrollReveal({ reset: true });
 
+    function count(elt) {
+        if (elt.text() != 0) return;
+
+        elt.prop('Counter', 0).animate({
+            Counter: elt.data('number')
+        }, {
+            duration: 2000,
+            easing: 'swing',
+            step: function step(now) {
+                elt.text(Math.ceil(now));
+            }
+        });
+    }
+
     sr.reveal('.isAnimated', { viewFactor: 0.1 });
 
     sr.reveal('.content-brand .baseline', { duration: 1500, origin: 'right', scale: 1, distance: '60px' });
@@ -36480,7 +36494,11 @@ module.exports = function (body) {
 
     sr.reveal('.push-links-item', { duration: 800, origin: 'bottom', scale: 1, distance: '60px' }, 150);
 
-    sr.reveal('.home-group-number', { duration: 800, origin: 'bottom', scale: 1, distance: '60px' }, 150);
+    sr.reveal('.home-group-number', { duration: 800, origin: 'bottom', scale: 1, distance: '60px', afterReveal: function afterReveal(elt) {
+            $(elt).find('.js-number').each(function () {
+                count($(this));
+            });
+        } }, 150);
 
     sr.reveal('.home-brands-services-list > li', { duration: 800, origin: 'bottom', scale: 1, distance: '60px' }, 150);
 
@@ -36544,6 +36562,7 @@ var $ = require('jquery');
 
 global.jQuery = $;
 var Cookies = require('js-cookie');
+//const CountUp = require('countup.js');
 
 var imagesLoaded = require('imagesloaded');
 // provide jQuery argument
@@ -36837,6 +36856,7 @@ module.exports = function homeSlider(slider, windowWidth) {
 
         TweenLite.fromTo(activeSlideImg, 0.7, { opacity: 1 }, {
             opacity: 0,
+            scale: 1,
             overwrite: true,
             onComplete: function onComplete() {
                 var slideImages = slider.find('.js-slide-img');
@@ -36854,7 +36874,8 @@ module.exports = function homeSlider(slider, windowWidth) {
             visibility: 'visible'
         });
 
-        TweenLite.fromTo(newActiveSlideImg, 0.7, { opacity: 0 }, { opacity: 1, overwrite: true });
+        TweenLite.fromTo(newActiveSlideImg, 4, { scale: 1 }, { scale: 1.05 });
+        TweenLite.fromTo(newActiveSlideImg, 0.7, { opacity: 0 }, { opacity: 1 });
 
         newActiveSlideTxt.addClass('on');
         TweenLite.fromTo(newActiveSlideTxt.find('.title'), 0.5, { opacity: 0 }, { opacity: 1, overwrite: true });
@@ -36906,6 +36927,7 @@ module.exports = function homeSlider(slider, windowWidth) {
     activeSlideTxt.removeClass('first-on').addClass('on').find('.title');
 
     TweenLite.set([activeSlideTxt.find('.title'), activeSlideTxt.find('.txt'), activeSlideTxt.find('.button')], { opacity: 1 });
+    TweenLite.to(activeSlideImg, 4, { scale: 1.05 });
 
     windowWidth > 780 ? slider.attr('style', '') : slider.height(activeSlideTxt.height());
 

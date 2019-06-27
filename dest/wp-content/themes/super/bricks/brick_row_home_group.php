@@ -25,7 +25,14 @@ $image = get_sub_field('image');
             <li class="home-group-number">
                 <div class="number-wrapper">
                     <?php if ($number = get_sub_field('number')): ?>
-                    <span class="number"><?php echo $number ?></span>
+                    <span class="number">
+                        <span class="js-number" data-number='<?php echo $number ?>'>0</span>
+                        <?php the_sub_field('comma') ?>
+                        <?php if( get_sub_field('number2') ){ ?>
+                            <span class="js-number" data-number='<?php the_sub_field('number2') ?>'>0</span>
+                        <?php } ?>
+                        <span class='indic'><?php the_sub_field('indic') ?></span>
+                    </span>
                     <?php endif; ?>
                     <?php if ($text = get_sub_field('text')): ?>
                     <span class="text"><?php echo $text ?></span>

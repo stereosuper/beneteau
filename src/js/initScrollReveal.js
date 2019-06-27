@@ -10,6 +10,20 @@ module.exports = function( body ){
 
     window.sr = ScrollReveal({ reset: true });
 
+    function count( elt ){
+        if( elt.text() != 0 ) return;
+
+        elt.prop('Counter',0).animate({
+            Counter: elt.data('number')
+        }, {
+            duration: 2000,
+            easing: 'swing',
+            step: function (now) {
+                elt.text(Math.ceil(now));
+            }
+        });
+    }
+
 
     sr.reveal('.isAnimated', { viewFactor: 0.1 } );
     
@@ -31,7 +45,11 @@ module.exports = function( body ){
     
     sr.reveal('.push-links-item', { duration: 800, origin: 'bottom', scale: 1, distance: '60px' }, 150);
 
-    sr.reveal('.home-group-number', { duration: 800, origin: 'bottom', scale: 1, distance: '60px' }, 150);
+    sr.reveal('.home-group-number', { duration: 800, origin: 'bottom', scale: 1, distance: '60px' , afterReveal: function(elt){
+        $(elt).find('.js-number').each(function(){
+            count($(this));
+        });
+    }}, 150);
 
     sr.reveal('.home-brands-services-list > li', { duration: 800, origin: 'bottom', scale: 1, distance: '60px' }, 150);
 

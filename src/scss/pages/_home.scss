@@ -388,12 +388,19 @@
         color: $white;
     }
     .number {
+        display: flex;
+        align-items: flex-end;
         font-family: $robotoBold;
         font-size: 3rem;
     }
     .text {
+        max-width: 96%;
         font-family: $roboto;
         text-transform: uppercase;
+    }
+    .indic{
+        font-size: 0.8em;
+        line-height: 1.7;
     }
 }
 
