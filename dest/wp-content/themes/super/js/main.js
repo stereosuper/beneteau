@@ -36913,7 +36913,6 @@ module.exports = function homeSlider(slider, windowWidth) {
     var handleAction = function handleAction(btn) {
         if (!done) return;
 
-        indic.pause();
         TweenLite.killDelayedCallsTo(slide);
         slide(btn.parent().index(), btn);
     };
@@ -36925,6 +36924,7 @@ module.exports = function homeSlider(slider, windowWidth) {
             TweenLite.killDelayedCallsTo(slide);
         } else if (!state.playing) {
             state.playing = true;
+            indic.play();
             setSliderTimeout();
         }
     };
@@ -36942,7 +36942,7 @@ module.exports = function homeSlider(slider, windowWidth) {
     checkIfInView.init(slider);
     setSliderTimeout();
 
-    slider.on('focusin mouseover', function () {
+    slider.on('focusin mouseenter', function () {
         if (state.stop) return;
 
         state.pause = true;
