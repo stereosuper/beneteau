@@ -91,6 +91,18 @@
                     content: none;
                 }
 
+                &.active{
+                    &:before{
+                        content: '';
+                        top: 10px;
+                        left: -10px;
+                        background: $blue;
+                    }
+                    a{
+                        color: $blue;
+                    }
+                }
+
                 >a {
                     font-family: $montserrat;
                     font-size: 1.3rem;

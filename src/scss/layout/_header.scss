@@ -28,6 +28,9 @@ $header-height: 97px;
             color: $text;
         }
     }
+    &.scrolled{
+        border-bottom: 1px solid #dadada;
+    }
     > .container {
         display: flex;
         width: 100%;
