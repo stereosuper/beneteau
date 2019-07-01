@@ -1,6 +1,24 @@
 {
     "key": "group_59b68c193f7e4",
     "title": "Secteur : Attributs",
+    "location": [
+        [
+            {
+                "param": "taxonomy",
+                "operator": "==",
+                "value": "branch"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1561980712,
     "fields": [
         {
             "key": "field_59b68c4733723",
@@ -26,23 +44,5 @@
             "max_size": "",
             "mime_types": ""
         }
-    ],
-    "location": [
-        [
-            {
-                "param": "taxonomy",
-                "operator": "==",
-                "value": "branch"
-            }
-        ]
-    ],
-    "menu_order": 0,
-    "position": "normal",
-    "style": "default",
-    "label_placement": "top",
-    "instruction_placement": "label",
-    "hide_on_screen": "",
-    "active": 1,
-    "description": "",
-    "modified": 1505135764
+    ]
 }
