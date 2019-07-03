@@ -77,7 +77,7 @@ $btn = get_sub_field('btn');
     <?php endif; ?>
     <div class='home-news-link isAnimated'>
         <?php if( $link && $btn ) : ?>
-            <a href='<?php echo $link['url'] ?>' class='a-btn'><?php echo $btn; ?></a>
+            <a href='<?php echo $link; ?>' class='a-btn'><?php echo $btn; ?></a>
         <?php endif; ?>
     </div>
 </div>
