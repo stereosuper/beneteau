@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Beneteau\n"
-"POT-Creation-Date: 2019-06-11 14:26+0000\n"
-"PO-Revision-Date: 2019-06-11 14:27+0000\n"
+"POT-Creation-Date: 2019-07-08 10:36+0000\n"
+"PO-Revision-Date: 2019-07-08 10:36+0000\n"
 "Last-Translator: adminBeneteau <elisabeth@stereosuper.fr>\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -95,14 +95,6 @@ msgstr "Fermer le bandeau de cookies"
 msgid "Sitemap"
 msgstr ""
 
-#: sitemap.php:16 sitemap.php:27
-msgid "Pages"
-msgstr "Pages"
-
-#: sitemap.php:43
-msgid "News"
-msgstr "Actualités"
-
 #: page.php:25
 msgid "Secondary navigation"
 msgstr "Navigation secondaire"
@@ -114,6 +106,10 @@ msgstr ""
 #: front-page.php:60
 msgid "En savoir plus sur "
 msgstr ""
+
+#: bricks/menu.php:19
+msgid "Close"
+msgstr "Fermer"
 
 #: bricks/brick_row_home_news.php:63
 msgid "d/m/Y"

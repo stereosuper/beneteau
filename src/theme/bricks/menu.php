@@ -16,7 +16,7 @@
                     <div class='menu-content'>
                         <div class='menu-container'>
                             <button class="nav-cross" type="button">
-                                <svg class="icon" aria-hidden='true' focusable='false'><use href="#icon-cross"/></svg><span><?php _e('Fermer', 'beneteau'); ?></span>
+                                <svg class="icon" aria-hidden='true' focusable='false'><use href="#icon-cross"/></svg><span><?php _e('Close', 'beneteau'); ?></span>
                             </button>
                             <div>
                                 <div>
