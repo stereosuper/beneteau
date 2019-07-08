@@ -11,7 +11,7 @@
                     <?php while( have_rows('links', 'options') ) : the_row(); ?>
                         <?php $link = get_sub_field('link', 'options'); ?>
                         <li class="third-level">
-                            <a href="<?php echo $link['url']; ?>">
+                            <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
                                 <?php echo $link['title']; ?>
                             </a>
                         </li>
@@ -28,7 +28,7 @@
             <?php while( have_rows('links', 'options') ) : the_row(); ?>
                 <?php $link = get_sub_field('link', 'options'); ?>
                 <li class="third-level">
-                    <a href="<?php echo $link['url']; ?>">
+                    <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
                         <?php echo $link['title']; ?>
                     </a>
                 </li>
@@ -43,7 +43,7 @@
         <?php $link = get_sub_field('link_pdf', 'options'); if( $link ){ ?>
             <div>
                 <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-doc" /></svg>
-                <a href="<?php echo $link['url']; ?>">
+                <a href="<?php echo $link['url']; ?>" target="<?php echo $link['target']; ?>">
                     <?php echo $link['title']; ?>
                 </a>
             </div>
@@ -51,7 +51,7 @@
         <?php $video = get_sub_field('link_video', 'options'); if( $video ){ ?>
             <div>
                 <svg class="icon icon-video" aria-hidden="true" focusable="false"><use href="#icon-video2" /></svg>
-                <a href="<?php echo $video['url']; ?>">
+                <a href="<?php echo $video['url']; ?>" target="<?php echo $video['target']; ?>">
                     <?php echo $video['title']; ?>
                 </a>
             </div>
