@@ -65,9 +65,9 @@ $btn = get_sub_field('btn');
                         <span class="read"><?php echo _e('Lire', 'beneteau') ?></span>
                     </a>
                 </p>
-                <figure class='img-wrapper'>
-                    <img src="<?php echo $img_uri; ?>" alt="<?php echo htmlspecialchars(esc_attr(get_the_title()), ENT_QUOTES); ?>" />
-                </figure>
+                <div class='img-wrapper' style='background-image: url(<?php echo $img_uri; ?>)'>
+                    <!--<img src="<?php //echo $img_uri; ?>" alt="<?php //echo htmlspecialchars(esc_attr(get_the_title()), ENT_QUOTES); ?>" />-->
+                </div>
             </li>
         <?php
             endwhile;

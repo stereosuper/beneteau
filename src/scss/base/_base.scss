@@ -577,6 +577,7 @@ h2, div{
         > a {
             flex-grow: 1;
             display: flex;
+            width: 100%;
             flex-direction: column;
             align-items: flex-start;
             padding: 20px $gutter 20px 50px;
@@ -592,6 +593,7 @@ h2, div{
         font-family: $robotoBold;
     }
     .title {
+        width: 100%;
         margin: $line-height 0 $line-height / 2;
         font-family: $roboto;
         text-transform: uppercase;
@@ -615,6 +617,8 @@ h2, div{
         right: 0;
         bottom: 0;
         z-index: -1;
+        background-size: cover;
+        background-position: 50% 50%;
         &::after {
             content: "";
             position: absolute;
@@ -628,11 +632,11 @@ h2, div{
                 background: #B56C00;
             }
         }
-        img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        // img {
+        //     width: 100%;
+        //     height: 100%;
+        //     object-fit: cover;
+        // }
     }
 }
 
@@ -653,7 +657,7 @@ h2, div{
             }
         }
         &:nth-child(2) {
-            figure {
+            .img-wrapper {
                 &::after {
                     background: rgba($blue, 0.9);
                     .contrasted &{
@@ -664,7 +668,7 @@ h2, div{
         }
         &:nth-child(3) {
             display: none;
-            figure {
+            .img-wrapper {
                 &::after {
                     background: rgba($corail, 0.9);
                     .contrasted &{

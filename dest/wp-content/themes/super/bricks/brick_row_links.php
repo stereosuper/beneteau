@@ -36,9 +36,9 @@ $title_align = get_sub_field('title_align');
                         <span class="read"><?php echo $link_label; ?></span>
                     </a>
                 </p>
-                <figure class='img-wrapper'>
-                    <img src="<?php echo $image_url; ?>" alt="" />
-                </figure>
+                <div class='img-wrapper' style='background-image: url(<?php echo $image_url; ?>)'>
+                    <!--<img src="<?php //echo $image_url; ?>" alt="" />-->
+                </div>
             </li>
             <?php endwhile ?>
         </ul>
