@@ -36442,7 +36442,7 @@ module.exports = function (htmlAze, header) {
     });
 
     if ($(window).width() > 1100) {
-        $('.js-accordion-button').removeAttr('aria-expanded').removeAttr('tabindex');
+        header.find('.js-accordion-button').removeAttr('aria-expanded').removeAttr('tabindex');
     }
 };
 
@@ -36739,7 +36739,7 @@ var menuAccordionHandler = function menuAccordionHandler() {
         if (!title) return;
 
         title.on('click keyup', function (e) {
-            if (e.keyCode !== undefined && e.keyCode !== 13) return;
+            if (e.keyCode !== undefined && e.keyCode !== 13 || $(window).width() >= 1100) return;
 
             var alreadyActivated = parent.hasClass('activated');
             var submenu = that.find('.js-sub-menu');

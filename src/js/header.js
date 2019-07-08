@@ -57,6 +57,6 @@ module.exports = function(htmlAze, header) {
     });
 
     if( $(window).width() > 1100 ){
-        $('.js-accordion-button').removeAttr('aria-expanded').removeAttr('tabindex');
+        header.find('.js-accordion-button').removeAttr('aria-expanded').removeAttr('tabindex');
     }
 };

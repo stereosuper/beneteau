@@ -15,7 +15,7 @@ const menuAccordionHandler = () => {
         if(!title) return;
 
         title.on('click keyup', (e) => {
-            if( e.keyCode !== undefined && e.keyCode !== 13 ) return;
+            if(( e.keyCode !== undefined && e.keyCode !== 13 ) || $(window).width() >= 1100) return;
 
             const alreadyActivated = parent.hasClass('activated');
             const submenu = that.find('.js-sub-menu');
