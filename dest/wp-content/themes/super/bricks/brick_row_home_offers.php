@@ -45,7 +45,7 @@
         </div>
         <?php if ($video_professions_url = get_sub_field('video_professions_url')): ?>
             <div class="home-video-alt">
-                <a href="<?php echo $video_professions_url ?>"><?php _e('Accéder à la vidéo avec transcript', 'precogs') ?></a>
+                <a href="<?php echo $video_professions_url ?>"><?php _e('Access to the video with transcript', 'beneteau') ?></a>
             </div>
         <?php endif; ?>
     <?php endif; ?>

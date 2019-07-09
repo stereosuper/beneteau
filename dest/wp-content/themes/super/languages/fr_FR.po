@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Beneteau\n"
-"POT-Creation-Date: 2019-07-08 10:36+0000\n"
-"PO-Revision-Date: 2019-07-08 10:36+0000\n"
+"POT-Creation-Date: 2019-07-09 07:59+0000\n"
+"PO-Revision-Date: 2019-07-09 07:59+0000\n"
 "Last-Translator: adminBeneteau <elisabeth@stereosuper.fr>\n"
 "Language-Team: Français\n"
 "Language: fr_FR\n"
@@ -106,6 +106,10 @@ msgstr ""
 #: front-page.php:60
 msgid "En savoir plus sur "
 msgstr ""
+
+#: bricks/brick_row_home_offers.php:48
+msgid "Access to the video with transcript"
+msgstr "Accéder à la vidéo avec transcript"
 
 #: bricks/menu.php:19
 msgid "Close"

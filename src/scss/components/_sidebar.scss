@@ -65,6 +65,9 @@
                     bottom: -3px;
                     left: -10px;
                     background: $secondary;
+                    .page-template-tpl-contact &{
+                        content: none;
+                    }
                 }
             }
         }
