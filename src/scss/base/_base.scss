@@ -953,6 +953,11 @@ blockquote,
     position: relative;
     margin: 0;
     z-index: 20;
+    a{
+        padding: 5px;
+        background: $text;
+        color: #fff;
+    }
 }
 
 
