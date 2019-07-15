@@ -15,7 +15,7 @@ const menuAccordionHandler = () => {
         if(!title) return;
 
         title.on('click keyup', (e) => {
-            if(( e.keyCode !== undefined && e.keyCode !== 13 ) || $(window).width() >= 1100) return;
+            if(( e.keyCode !== undefined && e.keyCode !== 13 && e.keyCode !== 32 ) || $(window).width() >= 1100) return;
 
             const alreadyActivated = parent.hasClass('activated');
             const submenu = that.find('.js-sub-menu');
@@ -23,6 +23,7 @@ const menuAccordionHandler = () => {
 
             if (alreadyActivated) {
                 parent.removeClass('activated');
+                that.css('visibility', 'hidden');
                 TweenMax.to(that, 0.3, {
                     maxHeight: 0,
                     opacity: 0,
@@ -30,6 +31,7 @@ const menuAccordionHandler = () => {
                 });
                 title.attr('aria-expanded', false);
             } else {
+                that.css('visibility', 'visible');
                 TweenMax.to(that, 0.3, {
                     maxHeight,
                     opacity: 1,

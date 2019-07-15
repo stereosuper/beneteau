@@ -36739,7 +36739,7 @@ var menuAccordionHandler = function menuAccordionHandler() {
         if (!title) return;
 
         title.on('click keyup', function (e) {
-            if (e.keyCode !== undefined && e.keyCode !== 13 || $(window).width() >= 1100) return;
+            if (e.keyCode !== undefined && e.keyCode !== 13 && e.keyCode !== 32 || $(window).width() >= 1100) return;
 
             var alreadyActivated = parent.hasClass('activated');
             var submenu = that.find('.js-sub-menu');
@@ -36747,6 +36747,7 @@ var menuAccordionHandler = function menuAccordionHandler() {
 
             if (alreadyActivated) {
                 parent.removeClass('activated');
+                that.css('visibility', 'hidden');
                 TweenMax.to(that, 0.3, {
                     maxHeight: 0,
                     opacity: 0,
@@ -36754,6 +36755,7 @@ var menuAccordionHandler = function menuAccordionHandler() {
                 });
                 title.attr('aria-expanded', false);
             } else {
+                that.css('visibility', 'visible');
                 TweenMax.to(that, 0.3, {
                     maxHeight: maxHeight,
                     opacity: 1,

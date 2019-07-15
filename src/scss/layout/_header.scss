@@ -57,9 +57,9 @@ $header-height: 97px;
         background: #35424D;
         color: #fff;
         text-decoration: underline;
+        transition: none;
         .menu-open &{
-            background: #35424D;
-            color: #fff;
+            visibility: hidden;
         }
     }
     .text{
@@ -328,6 +328,7 @@ $header-height: 97px;
         max-height: 0;
         opacity: 0; 
         overflow: hidden;
+        visibility: hidden;
         > .sub-menu {
             margin: 0;
             padding: 10px 0 20px;
@@ -444,6 +445,7 @@ $header-height: 97px;
         .sub-menu-wrapper{
             max-height: 100%;
             opacity: 1;
+            visibility: visible;
         }
         .menu-img-link{
             display: block;
