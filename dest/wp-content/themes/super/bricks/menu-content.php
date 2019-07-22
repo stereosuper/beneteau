@@ -4,7 +4,7 @@
 
 <?php if( get_row_layout() == 'menu_with_submenu' ) : ?>
     <div>
-        <span class="js-accordion-button accordion-button" role="button" aria-expanded="false" tabindex="0"><?php the_sub_field('title', 'options'); ?></span>
+        <span class="js-accordion-button accordion-button" aria-expanded="false" tabindex="0"><?php the_sub_field('title', 'options'); ?></span>
         <?php if( have_rows('links', 'options') ) : ?>
             <div class="sub-menu-wrapper js-sub-menu-wrapper">
                 <ul class="sub-menu js-sub-menu">

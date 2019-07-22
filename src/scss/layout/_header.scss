@@ -257,7 +257,7 @@ $header-height: 97px;
     }
     .first-level {
         margin-bottom: $line-height * 1.5;
-        > button, > a {
+        > button, > a, > span {
             display: block;
             margin: 0 0 $line-height $gutter;
             border: 0;
@@ -372,17 +372,21 @@ $header-height: 97px;
             justify-content: space-between;
             .first-level{
                 margin: 0 0 0 24px;
-                > a, > button{
+                > a, > button, > span{
                     margin: 0;
                     font-family: $roboto;
                     font-size: 1.4rem;
                     text-transform: uppercase;
                     color: #fff;
+                    cursor: pointer;
                     &.on{
                         color: $blue;
                     }
                     &:hover{
                         opacity: 0.7;
+                    }
+                    &:focus{
+                        outline: 1px dotted;
                     }
                     .scrolled &, .on &, .submenu-open &{
                         color: $text;

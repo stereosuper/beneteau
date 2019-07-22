@@ -7,7 +7,7 @@
                 <?php }else if( get_sub_field('link', 'options') ){ ?>
                     <a href='<?php the_sub_field('link', 'options'); ?>'><?php the_sub_field('title', 'options'); ?></a>
                 <?php }else{ ?>
-                    <button role='button' type='button' aria-expanded='false' class='js-menu-btn'><?php the_sub_field('title', 'options'); ?></button>
+                    <span role='button' aria-expanded='false' tabindex='0' class='js-menu-btn'><?php the_sub_field('title', 'options'); ?></span>
                 <?php } ?>
 
                 <hr>

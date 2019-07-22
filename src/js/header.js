@@ -10,6 +10,8 @@ module.exports = function(htmlAze, header) {
     //const menuBg = $('#menuBg');
     const mainMenus = $('#main-menus');
     const focusTrap = createFocusTrap('#main-menus');
+    const lang = $('#lang');
+    const accordionBtn = header.find('.js-accordion-button');
 
     header
         .on('click', '#burger', (e) => {
@@ -20,8 +22,12 @@ module.exports = function(htmlAze, header) {
             $('#main-navigation-cross').focus();
             mainMenus.attr('role', 'dialog').attr('aria-label', 'navigation');
             $('#access, #main, #footer, #logo').attr('aria-hidden', true);
+            accordionBtn.attr('role', 'button');
+            mainMenus.attr('aria-hidden', false).find('a, button').attr('tabindex', 0);
         })
-        .on('click', '.js-menu-btn', function() {
+        .on('click keyup', '.js-menu-btn', function(e) {
+            if( e.keyCode !== undefined && e.keyCode !== 13 && e.keyCode !== 32 ) return;
+
             $(this).toggleClass('on').parent().find('.menu-content').toggleClass('on').parent().siblings().find('.menu-content').removeClass('on').parent().find('.js-menu-btn').removeClass('on');
             if( $(this).hasClass('on') ){
                 $(this).attr('aria-expanded', true);
@@ -47,6 +53,8 @@ module.exports = function(htmlAze, header) {
             htmlAze.removeClass('menu-open');
             $('#access, #main, #footer, #logo').attr('aria-hidden', false);
             $('#burger').focus();
+            accordionBtn.attr('role', '');
+            mainMenus.attr('aria-hidden', true).find('a, button').attr('tabindex', -1);
         });
 
     $('body').on('click', function(e){
@@ -57,6 +65,14 @@ module.exports = function(htmlAze, header) {
     });
 
     if( $(window).width() > 1100 ){
-        header.find('.js-accordion-button').removeAttr('aria-expanded').removeAttr('tabindex');
+        accordionBtn.removeAttr('aria-expanded').removeAttr('tabindex');
+    }else{
+        mainMenus.attr('aria-hidden', true).find('a, button').attr('tabindex', -1);
+        header.find('.js-menu-btn').attr('role', '').attr('tabindex', -1).attr('aria-expanded', true);
+    }
+
+    if( lang.length ){
+        lang.find('[lang="FR"]').attr('title', 'FR - Version française');
+        lang.find('[lang="EN"]').attr('title', 'EN - English version');
     }
 };
