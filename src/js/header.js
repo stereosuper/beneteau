@@ -50,13 +50,13 @@ module.exports = function(htmlAze, header) {
         })
         .on('click', '#main-navigation-cross', e => {
             e.preventDefault();
+            focusTrap.deactivate();
             nav.removeClass('on');
             htmlAze.removeClass('menu-open');
             $('#access, #main, #footer, #logo').attr('aria-hidden', false);
             accordionBtn.attr('role', '').attr('tabindex', -1);
             mainMenus.attr('aria-hidden', true).find('a, button').attr('tabindex', -1);
-            focusTrap.deactivate();
-            $('#burger').focus();
+            setTimeout(function(){ $('#burger').focus(); }, 100);
         });
 
     $('body').on('click', function(e){

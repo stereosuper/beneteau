@@ -36435,13 +36435,15 @@ module.exports = function (htmlAze, header) {
         header.removeClass('on').find('.js-menu-btn.on').removeClass('on').focus().parent().find('.menu-content').removeClass('on');
     }).on('click', '#main-navigation-cross', function (e) {
         e.preventDefault();
+        focusTrap.deactivate();
         nav.removeClass('on');
         htmlAze.removeClass('menu-open');
         $('#access, #main, #footer, #logo').attr('aria-hidden', false);
         accordionBtn.attr('role', '').attr('tabindex', -1);
         mainMenus.attr('aria-hidden', true).find('a, button').attr('tabindex', -1);
-        focusTrap.deactivate();
-        $('#burger').focus();
+        setTimeout(function () {
+            $('#burger').focus();
+        }, 100);
     });
 
     $('body').on('click', function (e) {
