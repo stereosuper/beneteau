@@ -36403,16 +36403,18 @@ module.exports = function (htmlAze, header) {
     var lang = $('#lang');
     var accordionBtn = header.find('.js-accordion-button');
 
+    focusTrap.deactivate();
+
     header.on('click', '#burger', function (e) {
-        focusTrap.activate();
         e.preventDefault();
         nav.addClass('on');
         htmlAze.addClass('menu-open');
         $('#main-navigation-cross').focus();
         mainMenus.attr('role', 'dialog').attr('aria-label', 'navigation');
         $('#access, #main, #footer, #logo').attr('aria-hidden', true);
-        accordionBtn.attr('role', 'button');
+        accordionBtn.attr('role', 'button').attr('tabindex', 0);
         mainMenus.attr('aria-hidden', false).find('a, button').attr('tabindex', 0);
+        focusTrap.activate();
     }).on('click keyup', '.js-menu-btn', function (e) {
         if (e.keyCode !== undefined && e.keyCode !== 13 && e.keyCode !== 32) return;
 
@@ -36432,14 +36434,14 @@ module.exports = function (htmlAze, header) {
     }).on('click', '.nav-cross', function () {
         header.removeClass('on').find('.js-menu-btn.on').focus().removeClass('on').parent().find('.menu-content').removeClass('on');
     }).on('click', '#main-navigation-cross', function (e) {
-        focusTrap.deactivate();
         e.preventDefault();
         nav.removeClass('on');
         htmlAze.removeClass('menu-open');
         $('#access, #main, #footer, #logo').attr('aria-hidden', false);
         $('#burger').focus();
-        accordionBtn.attr('role', '');
+        accordionBtn.attr('role', '').attr('tabindex', -1);
         mainMenus.attr('aria-hidden', true).find('a, button').attr('tabindex', -1);
+        focusTrap.deactivate();
     });
 
     $('body').on('click', function (e) {
@@ -36454,6 +36456,7 @@ module.exports = function (htmlAze, header) {
     } else {
         mainMenus.attr('aria-hidden', true).find('a, button').attr('tabindex', -1);
         header.find('.js-menu-btn').removeAttr('role').attr('tabindex', -1).removeAttr('aria-expanded');
+        accordionBtn.attr('tabindex', -1);
     }
 
     if (lang.length) {
