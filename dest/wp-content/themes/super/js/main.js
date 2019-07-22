@@ -36453,12 +36453,12 @@ module.exports = function (htmlAze, header) {
         accordionBtn.removeAttr('aria-expanded').removeAttr('tabindex');
     } else {
         mainMenus.attr('aria-hidden', true).find('a, button').attr('tabindex', -1);
-        header.find('.js-menu-btn').attr('role', '').attr('tabindex', -1).attr('aria-expanded', true);
+        header.find('.js-menu-btn').removeAttr('role').attr('tabindex', -1).removeAttr('aria-expanded');
     }
 
     if (lang.length) {
-        lang.find('[lang="FR"]').attr('title', 'FR - Version française');
-        lang.find('[lang="EN"]').attr('title', 'EN - English version');
+        lang.find('[lang="FR"]').attr('title', 'FR - Version française').attr('lang', 'fr');
+        lang.find('[lang="EN"]').attr('title', 'EN - English version').attr('lang', 'en');
     }
 };
 
