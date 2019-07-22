@@ -27,7 +27,7 @@ module.exports = function(htmlAze, header) {
             mainMenus.attr('aria-hidden', false).find('a, button').attr('tabindex', 0);
             focusTrap.activate();
         })
-        .on('click keyup', '.js-menu-btn', function(e) {
+        .on('click keydown', '.js-menu-btn', function(e) {
             if( e.keyCode !== undefined && e.keyCode !== 13 && e.keyCode !== 32 ) return;
 
             $(this).toggleClass('on').parent().find('.menu-content').toggleClass('on').parent().siblings().find('.menu-content').removeClass('on').parent().find('.js-menu-btn').removeClass('on');
@@ -46,17 +46,17 @@ module.exports = function(htmlAze, header) {
             }
         })
         .on('click', '.nav-cross', function(){
-            header.removeClass('on').find('.js-menu-btn.on').focus().removeClass('on').parent().find('.menu-content').removeClass('on');
+            header.removeClass('on').find('.js-menu-btn.on').removeClass('on').focus().parent().find('.menu-content').removeClass('on');
         })
         .on('click', '#main-navigation-cross', e => {
             e.preventDefault();
             nav.removeClass('on');
             htmlAze.removeClass('menu-open');
             $('#access, #main, #footer, #logo').attr('aria-hidden', false);
-            $('#burger').focus();
             accordionBtn.attr('role', '').attr('tabindex', -1);
             mainMenus.attr('aria-hidden', true).find('a, button').attr('tabindex', -1);
             focusTrap.deactivate();
+            $('#burger').focus();
         });
 
     $('body').on('click', function(e){
