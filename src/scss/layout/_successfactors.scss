@@ -1,0 +1,43 @@
+.sf-form{
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 75px;
+    .sf-field{
+        flex-grow: 1;
+        margin-right: 12px;
+    }
+    label {
+        text-align: left;
+        width: 100%;
+        margin: 0 0 5px;
+    }
+    input{
+        width: 100%;
+    }
+    button{
+        display: inline-block;
+        border: 1px solid transparent;
+        position: relative;
+        font-family: $montserratBold;
+        color: $white;
+        background-color: $grey;
+        font-size: 1.1rem;
+        letter-spacing: 0.22em;
+        padding: 15px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+}
+.sf-map{
+    margin-bottom: 45px;
+}
+
+@media (max-width: $phone){
+    .sf-form{
+        flex-wrap: wrap;
+        .sf-field{
+            width: 100%;
+            margin-bottom: 15px;
+        }
+    }
+}
