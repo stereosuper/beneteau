@@ -68,7 +68,8 @@ h1 {
     margin: 1.7em 0 1.3em;
     line-height: 1;
 
-    .page-template-default & {
+    .page-template-default &,
+    .header-thumbnail & {
         // NOTE: default page template titles font changes
         font-family: $playfairBold;
         font-weight: 500;

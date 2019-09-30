@@ -16,7 +16,13 @@ get_header(); ?>
 		'depth' => 0,
 		'walker' => new CustomWalkerNavSubMenu()
 		) );
-	?>
+    ?>
+    
+    <?php if( has_post_thumbnail() ) : ?>
+		<div class='post-thumbnail header-thumbnail' style='background-image:url(<?php echo get_the_post_thumbnail_url($post, "full"); ?>)'>
+			<div class='container'><h1 class='isAnimated'><?php the_title(); ?></h1></div>
+		</div>
+	<?php endif; ?>
 
 	<div class='container<?php echo (strpos($sidebar_menu, '<li')!==FALSE)?' container-sidebar':''; ?>'>
 
@@ -32,7 +38,9 @@ get_header(); ?>
 		<div class='content'>
 			<?php if( function_exists('yoast_breadcrumb') ){ yoast_breadcrumb('<div class="breadcrumbs">','</div>'); } ?>
 
-			<h1 class='isAnimated'><?php the_title(); ?></h1>
+			<?php if( !has_post_thumbnail() ) : ?>
+				<h1 class='isAnimated'><?php the_title(); ?></h1>
+			<?php endif; ?>
             <?php the_content(); ?>
             <form id="keywordsearch" class='sf-form' name="keywordsearch" method="get" action="https://jobs.beneteau-group.com/search/" lang="<?php _e('en_US', 'beneteau'); ?>" xml:lang="<?php _e('en_US', 'beneteau'); ?>">
                 <div class='sf-field'>
