@@ -350,7 +350,6 @@ function beneteau_scripts(){
 	wp_enqueue_style( 'beneteau-style', get_template_directory_uri() . '/css/main.css', array(), BENETEAU_VERSION );
 
 	// footer
-	wp_deregister_script('jquery');
 	wp_enqueue_script( 'beneteau-scripts', get_template_directory_uri() . '/js/main.js', array(), BENETEAU_VERSION, true );
 
     wp_deregister_script( 'wp-embed' );
