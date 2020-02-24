@@ -1,18 +1,7 @@
 		</main>
 
-		<?php $cookie = isset($_COOKIE['beneteau-cookies']) ? true : false; ?>
-
 		<footer role='contentinfo' class='footer' id='footer'>
-			
-			<?php if(!$cookie){ ?>
-				<div class='cookies' id='cookies'>
-					<div class='container'>
-						<?php the_field('cookie', 'options'); ?>
-						<button type='button' id='btnCookies'><?php _e('Close the cookie warning', 'beneteau'); ?></button>
-					</div>
-				</div>
-			<?php } ?>
-
+	
 			<div class='container'>
 				<p>
 					<?php _e( sprintf('Copyright Groupe Beneteau %1$s &copy;', date('Y') ), 'beneteau'); ?>
