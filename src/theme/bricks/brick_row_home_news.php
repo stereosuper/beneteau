@@ -30,6 +30,11 @@ $btn = get_sub_field('btn');
                     <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin" /></svg>
                 </a>
             <?php endif; ?>
+            <?php if ($fb_link = get_sub_field('fb_link')): ?>
+                <a href="<?php echo $fb_link ?>">
+                    <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-fb" /></svg>
+                </a>
+            <?php endif; ?>
         </div>
     </header>
     <?php
