@@ -21,17 +21,17 @@ $btn = get_sub_field('btn');
         <?php endif; ?>
         <div class="home-news-social">
             <?php if ($twitter_link = get_sub_field('twitter_link')): ?>
-                <a href="<?php echo $twitter_link ?>">
+                <a href="<?php echo $twitter_link ?>" onclick="return ga('send', 'event', 'lien-sortant', 'clic-reseaux-sociaux', 'clic-LS-RS-Twitter')">
                     <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-twitter" /></svg>
                 </a>
             <?php endif; ?>
             <?php if ($linkedin_link = get_sub_field('linkedin_link')): ?>
-                <a href="<?php echo $linkedin_link ?>">
+                <a href="<?php echo $linkedin_link ?>" onclick="return ga('send', 'event', 'lien-sortant', 'clic-reseaux-sociaux', 'clic-LS-RS-Linkedin')">
                     <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-linkedin" /></svg>
                 </a>
             <?php endif; ?>
             <?php if ($fb_link = get_sub_field('fb_link')): ?>
-                <a href="<?php echo $fb_link ?>">
+                <a href="<?php echo $fb_link ?>" onclick="return ga('send', 'event', 'lien-sortant', 'clic-reseaux-sociaux', 'clic-LS-RS-Facebook')">
                     <svg class="icon" aria-hidden="true" focusable="false"><use href="#icon-fb" /></svg>
                 </a>
             <?php endif; ?>

@@ -23,7 +23,21 @@ $count = 0;
                     <?php if( get_sub_field('img') ) : ?><div class="img"><?php echo wp_get_attachment_image( get_sub_field('img'), 'full' ); ?></div><?php endif; ?>
                     <?php if( get_sub_field('title') ) : ?><h3><?php the_sub_field('title'); ?></h3><?php endif; ?>
                     <?php if( get_sub_field('address') ) : ?><div class='address'><?php the_sub_field('address'); ?></div><?php endif; ?>
-                    <?php if( get_sub_field('phone') ) : ?><div class='tel'><p><svg class='icon'><use xlink:href='#icon-tel'></use></svg><?php the_sub_field('phone'); ?></p></div><?php endif; ?>
+                    <?php if( get_sub_field('phone') ) : ?>
+                        <div class='tel'>
+                            <?php if(get_sub_field('phone_btn')){ ?>
+                                <button type="button" class="btn-invert-block btn-phone"><?php the_sub_field('phone_btn'); ?></button>
+                                <div class="phone hidden">
+                            <?php } ?>
+                                <p>
+                                    <svg class='icon'><use xlink:href='#icon-tel'></use></svg>
+                                    <?php the_sub_field('phone'); ?>
+                                </p>
+                            <?php if(get_sub_field('phone_btn')){ ?>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    <?php endif; ?>
                 <?php endif; ?>
             <?php $count ++; endwhile; ?>
         <?php endif; $count = 0; ?>
@@ -40,7 +54,21 @@ $count = 0;
                             <?php if( get_sub_field('img') ) : ?><div class="img"><?php echo wp_get_attachment_image( get_sub_field('img'), 'full' ); ?></div><?php endif; ?>
                             <?php if( get_sub_field('title') ) : ?><h3><?php the_sub_field('title'); ?></h3><?php endif; ?>
                             <?php if( get_sub_field('address') ) : ?><div class='address'><?php the_sub_field('address'); ?></div><?php endif; ?>
-                            <?php if( get_sub_field('phone') ) : ?><div class='tel'><p><svg class='icon'><use xlink:href='#icon-tel'></use></svg><?php the_sub_field('phone'); ?></p></div><?php endif; ?>
+                            <?php if( get_sub_field('phone') ) : ?>
+                                <div class='tel'>
+                                    <?php if(get_sub_field('phone_btn')){ ?>
+                                        <button type="button" class="btn-invert-block btn-phone"><?php the_sub_field('phone_btn'); ?></button>
+                                        <div class="phone hidden">
+                                    <?php } ?>
+                                        <p>
+                                            <svg class='icon'><use xlink:href='#icon-tel'></use></svg>
+                                            <?php the_sub_field('phone'); ?>
+                                        </p>
+                                    <?php if(get_sub_field('phone_btn')){ ?>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     <?php endif; ?>
                 <?php $count ++; endwhile; ?>

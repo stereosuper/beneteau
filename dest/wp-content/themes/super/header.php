@@ -18,26 +18,12 @@
 
 		<script>document.getElementsByTagName('html')[0].className = 'js';</script>
 
-		<?php
-		$use_ga = false;
-		if (isset($_COOKIE['goliath-rgpd-prefs'])) {
-			$cookie = json_decode(stripslashes($_COOKIE['goliath-rgpd-prefs']));
-			if (isset($cookie->ga) && $cookie->ga == 'accept') {
-				$use_ga = true;
-			}
-		} else {
-			if (isset($_COOKIE['beneteau-cookies']) && $_COOKIE['beneteau-cookies'] == 'true') {
-				$use_ga = true;
-			}
-		}
-		if($use_ga) :
-		?>
 		<!-- Google Analytics -->
 		<script>
 		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 		ga('create', 'UA-11897367-1', 'auto');
 		ga('require', 'displayfeatures');
@@ -45,9 +31,6 @@
 		ga('send', 'pageview');
 		</script>
 		<!-- End Google Analytics -->
-		<?php
-		endif;
-		?>
 	</head>
 
 	<?php $class = get_field('scrollreveal') ? 'no-sr' : ''; ?>

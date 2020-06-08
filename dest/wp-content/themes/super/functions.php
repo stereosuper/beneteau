@@ -8,8 +8,8 @@ define( 'BENETEAU_VERSION', '1.50' );
 
 // Fix SQL request always called ?
 if( isset($_GET['doing_wp_cron']) ){
-	remove_action('do_pings', 'do_all_pings');
-	wp_clear_scheduled_hook('do_pings');
+    remove_action('do_pings', 'do_all_pings');
+    wp_clear_scheduled_hook('do_pings');
 }
 
 add_action( 'after_setup_theme', 'beneteau_theme_setup' );
@@ -61,10 +61,10 @@ remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 
 // remove comment author class
 function beneteau_remove_comment_author_class( $classes ){
-	foreach( $classes as $key => $class ){
-		if(strstr($class, 'comment-author-')) unset( $classes[$key] );
-	}
-	return $classes;
+    foreach( $classes as $key => $class ){
+        if(strstr($class, 'comment-author-')) unset( $classes[$key] );
+    }
+    return $classes;
 }
 add_filter( 'comment_class' , 'beneteau_remove_comment_author_class' );
 
@@ -93,13 +93,13 @@ add_action( 'admin_bar_menu', 'beneteau_remove_top_menus', 999 );
 
 // Enlever le lien par défaut autour des images
 function beneteau_imagelink_setup(){
-	if(get_option( 'image_default_link_type' ) !== 'none') update_option('image_default_link_type', 'none');
+    if(get_option( 'image_default_link_type' ) !== 'none') update_option('image_default_link_type', 'none');
 }
 add_action( 'admin_init', 'beneteau_imagelink_setup' );
 
 // Enlever les <p> autour des images
 function beneteau_remove_p_around_images($content){
-   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
+    return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
 }
 add_filter( 'the_content', 'beneteau_remove_p_around_images' );
 
@@ -249,10 +249,10 @@ add_filter( 'post_gallery', 'beneteau_gallery' );
 /* Menus
 /*-----------------------------------------------------------------------------------*/
 register_nav_menus( array(
-		'primary' => 'Menu Principal',
-		'legals' => 'Menu des mentions légales',
-        'footer' => 'Menu de pied de page',
-        'job' => 'Menu emploi',
+    'primary' => 'Menu Principal',
+    'legals' => 'Menu des mentions légales',
+    'footer' => 'Menu de pied de page',
+    'job' => 'Menu emploi',
 ) );
 
 // Cleanup WP Menu html
@@ -285,15 +285,15 @@ add_filter('previous_post_link', 'beneteau_prev_class');
 /* Sidebar & Widgets
 /*-----------------------------------------------------------------------------------*/
 function super_register_sidebars(){
-	register_sidebar(array(
-		'id' => 'job',
-		'name' => 'Emploi',
-		'description' => "Apparait sur la page d'accueil Emploi",
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h2>',
-		'after_title' => '</h2>',
-		'empty_title'=> ''
+    register_sidebar(array(
+        'id' => 'job',
+        'name' => 'Emploi',
+        'description' => "Apparait sur la page d'accueil Emploi",
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h2>',
+        'after_title' => '</h2>',
+        'empty_title'=> ''
     ));
     // register_sidebar(array(
     //     'id' => 'job-menu',
@@ -347,10 +347,10 @@ add_action('acf/init', 'beneteau_add_options_page');
 /*-----------------------------------------------------------------------------------*/
 function beneteau_scripts(){
     // header
-	wp_enqueue_style( 'beneteau-style', get_template_directory_uri() . '/css/main.css', array(), BENETEAU_VERSION );
+    wp_enqueue_style( 'beneteau-style', get_template_directory_uri() . '/css/main.css', array(), BENETEAU_VERSION );
 
-	// footer
-	wp_enqueue_script( 'beneteau-scripts', get_template_directory_uri() . '/js/main.js', array(), BENETEAU_VERSION, true );
+    // footer
+    wp_enqueue_script( 'beneteau-scripts', get_template_directory_uri() . '/js/main.js', array(), BENETEAU_VERSION, true );
 
     wp_deregister_script( 'wp-embed' );
 }
@@ -439,16 +439,16 @@ function super_have_rows( $selector, $post_id = false )
  * @return type
  */
 function goliath_get_page_by_template($template_name) {
-  $posts_args = array(
-    'numberposts'     => 1,
-    'meta_key'        => '_wp_page_template',
-    'meta_value'      => $template_name,
-    'post_type'       => 'page',
-  );
-  $posts = get_posts($posts_args);
-  if (is_array($posts) && isset($posts[0])) {
-    return $posts[0];
-  }
+    $posts_args = array(
+        'numberposts'     => 1,
+        'meta_key'        => '_wp_page_template',
+        'meta_value'      => $template_name,
+        'post_type'       => 'page',
+    );
+    $posts = get_posts($posts_args);
+    if (is_array($posts) && isset($posts[0])) {
+        return $posts[0];
+    }
 }
 
 
@@ -459,8 +459,8 @@ function goliath_get_page_by_template($template_name) {
  * @return type
  */
 function goliath_get_page_url_by_template($template_name) {
-  $page = goliath_get_page_by_template($template_name);
-  return get_permalink($page->ID);
+    $page = goliath_get_page_by_template($template_name);
+    return get_permalink($page->ID);
 }
 
 function beneteau_mlp_navigation()
@@ -549,32 +549,32 @@ add_filter( 'rocket_cache_dynamic_cookies', 'beneteau_cookies' );
 /* Eolia
 /*-----------------------------------------------------------------------------------*/
 add_filter( 'eolia_filter_mail_to',
-function ( $mail, $job ) {
-    /** @var \Eolia\Controllers\JobController $job */
-    if( $job ){
-        $override = filter_var( $job->get_additionnal_field( 'saisie3' ), FILTER_SANITIZE_EMAIL );
-        if ( $override && $override !== '' ) {
-            $mail = 'fr-beneteau2@redirection-eolia.com';
-        }
-    }
-
-    return $mail;
-}, 10, 2 );
-
-add_action( 'eolia_action_mail',
-function ( $form_fields, $job, $content, $attachments ) {
-    /** @var \Eolia\Controllers\JobController $job */
-    if( $job ){
-        if($mailTo = filter_var($job->get_additionnal_field('saisie3'), FILTER_SANITIZE_EMAIL)){
-            $mailContent = $content;
-            $mailHeaders = 'Content-Type: text/html; charset=UTF-8';
-            $mailAttachments = $attachments;
-            if( ! wp_mail( $mailTo, 'Beneteau - Offre '.$job->get_ref(), $mailContent, $mailHeaders, $mailAttachments ) ) {
-                wp_die( __('Une erreur s\'est produite lors de l\'envoi de votre candidature...') );
+    function ( $mail, $job ) {
+        /** @var \Eolia\Controllers\JobController $job */
+        if( $job ){
+            $override = filter_var( $job->get_additionnal_field( 'saisie3' ), FILTER_SANITIZE_EMAIL );
+            if ( $override && $override !== '' ) {
+                $mail = 'fr-beneteau2@redirection-eolia.com';
             }
         }
-    }
-}, 10, 4 );
+
+        return $mail;
+    }, 10, 2 );
+
+add_action( 'eolia_action_mail',
+    function ( $form_fields, $job, $content, $attachments ) {
+        /** @var \Eolia\Controllers\JobController $job */
+        if( $job ){
+            if($mailTo = filter_var($job->get_additionnal_field('saisie3'), FILTER_SANITIZE_EMAIL)){
+                $mailContent = $content;
+                $mailHeaders = 'Content-Type: text/html; charset=UTF-8';
+                $mailAttachments = $attachments;
+                if( ! wp_mail( $mailTo, 'Beneteau - Offre '.$job->get_ref(), $mailContent, $mailHeaders, $mailAttachments ) ) {
+                    wp_die( __('Une erreur s\'est produite lors de l\'envoi de votre candidature...') );
+                }
+            }
+        }
+    }, 10, 4 );
 
 
 /*-----------------------------------------------------------------------------------*/
@@ -582,11 +582,11 @@ function ( $form_fields, $job, $content, $attachments ) {
 /*-----------------------------------------------------------------------------------*/
 
 function beneteau_register_required_plugins() {
-	/*
-	 * Array of plugin arrays. Required keys are name and slug.
-	 * If the source is NOT from the .org repo, then source is also required.
-	 */
-	$plugins = array(
+    /*
+     * Array of plugin arrays. Required keys are name and slug.
+     * If the source is NOT from the .org repo, then source is also required.
+     */
+    $plugins = array(
         array(
             'name'        => 'Advanced Custom Fields PRO',
             'slug'        => 'advanced-custom-fields-pro',
@@ -601,12 +601,12 @@ function beneteau_register_required_plugins() {
             'required'    => false,
             'force_activation' => false
         ),
-		array(
-			'name'        => 'WordPress SEO by Yoast',
-			'slug'        => 'wordpress-seo',
+        array(
+            'name'        => 'WordPress SEO by Yoast',
+            'slug'        => 'wordpress-seo',
             'required'    => false,
             'force_activation' => false
-		),
+        ),
         array(
             'name'        => 'MultilingualPress',
             'slug'        => 'multilingual-press',
@@ -638,21 +638,21 @@ function beneteau_register_required_plugins() {
             'required'    => true,
             'force_activation' => false
         ),
-	);
+    );
 
-	$config = array(
-		'id'           => 'beneteau',                 // Unique ID for hashing notices for multiple instances of TGMPA.
-		'default_path' => '',                      // Default absolute path to bundled plugins.
-		'menu'         => 'tgmpa-install-plugins', // Menu slug.
-		'parent_slug'  => 'themes.php',            // Parent menu slug.
-		'capability'   => 'edit_theme_options',    // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
-		'has_notices'  => true,                    // Show admin notices or not.
-		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
-		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
-		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
-		'message'      => '',                      // Message to output right before the plugins table.
-	);
+    $config = array(
+        'id'           => 'beneteau',                 // Unique ID for hashing notices for multiple instances of TGMPA.
+        'default_path' => '',                      // Default absolute path to bundled plugins.
+        'menu'         => 'tgmpa-install-plugins', // Menu slug.
+        'parent_slug'  => 'themes.php',            // Parent menu slug.
+        'capability'   => 'edit_theme_options',    // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
+        'has_notices'  => true,                    // Show admin notices or not.
+        'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
+        'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
+        'is_automatic' => false,                   // Automatically activate plugins after installation or not.
+        'message'      => '',                      // Message to output right before the plugins table.
+    );
 
-	tgmpa( $plugins, $config );
+    tgmpa( $plugins, $config );
 }
 add_action( 'tgmpa_register', 'beneteau_register_required_plugins' );

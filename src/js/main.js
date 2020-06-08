@@ -115,12 +115,12 @@ $(() => {
     brandSlider($('#sliderBrand'));
 
     // Cookies
-    body.on('click', '#btnCookies', function(e) {
+    /*body.on('click', '#btnCookies', function(e) {
         e.preventDefault();
         Cookies.set('beneteau-cookies', true, { expires: 30, path: '/' });
         $(this).parents('#cookies').addClass('off');
         $('#footer').focus();
-    });
+    });*/
 
     contrast.on('click', () => {
         body.toggleClass('contrasted');
@@ -130,6 +130,12 @@ $(() => {
     $('#access-to-main').on('click', function(e){
         e.preventDefault();
         $('#main').attr('tabindex', '-1').focus();
+    });
+
+    // Contact phone
+    $('.btn-phone').on('click', function(e){
+        $(this).addClass('hidden').siblings('.phone').removeClass('hidden');
+        ga('send', 'event', 'intentions-appels', 'intentions-appels', 'intentions-appels');
     });
 
     // Accordion
