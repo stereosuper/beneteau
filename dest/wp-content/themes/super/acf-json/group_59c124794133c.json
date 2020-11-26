@@ -391,6 +391,25 @@
                                     "maxlength": "",
                                     "rows": 2,
                                     "new_lines": "br"
+                                },
+                                {
+                                    "key": "field_5ede290b14e66",
+                                    "label": "Bouton téléphone",
+                                    "name": "phone_btn",
+                                    "type": "text",
+                                    "instructions": "",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
                                 }
                             ]
                         }
@@ -1026,5 +1045,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1562602535
+    "modified": 1591619181
 }

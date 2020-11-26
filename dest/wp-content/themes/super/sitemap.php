@@ -13,35 +13,31 @@ get_header(); ?>
 				<h1><?php the_title(); ?></h1>
 				<?php the_content(); ?>
 
-				<!--<h2><?php //_e('Pages', 'beneteau'); ?></h2>-->
-				<ul>
-					<?php wp_list_pages( array('post_type' => 'page', 'title_li' => '', 'sort_column' => 'post_title') ); ?>
-				</ul>
-
 				<?php
-					// function listPosts($postType, $tax){
-					// 	$options = $tax ? array( array('taxonomy' => 'types', 'field' => 'slug', 'terms' => $tax) ) : '';
-					// 	$posts = get_posts( array('post_type' => $postType, 'orderby' => 'title', 'posts_per_page' => -1, 'order' => 'ASC', 'tax_query' => $options) );
+					$pagesQuery = new WP_Query(
+						array(
+							'post_type' => 'page',
+							'order' => 'ASC',
+							'orderby' => 'title',
+							'posts_per_page' => -1,
+							'meta_query' => array(
+								array(
+									'key'     => 'sitemap_hide',
+									'value'   => 0
+								)
+							)
+						)
+					);
 
-					// 	if(!$posts)
-					// 		echo '<p>' . _e('Pages', 'beneteau') . '</p>';
-
-					// 	$output = "<ul>";
-					// 	foreach( $posts as $post ){
-					// 		$output .= '<li>';
-					// 		$output .= '<a href="'. get_permalink($post->ID) .'" title="Go to '. get_the_title($post->ID) .'">';
-					// 		$output .= get_the_title($post->ID);
-					// 		$output .= '</a>';
-					// 		$output .= '</li>';
-					// 	}
-					// 	$output .= '</ul>';
-
-					// 	echo $output;
-					// }
+					if ( $pagesQuery->have_posts() ) {
+						echo '<ul>';
+						while ( $pagesQuery->have_posts() ) {
+							$pagesQuery->the_post();
+							echo '<li><a href='.get_the_permalink().'>' . get_the_title() . '</a></li>';
+						}
+						echo '</ul>';
+					}
 				?>
-
-				<!--<h2><?php //_e('News', 'beneteau'); ?></h2>-->
-				<?php // listPosts('post', ''); ?>
 
 			<?php endwhile; ?>
 

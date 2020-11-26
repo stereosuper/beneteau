@@ -118,6 +118,25 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_5e9834be62524",
+                            "label": "Lien facebook",
+                            "name": "fb_link",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
                             "key": "field_59c3bcf5fdd43",
                             "label": "Contenu",
                             "name": "content",
@@ -181,44 +200,6 @@
                     "label": "Le groupe Beneteau (spécifique accueil)",
                     "display": "block",
                     "sub_fields": [
-                        {
-                            "key": "field_5d1e189ad640e",
-                            "label": "Indicateur",
-                            "name": "indic",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "25",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
-                        {
-                            "key": "field_5d1e1880d640c",
-                            "label": "",
-                            "name": "",
-                            "type": "text",
-                            "instructions": "",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "default_value": "",
-                            "placeholder": "",
-                            "prepend": "",
-                            "append": "",
-                            "maxlength": ""
-                        },
                         {
                             "key": "field_59c3c5aa57d44",
                             "label": "Image",
@@ -335,7 +316,7 @@
                                     "maxlength": ""
                                 },
                                 {
-                                    "key": "field_5d1e185ed640b",
+                                    "key": "field_5d1e1922dcb4c",
                                     "label": "Virgule",
                                     "name": "comma",
                                     "type": "text",
@@ -354,7 +335,7 @@
                                     "maxlength": ""
                                 },
                                 {
-                                    "key": "field_5d1e1889d640d",
+                                    "key": "field_5d1e192fdcb4d",
                                     "label": "Chiffre 2",
                                     "name": "number2",
                                     "type": "text",
@@ -373,7 +354,7 @@
                                     "maxlength": ""
                                 },
                                 {
-                                    "key": "field_5d1e18b1d640f",
+                                    "key": "field_5d1e1993dcb4e",
                                     "label": "Indicateur",
                                     "name": "indic",
                                     "type": "text",
@@ -1222,5 +1203,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1562253507
+    "modified": 1587034543
 }
